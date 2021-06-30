@@ -7,10 +7,12 @@ En este repositorio les presentamos un sitio web para venta de insumos y servici
 Este sitio web apunta a un publico tanto pasajero como permanente, es un sitio versatil y sencillo, cualquier persona puede ingresar, registrarse, buscar articulos y concretar una compra de manera rapida y sencilla.
 
 ### Colaboradores
-David: Listo para este nuevo desafio y acompañar al grupo
+David:
+Listo para este nuevo desafio y acompañar al grupo
 
 
 Fatima:
 
 
 Brian:
+Espero les guste el proyecto que estamos realizando con mis compañeros, superagradecido de estar con ellos <3
