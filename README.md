@@ -11,8 +11,8 @@ David:
 Listo para este nuevo desafio y acompañar al grupo
 
 
-Fatima:
-
+Fatima: 
+Todo gran proyecto tiene grandes colaboradores, estoy convencida que nuestro grupo finalizará con éxito este proyecto
 
 Brian:
 Espero les guste el proyecto que estamos realizando con mis compañeros, superagradecido de estar con ellos <3
