@@ -6,6 +6,13 @@ En este repositorio les presentamos un sitio web para venta de insumos y servici
 ### Estilo de Sitio
 Este sitio web apunta a un público tanto pasajero como permanente, es un sitio versátil y sencillo, cualquier persona puede ingresar, registrarse, buscar articulos y concretar una compra de manera rápida y sencilla.
 
+### Paginas web que utilizamos como medios de inspiracion:
+amazon.com  -  para el carrito de compras
+mercadolibre.com  -  vista de producto y categorias
+petbag.com.ar  -  footer 
+google.com  - registro de usuario en cuenta de google
+
+ 
 ### Colaboradores
 David:
 Listo para este nuevo desafio y acompañar al grupo
