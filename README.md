@@ -8,8 +8,11 @@ Este sitio web apunta a un público tanto pasajero como permanente, es un sitio 
 
 ### Paginas web que utilizamos como medios de inspiracion:
 amazon.com  -  para el carrito de compras
+
 mercadolibre.com  -  vista de producto y categorias
+
 petbag.com.ar  -  footer 
+
 google.com  - registro de usuario en cuenta de google
 
  
