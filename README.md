@@ -12,7 +12,7 @@ Somos un equipo de desarrolladores de software, orientado a la creación y dise�
 ### Colaboradores
 
 **David**:
-(https://github.com/ignacioMora98) (https://www.linkedin.com/in/ignaciodavidmora/) Desarrollador FullStack y estudiante de Analista de Sistemas. Listo para este nuevo desafio y acompañar al grupo
+[@David-Mora-GitHub](https://github.com/ignacioMora98) [@David-Mora-LinkedIn] (https://www.linkedin.com/in/ignaciodavidmora/) Desarrollador FullStack y estudiante de Analista de Sistemas. Listo para este nuevo desafio y acompañar al grupo
 
 **Fatima**:
 [@Fatima-Castro](https://github.com/Fatima-Castro) como **Castro Fatima de 23 años, desarrolladora web, estudiante de Digital House.**
