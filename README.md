@@ -52,7 +52,7 @@ _intrucciones de deploy (proximamente)_
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+_En el proyecto utilizamos:_
 
 * [Express](https://expressjs.com/) - El framework web usado
 * [Npm](https://www.npmjs.com/package/documentation) - Manejador de dependencias incluido en Node.js
