@@ -62,7 +62,7 @@ _En el proyecto utilizamos:_
 
 ## Autores ✒️
 
-* **Molina David** - *Desarrollador FullStack y estudiante de Analista de Sistemas. Listo para este nuevo desafio y acompañar al grupo.* - [Github](https://github.com/ignacioMora98) - [LinkedIn](https://www.linkedin.com/in/ignaciodavidmora/)
+* **Mora David** - *Desarrollador FullStack y estudiante de Analista de Sistemas. Listo para este nuevo desafio y acompañar al grupo.* - [Github](https://github.com/ignacioMora98) - [LinkedIn](https://www.linkedin.com/in/ignaciodavidmora/)
 
 * **Castro Fatima** - *Castro Fatima de 23 años, desarrolladora web, estudiante de Digital House.* - [Github](https://github.com/Fatima-Castro)
 
