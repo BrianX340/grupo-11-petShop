@@ -1,60 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/mobile-home.css">
+    <link rel="stylesheet" href="/css/mobile-home.css">
+    <title>PetLovers</title>
 </head>
-
 <body>
     <nav>
         <div class='nav-top'>
-            <div>menu</div>
-            <div>iniciar sesion</div>
-            <div>carrito</div>
+            <figure id='menu-button' ><img src="/img/icon_menu_mobile_lateral.svg" alt=""></figure>
+            <h1>Iniciar sesion / Registrarse</h1>
+            <figure id='carrito-button'><img src="/img/icon_carrito.svg" alt=""></figure>
         </div>
         <div class='nav-down'>
-            busqueda
+            <input type="text">
+            <figure>
+                <img src="/img/search.png" alt="">
+            </figure>
         </div>
     </nav>
 
-    <section class='carrusel'>
-        <figure>
-            <img src="img/banner-carrousel-mobile.jpg" alt="">
-        </figure>
+
+    <section id='all'>
+        <section id='phone-carrousel'>
+            <figure>
+                <div class='carrousel-image-container'></div>
+            </figure>
+        </section>
+
+        <section id='pet-categories'>
+            <span>¿Que mascota tienes?</span>
+            <div class='categories'>
+                <div class='pin-cat'></div>
+                <div class='pin-dog'></div>
+            </div>
+        </section>
+    
+        <section id='promotions' class='box-cards'>
+            <div class='promotions-title box-title'>
+                <span>Promociones!</span>
+            </div>
+            <div class='cards-promotions box-card-section'>
+                <div class="card-promotion box-card"></div>
+                <div class="card-promotion box-card"></div>
+                <div class="card-promotion box-card"></div>
+            </div>
+        </section>
+
+        <section id='best-sell' class='box-cards'>
+            <div class='best-sell-title box-title'>
+                <span>Mas vendidos!</span>
+            </div>
+            <div class='cards-best-sell box-card-section'>
+                <div class="card-best-sell box-card"></div>
+                <div class="card-best-sell box-card"></div>
+                <div class="card-best-sell box-card"></div>
+            </div>
+        </section>
+    
     </section>
 
-    <section class='categories-container'>
-        <span class='categories-title'>CATEGORIAS</span>
-        <div class='categories'>
-            <div class='categori'>01</div>
-            <div class='categori'>02</div>
-            <div class='categori'>03</div>
-            <div class='categori'>04</div>
+    <footer>
+        <div class="sector">
+            <div class="sector-title">Nosotros</div>
+            <div class="sector-info">Preguntas frecuentes</div>
+            <div class="sector-info">Contactanos</div>
         </div>
-    </section>
-
-    <section class='promotions section-card-container'>
-        <h3>Promociones</h3>
-        <div class='promotion-items section-items'>
-            <div class="promotion-card section-card"></div>
-            <div class="promotion-card section-card"></div>
-            <div class="promotion-card section-card"></div>
+        <div class="sector">
+            <div class="sector-title">Pago y Envío</div>
+            <div class="sector-info">Área de entrega</div>
+            <div class="sector-info">Medios de pago</div>
         </div>
-    </section>
-
-    <section class='best-sell section-card-container'>
-        <h3>Mas Vendidos!</h3>
-        <div class='best-items section-items'>
-            <div class="best-card section-card"></div>
-            <div class="best-card section-card"></div>
-            <div class="best-card section-card"></div>
+        <div class="sector">
+            <div class="sector-title">Legales</div>
+            <div class="sector-info">Terminos y condiciones</div>
+            <div class="sector-info">Politica de Privacidad</div>
         </div>
-    </section>
-
+    </footer>
+    
+    
 </body>
-
 </html>
