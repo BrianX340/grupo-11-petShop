@@ -7,19 +7,24 @@
     <link rel="stylesheet" href="/css/home.css">
     <title>PetLovers</title>
 </head>
-<body>
+<body id='body'>
     <nav id='nav-mobile'>
-        <div class='nav-top'>
-            <figure class='logo-desktop desktop'><img src="/img/logo.jpg" alt=""></figure>
-            <figure class='menu-button' class='mobile'><img id='menu-button' src="/img/icon_menu_mobile_lateral.svg" alt=""></figure>
-            <h1  class='mobile'>Iniciar sesion / Registrarse</h1>
-            <figure id='carrito-button' class='mobile'><img src="/img/icon_carrito.svg" alt=""></figure>
+        <div class='nav-top mobile'>
+            <figure class='menu-button'><img id='menu-button' src="/img/icon_menu_mobile_lateral.svg" alt=""></figure>
+            <h1 >Iniciar sesion / Registrarse</h1>
+            <figure id='carrito-button'><img src="/img/icon_carrito.svg" alt=""></figure>
         </div>
         <div class='nav-down'>
+            <figure class='logo-desktop desktop'><img src="/img/logo.jpg" alt=""></figure>
+            
             <input type="text">
-            <figure>
-                <img src="/img/search.png" alt="">
-            </figure>
+
+            <h1 class='desktop'>Iniciar sesion / Registrarse</h1>
+            <figure class='desktop' id='carrito-button'><img src="/img/icon_carrito.svg" alt=""></figure>
+        </div>
+        <div class="nav-desktop desktop">
+            <div class='menu-row' id='menu-dogs-desktop'><span>Perros</span></div>
+            <div class='menu-row' id='menu-cats-desktop'><span>Gatos</span></div>
         </div>
     </nav>
 
@@ -42,9 +47,6 @@
 
     <section id='all'>
         <section id='phone-carrousel'>
-            <div>
-                <figure></figure>
-            </div>
             <figure>
                 <img class='carrousel-image-container' src="/img/banner-carrousel-mobile.jpg" alt="">
             </figure>
