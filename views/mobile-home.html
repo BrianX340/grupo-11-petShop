@@ -8,11 +8,12 @@
     <title>PetLovers</title>
 </head>
 <body>
-    <nav>
+    <nav id='nav-mobile'>
         <div class='nav-top'>
-            <figure id='menu-button' ><img src="/img/icon_menu_mobile_lateral.svg" alt=""></figure>
-            <h1>Iniciar sesion / Registrarse</h1>
-            <figure id='carrito-button'><img src="/img/icon_carrito.svg" alt=""></figure>
+            <figure class='logo-desktop desktop'><img src="/img/logo.jpg" alt=""></figure>
+            <figure id='menu-button' class='mobile'><img src="/img/icon_menu_mobile_lateral.svg" alt=""></figure>
+            <h1  class='mobile'>Iniciar sesion / Registrarse</h1>
+            <figure id='carrito-button' class='mobile'><img src="/img/icon_carrito.svg" alt=""></figure>
         </div>
         <div class='nav-down'>
             <input type="text">
@@ -25,8 +26,11 @@
 
     <section id='all'>
         <section id='phone-carrousel'>
+            <div>
+                <figure></figure>
+            </div>
             <figure>
-                <div class='carrousel-image-container'></div>
+                <img class='carrousel-image-container' src="/img/banner-carrousel-mobile.jpg" alt="">
             </figure>
         </section>
 
@@ -83,3 +87,4 @@
     
 </body>
 </html>
+

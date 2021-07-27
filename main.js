@@ -9,6 +9,10 @@ app.get('/', (req, res)=> {
     res.sendFile(path.join(__dirname, 'views/mobile-home.html'))
 })
 
+app.get('/register', (req, res)=> {
+    res.sendFile(path.join(__dirname, 'views/desktop-register.html'))
+})
+
 app.listen(3000, ()=>{
     console.log('Se esta ejecutando el servidor en localhost:3000')
 })
