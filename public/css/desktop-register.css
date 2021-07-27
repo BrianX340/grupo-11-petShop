@@ -11,6 +11,13 @@ body {
     margin: 8px;
 }
 /* form */
+#formLogin {
+    display: flex;
+}
+
+#formRegister {
+    display: none;
+}
 
 form {
     width: 100%;
@@ -36,6 +43,12 @@ form {
     font-size: 18px;
 }
 
+
+.optionsContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .form-container .form .form-container {
     width: 80%;
 }
@@ -52,6 +65,7 @@ form {
     font-size: 14px;
     align-items: center;
 }
+
 
 .check {
     padding-top: 20px;
