@@ -1,7 +1,5 @@
 window.onload = () => {
 
-
-
     document.addEventListener('click', (event)=>{
         elementId = event.path[0].id
 
@@ -13,6 +11,5 @@ window.onload = () => {
             document.getElementById('formLogin').style.display = 'none'
         }
     })
-
 
 }
