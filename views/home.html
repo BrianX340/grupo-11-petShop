@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/mobile-home.css">
+    <link rel="stylesheet" href="/css/home.css">
     <title>PetLovers</title>
 </head>
 <body>
     <nav id='nav-mobile'>
         <div class='nav-top'>
             <figure class='logo-desktop desktop'><img src="/img/logo.jpg" alt=""></figure>
-            <figure id='menu-button' class='mobile'><img src="/img/icon_menu_mobile_lateral.svg" alt=""></figure>
+            <figure class='menu-button' class='mobile'><img id='menu-button' src="/img/icon_menu_mobile_lateral.svg" alt=""></figure>
             <h1  class='mobile'>Iniciar sesion / Registrarse</h1>
             <figure id='carrito-button' class='mobile'><img src="/img/icon_carrito.svg" alt=""></figure>
         </div>
@@ -22,6 +22,22 @@
             </figure>
         </div>
     </nav>
+
+    <section id='menu-mobile'>
+        <div id='menu-container' class='slide-right'>
+            <div class='logo-close-menu'><figure><img src="/img/logo.svg" alt=""></figure><a id='sidebar-close' href="">X</a></div>
+            <div class='menu-row' id='menu-inicio'><figure><img src="/img/menu-icon-inicio.svg" alt=""></figure><span>Inicio</span></div>
+            <div class='menu-row' id='menu-ingresar-registrarse'><figure><img src="/img/menu-icon-login.svg" alt=""></figure><span>Ingresar / Registrarse</span></div>
+            <div class='menu-title'>Productos</div>
+            <div class='menu-row' id='menu-dogs'><figure><img src="/img/menu-icon-perro.svg" alt=""></figure><span>Perros</span></div>
+            <div class='menu-row' id='menu-cats'><figure><img src="/img/menu-icon-gato.svg" alt=""></figure><span>Gatos</span></div>
+            <div class='menu-title'>Contacto</div>
+            <div class='menu-row' id='menu-call'><figure><img src="/img/menu-icon-telefono.svg" alt=""></figure><span>Llamanos</span></div>
+            <div class='menu-row' id='menu-chat'><figure><img src="/img/menu-icon-chat.svg" alt=""></figure><span>Chatea con nosotros</span></div>
+        </div>
+        <div class='menu-relleno'>
+        </div>
+    </section>
 
 
     <section id='all'>
@@ -86,5 +102,6 @@
     
     
 </body>
+<script src="/js/home.js"></script>
 </html>
 
