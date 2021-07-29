@@ -49,11 +49,14 @@ form {
     justify-content: space-evenly;
 }
 
-.form .form-container {
+.form-container {
     width: 80%;
 }
 
-.input-container .input-style{
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 40px;
     margin-top: 20px;
