@@ -256,14 +256,14 @@ nav figure img {
 
 /* END MENU-MOBILE */
 
-
-
-/*    CARROUSEL     */
-#phone-carrousel{
-
+/* CARROUSEL */
+#phone-carrousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#phone-carrousel figure {
+#phone-carrousel .content .images {
     margin: 0;
     padding: 0;
     min-width: 360px;
@@ -274,8 +274,58 @@ nav figure img {
 
 .carrousel-image-container {
     width: 100%;
+    max-width: 500px;
 }
+
+#all .content{
+    position: relative;
+  }
+  #all .content .images{
+    height: 100%;
+    width: 100%;
+  }
+  #all .content .images img{
+    height: 100%;
+    width: 100%;
+  }
+  #all .btm-slides{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+  #all .btm-slides span{
+    height: 15px;
+    width: 50px;
+    border: 2px solid white;
+    margin: 0 3px;
+    cursor: pointer;
+  }
+  #all .sliders{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    cursor: pointer;
+    border: 2px solid white;
+    background: rgba(255,255,255,0.1);
+  }
+  #all .sliders:hover{
+    background: rgba(255,255,255,0.2);
+  }
+  #all .right{
+    right: 0;
+  }
+  #all .sliders span{
+    line-height: 41px;
+    font-size: 35px;
+    color: white;
+  }
+
 /*    END CARROUSEL    */
+
+
 
 /*    CATEGORIES    */
 #pet-categories {
@@ -442,10 +492,6 @@ footer {
     .nav-down input {
         width: 50%;
         height: 40px;
-    }
-
-    .carrousel-image-container {
-        width: 650px;
     }
 
     .box-card {

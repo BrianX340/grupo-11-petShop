@@ -47,9 +47,24 @@
 
     <section id='all'>
         <section id='phone-carrousel'>
-            <figure>
-                <img class='carrousel-image-container' src="/img/banner-carrousel-mobile.jpg" alt="">
-            </figure>
+            <div class="content">
+                <div class="images">
+                  <img src="/img/banersCarrousel/banner01.jpg">
+                  <img src="/img/banersCarrousel/banner02.jpg">
+                  <img src="/img/banersCarrousel/banner03.jpg">
+                </div>
+                <div class="btm-slides">
+                  <span onclick="btm_slide(1)"></span>
+                  <span onclick="btm_slide(2)"></span>
+                  <span onclick="btm_slide(3)"></span>
+                </div>
+                <div class="sliders left" onclick="side_slide(-1)">
+                  <span class="fas fa-angle-left"></span>
+                </div>
+                <div class="sliders right" onclick="side_slide(1)">
+                  <span class="fas fa-angle-right"></span>
+                </div>
+            </div>
         </section>
 
         <section id='pet-categories'>
