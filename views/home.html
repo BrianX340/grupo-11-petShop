@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/carrousel.css">
     <title>PetLovers</title>
 </head>
+
 <body id='body'>
     <nav id='nav-mobile'>
         <div class='nav-top mobile'>
             <figure class='menu-button'><img id='menu-button' src="/img/icon_menu_mobile_lateral.svg" alt=""></figure>
-            <h1 >Iniciar sesion / Registrarse</h1>
+            <h1>Iniciar sesion / Registrarse</h1>
             <figure id='carrito-button'><img src="/img/icon_carrito.svg" alt=""></figure>
         </div>
         <div class='nav-down'>
             <figure class='logo-desktop desktop'><img src="/img/logo.jpg" alt=""></figure>
-            
+
             <input type="text">
 
             <h1 class='desktop'>Iniciar sesion / Registrarse</h1>
@@ -30,15 +33,29 @@
 
     <section id='menu-mobile'>
         <div id='menu-container' class='slide-right'>
-            <div class='logo-close-menu'><figure><img src="/img/logo.svg" alt=""></figure><a id='sidebar-close' href="">X</a></div>
-            <div class='menu-row' id='menu-inicio'><figure><img src="/img/menu-icon-inicio.svg" alt=""></figure><span>Inicio</span></div>
-            <div class='menu-row' id='menu-ingresar-registrarse'><figure><img src="/img/menu-icon-login.svg" alt=""></figure><span>Ingresar / Registrarse</span></div>
+            <div class='logo-close-menu'>
+                <figure><img src="/img/logo.svg" alt=""></figure><a id='sidebar-close' href="">X</a>
+            </div>
+            <div class='menu-row' id='menu-inicio'>
+                <figure><img src="/img/menu-icon-inicio.svg" alt=""></figure><span>Inicio</span>
+            </div>
+            <div class='menu-row' id='menu-ingresar-registrarse'>
+                <figure><img src="/img/menu-icon-login.svg" alt=""></figure><span>Ingresar / Registrarse</span>
+            </div>
             <div class='menu-title'>Productos</div>
-            <div class='menu-row' id='menu-dogs'><figure><img src="/img/menu-icon-perro.svg" alt=""></figure><span>Perros</span></div>
-            <div class='menu-row' id='menu-cats'><figure><img src="/img/menu-icon-gato.svg" alt=""></figure><span>Gatos</span></div>
+            <div class='menu-row' id='menu-dogs'>
+                <figure><img src="/img/menu-icon-perro.svg" alt=""></figure><span>Perros</span>
+            </div>
+            <div class='menu-row' id='menu-cats'>
+                <figure><img src="/img/menu-icon-gato.svg" alt=""></figure><span>Gatos</span>
+            </div>
             <div class='menu-title'>Contacto</div>
-            <div class='menu-row' id='menu-call'><figure><img src="/img/menu-icon-telefono.svg" alt=""></figure><span>Llamanos</span></div>
-            <div class='menu-row' id='menu-chat'><figure><img src="/img/menu-icon-chat.svg" alt=""></figure><span>Chatea con nosotros</span></div>
+            <div class='menu-row' id='menu-call'>
+                <figure><img src="/img/menu-icon-telefono.svg" alt=""></figure><span>Llamanos</span>
+            </div>
+            <div class='menu-row' id='menu-chat'>
+                <figure><img src="/img/menu-icon-chat.svg" alt=""></figure><span>Chatea con nosotros</span>
+            </div>
         </div>
         <div class='menu-relleno'>
         </div>
@@ -46,28 +63,46 @@
 
 
     <section id='all'>
-        <section id='phone-carrousel'>
-            <div class="content">
-                <div class="sliders left" onclick="side_slide(-1)">
-                    <figure class="fas fa-angle-left"><img src="/img/banbutton-left.svg" alt=""></figure>
-                    <!--<span class="fas fa-angle-left"></span>-->
-                </div>
-                <div class="sliders right" onclick="side_slide(1)">
-                    <figure class="fas fa-angle-right"><img src="/img/banbutton-right.svg" alt=""></figure>
-                    <!--<span class="fas fa-angle-right"></span>-->
-                </div>
-                <div class="images">
-                  <img src="/img/banersCarrousel/banner01.jpg">
-                  <img src="/img/banersCarrousel/banner02.jpg">
-                  <img src="/img/banersCarrousel/banner03.jpg">
-                </div>
-            </div>
-            <div class="btm-slides">
-              <span onclick="btm_slide(1)"></span>
-              <span onclick="btm_slide(2)"></span>
-              <span onclick="btm_slide(3)"></span>
-            </div>
+
+        <section id='carrousel' class="carousel" aria-label="Gallery">
+            <ol class="carousel__viewport">
+                <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+                    <img src="/img/banersCarrousel/banner01.jpg" alt="">
+                    <div class="carousel__snapper">
+                        <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
+                        <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
+                    </div>
+                </li>
+                <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+                    <img src="/img/banersCarrousel/banner02.jpg" alt="">
+                    <div class="carousel__snapper">
+                        <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
+                        <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
+                    </div>
+                </li>
+                <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+                    <img src="/img/banersCarrousel/banner03.jpg" alt="">
+                    <div class="carousel__snapper">
+                        <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
+                        <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
+                    </div>
+                </li>
+            </ol>
+            <aside class="carousel__navigation">
+                <ol class="carousel__navigation-list">
+                    <li class="carousel__navigation-item">
+                        <a href="#carousel__slide1" class="carousel__navigation-button">Go to slide 1</a>
+                    </li>
+                    <li class="carousel__navigation-item">
+                        <a href="#carousel__slide2" class="carousel__navigation-button">Go to slide 2</a>
+                    </li>
+                    <li class="carousel__navigation-item">
+                        <a href="#carousel__slide3" class="carousel__navigation-button">Go to slide 3</a>
+                    </li>
+                </ol>
+            </aside>
         </section>
+
 
         <section id='pet-categories'>
             <span>¿Que mascota tienes?</span>
@@ -76,7 +111,7 @@
                 <div class='pin-dog'></div>
             </div>
         </section>
-    
+
         <section id='promotions' class='box-cards'>
             <div class='promotions-title box-title'>
                 <span>Promociones!</span>
@@ -98,7 +133,7 @@
                 <div class="card-best-sell box-card"></div>
             </div>
         </section>
-    
+
     </section>
 
     <footer>
@@ -118,9 +153,9 @@
             <div class="sector-info">Politica de Privacidad</div>
         </div>
     </footer>
-    
-    
+
+
 </body>
 <script src="/js/home.js"></script>
-</html>
 
+</html>
