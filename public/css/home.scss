@@ -183,6 +183,7 @@ nav figure img {
     display: none;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
 }
 
 #menu-container {
@@ -261,6 +262,7 @@ nav figure img {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 #phone-carrousel .content .images {
@@ -278,6 +280,7 @@ nav figure img {
 }
 
 #all .content{
+    position: relative;
   }
   #all .content .images{
     height: 100%;
@@ -288,38 +291,72 @@ nav figure img {
     width: 100%;
   }
   #all .btm-slides{
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    bottom: 25px;
+    /*left: 50%;*/
+    /*transform: translateX(-50%);*/
     display: flex;
+    justify-content: center;
   }
-  #all .btm-slides span{
-    height: 15px;
-    width: 50px;
+  #all .btm-slides span {
+    height: 10px;
+    width: 10px;
     border: 2px solid white;
     margin: 0 3px;
     cursor: pointer;
+    border-radius: 15px;
+    transition: transform 0.5s;
   }
+
+  #all .btm-slides span:hover {
+    transform: scale(2);
+}
+
+
+
   #all .sliders{
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     width: 45px;
     cursor: pointer;
-    border: 2px solid white;
-    background: rgba(255,255,255,0.1);
+    margin: 0 10px 0 10px;
+    opacity: 0.8;
   }
-  #all .sliders:hover{
-    background: rgba(255,255,255,0.2);
-  }
+
   #all .right{
     right: 0;
   }
-  #all .sliders span{
+  #all .sliders span {
     line-height: 41px;
     font-size: 35px;
     color: white;
+  }
+
+  .fas img {
+      transition: transform 0.5s;
+  }
+
+  .fas img:hover {
+      transform: scale(1.1);
+  }
+
+  .fa-angle-left {
+    margin: 0;
+    padding: 0;
+    transform: scale(-1);
+  }
+
+  .fa-angle-left img {
+    width: 45px;
+  }
+
+  .fa-angle-right {
+    margin: 0;
+    padding: 0;
+  }
+
+  .fa-angle-right img {
+    width: 45px;
   }
 
 /*    END CARROUSEL    */
