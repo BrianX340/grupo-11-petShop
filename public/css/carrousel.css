@@ -90,10 +90,13 @@ width: 100%;
 max-width: 467px;
 }
 
+.carousel__viewport li img {
+    width: 100%;
+}
+
 .carousel__slide {
 position: relative;
 flex: 0 0 100%;
-width: 100%;
 counter-increment: item;
 display: flex;
 justify-content: center;

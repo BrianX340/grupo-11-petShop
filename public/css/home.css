@@ -20,7 +20,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-width: 360px;
+  min-width: 320px;
 }
 
 /* NAV MOBILE */
