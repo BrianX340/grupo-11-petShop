@@ -39,12 +39,16 @@ section .container{
     display: flex;
 }
 
+/*Caja de la imagen*/
+
 .user .imgBx{
     position: relative;
     width: 50%;
     height: 100%;
     transition: 0.5s;
 }
+/*Fin de la caja de la imagen*/
+/*Imagen*/
 
 .imgBx img{
     position: absolute;
@@ -54,6 +58,8 @@ section .container{
     height: 100%;
     object-fit: cover;
 }
+/*Fin de la Imagen*/
+/* caja del formulario*/
 
 .user .formBx{
     position: relative;
@@ -66,6 +72,8 @@ section .container{
     padding: 40px;
     transition: 0.5s;
 }
+/* Fin de la caja del formulario*/
+/* texto de formulario*/
 
 h2{ 
     font-size: 18px;
@@ -76,7 +84,8 @@ h2{
     margin-bottom: 10px;
     color: #555;
 }
-
+/* Fin texto de formulario*/
+/* input*/
 input {
     width: 100%;
     padding: 10px;
@@ -91,6 +100,8 @@ input {
     border-radius: 10px;
     font-weight: 300;
 }
+/* fin del input */
+/* Boton de inicio de sesion*/
 
 input[type="submit"]{
     width: 100%;
@@ -103,6 +114,9 @@ input[type="submit"]{
     letter-spacing: 1px;
     transition: 0.5s;
 }
+/* Fin del Boton de inicio de sesion*/
+/* Boton de registro*/
+
 
 .user.singupBox input[type="submit"]{
     width: 100%;
@@ -115,7 +129,7 @@ input[type="submit"]{
     letter-spacing: 1px;
     transition: 0.5s;
 }
-
+/* Fin del Boton de registro*/
 
 .singup{
     position: relative;
@@ -127,11 +141,16 @@ input[type="submit"]{
     font-weight: 300;
 }
 
+/* link para cambiar el formulario */
+
 .singup a{
     font-weight: 600;
     text-decoration: none;
     color: #577eff;
 }
+/* fin del link para cambiar el formulario */
+/* formulario interactivo */
+
 
 .singupBox {
     pointer-events: none;
@@ -174,6 +193,8 @@ input[type="submit"]{
 .container.active .singinBox .imgBx{
     top:-100%;
 }
+/* fin del formulario interactivo */
+/* Ajuste de pantalla */
 
 @media (max-width: 990px){
     .container{
@@ -189,3 +210,4 @@ input[type="submit"]{
         top: -100%;
     }
 }
+/* fin del Ajuste de pantalla */
