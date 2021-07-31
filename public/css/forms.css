@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+section {
+    position:relative;
+    min-height: 100vh;
+    background: #557085;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: 0.5s;
+}
+
+section.active {
+    background: #42494e;
+    transition: 0.5s;
+}
+
+section .container{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: #fff;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.container .user {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.user .imgBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user .formBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    transition: 0.5s;
+}
+
+h2{ 
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    background: #f5f5f5;
+    color: #333;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-size: 14px;
+    margin: 8px 0;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    font-weight: 300;
+}
+
+input[type="submit"]{
+    width: 100%;
+    min-width: 150px;
+    background: #677eff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.user.singupBox input[type="submit"]{
+    width: 100%;
+    min-width: 150px;
+    background: #ee1b1b;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+
+.singup{
+    position: relative;
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.singup a{
+    font-weight: 600;
+    text-decoration: none;
+    color: #577eff;
+}
+
+.singupBox {
+    pointer-events: none;
+}
+
+.container.active .singupBox {
+    pointer-events: initial;
+}
+
+.singupBox .formBx {
+    top: 100%;
+}
+
+.container.active .singupBox .formBx {
+    top: 0;
+}
+
+.singupBox .imgBx {
+    top: -100%;
+    transition: 0.5s;
+}
+
+.container.active .singupBox .imgBx {
+    top: 0;
+}
+
+
+.container .singinBox .formBx{
+    top:0;
+}
+
+.container.active .singinBox .formBx{
+    top:100%;
+}
+.container .singinBox .imgBx{
+    top:0;
+    transition: 0.5s;
+}
+
+.container.active .singinBox .imgBx{
+    top:-100%;
+}
+
+@media (max-width: 990px){
+    .container{
+        max-width: 440px;
+    }
+    .container .imgBx{
+        display: none;
+    }
+    .user .formBx{
+        width: 100%;
+    }
+    .container.active .singinBox .formBx {
+        top: -100%;
+    }
+}
