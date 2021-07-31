@@ -10,7 +10,7 @@
 
 /* TAMAÑOS DESKTOP */
 body {
-  background-color: white;
+  background-color: #fafafa;
   margin: 0;
   padding: 0;
   display: -webkit-box;
@@ -48,7 +48,7 @@ nav {
 
 .nav-top {
   width: 100%;
-  height: 50%;
+  min-height: 55px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: -webkit-box;
@@ -60,24 +60,6 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 10px;
-}
-
-.nav-down {
-  width: 100%;
-  height: 50%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 15px;
 }
 
 .nav-top .menu-button {
@@ -85,6 +67,10 @@ nav {
   height: 34px;
   margin: 0;
   padding: 0;
+}
+
+.nav-top-input-container {
+  width: 66.6666666%;
 }
 
 .nav-top h1 {
@@ -95,7 +81,7 @@ nav {
 }
 
 .nav-top #carrito-button {
-  height: 34px;
+  height: 24px;
   margin: 0;
   padding: 0;
   -webkit-box-pack: end;
@@ -107,31 +93,17 @@ nav {
 }
 
 nav figure img {
-  width: 34px;
-  height: 34px;
+  width: 24px;
+  height: 24px;
 }
 
-.nav-down input {
-  width: 90%;
-  height: 30px;
+.nav-top input {
+  width: 100%;
+  height: 32px;
   border-radius: 5px;
   border: none;
-}
-
-.nav-down figure {
-  height: 34px;
-  width: 34px;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  outline: none;
+  padding-left: 10px;
 }
 
 /* END NAV */
@@ -288,7 +260,7 @@ nav figure img {
       -ms-flex-direction: column;
           flex-direction: column;
   min-width: 320px;
-  background-color: white;
+  background-color: #fafafa;
 }
 
 #pet-categories > span {
@@ -356,7 +328,7 @@ nav figure img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: white;
+  background-color: #fafafa;
 }
 
 .box-title {
@@ -383,7 +355,7 @@ nav figure img {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 2rem;
 }
 
 .box-card {
@@ -555,7 +527,7 @@ footer {
 }
 
 /* END ANIMATION DOG-CAT */
-@media (min-width: 650px) {
+@media (min-width: 768px) {
   #body .desktop {
     display: -webkit-box;
     display: -ms-flexbox;
