@@ -14,13 +14,19 @@ function showImg(e) {
     for (i = 0; i < slider.length; i++) {
         slider[i].style.background = "rgba(255,255,255,0.1)";
     }
-    img[indexValue - 1].style.display = "block";
-    slider[indexValue - 1].style.background = "white";
+    //img[indexValue - 1].style.display = "block";
+    //slider[indexValue - 1].style.background = "white";
 }
 
 window.onload = () => {
     document.addEventListener('click', (event) => {
-        elementId = event.path[0].id
+        console.log(event)
+        try {
+            elementId = event.path[0].id
+        }
+        catch {
+            elementId = event.target.id
+        }
 
         if (elementId == 'menu-button') {
             document.getElementById('menu-mobile').style.display = 'flex'

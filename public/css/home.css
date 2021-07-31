@@ -287,7 +287,7 @@ nav figure img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-width: 360px;
+  min-width: 320px;
   background-color: white;
 }
 
@@ -330,24 +330,25 @@ nav figure img {
   margin-bottom: 15px;
 }
 
+/*
 .pin-cat {
-  width: 80px;
-  height: 80px;
-  background-size: cover;
-  background-image: url("../img/pin-cat.png");
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-image: url("../img/pin-cat.png");
 }
 
 .pin-dog {
-  width: 80px;
-  height: 80px;
-  background-size: cover;
-  background-image: url("../img/pin-dog.png");
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-image: url("../img/pin-dog.png");
 }
-
+*/
 /*    END CATEGORIES    */
 /*    BOX PROMOTIONS  /  BEST-SELL  */
 .box-cards {
-  min-width: 360px;
+  min-width: 320px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -387,9 +388,22 @@ nav figure img {
 
 .box-card {
   background-color: #a1a1a1;
-  width: 100px;
-  height: 150px;
+  width: 6.375rem;
+  height: 10.375rem;
   border-radius: 5px;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  background: #f1f1f1;
+  -webkit-box-shadow: 0 0.3125rem 0.9375rem -0.3125rem #00000070;
+          box-shadow: 0 0.3125rem 0.9375rem -0.3125rem #00000070;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 /*    END PROMOTIONS    */
@@ -402,7 +416,7 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-width: 360px;
+  min-width: 320px;
   height: 230px;
   background-color: #A4A4A4;
   -webkit-box-pack: space-evenly;
@@ -461,6 +475,86 @@ footer {
   font-size: 16px;
 }
 
+/* ANIMATION DOG-CAT */
+.pin-cat {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  width: 4.375rem;
+  height: 4.375rem;
+  background: #f1f1f1;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 0.3125rem 0.9375rem -0.3125rem #00000070;
+          box-shadow: 0 0.3125rem 0.9375rem -0.3125rem #00000070;
+  overflow: hidden;
+  position: relative;
+  color: #0e76a8;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.pin-cat img {
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-align: center;
+  color: #0e76a8;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: "Font Awesome 5 Brands";
+  line-height: 4.375rem;
+  font-size: 1.4375rem;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.pin-dog {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  width: 4.375rem;
+  height: 4.375rem;
+  background: #f1f1f1;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 0.3125rem 0.9375rem -0.3125rem #00000070;
+          box-shadow: 0 0.3125rem 0.9375rem -0.3125rem #00000070;
+  overflow: hidden;
+  position: relative;
+  color: #0e76a8;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.pin-dog img {
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-align: center;
+  color: #0e76a8;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: "Font Awesome 5 Brands";
+  line-height: 4.375rem;
+  font-size: 1.4375rem;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+/* END ANIMATION DOG-CAT */
 @media (min-width: 650px) {
   #body .desktop {
     display: -webkit-box;
@@ -483,8 +577,8 @@ footer {
     height: 40px;
   }
   .box-card {
-    width: 180px;
-    height: 230px;
+    width: 10.375rem;
+    height: 14.375rem;
   }
   #pet-categories > span {
     font-size: 30px;
@@ -495,6 +589,10 @@ footer {
   }
   .box-title {
     font-size: 30px;
+  }
+  .pin-cat, .pin-dog {
+    width: 7.375rem;
+    height: 7.375rem;
   }
 }
 /*# sourceMappingURL=home.css.map */

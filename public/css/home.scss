@@ -271,7 +271,7 @@ nav figure img {
 #pet-categories {
     display:flex;
     flex-direction:column;
-    min-width: 360px;
+    min-width: 320px;
     background-color: $primary;
 }
 
@@ -302,7 +302,7 @@ nav figure img {
     align-items: center;
     margin-bottom: 15px;
 }
-
+/*
 .pin-cat {
     width: 80px;
     height: 80px;
@@ -316,12 +316,13 @@ nav figure img {
     background-size: cover;
     background-image: url("../img/pin-dog.png");
 }
+*/
 /*    END CATEGORIES    */
 
 
 /*    BOX PROMOTIONS  /  BEST-SELL  */
 .box-cards {
-    min-width: 360px;
+    min-width: 320px;
     display: flex;
     flex-direction: column;
     background-color: $primary;
@@ -348,9 +349,19 @@ nav figure img {
 
 .box-card {
     background-color: rgb(161, 161, 161);
-    width: 100px;
-    height: 150px;
+    width: 6.375rem;
+    height: 10.375rem;
     border-radius: 5px;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    box-sizing: inherit;
+    background: #f1f1f1;
+    box-shadow: 0 0.3125rem 0.9375rem -0.3125rem #00000070;
+    overflow: hidden;
+    position: relative;
+    transition: 1s;
 }
 /*    END PROMOTIONS    */
 
@@ -358,7 +369,7 @@ nav figure img {
 footer {
     display: flex;
     flex-direction: column;
-    min-width: 360px;
+    min-width: 320px;
     height: 230px;
     background-color: #A4A4A4;
     justify-content: space-evenly;
@@ -410,6 +421,78 @@ footer {
     font-size: 16px;
 }
 
+/* ANIMATION DOG-CAT */
+.pin-cat {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    box-sizing: inherit;
+    width: 4.375rem;
+    height: 4.375rem;
+    background: #f1f1f1;
+    border-radius: 100%;
+    box-shadow: 0 0.3125rem 0.9375rem -0.3125rem #00000070;
+    overflow: hidden;
+    position: relative;
+    color: #0e76a8;
+    transition: 1s;
+}
+
+.pin-cat img {
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-align: center;
+    color: #0e76a8;
+    box-sizing: inherit;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    font-family: "Font Awesome 5 Brands";
+    line-height: 4.375rem;
+    font-size: 1.4375rem;
+    transition: 0.2s linear;
+}
+
+
+.pin-dog {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    box-sizing: inherit;
+    width: 4.375rem;
+    height: 4.375rem;
+    background: #f1f1f1;
+    border-radius: 100%;
+    box-shadow: 0 0.3125rem 0.9375rem -0.3125rem #00000070;
+    overflow: hidden;
+    position: relative;
+    color: #0e76a8;
+    transition: 1s;
+}
+
+.pin-dog img {
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-align: center;
+    color: #0e76a8;
+    box-sizing: inherit;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    font-family: "Font Awesome 5 Brands";
+    line-height: 4.375rem;
+    font-size: 1.4375rem;
+    transition: 0.2s linear;
+}
+
+/* END ANIMATION DOG-CAT */
+
 
 
 @media (min-width: 650px) {
@@ -435,8 +518,8 @@ footer {
     }
 
     .box-card {
-        width: 180px;
-        height: 230px;
+        width: 10.375rem;
+        height: 14.375rem;
     }
 
     #pet-categories > span {
@@ -450,6 +533,11 @@ footer {
 
     .box-title {
         font-size: $font-size-tittle-desktop;
+    }
+
+    .pin-cat, .pin-dog {
+        width: 7.375rem;
+        height: 7.375rem;
     }
   }
 
