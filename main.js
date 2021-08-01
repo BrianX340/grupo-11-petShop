@@ -1,20 +1,21 @@
 const express = require('express')
 const path = require('path')
+const router = express.Router()
 
 const app = express()
-
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', (req, res)=> {
-    res.sendFile(path.join(__dirname, 'views/home.html'))
-})
 
-app.get('/register', (req, res)=> {
-    res.sendFile(path.join(__dirname, 'views/desktop-register.html'))
-})
-app.get('/forms', (req, res)=> {
-    res.sendFile(path.join(__dirname, 'views/forms.html'))
-})
+/* ROUTERS */
+homeRouter = require('./routes/homeRouter')
+formsRouter = require('./routes/formsRouter')
+registerRouter = require('./routes/registerRouter')
+
+/* ROUTES */
+app.use('/',homeRouter)
+app.use('/forms',formsRouter)
+app.use('/register',registerRouter)
+
 
 app.listen(3000, ()=>{
     console.log('Se esta ejecutando el servidor en localhost:3000')

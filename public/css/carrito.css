@@ -1,0 +1,52 @@
+
+#carrito {
+    display: block;
+    position: absolute;
+    margin: 10px;
+}
+
+.carrito-container {
+    background-color: #f3f2f6;
+    border-radius: 6px;
+    min-width: 300px;
+}
+
+.carrito-head {
+    display: flex;
+    min-height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrito-head span {
+    font-family: system-ui;
+}
+
+.carrito-head figure {
+    right: 5px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
+
+.carrito-head figure img{
+    width: 30px;
+}
+
+.carrito-body {
+    min-height: 50px;
+    background-color: rgb(53, 199, 53);
+}
+
+.carrito-footer {
+    min-height: 100px;
+}
+
+.carrito-footer-section {
+    width: 270px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
