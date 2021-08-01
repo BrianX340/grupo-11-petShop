@@ -64,9 +64,20 @@ nav {
 
 .nav-top .menu-button {
   width: 30%;
-  height: 34px;
   margin: 0;
   padding: 0;
+}
+
+.menu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .nav-top-input-container {
@@ -94,7 +105,6 @@ nav {
 
 nav figure img {
   width: 24px;
-  height: 24px;
 }
 
 .nav-top input {
@@ -503,8 +513,8 @@ footer {
   overflow: hidden;
   position: relative;
   color: #0e76a8;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -558,8 +568,8 @@ footer {
   overflow: hidden;
   position: relative;
   color: #0e76a8;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -590,18 +600,61 @@ footer {
   transition: 0.2s linear;
 }
 
+.figure-logo {
+  background-color: white;
+  border-radius: 41px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 /* END ANIMATION DOG-CAT */
+.logo-desktop figure {
+  margin: 0;
+  padding: 0;
+}
+
+.logo-desktop figure img {
+  width: 40px;
+}
+
+.nav-top .desktop div span {
+  color: white;
+  font-weight: bold;
+  font-family: system-ui;
+}
+
 @media (min-width: 768px) {
   #body .desktop {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
+  .nav-top .carrito-button-container {
+    height: 35px;
+  }
+  .nav-top {
+    min-height: 70px;
+  }
+  .nav-top-input-container {
+    width: 57.666667%;
+  }
   .mobile {
     display: none;
   }
-  .nav-top .carrito-button-container {
-    display: none;
+  .desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .nav-down {
     -webkit-box-pack: space-evenly;

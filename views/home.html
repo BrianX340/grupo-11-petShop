@@ -12,12 +12,22 @@
 
 <body id='body'>
     <nav id='nav-mobile'>
-        <div class='nav-top mobile'>
-            <div>
+        <div class='nav-top'>
+            <div  class='logo-desktop desktop'>
+                <figure class="figure-logo">
+                    <img src="/img/logo.svg" alt="">
+                </figure>
+            </div>
+            <div class='mobile menu-container'>
                 <figure class='menu-button'><img id='menu-button' src="/img/icon_menu_mobile_lateral.svg" alt=""></figure>
             </div>
             <div class='nav-top-input-container'>
                 <input id='busqueda' placeholder='Buscar algo...' type="text">
+            </div>
+            <div class='desktop'>
+                <div>
+                    <span>Ingresar / Crear Cuenta</span>
+                </div>
             </div>
             <div>
                 <figure class='carrito-button-container'><img id='carrito-button' src="/img/icon_carrito.svg" alt=""></figure>
@@ -28,7 +38,10 @@
     <section id='menu-mobile'>
         <div id='menu-container' class='slide-right'>
             <div class='logo-close-menu'>
-                <figure><img src="/img/logo.svg" alt=""></figure><a id='sidebar-close' href="">X</a>
+                <figure class="figure-logo">
+                    <img src="/img/logo.svg" alt="">
+                </figure>
+                <a id='sidebar-close' href="">X</a>
             </div>
             <div class='menu-row' id='menu-inicio'>
                 <figure><img src="/img/menu-icon-inicio.svg" alt=""></figure><span>Inicio</span>
@@ -119,7 +132,7 @@
 
     <section id='wsp-chat'>
         <figure>
-            <img src="/img/wsp.png" alt="">
+            <a href="https://wa.me/+541134489022?text=Hola%20que%20servicios%20brindan%3F"><img src="/img/wsp.png" alt=""></a>
         </figure>
         <figure>
             <img src="/img/dog-chat.svg" alt="">
