@@ -104,7 +104,7 @@ nav {
     color: white;
 }
 
-.nav-top #carrito-button {
+.nav-top .carrito-button-container {
     height: 24px;
     margin: 0;
     padding: 0;
@@ -187,15 +187,36 @@ nav figure img {
     width: 100%;
     height: 55px;
     background-color: $secondary;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-close-menu a {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    box-sizing: border-box;
+    background-color: transparent;
+    text-decoration: none;
+    float: right;
+    font-weight: 700;
+    text-shadow: 0 1px 0 #fff;
+    color: #fff;
+    font-family: Lato;
+    font-size: 20px;
+    opacity: .9;
+    line-height: 28px;
+    margin-right: 15px;
 }
 
 .logo-close-menu figure {
     margin: 0;
     padding: 0;
+    margin-left: 10px;
 }
 .logo-close-menu figure img {
     margin: 0;
     padding: 0;
+    width: 45px;
 }
 
 .menu-title {
@@ -245,13 +266,25 @@ nav figure img {
 
 /* CARROUSEL */
 
-#carrousel {
+#carousel {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.carousel__viewport {
+    margin: 0;
+    padding: 0;
+}
+
+.carousel__viewport li {
+    list-style: none;
+}
+
+.carousel__viewport li img {
+    width: 100%;
+}
 
 /*    CATEGORIES    */
 #pet-categories {
@@ -335,8 +368,8 @@ nav figure img {
 
 .box-card {
     background-color: rgb(161, 161, 161);
-    width: 6.375rem;
-    height: 10.375rem;
+    width: 5.375rem;
+    height: 8.375rem;
     border-radius: 5px;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
@@ -414,8 +447,8 @@ footer {
     font-family: "Oswald", sans-serif;
     text-align: center;
     box-sizing: inherit;
-    width: 4.375rem;
-    height: 4.375rem;
+    width: 6.375rem;
+    height: 6.375rem;
     background: #f1f1f1;
     border-radius: 100%;
     box-shadow: 0 0.3125rem 0.9375rem -0.3125rem #00000070;
@@ -423,10 +456,18 @@ footer {
     position: relative;
     color: #0e76a8;
     transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pin-cat:hover, .pin-dog:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 0.5375rem 0.2125rem $secondary;
 }
 
 .pin-cat img {
-    width: 100%;
+    width: 80%;
     -webkit-text-size-adjust: 100%;
     text-align: center;
     color: #0e76a8;
@@ -449,8 +490,8 @@ footer {
     font-family: "Oswald", sans-serif;
     text-align: center;
     box-sizing: inherit;
-    width: 4.375rem;
-    height: 4.375rem;
+    width: 6.375rem;
+    height: 6.375rem;
     background: #f1f1f1;
     border-radius: 100%;
     box-shadow: 0 0.3125rem 0.9375rem -0.3125rem #00000070;
@@ -458,10 +499,13 @@ footer {
     position: relative;
     color: #0e76a8;
     transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .pin-dog img {
-    width: 100%;
+    width: 80%;
     -webkit-text-size-adjust: 100%;
     text-align: center;
     color: #0e76a8;
@@ -490,7 +534,7 @@ footer {
     }
 
 
-    .nav-top #carrito-button {
+    .nav-top .carrito-button-container {
         display: none;
     }
 
@@ -522,8 +566,8 @@ footer {
     }
 
     .pin-cat, .pin-dog {
-        width: 7.375rem;
-        height: 7.375rem;
+        width: 8.375rem;
+        height: 8.375rem;
     }
   }
 

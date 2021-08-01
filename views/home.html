@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/carrousel.css">
+    <!--<link rel="stylesheet" href="/css/carrousel.css">-->
     <title>PetLovers</title>
 </head>
 
@@ -20,7 +20,7 @@
                 <input id='busqueda' placeholder='Buscar algo...' type="text">
             </div>
             <div>
-                <figure id='carrito-button'><img src="/img/icon_carrito.svg" alt=""></figure>
+                <figure class='carrito-button-container'><img id='carrito-button' src="/img/icon_carrito.svg" alt=""></figure>
             </div>
         </div>
     </nav>
@@ -58,28 +58,10 @@
 
     <section id='all'>
 
-        <section id='carrousel' class="carousel" aria-label="Gallery">
+        <section id='carousel' class="carousel" aria-label="Gallery">
             <ol class="carousel__viewport">
                 <li id="carousel__slide1" tabindex="0" class="carousel__slide">
                     <img src="/img/banersCarrousel/banner01.jpg" alt="">
-                    <div class="carousel__snapper">
-                        <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
-                        <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
-                    </div>
-                </li>
-                <li id="carousel__slide2" tabindex="0" class="carousel__slide">
-                    <img src="/img/banersCarrousel/banner02.jpg" alt="">
-                    <div class="carousel__snapper">
-                        <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
-                        <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
-                    </div>
-                </li>
-                <li id="carousel__slide3" tabindex="0" class="carousel__slide">
-                    <img src="/img/banersCarrousel/banner03.jpg" alt="">
-                    <div class="carousel__snapper">
-                        <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
-                        <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
-                    </div>
                 </li>
             </ol>
         </section>
@@ -88,8 +70,8 @@
         <section id='pet-categories'>
             <span>¿Que mascota tienes?</span>
             <div class='categories'>
-                <a class='pin-cat'><img src="/img/pin-cat.png" alt=""></a>
-                <a class='pin-dog'><img src="/img/pin-dog.png" alt=""></a>
+                <a class='pin-cat'><img src="/img/cat-vector.svg" alt=""></a>
+                <a class='pin-dog'><img src="/img/dog-vector.svg" alt=""></a>
             </div>
         </section>
 
