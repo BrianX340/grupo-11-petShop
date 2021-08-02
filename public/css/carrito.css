@@ -24,6 +24,8 @@
 
 .carrito-head span {
     font-family: system-ui;
+    font-weight: bold;
+    color: #515151;
 }
 
 .carrito-head figure {
@@ -40,8 +42,7 @@
 .carrito-body {
     min-height: 50px;
     background-color: white;
-    padding: 2px;
-    border-bottom: #72cabe 1px solid;
+    border-top: #72cabe 1px solid;
     box-sizing: border-box;
 }
 
@@ -111,6 +112,10 @@
     height: 90px;
 }
 
+.carrito-item {
+    border-bottom: #72cabe 1px solid;
+}
+
 .carrito-item > div:first-child {
     display: flex;
     align-items: center;
@@ -140,7 +145,14 @@
 .amount {
     width: 31%;
     outline: none;
+    text-align: center;
 }
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
 
 .amount-controls {
     display: flex;
