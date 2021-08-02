@@ -35,6 +35,10 @@ window.onload = () => {
             document.getElementById('menu-mobile').style.display = 'none'
             document.getElementById('menu-container').style.display = 'none'
             event.preventDefault()
+        } else if (elementId == 'carrito-close') {
+            document.getElementById('carrito').style.display = 'none'
+        } else if (elementId == 'carrito-button'){
+            document.getElementById('carrito').style.display = 'flex'
         }
     })
 }

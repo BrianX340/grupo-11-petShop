@@ -1,6 +1,9 @@
 
 #carrito {
-    display: block;
+    display: none;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     margin: 10px;
 }
@@ -9,6 +12,7 @@
     background-color: #f3f2f6;
     border-radius: 6px;
     min-width: 300px;
+    position: relative;
 }
 
 .carrito-head {
@@ -35,7 +39,10 @@
 
 .carrito-body {
     min-height: 50px;
-    background-color: rgb(53, 199, 53);
+    background-color: white;
+    padding: 2px;
+    border-bottom: #72cabe 1px solid;
+    box-sizing: border-box;
 }
 
 .carrito-footer {
@@ -43,10 +50,123 @@
 }
 
 .carrito-footer-section {
-    width: 270px;
+    width: 100%;
     height: 80px;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
+}
+
+.subtotal {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    align-items: center;
+    font-weight: bold;
+    color: #080808ab;
+}
+
+.subtotal span {
+    position: absolute;
+    right: 20px;
+}
+
+.carrito-footer-section > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+
+.carrito-footer-section div a {
+    width: 60%;
+    height: 70%;
+    background-color: #72ca92;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: system-ui;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.item-image-container {
+    margin-left: 15px;
+}
+
+.item-image-container .item-figure {
+    margin: 0;
+    padding: 0;
+    max-height: 90px;
+}
+
+.item-figure img {
+    height: 90px;
+}
+
+.carrito-item > div:first-child {
+    display: flex;
+    align-items: center;
+    margin: 3px 0 3px 0px;
+    position: relative;
+}
+
+.item-description-container {
+    margin-left: 10px;
+    color: #777;
+    font-family: system-ui;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.price-amount {
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 72px;
+    justify-content: center;
+    align-items: center;
+}
+
+.amount {
+    width: 31%;
+    outline: none;
+}
+
+.amount-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.amount-controls div {
+    height: 20px;
+    width: 20px;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: white;
+}
+
+.amount-controls span {
+    width: 40%;
+    background-color: white;
+    box-sizing: border-box;
+    border: 2px #72cabe solid;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
     align-items: center;
 }
