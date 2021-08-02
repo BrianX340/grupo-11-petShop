@@ -182,3 +182,58 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 5px;
     align-items: center;
 }
+/* ANIMATION */
+
+.carrito-in {
+    transition: background-color 2s ease-out;
+	-webkit-animation: carrito-in-animation 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: carrito-in-animation 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes carrito-in-animation {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(100px);
+              transform: translateY(100px);
+    }
+  }
+  @keyframes carrito-in-animation {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(100px);
+              transform: translateY(100px);
+    }
+  }
+
+.carrito-out {
+	-webkit-animation: carrito-out-animation 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+	        animation: carrito-out-animation 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+}
+  
+@-webkit-keyframes carrito-out-animation {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(100px);
+              transform: translateY(100px);
+    }
+  }
+  @keyframes carrito-out-animation {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(100px);
+              transform: translateY(100px);
+    }
+  }
+  
