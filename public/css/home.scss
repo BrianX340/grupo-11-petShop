@@ -374,6 +374,9 @@ nav figure img {
     display: flex;
     flex-direction: column;
     background-color: $background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .box-title {
