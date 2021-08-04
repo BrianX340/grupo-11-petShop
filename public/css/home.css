@@ -423,18 +423,35 @@ nav figure img {
 }
 
 .box-card-section {
-  width: 100%;
+  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 2rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  margin-top: 10px;
-  margin-bottom: 2rem;
 }
 
 .box-card {
+  /*width: 100px;
+    height: 100px;*/
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
   background-color: #a1a1a1;
   width: 5.375rem;
   height: 8.375rem;
@@ -448,8 +465,6 @@ nav figure img {
   background: #f1f1f1;
   -webkit-box-shadow: 0 0.3125rem 0.9375rem -0.3125rem #00000070;
           box-shadow: 0 0.3125rem 0.9375rem -0.3125rem #00000070;
-  overflow: hidden;
-  position: relative;
   -webkit-transition: 1s;
   transition: 1s;
 }
