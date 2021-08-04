@@ -430,7 +430,8 @@ nav figure img {
 }
 
 .box-card-section {
-  width: 90%;
+  width: 95%;
+  max-width: 65rem;
   margin-top: 10px;
   margin-bottom: 2rem;
   -webkit-box-orient: horizontal;
@@ -460,8 +461,8 @@ nav figure img {
   margin-left: 20px;
   margin-right: 20px;
   background-color: #a1a1a1;
-  width: 5.375rem;
-  height: 8.375rem;
+  width: 9.375rem;
+  height: 12.375rem;
   border-radius: 5px;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
