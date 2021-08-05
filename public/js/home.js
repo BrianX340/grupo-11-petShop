@@ -28,9 +28,10 @@ window.onload = () => {
         }
 
         if (elementId == 'carrito-close') {
-            fadeInOutCarrito(0)
+            //fadeInOutCarrito(0)
         } else if (elementId == 'carrito-button'){
-            fadeInOutCarrito(1)
+            //fadeInOutCarrito(1)
+            window.location.href = `${window.location.origin}`+'/carrito'
         }
     })
 }
