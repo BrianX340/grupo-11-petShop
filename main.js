@@ -10,11 +10,13 @@ app.use(express.static(__dirname + '/public'));
 homeRouter = require('./routes/homeRouter')
 formsRouter = require('./routes/formsRouter')
 registerRouter = require('./routes/registerRouter')
+carritoRouter = require('./routes/carritoRouter')
 
 /* ROUTES */
 app.use('/',homeRouter)
 app.use('/forms',formsRouter)
 app.use('/register',registerRouter)
+app.use('/carrito',carritoRouter)
 
 
 app.listen(3000, ()=>{

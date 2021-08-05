@@ -18,5 +18,6 @@
   "homepage": "https://github.com/BrianX340/Team-11#readme",
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "author": ""
 }

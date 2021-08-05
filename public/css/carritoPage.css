@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+  }
+
+/* NAV */
+
+nav {
+    width: 100%;
+    height: 55px;
+    background-color: #72cabe;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 15px;
+  }
+
+  .menu-button img {
+      height: 24px;
+  }
+  
+  .logo figure img {
+    width: 35px;
+  }
+
+  .search-carrito {
+    display: flex;
+    right: 15px;
+    position: absolute;
+    width: 25%;
+    justify-content: space-around;
+  }
+
+  .figure-logo {
+    background-color: white;
+    border-radius: 41px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 1px solid white;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+  .figure-search img {
+    height: 30px;
+  }
+
+  .carrito-button-container {
+    height: 29px;
+    margin: 0;
+    padding: 0;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  #amount-carrito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    box-sizing: border-box;
+    line-height: 17px;
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    font-family: Lato;
+    width: 18px;
+    height: 18px;
+    background: #f8d71c;
+    border: 0 solid #333;
+    border-radius: 50%;
+    color: #333;
+    font-weight: 700;
+    right: -4px;
+    top: -5px;
+  }
+
+
+/* SECTION ARTICULOS/PRODUCTOS */
+
+.articulos-productos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-box {
+    width: 95%;
+    margin-top: 15px;
+}
+
+.agregar-mas {
+    width: 100%;
+    height: 40px;
+    border: black 1px solid;
+    box-sizing: border-box;
+}
