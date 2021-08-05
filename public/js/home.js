@@ -27,12 +27,7 @@ window.onload = () => {
             elementId = event.target.id
         }
 
-        if (elementId == 'menu-button') {
-            fadeInOutMenu(1)
-        } else if (elementId == 'sidebar-close') {
-            fadeInOutMenu(0)
-            event.preventDefault()
-        } else if (elementId == 'carrito-close') {
+        if (elementId == 'carrito-close') {
             fadeInOutCarrito(0)
         } else if (elementId == 'carrito-button'){
             fadeInOutCarrito(1)
@@ -40,33 +35,6 @@ window.onload = () => {
     })
 }
 
-async function fadeInOutMenu(activo){
-    document.getElementById('menu-mobile').style.display = 'flex'
-    menu = document.getElementById('menu-container')
-    if(activo){
-        opacidadFondo = 0
-        for (i=0 ; i<5 ; i++){
-            opacidadFondo += 0.1
-            document.getElementById('menu-mobile').style.backgroundColor = `rgba(0, 0, 0, ${opacidadFondo})`
-            await sleep(50);
-        }
-        menu.classList.add('menu-in');
-        menu.style.display = 'flex'
-        await sleep(2000);
-        menu.classList.remove('menu-in');
-    } else {
-        menu.classList.add('menu-out');
-        opacidadFondo = 0.5
-        for (i=0 ; i<5 ; i++){
-            opacidadFondo -= 0.1
-            document.getElementById('menu-mobile').style.backgroundColor = `rgba(0, 0, 0, ${opacidadFondo})`
-            await sleep(50);
-        }
-        menu.style.display = 'none'
-        document.getElementById('menu-mobile').style.display = 'none'
-        menu.classList.remove('menu-out');
-    }
-}
 
 
 async function fadeInOutCarrito(activo){

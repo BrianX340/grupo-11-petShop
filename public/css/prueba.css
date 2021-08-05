@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.caja-azul {
+    width: 100%;
+    background-color: blue;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.caja-roja {
+    width: 45%;
+    background-color: red;
+    height: 75vh;
+}
+
+.caja-amarilla {
+    background-color: yellow;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.titulos {
+    width: 100%;
+    height: 50px;
+    background-color: orange;
+}
+
+.caja-articulos {
+    background-color: orchid;
+    display: flex;
+    height: 50px;
+}
+
+.caja-botones {
+    width: 100%;
+    height: 50px;
+    background-color: orange;
+}
+
+.titulos > div:first-child {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-carrito{
+    width: 100%;
+    height: 50%;
+    border: red 2px solid
+}
+
+.primer-linea-carrito {
+    width: 100%;
+    height: 50%;
+    border: red 2px solid
+}
+
+.titulo-carrito span {
+    border: 2px green solid;
+    margin-left: 10px;
+}
+
+.primer-linea-carrito {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.primer-linea-carrito > div{
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.primer-linea-carrito > div:first-child div {
+    margin-left: 10px;
+}
+.primer-linea-carrito > div:last-child div {
+    display: flex;
+    justify-content: space-evenly;
+}
