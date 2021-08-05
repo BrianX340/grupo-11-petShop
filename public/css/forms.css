@@ -5,15 +5,23 @@
     font-family: system-ui;
 }
 
-section {
+
+
+.container-form {
     position:relative;
     min-height: 100vh;
-    background: #557085;
+    background: #72aaca;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     transition: 0.5s;
+}
+
+@media (max-height: 990px){
+    .container-form{
+        height: 660px;
+    }
 }
 
 section.active {

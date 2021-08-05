@@ -5,7 +5,7 @@
 ¿Qué hicieron mal?
 - no definir bien la paleta de colores y la fuente
 - hubo muy poca organizacion
-- hizimos los wireframes minimos necesarios
+- hicimos los wireframes minimos necesarios
 
 
 ¿Qué deberían empezar a hacer?
