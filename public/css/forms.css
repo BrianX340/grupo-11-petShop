@@ -5,7 +5,9 @@
     font-family: system-ui;
 }
 
-
+.inicioF{
+    text-decoration: none;
+}
 
 .container-form {
     position:relative;
