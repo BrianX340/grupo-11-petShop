@@ -20,19 +20,31 @@ function showImg(e) {
 
 window.onload = () => {
     document.addEventListener('click', (event) => {
+        funcion = false
         try {
             elementId = event.path[0].id
+            elementClass = event.path[0].className
         }
         catch {
             elementId = event.target.id
+            elementClass = event.path[0].className
         }
 
         if (elementId == 'carrito-close') {
             //fadeInOutCarrito(0)
+            funcion = 'true'
         } else if (elementId == 'carrito-button'){
             //fadeInOutCarrito(1)
+            funcion = 'true'
             window.location.href = `${window.location.origin}`+'/carrito'
         }
+
+        if (!funcion){
+            if (elementClass.includes('box-card')){
+                window.location.href = `${window.location.origin}`+'/productDetail'
+            }
+        }
+        
     })
 }
 
