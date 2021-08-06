@@ -1,0 +1,12 @@
+.container-img-mensaje {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.mensaje {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
