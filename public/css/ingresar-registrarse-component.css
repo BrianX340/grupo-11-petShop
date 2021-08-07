@@ -1,0 +1,221 @@
+
+#ingresar-registrarse-component .inicioF{
+    text-decoration: none;
+}
+
+#ingresar-registrarse-component .container-form {
+    position:relative;
+    min-height: 100vh;
+    background: #72aaca;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: 0.5s;
+}
+
+@media (max-height: 990px){
+    #ingresar-registrarse-component .container-form{
+        height: 660px;
+    }
+}
+
+#ingresar-registrarse-component section.active {
+    background: #42494e;
+    transition: 0.5s;
+}
+
+#ingresar-registrarse-component section .container{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: rgb(248, 248, 248);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#ingresar-registrarse-component .container .user {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+/*Caja de la imagen*/
+
+#ingresar-registrarse-component .user .imgBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    transition: 0.5s;
+}
+/*Fin de la caja de la imagen*/
+/*Imagen*/
+
+#ingresar-registrarse-component .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*Fin de la Imagen*/
+/* caja del formulario*/
+
+#ingresar-registrarse-component .user .formBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: rgb(180, 179, 179);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+/* Fin de la caja del formulario*/
+/* texto de formulario*/
+
+#ingresar-registrarse-component .user .formBx > form {
+    width: 95%;
+}
+
+#ingresar-registrarse-component h2{ 
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #555;
+}
+/* Fin texto de formulario*/
+/* input*/
+#ingresar-registrarse-component input {
+    width: 95%;
+    height: 2rem;
+    padding-left: 5px;
+    background: #f5f5f5;
+    color: #333;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-size: 14px;
+    margin: 8px 0;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    font-weight: 300;
+}
+/* fin del input */
+/* Boton de inicio de sesion*/
+
+#ingresar-registrarse-component input[type="submit"]{
+    width: 100%;
+    min-width: 150px;
+    background: #677eff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+/* Fin del Boton de inicio de sesion*/
+/* Boton de registro*/
+
+
+#ingresar-registrarse-component .user.singupBox input[type="submit"]{
+    width: 100%;
+    min-width: 150px;
+    background: #ee1b1b;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+/* Fin del Boton de registro*/
+
+#ingresar-registrarse-component .singup{
+    position: relative;
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* link para cambiar el formulario */
+
+#ingresar-registrarse-component .singup a{
+    font-weight: 600;
+    text-decoration: none;
+    color: #577eff;
+}
+/* fin del link para cambiar el formulario */
+/* formulario interactivo */
+
+
+#ingresar-registrarse-component .singupBox {
+    pointer-events: none;
+}
+
+#ingresar-registrarse-component .container.active .singupBox {
+    pointer-events: initial;
+}
+
+#ingresar-registrarse-component .singupBox .formBx {
+    top: 100%;
+}
+
+#ingresar-registrarse-component .container.active .singupBox .formBx {
+    top: 0;
+}
+
+#ingresar-registrarse-component .singupBox .imgBx {
+    top: -100%;
+    transition: 0.5s;
+}
+
+#ingresar-registrarse-component .container.active .singupBox .imgBx {
+    top: 0;
+}
+
+
+#ingresar-registrarse-component .container .singinBox .formBx{
+    top:0;
+}
+
+#ingresar-registrarse-component .container.active .singinBox .formBx{
+    top:100%;
+}
+#ingresar-registrarse-component .container .singinBox .imgBx{
+    top:0;
+    transition: 0.5s;
+}
+
+#ingresar-registrarse-component .container.active .singinBox .imgBx{
+    top:-100%;
+}
+/* fin del formulario interactivo */
+/* Ajuste de pantalla */
+
+@media (max-width: 990px){
+    .container{
+        max-width: 440px;
+    }
+    .container .imgBx{
+        display: none;
+    }
+    .user .formBx{
+        width: 100%;
+    }
+    .container.active .singinBox .formBx {
+        top: -100%;
+    }
+}
+/* fin del Ajuste de pantalla */
