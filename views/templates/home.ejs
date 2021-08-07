@@ -5,47 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="/css/home.css">
-
     <title>PetLovers</title>
 </head>
 
 <body id='body'>
-
     <%- include('header-invited'); %>
-
-    <section id='menu-mobile'>
-        <div id='menu-container' class=''>
-            <div class='logo-close-menu'>
-                <figure class="figure-logo">
-                    <img src="/img/logo.svg" alt="">
-                </figure>
-                <a id='sidebar-close' href="">X</a>
-            </div>
-            <div class='menu-row' id='menu-inicio'>
-                <figure><img src="/img/menu-icon-inicio.svg" alt=""></figure><span>Inicio</span>
-            </div>
-            <div class='menu-row' id='menu-ingresar-registrarse'>
-                <figure><img src="/img/menu-icon-login.svg" alt=""></figure><span>Ingresar / Registrarse</span>
-            </div>
-            <div class='menu-title'>Productos</div>
-            <div class='menu-row' id='menu-dogs'>
-                <figure><img src="/img/menu-icon-perro.svg" alt=""></figure><span>Perros</span>
-            </div>
-            <div class='menu-row' id='menu-cats'>
-                <figure><img src="/img/menu-icon-gato.svg" alt=""></figure><span>Gatos</span>
-            </div>
-            <div class='menu-title'>Contacto</div>
-            <div class='menu-row' id='menu-call'>
-                <figure><img src="/img/menu-icon-telefono.svg" alt=""></figure><span>Llamanos</span>
-            </div>
-            <div class='menu-row' id='menu-chat'>
-                <figure><img src="/img/menu-icon-chat.svg" alt=""></figure><span>Chatea con nosotros</span>
-            </div>
-        </div>
-    </section>
-
+    <%- include('menuMobileInvited'); %>
 
     <section id='all'>
 
@@ -57,7 +23,6 @@
             </ol>
         </section>
 
-
         <section id='pet-categories'>
             <span>¿Que mascota tienes?</span>
             <div class='categories'>
@@ -67,9 +32,11 @@
         </section>
 
         <section id='promotions' class='box-cards'>
+
             <div class='promotions-title box-title'>
                 <span>Promociones!</span>
             </div>
+
             <div class='cards-promotions box-card-section'>
                 <div class="card-promotion box-card"></div>
                 <div class="card-promotion box-card"></div>
@@ -78,12 +45,15 @@
                 <div class="card-promotion box-card"></div>
                 <div class="card-promotion box-card"></div>
             </div>
+
         </section>
 
         <section id='best-sell' class='box-cards'>
+
             <div class='best-sell-title box-title'>
                 <span>Mas vendidos!</span>
             </div>
+
             <div class='cards-best-sell box-card-section'>
                 <div class="card-best-sell box-card"></div>
                 <div class="card-best-sell box-card"></div>
@@ -92,63 +62,14 @@
                 <div class="card-best-sell box-card"></div>
                 <div class="card-best-sell box-card"></div>
             </div>
+
         </section>
 
     </section>
 
     <%- include('footer'); %>
-
-    <section id='carrito' class=''>
-        <div>
-            <div class='carrito-container'>
-                <div class='carrito-head'>
-                    <span>Lista de compras</span><figure><img id='carrito-close' src="/img/close.svg" alt=""></figure>
-                </div>
-                <div class='carrito-body'>
-                    <div class='carrito-item'>
-                        <div>
-                            <div class='item-image-container'>
-                                <figure class='item-figure'><img src="/img/item-test.png" alt=""></figure>
-                            </div>
-                            <div class='item-description-container'>
-                                <div class="item-title">Alimento marca X</div>
-                                <div class="item-description">Alimento para perro :v</div>
-                            </div>
-                            <div class='price-amount'>
-                                <span>$20,99</span>
-                                <div class='amount-controls'>
-                                    <div class='amount-put'>-</div>
-                                    <input class='amount' name="amount"
-    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-    type = "number"
-    maxlength = "3"
- />
-                                    <div class='amount-add'>+</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class='carrito-footer'>
-                    <div class='carrito-footer-section'>
-                        <span class='subtotal'>Subtotal: <span>$0</span></span>
-                        <div>
-                            <a href="#">Realizar compra</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id='wsp-chat'>
-        <figure>
-            <a href="https://wa.me/+541134489022?text=Hola%20que%20servicios%20brindan%3F"><img src="/img/wsp.png" alt=""></a>
-        </figure>
-        <figure>
-            <img src="/img/dog-chat.svg" alt="">
-        </figure>
-    </section>
+    <%- include('carritoFlotante'); %>
+    <%- include('wsp-dog-chat'); %>
 
 
 </body>
