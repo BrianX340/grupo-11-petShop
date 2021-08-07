@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/productDetail.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav id='nav-mobile'>
+        <div class='nav-top'>
+            <div  class='logo-desktop desktop'>
+                <figure class="figure-logo">
+                    <img src="/img/logo.svg" alt="">
+                </figure>
+            </div>
+            <div class='mobile menu-container'>
+                <figure class='menu-button'><img id='menu-button' src="/img/icon_menu_mobile_lateral.svg" alt=""></figure>
+            </div>
+            <div class='nav-top-input-container'>
+                <input id='busqueda' placeholder='Buscar algo...' type="text">
+            </div>
+            <div class='desktop'>
+                <div>
+                    <a class="inicioF" href="./"><span>Inicio</span></a>
+                    
+                </div>
+            </div>
+            <div>
+                <figure class='carrito-button-container'><img id='carrito-button' src="/img/icon_carrito.svg" alt=""></figure>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-img-info">
+        <div class="container-img">
+            <div class="box-img">
+                <img src="/img/product1.jpg">
+            </div>
+            <div class="images">
+                <div class="small-img">
+                    <img src="/img/product1.jpg" onclick="showImg(this.src)">
+                </div>
+                <div class="small-img">
+                    <img src="/img/img-1.jpg" onclick="showImg(this.src)">
+                </div>
+                <div class="small-img">
+                    <img src="/img/img-3.jpg" onclick="showImg(this.src)">
+                </div>
+                <div class="small-img">
+                    <img src="/img/img-4.jpg" onclick="showImg(this.src)">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-info">
+            <div class="container-tittle">
+                <h5 class="tittle-h5">Lorem ipsum dolor sit amet.</h5>
+                <p class="mb-2 text-muted  small">Lorem ipsum</p>
+            </div>
+
+            <div class="container-price">
+                <div class="price">$$$$</div>
+            </div>
+
+            <div class="quantity">
+                <p>Cantidad :</p>
+                <input type="number" id="cantidad" name="cantidad" min="1" max="10">
+            </div>
+
+            <div class="btn-box">
+                <div class="btn-cart">
+                    <button class="cart-btn"> Añadir al carrito</button>
+                </div>
+                <div class="btn-buy">
+                    <button class="buy-btn"> Comprar ahora </buttom>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container-descripcion">
+        <div class="box-descripcion">
+            <p class="p-Descripcion">Descripción</p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla vel, accusamus adipisci mollitia molestias
+            illo placeat. Veniam ducimus qui eveniet cupiditate ipsam, perspiciatis natus autem, magni soluta harum,
+            error rerum perferendis ut vel est assumenda? Iure voluptatum laudantium aliquam, a modi officia quae nam ea
+            iste eius dolorum, et aut dolorem veritatis consequatur consequuntur quod mollitia praesentium iusto aperiam
+            eveniet!
+        </div>
+    </div>
+
+    <div class="container-carac">
+        <div class="box-carac">
+            <h4 class="carac-h3">Caracteristicas</h4>
+            <p>
+                - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+            </p>
+            <p>
+                - Lorem ipsum dolor sit amet consectetur adipisicing.
+
+            </p>
+            <p>
+                - Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque iusto, magni voluptatem ipsum
+                beatae et!
+
+            </p>
+            <p>
+                - Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur ab eaque, qui vero, nobis
+                laudantium pariatur illum ea corrupti nihil doloremque corporis cum! Reiciendis fugit sed tempora
+                molestiae! Sunt, ad.
+            </p>
+
+        </div>
+    </div>
+    
+    <footer>
+        <div class="sector">
+            <div class="sector-title"><span>Nosotros</span></div>
+            <div class="sector-info"><span>Preguntas frecuentes</span></div>
+            <div class="sector-info"><span>Contactanos</span></div>
+        </div>
+        <div class="sector">
+            <div class="sector-title"><span>Pago y Envío</span></div>
+            <div class="sector-info"><span>Área de entrega</span></div>
+            <div class="sector-info"><span>Medios de pago</span></div>
+        </div>
+        <div class="sector">
+            <div class="sector-title"><span>Legales</span></div>
+            <div class="sector-info"><span>Terminos y condiciones</span></div>
+            <div class="sector-info"><span>Politica de Privacidad</span></div>
+        </div>
+    </footer>
+
+    <script>
+        let bigImg = document.querySelector('.box-img img');
+        function showImg(pic) {
+            bigImg.src = pic;
+        }
+    </script>
+
+
+
+</body>
+
+</html>
