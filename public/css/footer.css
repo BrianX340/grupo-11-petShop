@@ -18,21 +18,21 @@ footer {
     width: 100%;
   }
 
-  span {
+  footer span {
     cursor: default;
   }
   
-  .sector {
+  footer .sector {
     width: 100%;
   }
   
-  .sector-title {
+  footer .sector-title {
     color: white;
     font-size: 16px;
     font-weight: bold;
   }
   
-  .sector-info {
+  footer .sector-info {
     color: #DDDDDD;
     font-size: 13px;
     font-weight: normal;

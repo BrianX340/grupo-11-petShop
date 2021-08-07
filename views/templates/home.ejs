@@ -5,17 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/carrito.css">
-    <link rel="stylesheet" href="/css/wsp-chat.css">
-    <link rel="stylesheet" href="/css/menu-mobile.css">
-    <link rel="stylesheet" href="/css/footer.css">
+
     <title>PetLovers</title>
 </head>
 
 <body id='body'>
-    
-    <%- include('./templates/header-invited'); %>
+
+    <%- include('header-invited'); %>
 
     <section id='menu-mobile'>
         <div id='menu-container' class=''>
@@ -98,23 +96,7 @@
 
     </section>
 
-    <footer>
-        <div class="sector">
-            <div class="sector-title"><span>Nosotros</span></div>
-            <div class="sector-info"><span>Preguntas frecuentes</span></div>
-            <div class="sector-info"><span>Contactanos</span></div>
-        </div>
-        <div class="sector">
-            <div class="sector-title"><span>Pago y Envío</span></div>
-            <div class="sector-info"><span>Área de entrega</span></div>
-            <div class="sector-info"><span>Medios de pago</span></div>
-        </div>
-        <div class="sector">
-            <div class="sector-title"><span>Legales</span></div>
-            <div class="sector-info"><span>Terminos y condiciones</span></div>
-            <div class="sector-info"><span>Politica de Privacidad</span></div>
-        </div>
-    </footer>
+    <%- include('footer'); %>
 
     <section id='carrito' class=''>
         <div>
