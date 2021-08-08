@@ -1,5 +1,23 @@
 
 /* MENU-MOBILE */
+
+.figure-logo {
+  background-color: white;
+  border-radius: 41px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .menu-in {
     -webkit-animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;

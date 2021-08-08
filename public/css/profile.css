@@ -1,0 +1,16 @@
+@charset "UTF-8";
+@import url('header-nav.css');
+@import url('wsp-chat.css');
+@import url('menu-mobile.css');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+figure {
+    margin:0;
+    padding: 0;
+}

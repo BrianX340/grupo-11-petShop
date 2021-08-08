@@ -10,15 +10,17 @@ app.set('view engine', 'ejs');
 
 /* ROUTERS */
 homeRouter = require('./routes/homeRouter')
+errorRouter = require('./routes/errorRouter')
 formsRouter = require('./routes/formsRouter')
 carritoRouter = require('./routes/carritoRouter')
+profileRouter = require('./routes/profileRouter')
 productDetailRouter = require('./routes/productDetailRouter')
-errorRouter = require('./routes/errorRouter')
 
 /* ROUTES */
 app.use('/',homeRouter)
 app.use('/forms',formsRouter)
 app.use('/carrito',carritoRouter)
+app.use('/profile', profileRouter)
 app.use('/productDetail', productDetailRouter)
 app.use('*', errorRouter)
 

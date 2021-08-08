@@ -4,19 +4,16 @@
 @import url('wsp-chat.css');
 @import url('menu-mobile.css');
 @import url('footer.css');
+@import url('header-nav.css');
 @import url('ingresar-registrarse-component.css');
 
-.ingrese{
-  text-decoration: none;
-}
+
 /* PALETA DE COLORES */
 /*  END PALETA DE COLORES */
 /* FUENTE */
 /* TAMAÑOS PHONE */
 /* DISPLAYS DESKTOP */
-#body .desktop {
-  display: none;
-}
+
 
 /* TAMAÑOS DESKTOP */
 body {
@@ -26,6 +23,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: column;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -37,100 +35,6 @@ span {
   cursor: default;
 }
 
-/* NAV MOBILE */
-nav {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  font-size: 16px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #72cabe;
-}
-
-.nav-top {
-  width: 100%;
-  min-height: 55px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.nav-top .menu-button {
-  width: 30%;
-  margin: 0;
-  padding: 0;
-}
-
-.menu-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.nav-top-input-container {
-  width: 66.6666666%;
-}
-
-.nav-top h1 {
-  font-size: 10px;
-  font-family: system-ui;
-  font-weight: bold;
-  color: white;
-}
-
-.nav-top .carrito-button-container {
-  height: 24px;
-  margin: 0;
-  padding: 0;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-nav figure img {
-  width: 24px;
-}
-
-.nav-top input {
-  width: 100%;
-  height: 32px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  padding-left: 10px;
-}
-
-/* END NAV */
 #all {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -321,38 +225,6 @@ nav figure img {
 
 /*    END PROMOTIONS    */
 
-/* DESKTOP */
-.nav-desktop {
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.nav-desktop > div {
-  width: 25%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: none;
-}
-
-.nav-desktop > div span {
-  color: white;
-  font-size: 18px;
-}
-
-.nav-down h1 {
-  color: white;
-  font-family: system-ui;
-  font-size: 16px;
-}
 
 /* ANIMATION DOG-CAT */
 .pin-cat {
@@ -458,22 +330,7 @@ nav figure img {
   transition: 0.2s linear;
 }
 
-.figure-logo {
-  background-color: white;
-  border-radius: 41px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: 1px solid white;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
+
 
 /* END ANIMATION DOG-CAT */
 .logo-desktop figure {
@@ -485,11 +342,7 @@ nav figure img {
   width: 40px;
 }
 
-.nav-top .desktop div span {
-  color: white;
-  font-weight: bold;
-  font-family: system-ui;
-}
+
 
 @media (min-width: 768px) {
   #body .desktop {
@@ -500,32 +353,7 @@ nav figure img {
   #carousel {
     margin-top: 20px;
   }
-  .nav-top .carrito-button-container {
-    height: 35px;
-  }
-  .nav-top {
-    min-height: 70px;
-  }
-  .nav-top-input-container {
-    width: 57.666667%;
-  }
-  .mobile {
-    display: none;
-  }
-  .desktop {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .nav-down {
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
-  .nav-down input {
-    width: 50%;
-    height: 40px;
-  }
+  
   .box-card {
     width: 10.375rem;
     height: 14.375rem;
