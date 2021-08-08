@@ -22,18 +22,29 @@ document.addEventListener('click', (event) => {
 
 async function fadeInOutCarrito(activo){
     carrito = document.getElementById('carrito')
-    carrito.style.opacity = 1
     if (activo){
-        carrito.classList.add('carrito-in');
         carrito.style.display = 'flex'
-        await sleep(2000);
-        carrito.classList.remove('carrito-in');
-    } else {
-        carrito.classList.add('carrito-out');
+        opacidad = 0
+        carrito.classList.add('carrito-in');
+
         for (i=0 ; i<10 ; i++){
-            carrito.style.opacity -= 0.1
+            carrito.style.opacity = opacidad
+            opacidad += 0.1
             await sleep(50);
         }
+        await sleep(2000);
+
+    } else {
+        carrito.classList.remove('carrito-in');
+        opacidad = 1.0
+        carrito.classList.add('carrito-out');
+
+        for (i=0 ; i<10 ; i++){
+            carrito.style.opacity = opacidad
+            opacidad -= 0.1
+            await sleep(50);
+        }
+
         carrito.style.display = 'none'
         carrito.classList.remove('carrito-out');
     }
