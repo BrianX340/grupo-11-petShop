@@ -278,6 +278,17 @@ img{
   align-items: center;
   font-weight: bold;
   font-size: 13px;
+  transition: 1s;
+  color: #4b4b4b;
+}
+
+.product-name {
+  cursor: pointer;
+}
+
+.card-item-name:hover {
+  color:#33c1d4;
+  transform: scale(1.1);
 }
 
 

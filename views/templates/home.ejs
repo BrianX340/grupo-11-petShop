@@ -10,8 +10,8 @@
 </head>
 
 <body id='body'>
-    <%- include('header-invited'); %>
-    <%- include('menuMobileInvited'); %>
+    <%- include('../partial/header-invited'); %>
+    <%- include('../partial/menuMobileInvited'); %>
 
     <section id='all'>
 
@@ -38,37 +38,11 @@
             </div>
 
             <div class='cards-promotions box-card-section'>
-                <div class="box-card">
-                    <div>
-                        <div class='box-card-top'>
-                            <div class='card-item-image'>
-                                <figure>
-                                    <img src="/img/productTest.jpg" alt="">
-                                </figure>
-                            </div>
-                            <div class='card-item-name'>
-                                <span>Produxto Equis</span>
-                            </div>
-                            <div class='card-item-description'>
-                                <span>Aqui va la descripcion del producto que esta a la venta</span>
-                            </div>
-                            <div class='card-item-price'>
-                                <span>$99.99</span>
-                            </div>
-                            <div class='card-item-valoration'>
-                                XXXxx
-                            </div>
-                        </div>
-                        <div class='box-card-bottom'>
-                            <span>Al carrito</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="box-card"></div>
-                <div class="box-card"></div>
-                <div class="box-card"></div>
-                <div class="box-card"></div>
-                <div class="box-card"></div>
+                <!--Comienza un item-->
+                <%- include('../partial/productCard'); %>
+                <%- include('../partial/productCard'); %>
+                <%- include('../partial/productCard'); %>
+                <!--fin del item-->
             </div>
 
         </section>
@@ -80,12 +54,11 @@
             </div>
 
             <div class='cards-best-sell box-card-section'>
-                <div class="box-card"></div>
-                <div class="box-card"></div>
-                <div class="box-card"></div>
-                <div class="box-card"></div>
-                <div class="box-card"></div>
-                <div class="box-card"></div>
+                <!--Comienza un item-->
+                <%- include('../partial/productCard'); %>
+                <%- include('../partial/productCard'); %>
+                <%- include('../partial/productCard'); %>
+                <!--fin del item-->
             </div>
 
         </section>
@@ -94,9 +67,9 @@
 
 
 
-    <%- include('footer'); %>
-    <%- include('carritoFlotante'); %>
-    <%- include('wsp-dog-chat'); %>
+    <%- include('../partial/footer'); %>
+    <%- include('../partial/carritoFlotante'); %>
+    <%- include('../partial/wsp-dog-chat'); %>
 
 
 </body>
