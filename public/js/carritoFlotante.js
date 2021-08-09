@@ -14,8 +14,8 @@ document.addEventListener('click', (event) => {
         fadeInOutCarrito(0)
         funcion = 'true'
     } else if (elementId == 'carrito-button'){
-        //fadeInOutCarrito(1)
-        window.location.href = `${window.location.origin}`+'/carrito'
+        fadeInOutCarrito(1)
+        //window.location.href = `${window.location.origin}`+'/carrito'
         funcion = 'true'
     }
 })
