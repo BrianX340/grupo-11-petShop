@@ -34,18 +34,7 @@ span {
   cursor: default;
 }
 
-figure {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
 
-img{
-  height: 100%;
-}
 
 #all {
   display: -webkit-box;
@@ -324,6 +313,19 @@ img{
 
 .box-card-bottom:hover {
   background-color: #34d87a;
+}
+
+.card-item-image figure {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-item-image img{
+  height: 100%;
 }
 
 /*    END PROMOTIONS    */
