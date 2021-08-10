@@ -9,6 +9,7 @@
         "productStock":122,
         "productPet":"cat",
         "productFilter":[ "food"],
-        "productMarca": "cat-chow"
+        "productMarca": "cat-chow",
+        "productDescuento": [ "true" , 20 ]
     }
 ]
