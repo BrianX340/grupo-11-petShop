@@ -5,6 +5,7 @@
 @import url('menu-mobile.css');
 @import url('footer.css');
 @import url('header-nav.css');
+@import url('background.css');
 
 
 /* PALETA DE COLORES */
@@ -16,7 +17,6 @@
 
 /* TAMAÑOS DESKTOP */
 body {
-  background-color: #fafafa;
   margin: 0;
   padding: 0;
   display: -webkit-box;
@@ -89,7 +89,6 @@ span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #fafafa;
 }
 
 .pet-cat-cate {
@@ -143,21 +142,6 @@ span {
   margin-bottom: 15px;
 }
 
-/*
-.pin-cat {
-    width: 80px;
-    height: 80px;
-    background-size: cover;
-    background-image: url("../img/pin-cat.png");
-}
-
-.pin-dog {
-    width: 80px;
-    height: 80px;
-    background-size: cover;
-    background-image: url("../img/pin-dog.png");
-}
-*/
 /*    END CATEGORIES    */
 /*    BOX PROMOTIONS  /  BEST-SELL  */
 .box-cards {
@@ -169,7 +153,6 @@ span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #fafafa;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;

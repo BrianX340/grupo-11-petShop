@@ -184,6 +184,7 @@
   }
   
   .menu-row span {
+    cursor: pointer;
     color: #4b4b4b;
     font-family: system-ui;
   }
