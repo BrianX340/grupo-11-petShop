@@ -25,7 +25,7 @@ async function fadeInOutCarrito(activo){
     carrito = document.getElementById('carrito')
     if (activo){
         carrito.style.display = 'flex'
-        opacidad = 0
+        opacidad = 0.1
         carrito.classList.add('carrito-in');
 
         for (i=0 ; i<10 ; i++){

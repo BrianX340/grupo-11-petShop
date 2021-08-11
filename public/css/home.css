@@ -76,18 +76,35 @@ span {
 /*    CATEGORIES    */
 #pet-categories {
   height: 10.375rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  min-width: 320px;
   display: flex;
+}
+
+
+#pet-categories .pet-duo {
+  display: flex;
+  height: 100%;
+  width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-width: 320px;
   background-color: #fafafa;
 }
 
-#pet-categories > span {
+.pet-cat-cate {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.pet-dog-cate {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+#pet-categories .pet-duo > span {
   width: 100%;
   text-align: center;
   font-size: 16px;
@@ -284,7 +301,7 @@ img{
 
 .card-item-description {
   width: 100%;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .card-item-price {
