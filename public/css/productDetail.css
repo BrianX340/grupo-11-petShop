@@ -2,197 +2,130 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: system-ui;
-}
-section{
-    background-color: lightcoral;
-    width: 100vw;
-    height: 100px;
-    border-color: black;
+    font-family: system-ui;   
 }
 
-body {
-    background-color: #72ca92;
-    height: 100vh;
-}
-
-.inicioF{
-    text-decoration: none;
-}
-
-
-/*width: 95%;
-    max-width: 65rem;
-    margin-top: 10px;
-    margin-bottom: 2rem;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    display: flex;
-*/
-
-.container-img-info{
-    border-radius: 30px;
-    background-color: white;
-    flex-direction: row;
-}
-
-.container-img-info{
-    width: 100vw;
-    display: flex;
-    margin: 20px auto;
-}
-
-@media (max-width: 1100px){
-    .container-img-info{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-}
-
-@media (min-width: 1600px){
-    .container-img-info {
-        width: 1600px;
-        background-color: white;
-        display: flex;
-        flex-direction: row;
-    }
-}
-/* img */
-
-
-
-.container-img {
-    width: 100%;
-    margin: 0 0 0 30px;
+div {
     display: block;
-    justify-content: center;
-    
-}
-@media (max-width){
-    .container-img{
-        margin-bottom: 30px;
-    }
 }
 
-.box-img {
-    justify-content: center;
-    padding: 30px 0 0 30px;
-    width: 600px;
-}
-@media (max-width:600px) {
-    .box-img {
-        width: 100%;
-    }
-}
-
-.box-img img{
-    width: -webkit-fill-available;
-}
-
-
-
-.images {
+@media (min-width: 700px){
+    body{
     display: flex;
-    justify-content: space-between;
-    width: 70%;
-    margin-top: 15px;
-    padding-left: 30px;
-}
-
-@media (min-width: 310px) {
-    .images {
-        display: flex;
-        flex-direction: inherit;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
     }
 }
 
-@media (min-width: 1040px){
-    .images{
-        width: 60%;
+@media (min-width: 700px){
+    .container-padre{
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     }
 }
 
-.small-img {
+.container-img-info {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+}
+
+@media (max-width: 500px) {
+    .container-img-info{
+        flex-direction: column;
+    }
+}
+
+.container-img-info{
+    background-color: #ccc;
+    border-radius: 8px;
+
+}
+
+/* Caja de info*/
+
+.padre-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 500px) {
+    .padre-info{
+        flex-direction: row-reverse;
+        order: 1;
+    }
+}
+
+.padre-info {
+    margin: 4px 0 0 30px;
+    padding: 10px;
+}
+
+@media (min-width: 500px){
+    .padre-info {
+        width: 500px;
+}
+}
+
+
+@media (max-width: 500px) {
+    .padre-info {
+        margin: 0;
+    }
+}
+
+.container-box-info {
+    padding: 10px;
     width: 100%;
-    overflow: hidden;
-    border: 1.5px solid black;
-}    
-
-.small-img img{
-    width: inherit;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    border-radius: 10px;
+    background-color: cornflowerblue;
 }
 
-.small-img:hover img {
-    transform: scale(1.2);
+.container-title{
+    height: 100px;
 }
 
-
-/* fin de img*/
-
-/* info*/
-/* Caja derecha*/
-
-.container-info {
-    width: 400px;
-    height: 600px;
-    border: 2px solid rgba(172, 171, 171, 0.795);
-    border-radius: 12px;
-    margin: 30px 20px 0 20px;
-    padding: 20px 16px 0;
-}
-
-@media (max-width) {
-    .container-info{
-        margin: 66px 20px 0 20px;
-    }
-}
-
-
-/* titulo*/
-.container-tittle {
-    width: 360px;
-    height: 120px;
-}
-
-.tittle-h5 {
-    padding-top: 30px;
+.title-h5 {
     font-weight: bold;
-    font-size: 26px;
-}
-/* Fin de titulo*/
-/*precio*/
-.price{ 
     font-size: 20px;
-    font-weight: 500;
-    margin: 20px 0 40px;
 }
-/* Fin de precio*/
-/*Cant*/
 
-.quantity {
+.subtitulo{
+    color: rgb(107, 107, 107);
+}
+
+.container-price {
+    font-size: 1.5rem;
+}
+
+.product-quantity{
     display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    height: 100px;
 }
 
-.quantity p{
+.product-quantity p {
     font-size: 18px;
     font-weight: 600;
 }
 
-.quantity input {
+.product-quantity input {
     width: 60px;
+    height: 30%;
     font-size: 17px;
     font-weight: 500;
     text-align: center;
     margin-left: 15px;
 }
 
-/* fin de Cantidad*/
 /* Botones*/
 .btn-box{
     display: flex;
@@ -229,14 +162,72 @@ body {
 
 /* Fin de botones*/
 
+/* Fin de Caja de info*/
+
+/* Caja img*/
+
+img {
+    width: 100%;
+}
+
+.container-img{ 
+    width: 100%;
+    order: -1;
+}
+
+@media (max-width: 695px){
+    .img{
+        width: 50%;
+    }
+}
+.box-img {
+    padding: 10px;
+    object-fit: cover;
+}
+
+.box-gallery {
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* images*/
+
+.images {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
+}
+
+
+.small-img {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1.5px solid black;
+}    
+
+.small-img img{
+    width: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.small-img:hover img {
+    transform: scale(1.2);
+}
+
+
+/* Fin de Caja img*/
+
 /*Descripción*/
 
 .container-descripcion{
     display: flex;
-    width: 60%;
-    background-color: white;
+    width: 100%;
+    background-color: rgb(94, 90, 90);
     border-radius: 30px;
-    margin-left: 30px;
     padding: 20px;
 }
 
@@ -247,11 +238,10 @@ body {
 
 .container-carac {
     display: flex;
-    width: 60%;
-    background-color: white;
+    width: 100%;
+    background-color: rgb(104, 97, 97);
     border-radius: 30px;
     margin-top: 10px;
-    margin-left: 30px;
     padding: 20px;
 }
 
