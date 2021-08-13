@@ -24,14 +24,14 @@ homeRouter = require('./routes/homeRouter')
 errorRouter = require('./routes/errorRouter')
 formsRouter = require('./routes/formsRouter')
 carritoRouter = require('./routes/carritoRouter')
-profileRouter = require('./routes/profileRouter')
+historialRouter = require('./routes/historialRouter')
 productDetailRouter = require('./routes/productDetailRouter')
 
 /* ROUTES */
 app.use('/',homeRouter)
 app.use('/forms',formsRouter)
 app.use('/carrito',carritoRouter)
-app.use('/profile', profileRouter)
+app.use('/historial', historialRouter)
 app.use('/productDetail', productDetailRouter)
 app.use('*', errorRouter)
 

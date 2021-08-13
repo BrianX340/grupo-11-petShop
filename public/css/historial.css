@@ -161,18 +161,31 @@ figure {
 
 .card-resume img {
     width: 6vw;
+    transition: 0.5s;
+}
+
+.card-resume img:hover {
+    transform: scale(1.3);
 }
 
 @media (min-width: 500px) {
+
+    .historial-titulo {
+        height: 46px;
+    }
+
     .card-id-compra, .card-precio {
         font-size: 21px;
     }
+
     .card-resume {
         font-size: 14px;
     }
+
     .card-resume img {
         width: 3vw;
     }
+
     .historial-titulo div span {
         font-size: 28px;
     }
