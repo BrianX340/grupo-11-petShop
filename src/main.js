@@ -13,6 +13,7 @@ app.use(express.json())
 
 /* ROUTERS */
 productDetailRouter = require('./routes/productDetailRouter')
+formsProductsRouter = require('./routes/formsProductsRouter')
 historialRouter = require('./routes/historialRouter')
 carritoRouter = require('./routes/carritoRouter')
 adminRouter = require('./routes/adminRouter')
@@ -31,7 +32,6 @@ app.use('/historial', historialRouter)
 app.use('/productDetail', productDetailRouter)
 app.use('/formsProducts', formsProductsRouter)
 app.use('*', errorRouter)
-
 
 app.listen(3000, ()=>{
     console.log('Se esta ejecutando el servidor en localhost:3000')
