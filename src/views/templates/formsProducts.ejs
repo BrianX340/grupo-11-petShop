@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Productos</title>
+    <link rel="stylesheet" href="formsProducts.css">
+</head>
+<body>
+    <%- include('../partial/menuMobileLoged'); %>
+    <%- include('../partial/header-loged'); %>
+
+
+    <div class="formProductContainer">
+        <div class="form-product">
+
+            <div class="containerAleta">
+                <div class="aleta activo">
+                    Agregar
+                </div>
+                <div class="aleta">
+                    Editar
+                </div>
+                <div class="aleta">
+                    Eliminar
+                </div>
+                <div class="aleta">
+                    Consultar
+                </div>
+            </div>
+
+            <div class="container-form">
+
+                <form action="" class="cajaform activo">
+                    <div class="carga-de-producto">
+                        <div class="box-img">
+                            <h2>Cargar Imagen</h2>
+                            <div class="container-img">
+                                <img src="" alt="">
+                            </div>
+
+                        </div>
+
+                        <label for="nombre">Nombre: </label>
+
+                        <input class="input-nombre" type="text" placeholder="Nombre del productro" name="nombre">
+
+                        <div class="input">
+
+
+                            <label for="precio">Precio: </label>
+
+                            <input type="text" placeholder="Precio" name="precio">
+
+                            <label for="descuento">Descuento: </label>
+
+                            <input type="text" placeholder="Descuento %" name="descuento">
+
+                            <label for="código">Código de barra: </label>
+
+                            <input type="text" placeholder="Código de barra" name="código">
+
+                            <label for="tipos">Tipo de producto: </label>
+                            <input type="text" placeholder="Tipo de producto" name="tipos">
+                        </div>
+
+                        <label for="descripcion" class="descripcion"> Descripción: </label>
+                        <textarea class="descripcion" name="descripcion" rows="6" cols="80"
+                            placeholder="Descripcion"></textarea>
+                    </div>
+                </form> 
+
+                <form action="" class="cajaform">
+
+                    <div class="containerEditar">
+
+                        <div class="buscaDeProducto">
+                            <label for="producto">Buscar Producto: </label>
+                            <input type="text" placeholder="Buscar Producto" name="producto">
+                        </div>
+
+                        <div class="box-img">
+                            <h2>Cargar Imagen</h2>
+                            <div class="container-img">
+                                <img src="" alt="">
+                            </div>
+
+                        </div>
+
+                        <label for="nombre">Nombre: </label>
+
+                        <input class="input-nombre" type="text" placeholder="Nombre del productro" name="nombre">
+
+                        <div class="input">
+
+
+                            <label for="precio">Precio: </label>
+
+                            <input type="text" placeholder="Precio" name="precio">
+
+                            <label for="descuento">Descuento: </label>
+
+                            <input type="text" placeholder="Descuento %" name="descuento">
+
+                            <label for="código">Código de barra: </label>
+
+                            <input type="text" placeholder="Código de barra" name="código">
+
+                            <label for="tipos">Tipo de producto: </label>
+                            <input type="text" placeholder="Tipo de producto" name="tipos">
+                        </div>
+
+                        <label for="descripcion" class="descripcion"> Descripción: </label>
+                        <textarea class="descripcion" name="descripcion" rows="6" cols="80"
+                            placeholder="Descripcion">
+                        </textarea>
+                    </div>
+
+                </form> 
+
+                <form action="" class="cajaform">
+
+                    <div class="containerEliminar">
+
+                        <div class="buscaDeProducto">
+                            <label for="producto">Buscar Producto: </label>
+                            <input type="text" placeholder="Buscar Producto" name="producto">
+                        </div>
+
+                        
+                    </div>    
+                </form>
+
+                <form action="" class="cajaform">
+
+                    <div class="containerEliminar">
+
+                        <div class="buscaDeProducto">
+                            <label for="producto">Buscar Producto: </label>
+                            <input type="text" placeholder="Buscar Producto" name="producto">
+                        </div>
+
+                        
+                    </div>    
+                </form>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <%- include('../partial/footer'); %>
+
+</body>
+<script src="/js/formsProducts.js"></script>
+
+</html>

@@ -27,6 +27,7 @@ app.use('/carrito',carritoRouter)
 app.use('/historial', historialRouter)
 app.use('/productDetail', productDetailRouter)
 app.use('*', errorRouter)
+app.use('/formsProducts', formsProductsRouter)
 
 
 app.listen(3000, ()=>{
