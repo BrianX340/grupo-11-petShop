@@ -19,15 +19,18 @@ adminRouter = require('./routes/adminRouter')
 errorRouter = require('./routes/errorRouter')
 formsRouter = require('./routes/formsRouter')
 homeRouter = require('./routes/homeRouter')
+adminRouter = require('./routes/adminRouter')
+
 /* ROUTES */
 app.use('/',homeRouter)
+app.use('/admin',adminRouter)
 app.use('/forms',formsRouter)
 app.use('/admin', adminRouter)
 app.use('/carrito',carritoRouter)
 app.use('/historial', historialRouter)
 app.use('/productDetail', productDetailRouter)
-app.use('*', errorRouter)
 app.use('/formsProducts', formsProductsRouter)
+app.use('*', errorRouter)
 
 
 app.listen(3000, ()=>{

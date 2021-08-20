@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-    admin: (req,res) =>{
-        res.render('templates//admin')
+    adminPanel: (req,res) =>{
+        res.render('templates//adminPanel')
     }
 }
