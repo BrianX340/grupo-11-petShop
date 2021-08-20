@@ -4,6 +4,7 @@
   "description": "_En este proyecto construiremos una tienda de mascotas donde debe proporcionar facilidades al usuario, ya sea al cliente o al administrador. Contiene características tales como la pagina de registro y realizar compras, tendrá acceso a su carrito de compras, a su perfil, ver su historial de compras, podrá añadir articulos al carrito aunque no tenga una cuenta._",
   "main": "./src/main.js",
   "scripts": {
+    "start": "node ./src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

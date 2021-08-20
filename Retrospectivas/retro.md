@@ -1,3 +1,5 @@
+##Retrospectiva del Sprint 1
+
 ¿Qué hicieron bien en el sprint anterior?
 - Comunicacion eficiente.
 - Nos comunicamos de tal manera que todo el equipo este conforme.
@@ -7,7 +9,6 @@
 - hubo muy poca organizacion
 - hicimos los wireframes minimos necesarios
 
-
 ¿Qué deberían empezar a hacer?
 - Crear wireframes en caso de necesitarlos
 - Principalmente organizar el espacio de trabajo (Github), definir las rutas y dejar los archivos creados listos para modificar
@@ -15,10 +16,23 @@
 - Concurrir a los daylis
 - Codear
 - Tomar una nota del trello
+- Comprometernos mas en el proyecto
 
 ¿Qué deberían dejar de hacer?
-- Comprometernos mas en el proyecto
 - Postergar tareas
 
+##Retrospectiva del Sprint 2
 
+¿Qué hicieron bien en el sprint anterior?
+- Comunicacion eficiente.
+- Nos comunicamos de tal manera que todo el equipo este conforme.
+- Buena distribucion de las tareas
 
+¿Qué hicieron mal?
+- Olviamos detalles en algunos html
+
+¿Qué deberían empezar a hacer?
+- Pensar que vistas nos faltan hacer
+
+¿Qué deberían dejar de hacer?
+- -.-
