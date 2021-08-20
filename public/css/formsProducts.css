@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+.falseNav{
+    background-color: brown;
+    height: 100px;
+    width: 100%;
+}
+
+.formProductContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.form-product {
+    display: flex;
+    margin-top: 30px;
+    width: 1000px;
+}
+
+.container-form{
+    min-height: 10vh;
+    position: relative;
+}
+
+form.cajaform{
+    padding-left: 10px;
+    border-radius: 10px;
+    background-color: #72cabe94;
+    opacity: 0;
+    position: absolute;
+    top:0;
+}
+
+form.cajaform.activo{
+    opacity: 1;
+}
+.containerAleta{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 200px;
+    margin-top: 10px;
+}
+
+.aleta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #72aaca;
+    height: 40px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.aleta.activo {
+    background-color: #72ca92;
+}
+
+.carga-de-producto{
+    width: 800px;
+    border-radius: 10px;
+}
+
+label {
+    font-weight: bold;
+    
+}
+
+.input {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+input{
+    background-color: lightsteelblue;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    height: 30px;
+}
+
+.input-nombre{
+    width: 70%;
+}
+
+label.descripcion{
+    display: flex;
+}
+
+textarea {
+    background-color: lightsteelblue;
+    border-radius: 10px;
+}

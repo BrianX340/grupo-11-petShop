@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path');
+const { formsProduct } = require('./controllers/formsProductsController');
 const productDetailController = require('./controllers/productDetailController');
 const router = express.Router()
 
@@ -26,6 +27,7 @@ formsRouter = require('./routes/formsRouter')
 carritoRouter = require('./routes/carritoRouter')
 historialRouter = require('./routes/historialRouter')
 productDetailRouter = require('./routes/productDetailRouter')
+formsProductsRouter = require('./routes/formsProductsRouter')
 
 /* ROUTES */
 app.use('/',homeRouter)
@@ -34,6 +36,7 @@ app.use('/carrito',carritoRouter)
 app.use('/historial', historialRouter)
 app.use('/productDetail', productDetailRouter)
 app.use('*', errorRouter)
+app.use('/formsProducts', formsProductsRouter)
 
 app.listen(3000, ()=>{
     console.log('Se esta ejecutando el servidor en localhost:3000')
