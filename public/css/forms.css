@@ -15,7 +15,6 @@
 .container-form {
     position:relative;
     min-height: 100vh;
-    background: #72aaca;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,10 +28,9 @@
     }
 }
 
-section.active {
-    background: #42494e;
+/* section.active {
     transition: 0.5s;
-}
+} */
 
 section .container{
     position: relative;
