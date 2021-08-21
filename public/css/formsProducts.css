@@ -16,21 +16,61 @@
     font-family: system-ui;
 }
 
-.falseNav{
-    background-color: brown;
-    height: 100px;
-    width: 100%;
-}
+
+
+
 
 .formProductContainer{
     display: flex;
     justify-content: center;
 }
 
-.form-product {
+.form-product{
     display: flex;
+    margin-top: 30px;   
+}
+
+@media (max-width: 800px){
+    .form-product {
+    display: flex;
+    flex-direction: column;
     margin-top: 30px;
-    width: 1000px;
+}
+}
+
+
+@media(max-width: 800px){
+    .widthCon{
+        width: 100vw;
+    }
+}
+
+
+.containerAleta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 300px;
+}
+
+.aleta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #549cc5;
+    height: 40px;
+    width: 70px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.aleta.activo {
+    background-color: #72ca92;
+}
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
 }
 
 .container-form{
@@ -38,8 +78,36 @@
     position: relative;
 }
 
+.cajaform {
+    display: flex;
+    
+}
+
+/* Direccion de los forms*/
+.carga-de-producto {
+    display: flex;
+    flex-direction: column;
+}
+
+.containerEditar{
+    display: flex;
+    flex-direction: column;
+}
+
+.containerEliminar{
+    display: flex;
+    flex-direction: column;
+}
+
+.containerConsultar{
+    display: flex;
+    flex-direction: column;
+}
+/* Fin Direccion de los forms*/
+/* Form container*/
+
 form.cajaform{
-    padding-left: 10px;
+    padding: 0 10px;
     border-radius: 10px;
     background-color: #72cabe94;
     opacity: 0;
@@ -50,42 +118,17 @@ form.cajaform{
 form.cajaform.activo{
     opacity: 1;
 }
-.containerAleta{
+
+form {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 200px;
-    margin-top: 10px;
+    width: 100%;
 }
-
-.aleta{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #72aaca;
-    height: 40px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.aleta.activo {
-    background-color: #72ca92;
-}
-
-.carga-de-producto{
-    width: 800px;
-    border-radius: 10px;
-}
-
+/* Fin de Form container*/
+/* Letra e input */
 label {
     font-weight: bold;
     
-}
-
-.input {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
 }
 
 input{
@@ -96,15 +139,47 @@ input{
     height: 30px;
 }
 
-.input-nombre{
-    width: 70%;
-}
-
-label.descripcion{
-    display: flex;
-}
-
 textarea {
     background-color: lightsteelblue;
     border-radius: 10px;
 }
+
+/* Vista mayor a 800px*/
+
+
+@media(min-width: 800px){
+    .containerAleta{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 200px;
+        margin-top: 10px;
+        width:100%;
+    }
+
+    
+}
+
+@media(min-width: 800px){
+    .aleta{
+        height: 40px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+}
+
+@media(min-width: 1000px){
+    .form-product {
+        display: flex;
+        margin-top: 30px;
+        width: 1000px;
+    }
+}
+
+@media(min-width:800px){
+    .formContainer{
+        width:100%;
+    }
+}
+
+
