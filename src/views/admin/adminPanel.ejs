@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,158 +8,263 @@
     <title>Admin Panel</title>
     <link rel="stylesheet" href="css/adminPanel.css">
 </head>
+
 <body>
 
     <%- include('../partial/menuMobileInvited'); %>
-    <%- include('../partial/header-invited'); %>
+        <%- include('../partial/header-invited'); %>
 
-    <section id='adminPanel'>
+            <section id='adminPanel'>
 
-        <div id='panel-menu' class='panel-menu panel-gral'>
-            <div class='board'>
-                <div class='board-box'>
-                    <div>
-                        <!--Inicio cards-->
-                        <div class='card-options'>
+                <div id='panel-menu' class='panel-menu panel-gral'>
+                    <div class='board'>
+                        <div class='board-box'>
                             <div>
-                                <figure><img src="files/box.svg" alt=""></figure>
-                                <div><span>Productos</span></div>
+                                <!--Inicio cards-->
+                                <div class='card-options'>
+                                    <div>
+                                        <figure><img src="files/box.svg" alt=""></figure>
+                                        <div><span>Productos</span></div>
+                                    </div>
+                                    <div id="box-products" class='coverButton'></div>
+                                </div>
+                                <div class='card-options'>
+                                    <div>
+                                        <figure><img src="files/clients.svg" alt=""></figure>
+                                        <div><span>Clientes</span></div>
+                                    </div>
+                                    <div id="box-client" class='coverButton'></div>
+                                </div>
+                                <div class='card-options'>
+                                    <div>
+                                        <figure><img src="files/icon-factura.svg" alt=""></figure>
+                                        <div><span>Mas Opciones</span></div>
+                                    </div>
+                                    <div id="box-ventas" class='coverButton'></div>
+                                </div>
+                                <!--Fin cards-->
                             </div>
-                            <div id="box-products" class='coverButton'></div>
                         </div>
-                        <div class='card-options'>
-                            <div>
-                                <figure><img src="files/clients.svg" alt=""></figure>
-                                <div><span>Clientes</span></div>
-                            </div>
-                            <div id="box-client" class='coverButton'></div>
-                        </div>
-                        <div class='card-options'>
-                            <div>
-                                <figure><img src="files/icon-factura.svg" alt=""></figure>
-                                <div><span>Mas Opciones</span></div>
-                            </div>
-                            <div id="box-ventas" class='coverButton'></div>
-                        </div>
-                        <!--Fin cards-->
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div id='panel-products' class='noDisplay panel-gral'>
-            <div class='board'>
-                <div class='board-box'>
-                    <div id='productOptionsViews'>
-                        <!--Inicio cards-->
-                        <div class='card-options'>
-                            <div>
-                                <figure><img src="files/productUpload.svg" alt=""></figure>
-                                <div><span>Cargar</span></div>
-                            </div>
-                            <div id="productsLoaderButton" class='coverButton'></div>
-                        </div>
-                        <div class='card-options'>
-                            <div>
-                                <figure><img src="files/editProduct.svg" alt=""></figure>
-                                <div><span>Modificar</span></div>
-                            </div>
-                            <div id="productsEditButton" class='coverButton'></div>
-                        </div>
-                        <div class='card-options'>
-                            <div>
-                                <figure><img src="files/barcodeDetail.svg" alt=""></figure>
-                                <div><span>Consultar</span></div>
-                            </div>
-                            <div id="productsDetailButton" class='coverButton'></div>
-                        </div>
-                        <!--Fin cards-->
-                    </div>
-                    <div id='addProductView' class='noDisplay'>
-                        <div class='card-options'>
-                            <div>
-                                <figure><img src="files/productUpload.svg" alt=""></figure>
-                                <div><span>Cargar</span></div>
-                            </div>
-                            <div id="productsLoaderButton" class='coverButton'></div>
-                        </div>
-                    </div>
-                    <div id='modifyProductView' class='noDisplay'>
+                <div id='panel-products' class='noDisplay panel-gral'>
+                    <div class='board'>
+                        <div class='board-box'>
 
-                    </div>
-                    <div id='consultProductView' class='noDisplay'>
+                            <div id='productOptionsViews'>
+                                <!--Inicio cards-->
+                                <div class='card-options'>
+                                    <div>
+                                        <figure><img src="files/productUpload.svg" alt=""></figure>
+                                        <div><span>Cargar</span></div>
+                                    </div>
+                                    <div id="productsLoaderButton" class='coverButton'></div>
+                                </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
+                                <div class='card-options'>
+                                    <div>
+                                        <figure><img src="files/editProduct.svg" alt=""></figure>
+                                        <div><span>Modificar</span></div>
+                                    </div>
+                                    <div id="productsEditButton" class='coverButton'></div>
+                                </div>
 
-        <div id='panel-clients' class='noDisplay panel-gral'>
-            <div class='board'>
-                <div class='board-box'>
-                    <div>
-                        <!--Inicio cards-->
-                        
-                        <div class='card-options'>
-                            <div>
-                                <figure><img src="files/statistics.svg" alt=""></figure>
-                                <div><span>Estadisticas Clientes</span></div>
+                                <div class='card-options'>
+                                    <div>
+                                        <figure><img src="files/barcodeDetail.svg" alt=""></figure>
+                                        <div><span>Consultar</span></div>
+                                    </div>
+                                    <div id="productsDetailButton" class='coverButton'></div>
+                                </div>
+                                <!--Fin cards-->
                             </div>
-                            <div id="clientStatistics" class='coverButton'></div>
-                        </div>
-                        <div class='card-options'>
-                            <div>
-                                <figure><img src="files/dogChat.svg" alt=""></figure>
-                                <div><span>Dog Chat</span></div>
-                            </div>
-                            <div id="clientsLast" class='coverButton'></div>
-                        </div>
-                        <div class='card-options'>
-                            <div>
-                                <figure><img src="files/conecction.svg" alt=""></figure>
-                                <div><span>Online</span></div>
-                            </div>
-                            <div id="clientsOnline" class='coverButton'></div>
-                        </div>
-                        <!--Fin cards-->
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div id='panel-moreOptions' class='noDisplay panel-gral'>
-            <div class='board'>
-                <div class='board-box'>
-                    <div>
-                        <!--Inicio cards-->
-                        <div class='card-options'>
-                            <div>
-                                <figure><img src="files/transaction.svg" alt=""></figure>
-                                <div><span>Transacciones</span></div>
+                            <div id='addProductView' class='noDisplay'>
+                                <div class='final-card'>
+                                    <div>
+                                        <div class='finalCardTitle'><span>Carga de Productos</span></div>
+                                        <div class='finalCardsContainer'>
+                                            <div class='inputsContainer'>
+
+                                                <div class="inputfield">
+                                                    <div><span>Nombre</span><input type="text"></div>
+                                                </div>
+
+                                                <div class="inputfield">
+                                                    <div><span>Precio Compra</span><input type="number"></div>
+                                                </div>
+                                                
+                                                <div class="inputfield">
+                                                    <div><span>Precio Venta</span><input type="number"></div>
+                                                </div>
+
+                                                <div class="inputfield">
+                                                    <div><span>Descripcion</span><input type="text"></div>
+                                                </div>
+
+                                                <div class="inputfield">
+                                                    <div><span>Cantidad</span><input type="number"></div>
+                                                </div>
+
+                                                <div class="inputfield">
+                                                    <div><span>Codigo de Barras</span><input type="text"></div>
+                                                </div>
+
+                                                <div class="inputfield">
+                                                    <div><span>Marca</span><input type="text"></div>
+                                                </div>
+
+                                                <div class="inputfield">
+                                                    <div><span>Categoria</span><input type="text"></div>
+                                                </div>
+
+                                                <div class="inputfield">
+                                                    <div><span>Subcategoria</span><input type="text"></div>
+                                                </div>
+
+                                            </div>
+                                            <div class='buttonOptionProduct'>
+                                                <button>Cargar</button>
+                                                <button>Limpiar campos</button>
+                                                <button>Volver</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="transactions" class='coverButton'></div>
-                        </div>
-                        <div class='card-options'>
-                            <div>
-                                <figure><img src="files/moneyStatistics.svg" alt=""></figure>
-                                <div><span>Estadisticas</span></div>
+
+                            <div id='modifyProductView' class='noDisplay'>
+                                <div class='final-card'>
+                                    <div>
+                                        <div><span>Modificar Producto</span></div>
+                                    </div>
+                                    <div>
+                                        
+                                    </div>
+                                </div>
                             </div>
-                            <div id="statistics" class='coverButton'></div>
-                        </div>
-                        <div class='card-options'>
-                            <div>
-                                <figure><img src="files/gear.svg" alt=""></figure>
-                                <div><span>Conf. Avanzadas</span></div>
+
+                            <div id='consultProductView' class='noDisplay'>
+                                <div class='final-card'>
+                                    <div>
+                                        <div><span>consultProductView</span></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="sellCurrent" class='coverButton'></div>
+
                         </div>
-                        <!--Fin cards-->
                     </div>
                 </div>
-            </div>
-        </div>
 
-    </section>
+                <div id='panel-clients' class='noDisplay panel-gral'>
+                    <div class='board'>
+                        <div class='board-box'>
+                            <div id='panelClientView'>
+                                <!--Inicio cards-->
+                                <div class='card-options'>
+                                    <div>
+                                        <figure><img src="files/statistics.svg" alt=""></figure>
+                                        <div><span>Estadisticas Clientes</span></div>
+                                    </div>
+                                    <div id="clientStatistics" class='coverButton'></div>
+                                </div>
+                                <div class='card-options'>
+                                    <div>
+                                        <figure><img src="files/dogChat.svg" alt=""></figure>
+                                        <div><span>Dog Chat</span></div>
+                                    </div>
+                                    <div id="dogChat" class='coverButton'></div>
+                                </div>
+                                <div class='card-options'>
+                                    <div>
+                                        <figure><img src="files/conecction.svg" alt=""></figure>
+                                        <div><span>Online</span></div>
+                                    </div>
+                                    <div id="clientsOnline" class='coverButton'></div>
+                                </div>
+                                <!--Fin cards-->
+                            </div>
+                            <div id='clientStatisticsView' class='noDisplay'>
+                                <div class='final-card'>
+                                    <div>
+                                        <div><span>clientStatisticsView</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id='dogChatView' class='noDisplay'>
+                                <div class='final-card'>
+                                    <div>
+                                        <div><span>dogChatView</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id='clientOnlineView' class='noDisplay'>
+                                <div class='final-card'>
+                                    <div>
+                                        <div><span>clientOnlineView</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id='panel-moreOptions' class='noDisplay panel-gral'>
+                    <div class='board'>
+                        <div class='board-box'>
+                            <div id='moreOptionsView'>
+                                <!--Inicio cards-->
+                                <div class='card-options'>
+                                    <div>
+                                        <figure><img src="files/transaction.svg" alt=""></figure>
+                                        <div><span>Transacciones</span></div>
+                                    </div>
+                                    <div id="transactions" class='coverButton'></div>
+                                </div>
+                                <div class='card-options'>
+                                    <div>
+                                        <figure><img src="files/moneyStatistics.svg" alt=""></figure>
+                                        <div><span>Estadisticas</span></div>
+                                    </div>
+                                    <div id="statistics" class='coverButton'></div>
+                                </div>
+                                <div class='card-options'>
+                                    <div>
+                                        <figure><img src="files/gear.svg" alt=""></figure>
+                                        <div><span>Conf. Avanzadas</span></div>
+                                    </div>
+                                    <div id="advanceOptions" class='coverButton'></div>
+                                </div>
+                                <!--Fin cards-->
+                            </div>
+                            <div id='transactionsView' class='noDisplay'>
+                                <div class='final-card'>
+                                    <div>
+                                        <div><span>transactionsView</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id='moneyStatisticsView' class='noDisplay'>
+                                <div class='final-card'>
+                                    <div>
+                                        <div><span>moneyStatisticsView</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id='advanceConfigurationView' class='noDisplay'>
+                                <div class='final-card'>
+                                    <div>
+                                        <div><span>advanceConfigurationView</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
 </body>
 <script src="js/adminPanel.js"></script>
+
 </html>
