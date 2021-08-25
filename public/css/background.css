@@ -1,4 +1,6 @@
 body {
     background-image: url(../img/back.jpg);
     background-size: contain;
+    margin: 0;
+    padding: 0;
 }

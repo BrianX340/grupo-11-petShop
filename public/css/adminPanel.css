@@ -1,0 +1,290 @@
+@import url('menu-mobile.css');
+@import url('footer.css');
+@import url('header-nav.css');
+@import url('background.css');
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+#test {
+    width: 100%;
+    position: absolute;
+    opacity: 0.3;
+}
+
+figure {
+    margin:0;
+    padding:0;
+}
+
+#adminPanel {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.panel-menu {
+    display: flex;
+}
+
+.panel-products, .panel-clients, .panel-facture {
+    display: none;
+}
+
+.panel-gral {
+    box-sizing: border-box;
+    margin-top: 2%;
+    width: 100%;
+}
+
+
+.panel-gral .board {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.7vw;
+    justify-content: space-around;
+}
+
+.board-box {
+    width: 100%;
+}
+
+
+.board-box > div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-options {
+    width: 75vw;
+    height: 50vw;
+    margin-top: 1vw;
+    box-sizing: border-box;
+    /* background-color: #72cabe; */
+    border-radius: 0.7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-options > div {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4.7vw;
+    background-color: #0e76a8;
+    box-shadow: 0 7px 6px rgb(0 0 0);
+    /* transition: all 1s ease, background-color 0ms; */
+    margin: 1vw;
+    height: 90%;
+}
+
+
+.card-options figure {
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5vw;
+    border-radius: 81px;
+    overflow: hidden;
+    height: 70%;
+    align-items: center;
+}
+
+.card-options figure img{
+    height: 80%;
+}
+
+.card-options > div > div:nth-child(2) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 6vw;
+    height: 10%;
+}
+
+.card-options > div > div:last-child {
+    width: 60%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin-top: 1vw;
+    height: 18%;
+    align-items: center;
+    background-color: #6DACD6;
+    border-radius: 17px;
+    font-size: 5vw;
+}
+
+
+.section-activity {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.activity-top {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.visit-today{
+    height: 90%;
+    width: 50%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+
+.visit-today > div{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 0.7vw;
+    justify-content: flex-start;
+    align-items: center;
+    border: 0.22vw #0e76a8 solid;
+    box-sizing: border-box;
+    width: 80%;
+}
+
+.visit-today > div:first-child > div:first-child {
+    width: 100%;
+    height: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+    font-weight: bold;
+    font-family: system-ui;
+    color: #4e4d4b;
+    margin: 0vw 1vw 1vw 1vw;
+}
+
+.visit-today > div:first-child > div:last-child {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1vw;
+}
+
+.visit-today > div:first-child > div:last-child div {
+    width: 8vw;
+    height: 8vw;
+    border-radius: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5vw;
+    color: #0e76a8;
+}
+
+div.activity-top > div.last-online-users > div {
+    width: 80%;
+    height: 100%;
+    border-radius: 0.7vw;
+    background-color: white;
+    box-sizing: border-box;
+    border:0.22vw #0e76a8 solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: overlay;
+}
+
+
+
+
+
+
+
+.last-online-users{
+    width: 50%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.last-online-users div > div:first-child {
+    font-size: 1.5vw;
+    font-family: system-ui;
+    font-weight: bold;
+    display: flex;
+    height: 2vw;
+    justify-content: flex-start;
+}
+
+.online-container {
+    width: 100%;
+    height: -webkit-fill-available;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 0.7vw;
+}
+
+.activity-top .last-online-users .online-container > div {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.last-online-users .online-container .card-online {
+    align-items:center;
+    display: flex;
+    background-color: gold;
+    justify-content: flex-start;
+    border-radius: 20px 10px 10px 20px;
+    width: 89%;
+    font-size: 1.5vw;
+    font-family: system-ui;
+    font-weight: bold;
+    margin-bottom: 0.5vw;
+}
+
+.last-online-users .card-online >div:first-child {
+    width: 2vw;
+}
+
+.card-online figure {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.card-online figure img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.card-online > span {
+    margin-left: 1vw;
+    font-size: 1vw;
+}
