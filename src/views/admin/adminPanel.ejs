@@ -14,7 +14,7 @@
 
     <section id='adminPanel'>
 
-        <div class='panel-menu panel-gral'>
+        <div id='panel-menu' class='panel-menu panel-gral'>
             <div class='board'>
                 <div class='board-box'>
                     <div>
@@ -24,18 +24,21 @@
                                 <figure><img src="files/box.svg" alt=""></figure>
                                 <div><span>Productos</span></div>
                             </div>
+                            <div id="box-products" class='coverButton'></div>
                         </div>
                         <div class='card-options'>
                             <div>
                                 <figure><img src="files/clients.svg" alt=""></figure>
                                 <div><span>Clientes</span></div>
                             </div>
+                            <div id="box-client" class='coverButton'></div>
                         </div>
                         <div class='card-options'>
                             <div>
                                 <figure><img src="files/icon-factura.svg" alt=""></figure>
-                                <div><span>Ventas</span></div>
+                                <div><span>Mas Opciones</span></div>
                             </div>
+                            <div id="box-ventas" class='coverButton'></div>
                         </div>
                         <!--Fin cards-->
                     </div>
@@ -43,33 +46,112 @@
             </div>
         </div>
 
-        <div class='panel-products panel-gral'>
+        <div id='panel-products' class='noDisplay panel-gral'>
+            <div class='board'>
+                <div class='board-box'>
+                    <div id='productOptionsViews'>
+                        <!--Inicio cards-->
+                        <div class='card-options'>
+                            <div>
+                                <figure><img src="files/productUpload.svg" alt=""></figure>
+                                <div><span>Cargar</span></div>
+                            </div>
+                            <div id="productsLoaderButton" class='coverButton'></div>
+                        </div>
+                        <div class='card-options'>
+                            <div>
+                                <figure><img src="files/editProduct.svg" alt=""></figure>
+                                <div><span>Modificar</span></div>
+                            </div>
+                            <div id="productsEditButton" class='coverButton'></div>
+                        </div>
+                        <div class='card-options'>
+                            <div>
+                                <figure><img src="files/barcodeDetail.svg" alt=""></figure>
+                                <div><span>Consultar</span></div>
+                            </div>
+                            <div id="productsDetailButton" class='coverButton'></div>
+                        </div>
+                        <!--Fin cards-->
+                    </div>
+                    <div id='addProductView' class='noDisplay'>
+                        <div class='card-options'>
+                            <div>
+                                <figure><img src="files/productUpload.svg" alt=""></figure>
+                                <div><span>Cargar</span></div>
+                            </div>
+                            <div id="productsLoaderButton" class='coverButton'></div>
+                        </div>
+                    </div>
+                    <div id='modifyProductView' class='noDisplay'>
+
+                    </div>
+                    <div id='consultProductView' class='noDisplay'>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id='panel-clients' class='noDisplay panel-gral'>
             <div class='board'>
                 <div class='board-box'>
                     <div>
                         <!--Inicio cards-->
+                        
+                        <div class='card-options'>
+                            <div>
+                                <figure><img src="files/statistics.svg" alt=""></figure>
+                                <div><span>Estadisticas Clientes</span></div>
+                            </div>
+                            <div id="clientStatistics" class='coverButton'></div>
+                        </div>
+                        <div class='card-options'>
+                            <div>
+                                <figure><img src="files/dogChat.svg" alt=""></figure>
+                                <div><span>Dog Chat</span></div>
+                            </div>
+                            <div id="clientsLast" class='coverButton'></div>
+                        </div>
+                        <div class='card-options'>
+                            <div>
+                                <figure><img src="files/conecction.svg" alt=""></figure>
+                                <div><span>Online</span></div>
+                            </div>
+                            <div id="clientsOnline" class='coverButton'></div>
+                        </div>
                         <!--Fin cards-->
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class='panel-clients panel-gral'>
+        <div id='panel-moreOptions' class='noDisplay panel-gral'>
             <div class='board'>
                 <div class='board-box'>
                     <div>
                         <!--Inicio cards-->
-                        <!--Fin cards-->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class='panel-facture panel-gral'>
-            <div class='board'>
-                <div class='board-box'>
-                    <div>
-                        <!--Inicio cards-->
+                        <div class='card-options'>
+                            <div>
+                                <figure><img src="files/transaction.svg" alt=""></figure>
+                                <div><span>Transacciones</span></div>
+                            </div>
+                            <div id="transactions" class='coverButton'></div>
+                        </div>
+                        <div class='card-options'>
+                            <div>
+                                <figure><img src="files/moneyStatistics.svg" alt=""></figure>
+                                <div><span>Estadisticas</span></div>
+                            </div>
+                            <div id="statistics" class='coverButton'></div>
+                        </div>
+                        <div class='card-options'>
+                            <div>
+                                <figure><img src="files/gear.svg" alt=""></figure>
+                                <div><span>Conf. Avanzadas</span></div>
+                            </div>
+                            <div id="sellCurrent" class='coverButton'></div>
+                        </div>
                         <!--Fin cards-->
                     </div>
                 </div>
@@ -78,4 +160,5 @@
 
     </section>
 </body>
+<script src="js/adminPanel.js"></script>
 </html>
