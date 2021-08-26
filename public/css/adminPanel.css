@@ -419,3 +419,17 @@ div.activity-top > div.last-online-users > div {
     background-color: #72cabe;
     box-shadow: 0 2px 3px 0px rgb(0 0 0);
 }
+
+#backButton {
+    position: fixed;
+    left: 2vw;
+    top: 35vw;
+}
+
+#backButton div {
+    height: 15vw;
+}
+
+#backButton div img {
+    height: 100%;
+}
