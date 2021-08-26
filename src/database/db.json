@@ -1,7 +1,33 @@
 [
     {
         "id":1,
-        "productName":"Comida para gatos",
+        "name":"Comida para gatos",
+        "productDescription":"Aqui va la descripcion del producto que esta a la venta",
+        "productBarcode":7794588675,
+        "productPrice":58.99,
+        "productValoration":4,
+        "productStock":122,
+        "productPet":"cat",
+        "productFilter":[ "food"],
+        "productMarca": "cat-chow",
+        "productDescuento": [ "true" , 20 ]
+    },
+    {
+        "id":1,
+        "name":"Comida para gatos2",
+        "productDescription":"Aqui va la descripcion del producto que esta a la venta",
+        "productBarcode":7794588675,
+        "productPrice":58.99,
+        "productValoration":4,
+        "productStock":122,
+        "productPet":"cat",
+        "productFilter":[ "food"],
+        "productMarca": "cat-chow",
+        "productDescuento": [ "true" , 20 ]
+    },
+    {
+        "id":1,
+        "name":"Comida para gatos3",
         "productDescription":"Aqui va la descripcion del producto que esta a la venta",
         "productBarcode":7794588675,
         "productPrice":58.99,

@@ -1,0 +1,15 @@
+<% productos.forEach(producto => { %>
+    <div class='resultCard'>
+        <div>
+            <figure><img src="img/item-test.png" alt=""></figure>
+        </div>
+        <div>
+            <div>
+                <span>Nombre: </span><span><%- producto.name %></span>
+            </div>
+            <div>
+                <span>Codigo de barras: </span><span><%- producto.id %></span>
+            </div>
+        </div>
+    </div>
+<% }) %>
