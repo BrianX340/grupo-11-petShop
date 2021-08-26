@@ -84,7 +84,19 @@
                                 <div class='final-card'>
                                     <div>
                                         <div class='finalCardTitle'><span>Carga de Productos</span></div>
+                                        
+                                        <div class='addProductImage'>
+                                            <div>
+                                                <figure id='imageProductAddPreview'><img src="img/item-test.png" alt=""></figure>
+                                            </div>
+                                            <div>
+                                                <span id="errorImage" ></span>
+                                            </div>
+                                            <div><input id='imageContainer' type="file"></div>
+                                        </div>
+
                                         <div class='finalCardsContainer'>
+
                                             <div class='inputsContainer'>
 
                                                 <div class="inputfield">
@@ -124,11 +136,13 @@
                                                 </div>
 
                                             </div>
+
                                             <div class='buttonOptionProduct'>
-                                                <button>Cargar</button>
-                                                <button>Limpiar campos</button>
                                                 <button>Volver</button>
+                                                <button>Limpiar campos</button>
+                                                <button>Cargar</button>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +151,10 @@
                             <div id='modifyProductView' class='noDisplay'>
                                 <div class='final-card'>
                                     <div>
-                                        <div><span>Modificar Producto</span></div>
+                                        <div class='finalCardTitle'><span>Modificar Producto</span></div>
+                                        <div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +162,7 @@
                             <div id='consultProductView' class='noDisplay'>
                                 <div class='final-card'>
                                     <div>
-                                        <div><span>consultProductView</span></div>
+                                        <div class='finalCardTitle'><span>Detallar Producto</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -157,6 +174,7 @@
                 <div id='panel-clients' class='noDisplay panel-gral'>
                     <div class='board'>
                         <div class='board-box'>
+
                             <div id='panelClientView'>
                                 <!--Inicio cards-->
                                 <div class='card-options'>
@@ -182,6 +200,7 @@
                                 </div>
                                 <!--Fin cards-->
                             </div>
+
                             <div id='clientStatisticsView' class='noDisplay'>
                                 <div class='final-card'>
                                     <div>
@@ -189,6 +208,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div id='dogChatView' class='noDisplay'>
                                 <div class='final-card'>
                                     <div>
@@ -196,6 +216,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div id='clientOnlineView' class='noDisplay'>
                                 <div class='final-card'>
                                     <div>
@@ -203,6 +224,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -210,6 +232,7 @@
                 <div id='panel-moreOptions' class='noDisplay panel-gral'>
                     <div class='board'>
                         <div class='board-box'>
+
                             <div id='moreOptionsView'>
                                 <!--Inicio cards-->
                                 <div class='card-options'>
@@ -235,6 +258,7 @@
                                 </div>
                                 <!--Fin cards-->
                             </div>
+
                             <div id='transactionsView' class='noDisplay'>
                                 <div class='final-card'>
                                     <div>
@@ -242,6 +266,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div id='moneyStatisticsView' class='noDisplay'>
                                 <div class='final-card'>
                                     <div>
@@ -249,6 +274,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div id='advanceConfigurationView' class='noDisplay'>
                                 <div class='final-card'>
                                     <div>
@@ -256,12 +282,15 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
 
-                <div id='backButton'>
-                    <div><img src="files/buttonBack.svg" alt=""></div>
+                <div class='globalBackButton'>
+                    <div>
+                        <img id='globalBackButton' src="files/buttonBack.svg" alt="">
+                    </div>
                 </div>
 
             </section>
