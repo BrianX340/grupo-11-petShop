@@ -4,11 +4,82 @@ var previousView = 'panel-menu'
 
 window.onload = () => {
 
+    keypressListener()
     clickListener()
     imageViewer()
     
 }
 
+
+//Escuchador keypress
+function keypressListener(){
+    document.addEventListener('keypress', (event)=>{
+        //Inicio capturar el id y la clase del elemento
+        try {
+            elementId = event.path[0].id
+            elementClass = event.path[0].className
+        }
+        catch {
+            elementId = event.target.id
+            elementClass = event.path[0].className
+        }
+        //Fin captura
+        
+        switch (event.key){
+            case 'Enter':
+                enterPress(elementId,elementClass)
+                break
+        }
+    })
+}
+
+//Controlador Event Enter
+function enterPress(elementId,elementClass){
+    switch (elementId){
+        case 'searchInputModify':
+        case 'searchInputConsult':
+            cargarBusquedaProductosAlDom(elementId)
+            break
+    }
+}
+
+//Con esta funcion rellenamos los campos de resultados de productos segun el input donde se presiono
+function cargarBusquedaProductosAlDom(elementId){
+    textoBusqueda = document.getElementById(elementId).value
+
+    fetch(`${window.location.origin}/admin/products/${textoBusqueda}`, {
+        method: "GET",
+        cache: 'no-cache',
+        mode: 'no-cors',
+        })
+        .then(function (response) {
+            if (response.status !== 200) {
+                console.log(`Looks like there was a problem. Status code: ${response.status}`);
+                return;
+            }
+            return response.text()
+
+        }).then((response) => {
+            //parseamos el response como html
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(response, "text/html")
+
+            cards = doc.body.innerHTML //capturamos solo las CARDS de los productos
+
+            switch (elementId){
+                case 'searchInputModify':
+                    document.getElementById('modifySearchResult').innerHTML = cards
+                    break
+                case 'searchInputConsult':
+                    document.getElementById('detailSearchResult').innerHTML = cards
+                    break
+            }
+
+        })
+        .catch(function (error) {
+            console.log("Fetch error: " + error);
+        }); 
+}
 
 //Escuchador Clicks
 function clickListener(){
@@ -24,9 +95,6 @@ function clickListener(){
             elementClass = event.path[0].className
         }
         //Fin captura
-
-        
-        console.log(elementClass)
 
         switch (elementClass){
             case 'backButton':

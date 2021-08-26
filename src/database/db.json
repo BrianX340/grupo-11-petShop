@@ -10,7 +10,8 @@
         "productPet":"cat",
         "productFilter":[ "food"],
         "productMarca": "cat-chow",
-        "productDescuento": [ "true" , 20 ]
+        "productDescuento": [ "true" , 20 ],
+        "img": "img/productTest.jpg"
     },
     {
         "id":1,
@@ -23,7 +24,8 @@
         "productPet":"cat",
         "productFilter":[ "food"],
         "productMarca": "cat-chow",
-        "productDescuento": [ "true" , 20 ]
+        "productDescuento": [ "true" , 20 ],
+        "img": "img/productTest.jpg"
     },
     {
         "id":1,
@@ -36,6 +38,7 @@
         "productPet":"cat",
         "productFilter":[ "food"],
         "productMarca": "cat-chow",
-        "productDescuento": [ "true" , 20 ]
+        "productDescuento": [ "true" , 20 ],
+        "img": "img/productTest.jpg"
     }
 ]
