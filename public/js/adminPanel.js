@@ -26,10 +26,23 @@ function clickListener(){
         //Fin captura
 
         
-        console.log(elementId)
+        console.log(elementClass)
+
+        switch (elementClass){
+            case 'backButton':
+                backButtonController(previousView)
+                break;
+        }
 
         //Inicio condicional depende del ID
         switch (elementId){
+
+            //Inicio casos boton BACK
+            case 'globalBackButton':
+                backButtonController(previousView)
+                break;
+
+            /////////////////////////////////////////////////////////////////////////////INICIO VISTA PRINCIPAL
 
             //Inicio casos menu principal
             case 'box-products':
@@ -42,6 +55,7 @@ function clickListener(){
                 principalViewController('panel-moreOptions')
                 break;
 
+            /////////////////////////////////////////////////////////////////////////////INICIO VISTA PRODUCTOS
             //Inicio casos panel menu products
             case 'productsLoaderButton':
                 panelProductViewController('addProductView')
@@ -53,6 +67,7 @@ function clickListener(){
                 panelProductViewController('consultProductView')
                 break;
 
+            /////////////////////////////////////////////////////////////////////////////INICIO VISTA CLIENTES
             //Inicio casos panel menu clients
             case 'clientStatistics':
                 panelClientsViewController('clientStatisticsView')
@@ -64,6 +79,7 @@ function clickListener(){
                 panelClientsViewController('clientOnlineView')
                 break;
 
+            /////////////////////////////////////////////////////////////////////////////INICIO VISTA MORE OPTIONS
             //Inicio casos panel menu moreOptions
             case 'transactions':
                 panelMoreViewController('transactionsView')
@@ -75,18 +91,14 @@ function clickListener(){
                 panelMoreViewController('advanceConfigurationView')
                 break;
 
-            //Inicio casos boton BACK
-            case 'globalBackButton':
-                backButtonController(previousView)
-                break;
             
 
         }
 
-        
     })
 }
 
+//Se encarga de volver a la vista anterior
 function backButtonController(){
 
     switch (previousView){
@@ -109,19 +121,10 @@ function backButtonController(){
             panelMoreViewController('moreOptionsView')
             previousView = 'panel-menu'
             break
-        /*    
-        case 'productOptionsViews':
-        case 'addProductView':
-        case 'modifyProductView':
-        case 'consultProductView':
-            console.log('click atras para volver a menu principal')
-            principalViewController('panel-menu')
-            break */
-
     }
 }
 
-
+//Controla el display del boton de volver atras
 function backButtonView(mode){
     if (mode){
         document.getElementById('globalBackButton').style.display = 'flex'
@@ -182,24 +185,17 @@ function panelProductViewController(idView){
 //Funcion de control de vistas CLIENTES
 function panelClientsViewController(idView){
 
-    document.getElementById('panelClientView').style.display = 'flex'
+    document.getElementById('panelClientView').style.display = 'none'
     document.getElementById('clientStatisticsView').style.display = 'none'
     document.getElementById('dogChatView').style.display = 'none'
     document.getElementById('clientOnlineView').style.display = 'none'
 
-    switch (idView){
-        case 'clientStatisticsView':
-        case 'dogChatView':
-        case 'clientOnlineView':
-            actualView = idView
-            document.getElementById(idView).style.display = 'flex'
-            break
-        case  'panelClientView':
-            document.getElementById(idView).style.display = 'flex'
-            break
-    }
+    document.getElementById(idView).style.display = 'flex'
     previousView = 'panel-clients'
-    actualView = idView
+
+    if (idView=='panelClientView'){
+        previousView = 'panel-menu'
+    }
 }
 
 //Funcion de control de vistas MAS OPCIONES
@@ -209,45 +205,18 @@ function panelMoreViewController(idView){
     document.getElementById('moneyStatisticsView').style.display = 'none'
     document.getElementById('advanceConfigurationView').style.display = 'none'
 
-    switch (idView){
-        case 'transactionsView':
-        case 'moneyStatisticsView':
-        case 'advanceConfigurationView':
-            actualView = idView
-            document.getElementById(idView).style.display = 'flex'
-            break
-        case  'moreOptionsView':
-            document.getElementById('transactionsView').style.display = 'none'
-            document.getElementById('moneyStatisticsView').style.display = 'none'
-            document.getElementById('advanceConfigurationView').style.display = 'none'
-            document.getElementById(idView).style.display = 'flex'
-            break
+    document.getElementById(idView).style.display = 'flex'
+    previousView = 'panel-moreOptions'
+
+    if (idView=='moreOptionsView'){
+            previousView = 'panel-menu'
     }
 
-    previousView = 'panel-moreOptions'
-    actualView = idView
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Funcion encargada de mostrar la imagen en carga de productos
 function imageViewer(){
+    //para carga de producto
     document.getElementById('imageContainer').addEventListener('change', (event)=>{
         let inputImage = document.getElementById('imageContainer')
         var filePath = inputImage.value; //Capturo el valor del input
@@ -265,6 +234,31 @@ function imageViewer(){
                 var reader = new FileReader();
                 reader.onload = function(e){
                     document.getElementById('imageProductAddPreview').innerHTML = '<img src="' + e.target.result +'"/>';
+                };
+                reader.readAsDataURL(inputImage.files[0]);
+                errorImage.innerHTML = '';
+            }
+        }
+    })
+
+    //para edicion de producto
+    document.getElementById('editImageContainer').addEventListener('change', (event)=>{
+        let inputImage = document.getElementById('editImageContainer')
+        var filePath = inputImage.value; //Capturo el valor del input
+        var allowefExtensions = /(.jpg|.jpeg|.png|.gif)$/i; //Extensiones permitidas
+        if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+            var errorImage = document.getElementById('errorImageEdit')
+            let error = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)'
+            errorImage.innerHTML = error;
+            inputImage.value = '';
+            document.getElementById('imageProductEditPreview').innerHTML = '';
+            return false;
+        }else{
+            // Image preview
+            if(inputImage.files && inputImage.files[0]){
+                var reader = new FileReader();
+                reader.onload = function(e){
+                    document.getElementById('imageProductEditPreview').innerHTML = '<img src="' + e.target.result +'"/>';
                 };
                 reader.readAsDataURL(inputImage.files[0]);
                 errorImage.innerHTML = '';
