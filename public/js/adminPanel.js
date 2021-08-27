@@ -27,18 +27,19 @@ function keypressListener(){
         
         switch (event.key){
             case 'Enter':
-                enterPress(elementId,elementClass)
+                enterPress(elementId,elementClass,event)
                 break
         }
     })
 }
 
 //Controlador Event Enter
-function enterPress(elementId,elementClass){
+function enterPress(elementId,elementClass,event){
     switch (elementId){
         case 'searchInputModify':
         case 'searchInputConsult':
             cargarBusquedaProductosAlDom(elementId)
+            event.preventDefault()
             break
     }
 }
