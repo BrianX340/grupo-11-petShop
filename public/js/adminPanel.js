@@ -10,6 +10,44 @@ window.onload = () => {
     
 }
 
+//Limpieza de Campos
+function limpiarCampos(){
+
+    //Image
+    document.getElementById("searchInputConsult").value = ''
+
+    //Searchs
+    document.getElementById("imageContainer").value = ''
+    document.getElementById("searchInputModify").value = ''
+    document.getElementById("imageProductAddPreview").value = ''
+    
+    //Carga de productos
+    document.getElementById("inputNameAdd").value = ''
+    document.getElementById("inputMarkAdd").value = ''
+    document.getElementById("inputAmountAdd").value = ''
+    document.getElementById("inputBarcodeAdd").value = ''
+    document.getElementById("inputBuyPriceAdd").value = ''
+    document.getElementById("inputCategoryAdd").value = ''
+    document.getElementById("inputSellPriceAdd").value = ''
+    document.getElementById("inputDescriptionAdd").value = ''
+    document.getElementById("inputSubCategoryAdd").value = ''
+
+    //Carga de Modify
+    document.getElementById("searchInputModify").value = ''
+
+    //Carga de Consult
+    document.getElementById("searchInputConsult").value = ''
+
+    document.getElementById("inputSubCategoryAdd").value = ''
+    document.getElementById("inputSubCategoryAdd").value = ''
+    document.getElementById("inputSubCategoryAdd").value = ''
+    document.getElementById("inputSubCategoryAdd").value = ''
+    document.getElementById("inputSubCategoryAdd").value = ''
+    document.getElementById("inputSubCategoryAdd").value = ''
+    document.getElementById("inputSubCategoryAdd").value = ''
+    document.getElementById("inputSubCategoryAdd").value = ''
+
+}
 
 //Escuchador keypress
 function keypressListener(){
@@ -44,71 +82,6 @@ function enterPress(elementId,elementClass,event){
     }
 }
 
-//Subir formulario crear PRODUCTO
-function createProduct(){
-
-    var formData = new FormData(document.getElementById("formCreate"));
-
-    fetch(`${window.location.origin}/admin/products`, {
-      method: 'POST',
-      body: formData
-    })
-        .then( (response)=>{
-                        console.log(response)
-                            if (response.status !== 200) {
-                                console.log(`Looks like there was a problem. Status code: ${response.status}`);
-                                //mostrar mensaje de producto no creado :3
-                                return;
-                            }else{
-                                //mostrar mensaje de producto creado :3
-                                return
-                            }
-                        })
-                                .catch(function (error) {
-                                    console.log("Fetch error: " + error);
-                                }); 
-
-
-  }
-
-//Con esta funcion rellenamos los campos de resultados de productos segun el input donde se presiono
-function cargarBusquedaProductosAlDom(elementId){
-    textoBusqueda = document.getElementById(elementId).value
-
-    fetch(`${window.location.origin}/admin/products/${textoBusqueda}`, {
-        method: "GET",
-        cache: 'no-cache',
-        mode: 'no-cors',
-        })
-        .then(function (response) {
-            if (response.status !== 200) {
-                console.log(`Looks like there was a problem. Status code: ${response.status}`);
-                return;
-            }
-            return response.text()
-
-        }).then((response) => {
-            //parseamos el response como html
-            var parser = new DOMParser();
-            var doc = parser.parseFromString(response, "text/html")
-
-            cards = doc.body.innerHTML //capturamos solo las CARDS de los productos
-
-            switch (elementId){
-                case 'searchInputModify':
-                    document.getElementById('modifySearchResult').innerHTML = cards
-                    break
-                case 'searchInputConsult':
-                    document.getElementById('detailSearchResult').innerHTML = cards
-                    break
-            }
-
-        })
-        .catch(function (error) {
-            console.log("Fetch error: " + error);
-        }); 
-}
-
 //Escuchador Clicks
 function clickListener(){
     document.addEventListener('click', (event)=>{
@@ -128,7 +101,12 @@ function clickListener(){
             case 'backButton':
                 backButtonController(previousView)
                 break;
+            case 'cleanInputs':
+                limpiarCampos()
+                event.preventDefault()
+                break
         }
+
 
         //Inicio condicional depende del ID
         switch (elementId){
@@ -201,9 +179,75 @@ function clickListener(){
     })
 }
 
+//Subir formulario crear PRODUCTO
+function createProduct(){
+
+    var formData = new FormData(document.getElementById("formCreate"));
+
+    fetch(`${window.location.origin}/admin/products`, {
+      method: 'POST',
+      body: formData
+    })
+        .then( (response)=>{
+                        console.log(response)
+                            if (response.status !== 200) {
+                                console.log(`Looks like there was a problem. Status code: ${response.status}`);
+                                //mostrar mensaje de producto no creado :3
+                                return;
+                            }else{
+                                //mostrar mensaje de producto creado :3
+                                return
+                            }
+                        })
+                                .catch(function (error) {
+                                    console.log("Fetch error: " + error);
+                                }); 
+
+
+  }
+
+//Con esta funcion rellenamos los campos de resultados de productos segun el input donde se presiono
+function cargarBusquedaProductosAlDom(elementId){
+    textoBusqueda = document.getElementById(elementId).value
+
+    fetch(`${window.location.origin}/admin/products/${textoBusqueda}`, {
+        method: "GET",
+        cache: 'no-cache',
+        mode: 'no-cors',
+        })
+        .then(function (response) {
+            if (response.status !== 200) {
+                console.log(`Looks like there was a problem. Status code: ${response.status}`);
+                return;
+            }
+            return response.text()
+
+        }).then((response) => {
+            //parseamos el response como html
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(response, "text/html")
+
+            cards = doc.body.innerHTML //capturamos solo las CARDS de los productos
+
+            switch (elementId){
+                case 'searchInputModify':
+                    document.getElementById('modifySearchResult').innerHTML = cards
+                    break
+                case 'searchInputConsult':
+                    document.getElementById('detailSearchResult').innerHTML = cards
+                    break
+            }
+
+        })
+        .catch(function (error) {
+            console.log("Fetch error: " + error);
+        }); 
+}
+
+
 //Se encarga de volver a la vista anterior
 function backButtonController(){
-
+    limpiarCampos()
     switch (previousView){
         case 'panel-menu':
             principalViewController(previousView)

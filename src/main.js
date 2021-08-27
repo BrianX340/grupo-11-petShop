@@ -7,29 +7,23 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 /* MIDDLEWARES */
-app.use(express.static(__dirname.replace('src','public')));
-app.use(express.urlencoded({extended:false}))
 app.use(express.json())
+app.use(express.urlencoded({extended:false}))
+app.use(express.static(__dirname.replace('src','public')));
 
 /* ROUTERS */
-homeRouter = require('./routes/homeRouter')
 errorRouter = require('./routes/errorRouter')
-formsRouter = require('./routes/formsRouter')
 adminRouter = require('./routes/adminRouter')
-carritoRouter = require('./routes/carritoRouter')
-historialRouter = require('./routes/historialRouter')
-formsProductsRouter = require('./routes/formsProductsRouter')
-productDetailRouter = require('./routes/productDetailRouter')
+indexRouter = require('./routes/indexRouter')
+userRouter = require('./routes/userRouter')
 
 /* ROUTES */
-app.use('/formsProducts', formsProductsRouter)
-app.use('/productDetail', productDetailRouter)
-app.use('/historial', historialRouter)
-app.use('/carrito',carritoRouter)
-app.use('/forms',formsRouter)
+app.use('/', indexRouter)
+app.use('/ps', userRouter)
 app.use('/admin',adminRouter)
-app.use('/',homeRouter)
+
 app.use('*', errorRouter)
+
 
 app.listen(3000, ()=>{
     console.log('Se esta ejecutando el servidor en localhost:3000')
