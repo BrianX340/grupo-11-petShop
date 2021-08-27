@@ -82,7 +82,7 @@
 
                             <div id='addProductView' class='noDisplay'>
                                 <div class='final-card'>
-                                    <div>
+                                    <form id='formCreate' method="POST" enctype="multipart/form-data">
                                         <div class='finalCardTitle'><span>Carga de Productos</span></div>
                                         
                                         <div class='addProductImage'>
@@ -92,47 +92,74 @@
                                             <div>
                                                 <span id="errorImage" ></span>
                                             </div>
-                                            <div><input id='imageContainer' type="file"></div>
+                                            <div><input id='imageContainer' type="file" class="form-control" name="image" aria-label="file example"></div>
                                         </div>
 
-                                        <div class='finalCardsContainer'>
+                                        <div class='formContainer'>
 
                                             <div class='inputsContainerBox'>
 
                                                 <div class="inputfield">
-                                                    <div><span>Nombre</span><input type="text"></div>
+                                                    <div>
+                                                        <span>Nombre</span>
+                                                        <input type="text" type="text" class="form-control" id="inputNameAdd" name="name">
+                                                    </div>
                                                 </div>
 
                                                 <div class="inputfield">
-                                                    <div><span>Precio Compra</span><input type="number"></div>
+                                                    <div>
+                                                        <span>Precio Compra</span>
+                                                        <input type="number" class="form-control" id="inputBuyPriceAdd" name="buyPrice">
+                                                    </div>
                                                 </div>
                                                 
                                                 <div class="inputfield">
-                                                    <div><span>Precio Venta</span><input type="number"></div>
+                                                    <div>
+                                                        <span>Precio Venta</span>
+                                                        <input type="number" class="form-control" id="inputSellPriceAdd" name="sellPrice">
+                                                    </div>
                                                 </div>
 
                                                 <div class="inputfield">
-                                                    <div><span>Descripcion</span><input type="text"></div>
+                                                    <div>
+                                                        <span>Descripcion</span>
+                                                        <input type="text" id="inputDescriptionAdd" name="description">
+                                                    </div>
                                                 </div>
 
                                                 <div class="inputfield">
-                                                    <div><span>Cantidad</span><input type="number"></div>
+                                                    <div>
+                                                        <span>Cantidad</span>
+                                                        <input type="number" id="inputAmountAdd" name="amount">
+                                                    </div>
                                                 </div>
 
                                                 <div class="inputfield">
-                                                    <div><span>Codigo de Barras</span><input type="text"></div>
+                                                    <div>
+                                                        <span>Codigo de Barras</span>
+                                                        <input type="text" id="inputBarcodeAdd" name="barcode">
+                                                    </div>
                                                 </div>
 
                                                 <div class="inputfield">
-                                                    <div><span>Marca</span><input type="text"></div>
+                                                    <div>
+                                                        <span>Marca</span>
+                                                        <input type="text" id="inputMarkAdd" name="mark">
+                                                    </div>
                                                 </div>
 
                                                 <div class="inputfield">
-                                                    <div><span>Categoria</span><input type="text"></div>
+                                                    <div>
+                                                        <span>Categoria</span>
+                                                        <input type="text" id="inputCategoryAdd" name="category">
+                                                    </div>
                                                 </div>
 
                                                 <div class="inputfield">
-                                                    <div><span>Subcategoria</span><input type="text"></div>
+                                                    <div>
+                                                        <span>Subcategoria</span>
+                                                        <input type="text" id="inputSubCategoryAdd" name="subCategory">
+                                                    </div>
                                                 </div>
 
                                             </div>
@@ -140,11 +167,11 @@
                                             <div class='buttonOptionProduct'>
                                                 <button class='backButton'>Volver</button>
                                                 <button>Limpiar campos</button>
-                                                <button>Cargar</button>
+                                                <button id='productCreate'>Cargar</button>
                                             </div>
 
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
 
@@ -177,7 +204,7 @@
                                                 <div><input id='editImageContainer' type="file"></div>
                                             </div>
     
-                                            <div class='finalCardsContainer'>
+                                            <div class='formContainer'>
     
                                                 <div class='inputsContainerBox'>
     

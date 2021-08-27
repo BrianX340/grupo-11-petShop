@@ -43,6 +43,33 @@ function enterPress(elementId,elementClass){
     }
 }
 
+//Subir formulario crear PRODUCTO
+function createProduct(){
+
+    var formData = new FormData(document.getElementById("formCreate"));
+
+    fetch(`${window.location.origin}/admin/products`, {
+      method: 'POST',
+      body: formData
+    })
+        .then( (response)=>{
+                        console.log(response)
+                            if (response.status !== 200) {
+                                console.log(`Looks like there was a problem. Status code: ${response.status}`);
+                                //mostrar mensaje de producto no creado :3
+                                return;
+                            }else{
+                                //mostrar mensaje de producto creado :3
+                                return
+                            }
+                        })
+                                .catch(function (error) {
+                                    console.log("Fetch error: " + error);
+                                }); 
+
+
+  }
+
 //Con esta funcion rellenamos los campos de resultados de productos segun el input donde se presiono
 function cargarBusquedaProductosAlDom(elementId){
     textoBusqueda = document.getElementById(elementId).value
@@ -157,6 +184,13 @@ function clickListener(){
                 break;
             case 'advanceOptions':
                 panelMoreViewController('advanceConfigurationView')
+                break;
+
+            /////////////////////////////////////////////////////////////////////////////METODOS
+            //Inicio carga producto
+            case 'productCreate':
+                createProduct()
+                event.preventDefault()
                 break;
 
             
@@ -289,8 +323,8 @@ function imageViewer(){
         let inputImage = document.getElementById('imageContainer')
         var filePath = inputImage.value; //Capturo el valor del input
         var allowefExtensions = /(.jpg|.jpeg|.png|.gif)$/i; //Extensiones permitidas
+        var errorImage = document.getElementById('errorImage')
         if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
-            var errorImage = document.getElementById('errorImage')
             let error = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)'
             errorImage.innerHTML = error;
             inputImage.value = '';
