@@ -1,49 +1,110 @@
-/* FOOTER */
-footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 320px;
-    height: 160px;
-    background-color: #A4A4A4;
-    -webkit-box-pack: space-evenly;
-    -ms-flex-pack: space-evenly;
-    justify-content: space-evenly;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-  }
+.contenedorFooter {
+  padding: 120px 0px 270px;
+  position: relative;
+    overflow-x: hidden;
+}
 
-  footer span {
-    cursor: default;
-  }
-  
-  footer .sector {
-    width: 100%;
-  }
-  
-  footer .sector-title {
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  footer .sector-info {
-    color: #DDDDDD;
-    font-size: 13px;
-    font-weight: normal;
-  }
-  
-  /* END FOOTER */
+.footer-style {
+  background-color: #67a6e6;
+  height: 100%;
+} 
 
-  @media (min-width: 500px) {
-      footer {
-          flex-direction: unset;
-          align-items: center;
-          height: 90px;
-      }
+.sectorFooter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 320px;
+  height: 200px;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+}
+
+.spanFooter {
+  cursor: default;
+}
+
+.footer-sector {
+  width: 100%;
+}
+
+.sector-title {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.sector-info {
+  color: #DDDDDD;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+/* END FOOTER */
+
+@media (min-width: 500px) {
+    .sectorFooter {
+      flex-direction: row;
+    }
+}
+
+
+
+
+/* animacion  */
+.footer_bg {
+  position: absolute;
+  bottom: 0;
+  background: url("http://droitthemes.com/html/saasland/img/seo/footer_bg.png") no-repeat scroll center 0;
+  width: 100%;
+  height: 266px;
+}
+
+.footer_bg .footer_bg_one {
+  background: url("") no-repeat center center;
+  background-size:100%;
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  -webkit-animation: cachorro 22s linear infinite;
+  animation: cachorro 22s linear infinite;
+}
+
+.footerImage {
+  width: 100px; 
+  height: 100px;
+}
+
+@keyframes cachorro {
+  0% {
+    left: -25%;
   }
+  100% {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes cachorro {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@-moz-keyframes cachorro {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+}
