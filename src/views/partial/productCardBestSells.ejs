@@ -1,0 +1,35 @@
+<div class='cards-bestSells box-card-section'>
+    <% data.bestSells.forEach(function(product){ %>
+        <!--Comienza un item-->
+            <div class="box-card">
+                <div>
+                    <a href="product/idProducto">
+                        <div class='box-card-top'>
+    
+                            <div class='card-item-image'>
+                                <figure>
+                                    <img src="/img/productTest.jpg" alt="">
+                                </figure>
+                            </div>
+                            <div class='card-item-name'>
+                                <span class='product-name'><%= product.name %></span>
+                            </div>
+                            <div class='card-item-description'>
+                                <span><%= product.description %></span>
+                            </div>
+                            <div class='card-item-price'>
+                                <span>$<%= product.sellPrice %></span>
+                            </div>
+                            <div class='card-item-valoration'>
+                                <%= product.valoration %>
+                            </div>
+                        </div>
+                    </a>
+                    <div class='box-card-bottom'>
+                        <span>Al carrito</span>
+                    </div>
+                </div>
+            </div>
+        <!--fin del item-->
+    <% }); %>
+</div>

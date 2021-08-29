@@ -1,9 +1,9 @@
-@import url('header-nav.css');
-@import url('wsp-chat.css');
-@import url('menu-mobile.css');
-@import url('carrito.css');
-@import url('footer.css');
-@import url('background.css');
+@import url('../partials/header-nav.css');
+@import url('../partials/wsp-chat.css');
+@import url('../partials/menu-mobile.css');
+@import url('../partials/carrito.css');
+@import url('../partials/footer.css');
+@import url('../partials/background.css');
 
 *{
     margin: 0;

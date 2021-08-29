@@ -1,6 +1,6 @@
-@import url('header-nav.css');
-@import url('menu-mobile.css');
-@import url('footer.css');
+@import url('../partials/header-nav.css');
+@import url('../partials/menu-mobile.css');
+@import url('../partials/footer.css');
 
 body {
   margin: 0;

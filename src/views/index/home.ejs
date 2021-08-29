@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/index/home.css">
     <title>PetLovers</title>
 </head>
 
@@ -45,18 +45,9 @@
                 <span>Promociones!</span>
             </div>
 
-            <div class='cards-promotions box-card-section'>
-                <!--Comienza un item-->
-                <%- include('../partial/productCard'); %>
-                <%- include('../partial/productCard'); %>
-                <%- include('../partial/productCard'); %>
-                <%- include('../partial/productCard'); %>
-                <%- include('../partial/productCard'); %>
-                <%- include('../partial/productCard'); %>
-                <%- include('../partial/productCard'); %>
-                <%- include('../partial/productCard'); %>
-                <!--fin del item-->
-            </div>
+            <!--Comienza el include de la seccion que contiene las tarjetas PROMOCIONES-->
+                <%- include('../partial/productCardPromotions'); %>
+            <!--fin del las tarjetas-->
 
         </section>
 
@@ -67,16 +58,9 @@
             </div>
 
             <div class='cards-best-sell box-card-section'>
-                <!--Comienza un item-->
-                <%- include('../partial/productCard'); %>
-                <%- include('../partial/productCard'); %>
-                <%- include('../partial/productCard'); %>
-                <%- include('../partial/productCard'); %>
-                <%- include('../partial/productCard'); %>
-                <%- include('../partial/productCard'); %>
-                <%- include('../partial/productCard'); %>
-                <%- include('../partial/productCard'); %>
-                <!--fin del item-->
+                <!--Comienza el include de la seccion que contiene las tarjetas MAS VENDIDOS-->
+                <%- include('../partial/productCardBestSells'); %>
+                <!--fin del las tarjetas-->
             </div>
 
         </section>

@@ -17,5 +17,31 @@ module.exports = {
     },
     saveDb: ()=>{
         fs.writeFileSync(`./src/database/db.json`, JSON.stringify(dataBase), "utf-8")
+    },
+    searcherByPetTag: (pet,tag)=>{
+        switch (tag){
+            case 'all':
+                if (pet == 'all'){
+                    //retornamos la busqueda
+                    return db
+                } else if (pet == 'cat' || pet == 'dog'){
+                    //retornamos la busqueda filtrando todo lo de gato
+                    return db.filter(producto => producto.pet == pet)
+                }
+                break
+            
+            case 'food':
+            case 'hygiene':
+            case 'toys':
+            case 'bed':
+                if (pet == 'all'){
+                    //retornamos la busqueda
+                    return db
+                } else if (pet == 'cat' || pet == 'dog'){
+                    //retornamos la busqueda filtrando todo lo de gato o perro
+                    return db.filter(producto => producto.tag == tag && producto.pet == pet)
+                }
+                break
+        }
     }
 }

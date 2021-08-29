@@ -1,11 +1,12 @@
 @charset "UTF-8";
 
-@import url('carrito.css');
-@import url('wsp-chat.css');
-@import url('menu-mobile.css');
-@import url('footer.css');
-@import url('header-nav.css');
-@import url('background.css');
+@import url('../partials/carrito.css');
+@import url('../partials/wsp-chat.css');
+@import url('../partials/menu-mobile.css');
+@import url('../partials/footer.css');
+@import url('../partials/header-nav.css');
+@import url('../partials/productCard.css');
+@import url('../partials/background.css');
 
 
 /* PALETA DE COLORES */
@@ -34,6 +35,11 @@ span {
   cursor: default;
 }
 
+a:-webkit-any-link {
+  color: unset;
+  cursor: unset;
+  text-decoration: unset;
+}
 
 
 #all {
@@ -148,23 +154,7 @@ span {
 
 /*    END CATEGORIES    */
 /*    BOX PROMOTIONS  /  BEST-SELL  */
-.box-cards {
-  min-width: 320px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
+
 
 .box-title {
   width: 100%;
@@ -182,157 +172,9 @@ span {
   transition: 1s;
 }
 
-.box-card-section {
-  width: 95%;
-  max-width: 530px;
-  margin-top: 10px;
-  margin-bottom: 2rem;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.box-card {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 9.375rem;
-  height: 14.375rem;
-  border-radius: 5px;
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-  font-family: "Oswald", sans-serif;
-  text-align: center;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-  background: #ffffff;
-  -webkit-box-shadow: 0 0.3125rem 0.9375rem -0.3125rem #00000070;
-          box-shadow: 0 0.3125rem 0.9375rem -0.3125rem #00000070;
-  -webkit-transition: 1s;
-  transition: 1s;
-  display: flex;
-  flex-direction: column;
-}
-
-.box-card > div {
-  width: 100%;
-  height: 100%;
-}
-
-.box-card-top {
-  width: 100%;
-  height: 85%;
-  display: flex;
-  flex-direction: column;
-}
-
-.box-card-top div {
-  margin: 3px 0 3px 0px;
-  font-family: system-ui;
-}
-
-.box-card-top .card-item-image {
-    width: 100%;
-    height: 50%;
-    margin-top: 10px;
-}
-
-/* figure {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-img{
-  height: 100%;
-} */
 
 
-.card-item-name {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 13px;
-  transition: 1s;
-  color: #4b4b4b;
-}
 
-.product-name {
-  cursor: pointer;
-}
-
-.card-item-name:hover {
-  color:#33c1d4;
-  transform: scale(1.1);
-}
-
-
-.card-item-description {
-  width: 100%;
-  font-size: 12px;
-}
-
-.card-item-price {
-  font-size: 12px;
-  color: #34c5d8;
-  font-weight: bold;
-}
-
-.card-item-valoration {
-  font-size: 10px;
-}
-
-.box-card-bottom {
-  width: 100%;
-  height: 15%;
-  background-color: #34c5d8;
-  box-shadow: inset 0 0rem 1rem 0.05rem #00000070;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 10px;
-  font-weight: bold;
-  border-radius: 0px 0px 5px 5px;
-  transition: 1s;
-}
-
-.box-card-bottom:hover {
-  background-color: #34d87a;
-}
-
-.card-item-image figure {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.card-item-image img{
-  height: 100%;
-}
 
 /*    END PROMOTIONS    */
 
