@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
-@import url('../partials/carrito.css');
+@import url('../partials/header-nav.css');
 @import url('../partials/wsp-chat.css');
 @import url('../partials/menu-mobile.css');
+@import url('../partials/carrito.css');
 @import url('../partials/footer.css');
-@import url('../partials/header-nav.css');
 @import url('../partials/background.css');
 
 
@@ -27,19 +27,26 @@ div {
     }
 }
 
-.container-padre{
-    margin-top: 30px;
+
+.productDetail-padre{
+    margin-top: 100px;
 }
+
 @media (min-width: 700px){
-    .container-padre{
+    .productDetail-padre{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     }
 }
 
-.container-img-info {
+@media (min-width: 1000px){
+    .productDetail-padre{
+        align-items: center;
+    }
+}
+
+.productDetail-img-info {
     display: flex;
     flex-direction: row;
     position: relative;
@@ -47,12 +54,12 @@ div {
 }
 
 @media (max-width: 500px) {
-    .container-img-info{
+    .productDetail-img-info{
         flex-direction: column;
     }
 }
 
-.container-img-info{
+.productDetail-img-info{
     background-color: white;
     border-radius: 8px;
 
@@ -60,33 +67,33 @@ div {
 
 /* Caja de info*/
 
-.padre-info {
+.productDetail-padre-info {
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
 @media (min-width: 500px) {
-    .padre-info{
+    .productDetail-padre-info{
         flex-direction: row-reverse;
         order: 1;
     }
 }
 
-.padre-info {
+/* .productDetail-padre-info {
     margin: 4px 0 0 30px;
     padding: 10px;
-}
+} */
 
 @media (min-width: 500px){
-    .padre-info {
+    .productDetail-padre-info {
         width: 500px;
 }
 }
 
 
 @media (max-width: 500px) {
-    .padre-info {
+    .productDetail-padre-info {
         margin: 0;
     }
 }
@@ -184,8 +191,8 @@ div {
     order: -1;
 }
 
-@media (max-width: 700px) {
-    img{
+@media (max-width: 800px) {
+    .image-big{
         width: 100%;
         height: 100%;
     }
@@ -228,13 +235,13 @@ div {
     border: 1.5px solid black;
 }    
 
-.small-img img{
+.small-img .img-zoom{
     width: inherit;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.small-img:hover img {
+.small-img:hover .img-zoom{
     transform: scale(1.2);
 }
 
@@ -245,21 +252,28 @@ div {
 
 .container-descripcion{
     display: flex;
-    width: 100%;
+    width: 100vw;
     margin-top: 15px;
     background-color: white;
     border-radius: 30px;
     padding: 20px;
 }
 
+.box-descripcion{
+    width: 900px;
+}
 
 /* Fin de descripción*/
+
+.containerInformacion{
+    width: 1000px;
+}
 
 /* caracteristicas */
 
 .container-carac {
     display: flex;
-    width: 100%;
+    width: 100vw;
     background-color: white;
     border-radius: 30px;
     margin-top: 10px;
@@ -267,4 +281,7 @@ div {
     padding: 20px;
 }
 
+.box-carac {
+    width: 900px;
+}
 /* Fin de caracteristicas*/
