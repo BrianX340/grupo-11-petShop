@@ -252,7 +252,6 @@ div {
 
 .container-descripcion{
     display: flex;
-    width: 100vw;
     margin-top: 15px;
     background-color: white;
     border-radius: 30px;
@@ -266,14 +265,13 @@ div {
 /* Fin de descripción*/
 
 .containerInformacion{
-    width: 1000px;
+    width: 100%;
 }
 
 /* caracteristicas */
 
 .container-carac {
     display: flex;
-    width: 100vw;
     background-color: white;
     border-radius: 30px;
     margin-top: 10px;
