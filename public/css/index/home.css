@@ -7,6 +7,7 @@
 @import url('../partials/header-nav.css');
 @import url('../partials/productCard.css');
 @import url('../partials/background.css');
+@import url('../partials/carrousel.css');
 
 
 /* PALETA DE COLORES */
@@ -36,7 +37,6 @@ span {
 }
 
 a:-webkit-any-link {
-  color: unset;
   cursor: unset;
   text-decoration: unset;
 }
@@ -52,32 +52,6 @@ a:-webkit-any-link {
           flex-direction: column;
 }
 
-/* CARROUSEL */
-#carousel {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.carousel__viewport {
-  margin: 0;
-  padding: 0;
-}
-
-.carousel__viewport li {
-  list-style: none;
-}
-
-.carousel__viewport li img {
-  width: 100%;
-}
 
 /*    CATEGORIES    */
 #pet-categories {
@@ -287,15 +261,6 @@ a:-webkit-any-link {
 
 
 
-/* END ANIMATION DOG-CAT */
-.logo-desktop figure {
-  margin: 0;
-  padding: 0;
-}
-
-.logo-desktop figure img {
-  width: 40px;
-}
 
 
 @media (min-width: 768px) {

@@ -1,5 +1,5 @@
 <div class='box-card-section'>
-    <% data.promotions.forEach(function(product){ %>
+    <% locals.data.search.forEach(function(product){ %>
         <!--Comienza un item-->
             <div class="box-card">
                 <div>
@@ -11,19 +11,15 @@
                                     <img src="/img/productTest.jpg" alt="">
                                 </figure>
                             </div>
-
                             <div class='card-iem-name'>
                                 <span class='product-name'><%= product.name %></span>
                             </div>
-
                             <div class='card-item-description'>
                                 <span><%= product.description %></span>
                             </div>
-
                             <div class='card-item-price'>
                                 <span>$<%= product.sellPrice %></span>
                             </div>
-
                             <div class='card-item-valoration'>
                                 <div>
                                     <% for( let index = 0; index < product.valoration; index++ ) { %>

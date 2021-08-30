@@ -11,17 +11,10 @@
 
 <body id='body'>
     <%- include('../partial/header-invited'); %>
-    <%- include('../partial/menuMobileInvited'); %>
 
     <section id='all'>
 
-        <section id='carousel' class="carousel" aria-label="Gallery">
-            <ol class="carousel__viewport">
-                <li id="carousel__slide1" tabindex="0" class="carousel__slide">
-                    <img src="/img/banersCarrousel/banner01.jpg" alt="">
-                </li>
-            </ol>
-        </section>
+        <%- include('../partial/carrousel'); %>
 
         <section id='pet-categories'>
             <div class='pet-duo'>
@@ -57,11 +50,9 @@
                 <span>Mas vendidos!</span>
             </div>
 
-            <div class='cards-best-sell box-card-section'>
-                <!--Comienza el include de la seccion que contiene las tarjetas MAS VENDIDOS-->
-                <%- include('../partial/productCardBestSells'); %>
-                <!--fin del las tarjetas-->
-            </div>
+            <!--Comienza el include de la seccion que contiene las tarjetas MAS VENDIDOS-->
+            <%- include('../partial/productCardBestSells'); %>
+            <!--fin del las tarjetas-->
 
         </section>
 
@@ -69,9 +60,10 @@
 
 
 
+
     <%- include('../partial/footer'); %>
     <%- include('../partial/carritoFlotante'); %>
-    <%- include('../partial/wsp-dog-chat'); %>
+    <%- include('../partial/wsp-cat-chat'); %>
 
 
 </body>

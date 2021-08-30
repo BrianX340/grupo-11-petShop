@@ -1,9 +1,9 @@
-<div class='cards-bestSells box-card-section'>
+<div class='box-card-section'>
     <% data.bestSells.forEach(function(product){ %>
         <!--Comienza un item-->
             <div class="box-card">
                 <div>
-                    <a href="product/idProducto">
+                    <a href="/product/idProducto">
                         <div class='box-card-top'>
     
                             <div class='card-item-image'>
@@ -21,7 +21,11 @@
                                 <span>$<%= product.sellPrice %></span>
                             </div>
                             <div class='card-item-valoration'>
-                                <%= product.valoration %>
+                                <div>
+                                    <% for( let index = 0; index < product.valoration; index++ ) { %>
+                                        <img src="/files/star.svg" alt="">
+                                    <% } %>
+                                </div>
                             </div>
                         </div>
                     </a>

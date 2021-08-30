@@ -1,0 +1,10 @@
+<section id='carousel' class="carousel" aria-label="Gallery">
+    <ol class="carousel__viewport">
+        <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+            <% data.carrouselImages.forEach(function(image){ %>
+                <img class='carrouselImages fade' src=<%- image %> alt="">
+            <% }); %>
+        </li>
+    </ol>
+</section>
+<script src="/js/carrousel.js"></script>

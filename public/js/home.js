@@ -1,3 +1,5 @@
+
+
 var indexValue = 1;
 showImg(indexValue);
 function btm_slide(e) { showImg(indexValue = e); }
@@ -35,6 +37,7 @@ window.onload = () => {
                 window.location.href = `${window.location.origin}`+'/productDetail'
             }
         }
+
         
     })
 }

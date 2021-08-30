@@ -12,7 +12,7 @@ a:-webkit-any-link {
     margin-left: 10px;
     margin-right: 10px;
     width: 9.375rem;
-    height: 14.375rem;
+    height: 18.375rem;
     border-radius: 5px;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
@@ -33,7 +33,9 @@ a:-webkit-any-link {
 .box-card > div {
     width: 100%;
     height: 100%;
+    position: relative;
   }
+
   
   .box-card-top {
     width: 100%;
@@ -42,9 +44,11 @@ a:-webkit-any-link {
     flex-direction: column;
   }
   
-  .box-card-top div {
+  .box-card-top > div {
     margin: 3px 0 3px 0px;
     font-family: system-ui;
+    display: flex;
+    justify-content: center;
   }
   
   .box-card-top .card-item-image {
@@ -56,7 +60,7 @@ a:-webkit-any-link {
   
 .box-card-bottom {
     width: 100%;
-    height: 15%;
+    height: 12%;
     background-color: #34c5d8;
     box-shadow: inset 0 0rem 1rem 0.05rem #00000070;
     color: white;
@@ -67,6 +71,8 @@ a:-webkit-any-link {
     font-weight: bold;
     border-radius: 0px 0px 5px 5px;
     transition: 1s;
+    bottom: 0;
+    position: absolute;
   }
   
 
@@ -118,7 +124,23 @@ a:-webkit-any-link {
   }
   
   .card-item-valoration {
-    font-size: 10px;
+    width: 100%;
+    height: 5vw;
+    max-height: 22px;
+  }
+
+  .card-item-valoration div {
+    height: 100%;
+    display: flex;
+    background-color: #2499d2;
+    border-radius: 3vw;
+    min-width: 30%;
+    padding: 1px 5px 1px 5px;
+    justify-content: space-around;
+  }
+
+  .card-item-valoration div img {
+    height: 100%;
   }
   
   .box-card-bottom:hover {
@@ -142,8 +164,6 @@ a:-webkit-any-link {
         -ms-flex-align: center;
             align-items: center;
   }
-
-  
   
 .box-card-section {
     width: 95%;

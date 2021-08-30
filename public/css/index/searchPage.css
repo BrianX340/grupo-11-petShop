@@ -7,3 +7,35 @@
 @import url('../partials/header-nav.css');
 @import url('../partials/productCard.css');
 @import url('../partials/background.css');
+
+
+.resultTitle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.resultTitle div {
+    width: 95%;
+    margin-top: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0e76a8;
+    border-radius: 3vw;
+}
+
+.resultTitle div span{
+    font-size: 5vw;
+    font-family: system-ui;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 1vw;
+    line-height: 8vw;
+}
+
+.resultSearch {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

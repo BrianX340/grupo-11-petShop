@@ -5,6 +5,6 @@ const { home, productDetail, productsSearch } = require('../controllers/indexCon
 
 router.get('/', home)
 router.get('/product/:id', productDetail)
-router.get('/search', productsSearch)
+router.get('/search/:search', productsSearch)
 
 module.exports = router

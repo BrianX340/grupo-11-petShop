@@ -5,14 +5,14 @@ module.exports = {
         //productos que se visualizan en el home 
         info = getAllProducts()
         data = {
-            bestSells:[
-                    {
-                        "id":1,
-                    }
-                ],
-                promotions:info,
+            bestSells:info,
+            promotions:info,
+            carrouselImages:[
+                "/img/banersCarrousel/banner01.jpg",
+                "/img/banersCarrousel/banner02.jpg",
+                "/img/banersCarrousel/banner03.jpg"
+            ]
         }
-        
         res.render('index//home',{data})
     },
     productDetail: (req,res) =>{
@@ -21,23 +21,25 @@ module.exports = {
         res.render('index//productDetail')
     },
     productsSearch: (req,res)=>{
-        pet = req.query.pet
-        tag = req.query.tag
-        search = req.query.search
+        searchText = req.params.search
 
-        //va a haber 4 categorias
-        //Alimentos, Higiene, Juguetes, Camas
+        if (searchText){
+            search = searchProductByName(searchText)
+        } /* else {
+            pet = req.query.pet
+            tag = req.query.tag
 
-        if (!search){
-            productos = searcherByPetTag(pet,tag)
-        } else {
-            productos = searchProductByName(search)
+            //va a haber 4 categorias
+            //Alimentos, Higiene, Juguetes, Camas
+            search = searcherByPetTag(pet,tag)
+        } */
+
+        data = {
+            search
         }
-        
-        res.render('index//searchPage', productos)
 
-
-
+        console.log(data)
+        res.render('index//searchPage', {data} )
 
 
     }
