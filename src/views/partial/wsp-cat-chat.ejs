@@ -1,41 +1,45 @@
-<section id='chatFloat'>
-    <div>
-        <div class='chatHead'>
-            <div>
-                <span>SOPORTE</span> <span id='chatClose'>X</span>
-            </div>
-            <div class='caterinaProfile'>
-                <div class='profileImageCat'><figure><img src="img/caterina.svg" alt=""></figure></div>
-                <div class='infoNameCaterina'>
-                    <div class='caterinaName'><span>CAT</span><span>erina</span></div>
-                    <div><span>Animal supporter</span></div>
-                </div>
-            </div>
-        </div>
-        <div class="messagesBox">
-
-            <div class='messageCard messageR'>
+<section id='chatContainer'>
+    <div id='chatFloat'>
+        <div>
+            <div class='chatHead'>
                 <div>
-                    <span>Hola, soy Caterina, en que puedo ayudarte?</span>
+                    <span>SOPORTE</span> <span id='chatClose'>X</span>
+                </div>
+                <div class='caterinaProfile'>
+                    <div class='profileImageCat'>
+                        <figure><img src="img/caterina.svg" alt=""></figure>
+                    </div>
+                    <div class='infoNameCaterina'>
+                        <div class='caterinaName'><span>CAT</span><span>erina</span></div>
+                        <div><span>Animal CHAT</span></div>
+                    </div>
                 </div>
             </div>
+            <div class="messagesBox">
 
-            <div class='messageCard messageS'>
+                <div class='messageCard messageR'>
+                    <div>
+                        <span>Hola, soy Caterina, en que puedo ayudarte?</span>
+                    </div>
+                </div>
+
+                <div class='messageCard messageS'>
+                    <div>
+                        <span>Hola, en que horario realizan envios?</span>
+                    </div>
+                </div>
+
+                <div class='messageCard messageR'>
+                    <div>
+                        <span>Entre las 14hs y las 18hs</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class='inputChat'>
                 <div>
-                    <span>Hola, en que horario realizan envios?</span>
+                    <input id='chatSender' placeholder="Mensaje..." spellcheck="false" type="text">
                 </div>
-            </div>
-
-            <div class='messageCard messageR'>
-                <div>
-                    <span>Entre las 14hs y las 18hs</span>
-                </div>
-            </div>
-
-        </div>
-        <div class='inputChat'>
-            <div>
-                <input id='chatSender' placeholder="Mensaje..." spellcheck="false" type="text">
             </div>
         </div>
     </div>
@@ -46,44 +50,45 @@
 
 <section id='wsp-chat'>
     <figure>
-        <a href="https://wa.me/+541134489022?text=Hola%20que%20servicios%20brindan%3F"><img src="/img/wsp.png" alt=""></a>
+        <a href="https://wa.me/+541134489022?text=Hola%20que%20servicios%20brindan%3F"><img src="/img/wsp.png"
+                alt=""></a>
     </figure>
     <figure>
         <img id='catChat' src="/img/catChat.svg" alt="">
     </figure>
 </section>
 <script>
-    function viewCaterinaChat(active){
-    if (active){
-        document.getElementById('wsp-chat').style.display = 'none'
-        document.getElementById('chatFloat').style.display = 'flex'
-    } else {
-        document.getElementById('wsp-chat').style.display = 'flex'
-        document.getElementById('chatFloat').style.display = 'none'
-    }
-}
-
-
-
-document.addEventListener('click', (event) => {
-    funcion = false
-    try {
-        elementId = event.path[0].id
-        elementClass = event.path[0].className
-    }
-    catch {
-        elementId = event.target.id
-        elementClass = event.path[0].className
+    function viewCaterinaChat(active) {
+        if (active) {
+            document.getElementById('wsp-chat').style.display = 'none'
+            document.getElementById('chatContainer').style.display = 'flex'
+        } else {
+            document.getElementById('wsp-chat').style.display = 'flex'
+            document.getElementById('chatContainer').style.display = 'none'
+        }
     }
 
-    switch (elementId){
-        case 'catChat':
-            viewCaterinaChat(1)
-            break
-        case 'chatClose':
-            viewCaterinaChat(0)
-            break
-    }
 
-})
+
+    document.addEventListener('click', (event) => {
+        funcion = false
+        try {
+            elementId = event.path[0].id
+            elementClass = event.path[0].className
+        }
+        catch {
+            elementId = event.target.id
+            elementClass = event.path[0].className
+        }
+
+        switch (elementId) {
+            case 'catChat':
+                viewCaterinaChat(1)
+                break
+            case 'chatClose':
+                viewCaterinaChat(0)
+                break
+        }
+
+    })
 </script>
