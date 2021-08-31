@@ -281,15 +281,7 @@ a:-webkit-any-link {
     height: 13.375rem;
   }
 
-  .box-card {
-    width: 11.375rem;
-    height: 16.375rem;
-  }
-
-  .box-card-section {
-    max-width: 810px;
-  }
-
+  
 
   #pet-categories > span {
     font-size: 30px;

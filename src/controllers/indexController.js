@@ -15,30 +15,25 @@ module.exports = {
         }
         res.render('index//home',{data})
     },
+
     productDetail: (req,res) =>{
         //idProducto = req.params.id
         //res.render('index//productDetail',{producto})
         res.render('index//productDetail')
     },
+
     productsSearch: (req,res)=>{
+
         searchText = req.params.search
+        pet = req.query.pet
+        tag = req.query.tag
 
-        if (searchText){
-            search = searchProductByName(searchText)
-        } /* else {
-            pet = req.query.pet
-            tag = req.query.tag
-
-            //va a haber 4 categorias
-            //Alimentos, Higiene, Juguetes, Camas
-            search = searcherByPetTag(pet,tag)
-        } */
+        search = searchText ? searchProductByName(searchText) : searcherByPetTag(pet,tag)
 
         data = {
             search
         }
 
-        console.log(data)
         res.render('index//searchPage', {data} )
 
 

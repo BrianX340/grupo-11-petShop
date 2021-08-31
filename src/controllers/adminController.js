@@ -1,4 +1,4 @@
-const { getAllProducts , searchProductByName } = require('../database/db');
+const { getAllProducts, searchProductByName, saveOneProduct } = require('../database/db');
 
 module.exports = {
     adminPanel: (req,res) =>{
@@ -11,16 +11,35 @@ module.exports = {
         res.render('partial//resultProductSearch', {productos:searchProductByName(req.params.name)})
     },
     createProducts: (req,res) =>{
-        console.log('02')
+        imagePath = req.file ? req.file.filename : "productDefault.png"
 
-        console.log(req.body)
+        let {
+            name,
+            buyPrice,
+            sellPrice,
+            description,
+            amount,
+            barcode,
+            mark,
+            category,
+            subCategory,
+        } = req.body
 
-        let newProduct = {
-            image: req.file ? [req.file.filename] : "default-image.png"
-        };
+        newProduct = {
+            id:"",
+            name,
+            buyPrice,
+            sellPrice,
+            description,
+            amount,
+            barcode,
+            mark,
+            category,
+            subCategory,
+            imagePath
+        }
 
-        //products.push(newProduct);
-        //writeProductsJSON(products)
+        saveOneProduct(newProduct);
 
         res.send({status:"ok"})
 

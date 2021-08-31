@@ -39,3 +39,17 @@
     display: flex;
     justify-content: center;
 }
+
+@media (min-width: 450px) {
+
+    .resultTitle div {
+        border-radius: 12px;
+        width: unset;
+    }
+
+    .resultTitle div span {
+        font-size: 20px;
+        line-height: unset;
+    }
+
+}

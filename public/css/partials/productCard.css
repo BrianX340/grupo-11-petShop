@@ -3,7 +3,9 @@ a:-webkit-any-link {
     color: unset;
     cursor: unset;
     text-decoration: unset;
+    display: flex;
   }
+
   
 
 .box-card {
@@ -12,7 +14,7 @@ a:-webkit-any-link {
     margin-left: 10px;
     margin-right: 10px;
     width: 9.375rem;
-    height: 18.375rem;
+    height: 15.775rem;
     border-radius: 5px;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
@@ -49,18 +51,20 @@ a:-webkit-any-link {
     font-family: system-ui;
     display: flex;
     justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
   }
   
   .box-card-top .card-item-image {
       width: 100%;
-      height: 50%;
+      height: 100px;
       margin-top: 10px;
   }
 
   
 .box-card-bottom {
     width: 100%;
-    height: 12%;
+    height: 25px;
     background-color: #34c5d8;
     box-shadow: inset 0 0rem 1rem 0.05rem #00000070;
     color: white;
@@ -114,7 +118,7 @@ a:-webkit-any-link {
   
   .card-item-description {
     width: 100%;
-    font-size: 12px;
+    font-size: 10px;
   }
   
   .card-item-price {
@@ -187,4 +191,15 @@ a:-webkit-any-link {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+
+  @media (min-width: 768px) {
+    .box-card {
+      width: 11.375rem;
+    }
+  
+    .box-card-section {
+      max-width: 810px;
+    }
+  
   }

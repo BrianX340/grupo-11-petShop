@@ -6,26 +6,45 @@
             </figure>
             <span id='sidebar-close' href="">X</span>
         </div>
-        <div class='menu-row' id='menu-inicio'>
-            <figure><img src="/img/menu-icon-inicio.svg" alt=""></figure><span>Inicio</span>
-        </div>
-        <div class='menu-row' id='menu-ingresar-registrarse'>
-            <figure><img src="/img/menu-icon-login.svg" alt=""></figure><span>Ingresar / Registrarse</span>
-        </div>
+
+        <a href="/">
+            <div class='menu-row' id='menu-inicio'>
+                <figure><img src="/img/menu-icon-inicio.svg" alt=""></figure><span>Inicio</span>
+            </div>
+        </a>
+
+        <a href="/ps/login">
+            <div class='menu-row' id='menu-ingresar-registrarse'>
+                <figure><img src="/img/menu-icon-login.svg" alt=""></figure><span>Ingresar / Registrarse</span>
+            </div>
+        </a>
+
         <div class='menu-title'>Productos</div>
-        <div class='menu-row' id='menu-dogs'>
-            <figure><img src="/img/menu-icon-perro.svg" alt=""></figure><span>Perros</span>
-        </div>
-        <div class='menu-row' id='menu-cats'>
-            <figure><img src="/img/menu-icon-gato.svg" alt=""></figure><span>Gatos</span>
-        </div>
+
+        <a href="/search/?pet=dog&tag=all">
+            <div class='menu-row' id='menu-dogs'>
+                <figure><img src="/img/menu-icon-perro.svg" alt=""></figure><span>Perros</span>
+            </div>
+        </a>
+
+        <a href="/search/?pet=cat&tag=all">
+            <div class='menu-row' id='menu-cats'>
+                <figure><img src="/img/menu-icon-gato.svg" alt=""></figure><span>Gatos</span>
+            </div>
+        </a>
+
         <div class='menu-title'>Contacto</div>
-        <div class='menu-row' id='menu-call'>
-            <figure><img src="/img/menu-icon-telefono.svg" alt=""></figure><span>Llamanos</span>
-        </div>
+        <a href="">
+            <div class='menu-row' id='menu-call'>
+                <figure><img src="/img/menu-icon-telefono.svg" alt=""></figure><span>Llamanos</span>
+            </div>
+        </a>
+
         <div class='menu-row' id='menu-chat'>
             <figure><img src="/img/menu-icon-chat.svg" alt=""></figure><span>Chatea con nosotros</span>
         </div>
+        </a>
+
     </div>
 </section>
 <script src="/js/menu-mobile.js"></script>

@@ -4,20 +4,33 @@ db = JSON.parse(fs.readFileSync('./src/database/db.json', "utf-8"))
 
 
 
+function saveDatabase(){
+    fs.writeFileSync(`./src/database/db.json`, JSON.stringify(db), "utf-8")
+}
+
+
 module.exports = {
+    saveOneProduct: (product)=>{
+        db.push(product)
+        saveDatabase()
+    },
     getAllProducts: ()=>{
         return db //devolvemos la base de datos completa PRODUCTOS
     },
+    
     searchProductByName: (productName)=>{
         //Filtramos la base de datos, devolvera los resultados que incluyan el texto recibido por parametro
         return db.filter((product)=> product.name.toLowerCase().includes(productName.toLowerCase()) )
     },
+
     searchOne: (id)=>{
         //return db.find()
     },
+
     saveDb: ()=>{
-        fs.writeFileSync(`./src/database/db.json`, JSON.stringify(dataBase), "utf-8")
+        saveDatabase()
     },
+
     searcherByPetTag: (pet,tag)=>{
         switch (tag){
             case 'all':
