@@ -13,87 +13,196 @@
 
         <%- include('../partial/header-invited'); %>
 
-            <section id='adminPanel'>
+        <section id='adminPanel'>
 
-                <div id='panel-menu' class='panel-menu panel-gral'>
-                    <div class='board'>
-                        <div class='board-box'>
-                            <div>
-                                <!--Inicio cards-->
-                                <div class='card-options'>
-                                    <div>
-                                        <figure><img src="files/box.svg" alt=""></figure>
-                                        <div><span>Productos</span></div>
-                                    </div>
-                                    <div id="box-products" class='coverButton'></div>
+            <div id='panel-menu' class='panel-menu panel-gral'>
+                <div class='board'>
+                    <div class='board-box'>
+                        <div>
+                            <!--Inicio cards-->
+                            <div class='card-options'>
+                                <div>
+                                    <figure><img src="files/box.svg" alt=""></figure>
+                                    <div><span>Productos</span></div>
                                 </div>
-
-                                <div class='card-options'>
-                                    <div>
-                                        <figure><img src="files/clients.svg" alt=""></figure>
-                                        <div><span>Clientes</span></div>
-                                    </div>
-                                    <div id="box-client" class='coverButton'></div>
-                                </div>
-
-                                <div class='card-options'>
-                                    <div>
-                                        <figure><img src="files/icon-factura.svg" alt=""></figure>
-                                        <div><span>Mas Opciones</span></div>
-                                    </div>
-                                    <div id="box-ventas" class='coverButton'></div>
-                                </div>
-                                <!--Fin cards-->
+                                <div id="box-products" class='coverButton'></div>
                             </div>
+
+                            <div class='card-options'>
+                                <div>
+                                    <figure><img src="files/clients.svg" alt=""></figure>
+                                    <div><span>Clientes</span></div>
+                                </div>
+                                <div id="box-client" class='coverButton'></div>
+                            </div>
+
+                            <div class='card-options'>
+                                <div>
+                                    <figure><img src="files/icon-factura.svg" alt=""></figure>
+                                    <div><span>Mas Opciones</span></div>
+                                </div>
+                                <div id="box-ventas" class='coverButton'></div>
+                            </div>
+                            <!--Fin cards-->
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div id='panel-products' class='noDisplay panel-gral'>
-                    <div class='board'>
-                        <div class='board-box'>
+            <div id='panel-products' class='noDisplay panel-gral'>
+                <div class='board'>
+                    <div class='board-box'>
 
-                            <div id='productOptionsViews'>
-                                <!--Inicio cards-->
-                                <div class='card-options'>
-                                    <div>
-                                        <figure><img src="files/productUpload.svg" alt=""></figure>
-                                        <div><span>Cargar</span></div>
-                                    </div>
-                                    <div id="productsLoaderButton" class='coverButton'></div>
+                        <div id='productOptionsViews'>
+                            <!--Inicio cards-->
+                            <div class='card-options'>
+                                <div>
+                                    <figure><img src="files/productUpload.svg" alt=""></figure>
+                                    <div><span>Cargar</span></div>
                                 </div>
-
-                                <div class='card-options'>
-                                    <div>
-                                        <figure><img src="files/editProduct.svg" alt=""></figure>
-                                        <div><span>Modificar</span></div>
-                                    </div>
-                                    <div id="productsEditButton" class='coverButton'></div>
-                                </div>
-
-                                <div class='card-options'>
-                                    <div>
-                                        <figure><img src="files/barcodeDetail.svg" alt=""></figure>
-                                        <div><span>Consultar</span></div>
-                                    </div>
-                                    <div id="productsDetailButton" class='coverButton'></div>
-                                </div>
-                                <!--Fin cards-->
+                                <div id="productsLoaderButton" class='coverButton'></div>
                             </div>
 
-                            <div id='addProductView' class='noDisplay'>
-                                <div class='final-card'>
-                                    <form id='formCreateAdd' class="formCreate" method="POST" enctype="multipart/form-data">
-                                        <div class='finalCardTitle'><span>Carga de Productos</span></div>
-                                        
+                            <div class='card-options'>
+                                <div>
+                                    <figure><img src="files/editProduct.svg" alt=""></figure>
+                                    <div><span>Modificar</span></div>
+                                </div>
+                                <div id="productsEditButton" class='coverButton'></div>
+                            </div>
+
+                            <div class='card-options'>
+                                <div>
+                                    <figure><img src="files/barcodeDetail.svg" alt=""></figure>
+                                    <div><span>Consultar</span></div>
+                                </div>
+                                <div id="productsDetailButton" class='coverButton'></div>
+                            </div>
+                            <!--Fin cards-->
+                        </div>
+
+                        <div id='addProductView' class='noDisplay'>
+                            <div class='final-card'>
+                                <form id='formCreateAdd' class="formCreate" method="POST" enctype="multipart/form-data">
+                                    <div class='finalCardTitle'><span>Carga de Productos</span></div>
+                                    
+                                    <div class='addProductImage'>
+                                        <div>
+                                            <figure id='imageProductAddPreview'><img src="img/item-test.png" alt=""></figure>
+                                        </div>
+                                        <div>
+                                            <span id="errorImage" ></span>
+                                        </div>
+                                        <div><input id='imageContainer' type="file" class="form-control" name="image" aria-label="file example"></div>
+                                    </div>
+
+                                    <div class='formContainer'>
+
+                                        <div class='inputsContainerBox'>
+
+                                            <div class="inputfield">
+                                                <div>
+                                                    <span>Nombre</span>
+                                                    <input type="text" type="text" class="form-control" id="inputNameAdd" name="name">
+                                                </div>
+                                            </div>
+
+                                            <div class="inputfield">
+                                                <div>
+                                                    <span>Precio Compra</span>
+                                                    <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="inputBuyPriceAdd" name="buyPrice">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="inputfield">
+                                                <div>
+                                                    <span>Precio Venta</span>
+                                                    <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="inputSellPriceAdd" name="sellPrice">
+                                                </div>
+                                            </div>
+
+                                            <div class="inputfield">
+                                                <div>
+                                                    <span>Descripcion</span>
+                                                    <input type="text" id="inputDescriptionAdd" name="description">
+                                                </div>
+                                            </div>
+
+                                            <div class="inputfield">
+                                                <div>
+                                                    <span>Cantidad</span>
+                                                    <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="inputAmountAdd" name="amount">
+                                                </div>
+                                            </div>
+
+                                            <div class="inputfield">
+                                                <div>
+                                                    <span>Codigo de Barras</span>
+                                                    <input type="text" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="inputBarcodeAdd" name="barcode">
+                                                </div>
+                                            </div>
+
+                                            <div class="inputfield">
+                                                <div>
+                                                    <span>Marca</span>
+                                                    <input type="text" id="inputMarkAdd" name="mark">
+                                                </div>
+                                            </div>
+
+                                            <div class="inputfield">
+                                                <div>
+                                                    <span>Categoria</span>
+                                                    <input type="text" id="inputCategoryAdd" name="category">
+                                                </div>
+                                            </div>
+
+                                            <div class="inputfield">
+                                                <div>
+                                                    <span>Subcategoria</span>
+                                                    <input type="text" id="inputSubCategoryAdd" name="subCategory">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class='buttonOptionProduct'>
+                                            <button class='backButton'>Volver</button>
+                                            <button class='cleanInputs'>Limpiar campos</button>
+                                            <button id='productCreate'>Cargar</button>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div id='modifyProductView' class='noDisplay'>
+                            <div class='final-card'>
+                                <form id='formCreateModify' class='formCreate' method="POST" enctype="multipart/form-data">
+                                    <div class='finalCardTitle'><span>Modificar Producto</span></div>
+                                    
+                                    <div id='searchModifyView'  class='searchResultBox'>
+                                        <div class='modifySearchBox'>
+                                            <div>
+                                                <span>Buscar producto</span><input id='searchInputModify' type="text">
+                                            </div>
+                                        </div>
+
+                                        <div id="modifySearchResult" class='resultBox'>
+                                            
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div id='modifyEditView' class='noDisplay'>
                                         <div class='addProductImage'>
                                             <div>
-                                                <figure id='imageProductAddPreview'><img src="img/item-test.png" alt=""></figure>
+                                                <figure id='imageProductEditPreview'><img src="img/item-test.png" alt=""></figure>
                                             </div>
                                             <div>
-                                                <span id="errorImage" ></span>
+                                                <span id="errorImageEdit" ></span>
                                             </div>
-                                            <div><input id='imageContainer' type="file" class="form-control" name="image" aria-label="file example"></div>
+                                            <div><input id='editImageContainer' type="file"></div>
                                         </div>
 
                                         <div class='formContainer'>
@@ -101,314 +210,208 @@
                                             <div class='inputsContainerBox'>
 
                                                 <div class="inputfield">
-                                                    <div>
-                                                        <span>Nombre</span>
-                                                        <input type="text" type="text" class="form-control" id="inputNameAdd" name="name">
-                                                    </div>
+                                                    <div><span>Nombre</span><input type="text"></div>
                                                 </div>
 
                                                 <div class="inputfield">
-                                                    <div>
-                                                        <span>Precio Compra</span>
-                                                        <input type="number" class="form-control" id="inputBuyPriceAdd" name="buyPrice">
-                                                    </div>
+                                                    <div><span>Precio Compra</span><input type="number"></div>
                                                 </div>
                                                 
                                                 <div class="inputfield">
-                                                    <div>
-                                                        <span>Precio Venta</span>
-                                                        <input type="number" class="form-control" id="inputSellPriceAdd" name="sellPrice">
-                                                    </div>
+                                                    <div><span>Precio Venta</span><input type="number"></div>
                                                 </div>
 
                                                 <div class="inputfield">
-                                                    <div>
-                                                        <span>Descripcion</span>
-                                                        <input type="text" id="inputDescriptionAdd" name="description">
-                                                    </div>
+                                                    <div><span>Descripcion</span><input type="text"></div>
                                                 </div>
 
                                                 <div class="inputfield">
-                                                    <div>
-                                                        <span>Cantidad</span>
-                                                        <input type="number" id="inputAmountAdd" name="amount">
-                                                    </div>
+                                                    <div><span>Cantidad</span><input type="number"></div>
                                                 </div>
 
                                                 <div class="inputfield">
-                                                    <div>
-                                                        <span>Codigo de Barras</span>
-                                                        <input type="text" id="inputBarcodeAdd" name="barcode">
-                                                    </div>
+                                                    <div><span>Codigo de Barras</span><input type="text"></div>
                                                 </div>
 
                                                 <div class="inputfield">
-                                                    <div>
-                                                        <span>Marca</span>
-                                                        <input type="text" id="inputMarkAdd" name="mark">
-                                                    </div>
+                                                    <div><span>Marca</span><input type="text"></div>
                                                 </div>
 
                                                 <div class="inputfield">
-                                                    <div>
-                                                        <span>Categoria</span>
-                                                        <input type="text" id="inputCategoryAdd" name="category">
-                                                    </div>
+                                                    <div><span>Categoria</span><input type="text"></div>
                                                 </div>
 
                                                 <div class="inputfield">
-                                                    <div>
-                                                        <span>Subcategoria</span>
-                                                        <input type="text" id="inputSubCategoryAdd" name="subCategory">
-                                                    </div>
+                                                    <div><span>Subcategoria</span><input type="text"></div>
                                                 </div>
 
                                             </div>
 
                                             <div class='buttonOptionProduct'>
                                                 <button class='backButton'>Volver</button>
-                                                <button class='cleanInputs'>Limpiar campos</button>
-                                                <button id='productCreate'>Cargar</button>
+                                                <button>Limpiar campos</button>
+                                                <button>Guardar cambios</button>
                                             </div>
 
                                         </div>
-                                    </form>
-                                </div>
-                            </div>
-
-                            <div id='modifyProductView' class='noDisplay'>
-                                <div class='final-card'>
-                                    <form id='formCreateModify' class='formCreate' method="POST" enctype="multipart/form-data">
-                                        <div class='finalCardTitle'><span>Modificar Producto</span></div>
-                                        
-                                        <div id='searchModifyView'  class='searchResultBox'>
-                                            <div class='modifySearchBox'>
-                                                <div>
-                                                    <span>Buscar producto</span><input id='searchInputModify' type="text">
-                                                </div>
-                                            </div>
-    
-                                            <div id="modifySearchResult" class='resultBox'>
-                                                
-                                            </div>
-                                        </div>
-                                        
-
-                                        <div id='modifyEditView' class='noDisplay'>
-                                            <div class='addProductImage'>
-                                                <div>
-                                                    <figure id='imageProductEditPreview'><img src="img/item-test.png" alt=""></figure>
-                                                </div>
-                                                <div>
-                                                    <span id="errorImageEdit" ></span>
-                                                </div>
-                                                <div><input id='editImageContainer' type="file"></div>
-                                            </div>
-    
-                                            <div class='formContainer'>
-    
-                                                <div class='inputsContainerBox'>
-    
-                                                    <div class="inputfield">
-                                                        <div><span>Nombre</span><input type="text"></div>
-                                                    </div>
-    
-                                                    <div class="inputfield">
-                                                        <div><span>Precio Compra</span><input type="number"></div>
-                                                    </div>
-                                                    
-                                                    <div class="inputfield">
-                                                        <div><span>Precio Venta</span><input type="number"></div>
-                                                    </div>
-    
-                                                    <div class="inputfield">
-                                                        <div><span>Descripcion</span><input type="text"></div>
-                                                    </div>
-    
-                                                    <div class="inputfield">
-                                                        <div><span>Cantidad</span><input type="number"></div>
-                                                    </div>
-    
-                                                    <div class="inputfield">
-                                                        <div><span>Codigo de Barras</span><input type="text"></div>
-                                                    </div>
-    
-                                                    <div class="inputfield">
-                                                        <div><span>Marca</span><input type="text"></div>
-                                                    </div>
-    
-                                                    <div class="inputfield">
-                                                        <div><span>Categoria</span><input type="text"></div>
-                                                    </div>
-    
-                                                    <div class="inputfield">
-                                                        <div><span>Subcategoria</span><input type="text"></div>
-                                                    </div>
-    
-                                                </div>
-    
-                                                <div class='buttonOptionProduct'>
-                                                    <button class='backButton'>Volver</button>
-                                                    <button>Limpiar campos</button>
-                                                    <button>Guardar cambios</button>
-                                                </div>
-    
-                                            </div>
-                                        </div>
-
-                                        
-                                    </form>
-                                </div>
-                            </div>
-
-                            <div id='consultProductView' class='noDisplay'>
-                                <div class='final-card'>
-                                    <div class='formCreate' method="POST" enctype="multipart/form-data">
-                                        <div class='finalCardTitle'><span>Detallar Producto</span></div>
-                                       
-                                        <div id="searchConsultView" class='searchResultBox'>
-                                            <div class='modifySearchBox'>
-                                                <div>
-                                                    <span>Buscar producto</span><input id='searchInputConsult' type="text">
-                                                </div>
-                                            </div>
-    
-                                            <div id="detailSearchResult" class='resultBox'>
-                                                
-                                            </div>
-                                        </div>
-
                                     </div>
-                                </div>
-                            </div>
 
+                                    
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div id='panel-clients' class='noDisplay panel-gral'>
-                    <div class='board'>
-                        <div class='board-box'>
+                        <div id='consultProductView' class='noDisplay'>
+                            <div class='final-card'>
+                                <div class='formCreate' method="POST" enctype="multipart/form-data">
+                                    <div class='finalCardTitle'><span>Detallar Producto</span></div>
+                                    
+                                    <div id="searchConsultView" class='searchResultBox'>
+                                        <div class='modifySearchBox'>
+                                            <div>
+                                                <span>Buscar producto</span><input id='searchInputConsult' type="text">
+                                            </div>
+                                        </div>
 
-                            <div id='panelClientView'>
-                                <!--Inicio cards-->
-                                <div class='card-options'>
-                                    <div>
-                                        <figure><img src="files/statistics.svg" alt=""></figure>
-                                        <div><span>Estadisticas Clientes</span></div>
+                                        <div id="detailSearchResult" class='resultBox'>
+                                            
+                                        </div>
                                     </div>
-                                    <div id="clientStatistics" class='coverButton'></div>
-                                </div>
-                                <div class='card-options'>
-                                    <div>
-                                        <figure><img src="files/dogChat.svg" alt=""></figure>
-                                        <div><span>Dog Chat</span></div>
-                                    </div>
-                                    <div id="dogChat" class='coverButton'></div>
-                                </div>
-                                <div class='card-options'>
-                                    <div>
-                                        <figure><img src="files/conecction.svg" alt=""></figure>
-                                        <div><span>Online</span></div>
-                                    </div>
-                                    <div id="clientsOnline" class='coverButton'></div>
-                                </div>
-                                <!--Fin cards-->
-                            </div>
 
-                            <div id='clientStatisticsView' class='noDisplay'>
-                                <div class='final-card'>
-                                    <div>
-                                        <div><span>clientStatisticsView</span></div>
-                                    </div>
                                 </div>
                             </div>
-
-                            <div id='dogChatView' class='noDisplay'>
-                                <div class='final-card'>
-                                    <div>
-                                        <div><span>dogChatView</span></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div id='clientOnlineView' class='noDisplay'>
-                                <div class='final-card'>
-                                    <div>
-                                        <div><span>clientOnlineView</span></div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
+
                     </div>
                 </div>
+            </div>
 
-                <div id='panel-moreOptions' class='noDisplay panel-gral'>
-                    <div class='board'>
-                        <div class='board-box'>
+            <div id='panel-clients' class='noDisplay panel-gral'>
+                <div class='board'>
+                    <div class='board-box'>
 
-                            <div id='moreOptionsView'>
-                                <!--Inicio cards-->
-                                <div class='card-options'>
-                                    <div>
-                                        <figure><img src="files/transaction.svg" alt=""></figure>
-                                        <div><span>Transacciones</span></div>
-                                    </div>
-                                    <div id="transactions" class='coverButton'></div>
+                        <div id='panelClientView'>
+                            <!--Inicio cards-->
+                            <div class='card-options'>
+                                <div>
+                                    <figure><img src="files/statistics.svg" alt=""></figure>
+                                    <div><span>Estadisticas Clientes</span></div>
                                 </div>
-                                <div class='card-options'>
-                                    <div>
-                                        <figure><img src="files/moneyStatistics.svg" alt=""></figure>
-                                        <div><span>Estadisticas</span></div>
-                                    </div>
-                                    <div id="statistics" class='coverButton'></div>
-                                </div>
-                                <div class='card-options'>
-                                    <div>
-                                        <figure><img src="files/gear.svg" alt=""></figure>
-                                        <div><span>Conf. Avanzadas</span></div>
-                                    </div>
-                                    <div id="advanceOptions" class='coverButton'></div>
-                                </div>
-                                <!--Fin cards-->
+                                <div id="clientStatistics" class='coverButton'></div>
                             </div>
-
-                            <div id='transactionsView' class='noDisplay'>
-                                <div class='final-card'>
-                                    <div>
-                                        <div><span>transactionsView</span></div>
-                                    </div>
+                            <div class='card-options'>
+                                <div>
+                                    <figure><img src="files/dogChat.svg" alt=""></figure>
+                                    <div><span>Dog Chat</span></div>
                                 </div>
+                                <div id="dogChat" class='coverButton'></div>
                             </div>
-
-                            <div id='moneyStatisticsView' class='noDisplay'>
-                                <div class='final-card'>
-                                    <div>
-                                        <div><span>moneyStatisticsView</span></div>
-                                    </div>
+                            <div class='card-options'>
+                                <div>
+                                    <figure><img src="files/conecction.svg" alt=""></figure>
+                                    <div><span>Online</span></div>
                                 </div>
+                                <div id="clientsOnline" class='coverButton'></div>
                             </div>
-
-                            <div id='advanceConfigurationView' class='noDisplay'>
-                                <div class='final-card'>
-                                    <div>
-                                        <div><span>advanceConfigurationView</span></div>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <!--Fin cards-->
                         </div>
+
+                        <div id='clientStatisticsView' class='noDisplay'>
+                            <div class='final-card'>
+                                <div>
+                                    <div><span>clientStatisticsView</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id='dogChatView' class='noDisplay'>
+                            <div class='final-card'>
+                                <div>
+                                    <div><span>dogChatView</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id='clientOnlineView' class='noDisplay'>
+                            <div class='final-card'>
+                                <div>
+                                    <div><span>clientOnlineView</span></div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+            </div>
 
-                <div class='globalBackButton'>
-                    <div>
-                        <img id='globalBackButton' src="files/buttonBack.svg" alt="">
+            <div id='panel-moreOptions' class='noDisplay panel-gral'>
+                <div class='board'>
+                    <div class='board-box'>
+
+                        <div id='moreOptionsView'>
+                            <!--Inicio cards-->
+                            <div class='card-options'>
+                                <div>
+                                    <figure><img src="files/transaction.svg" alt=""></figure>
+                                    <div><span>Transacciones</span></div>
+                                </div>
+                                <div id="transactions" class='coverButton'></div>
+                            </div>
+                            <div class='card-options'>
+                                <div>
+                                    <figure><img src="files/moneyStatistics.svg" alt=""></figure>
+                                    <div><span>Estadisticas</span></div>
+                                </div>
+                                <div id="statistics" class='coverButton'></div>
+                            </div>
+                            <div class='card-options'>
+                                <div>
+                                    <figure><img src="files/gear.svg" alt=""></figure>
+                                    <div><span>Conf. Avanzadas</span></div>
+                                </div>
+                                <div id="advanceOptions" class='coverButton'></div>
+                            </div>
+                            <!--Fin cards-->
+                        </div>
+
+                        <div id='transactionsView' class='noDisplay'>
+                            <div class='final-card'>
+                                <div>
+                                    <div><span>transactionsView</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id='moneyStatisticsView' class='noDisplay'>
+                            <div class='final-card'>
+                                <div>
+                                    <div><span>moneyStatisticsView</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id='advanceConfigurationView' class='noDisplay'>
+                            <div class='final-card'>
+                                <div>
+                                    <div><span>advanceConfigurationView</span></div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+            </div>
 
-            </section>
+            <div class='globalBackButton'>
+                <div>
+                    <img id='globalBackButton' src="files/buttonBack.svg" alt="">
+                </div>
+            </div>
+
+            <%- include('../partial/loadingCard'); %>
+
+        </section>
+
 </body>
 <script src="js/adminPanel.js"></script>
 

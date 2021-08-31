@@ -181,8 +181,31 @@ function clickListener() {
 }
 
 
+//Loading
+function loading(active){
+    if (active){
+        document.getElementById('loadingCard').style.display = 'flex'
+    } else {
+        setTimeout(function(){ 
+            document.getElementById('loadingCard').style.display = 'none'
+         }, 500)
+    }
+}
+
+//ScrollApp
+function scroolMenu(active){
+    if (active){
+        document.getElementById('adminPanel').style.overflowY = 'scroll'
+    } else {
+        document.getElementById('adminPanel').style.overflowY= 'hidden'
+    }
+}
+
 //////////////////////////CRUD
 function productCreate() {
+
+    //mostart pantalla de carga
+    loading(1)
 
     const data = new FormData(document.getElementById("formCreateAdd"))
 
@@ -201,6 +224,7 @@ function productCreate() {
                 } else {
                     //error
                 }
+                loading(0)
             });
         })
             .catch(function (error) {
@@ -208,11 +232,6 @@ function productCreate() {
             });
     
 }
-
-
-
-
-
 
 
 
@@ -304,6 +323,8 @@ function principalViewController(idView) {
 
     previousView = 'panel-menu'
 
+    scroolMenu(1)
+
     switch (idView) {
         case 'panel-products':
             panelProductViewController('productOptionsViews')
@@ -315,11 +336,13 @@ function principalViewController(idView) {
             panelMoreViewController('moreOptionsView')
             break
         case 'panel-menu':
+            scroolMenu(0)
             backButtonView(0)
             break
     }
 
 }
+
 
 //Funcion de control de vistas PRODUCTOS
 function panelProductViewController(idView) {

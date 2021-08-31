@@ -1,5 +1,6 @@
 @import url('../partials/menu-mobile.css');
 @import url('../partials/footer.css');
+@import url('../partials/loading.css');
 @import url('../partials/header-nav.css');
 @import url('../partials/background.css');
 
@@ -28,6 +29,8 @@ figure {
     width: 100%;
     display: flex;
     justify-content: center;
+    overflow-y: hidden;
+    height: 100vh;
 }
 
 .panel-menu {
@@ -308,7 +311,6 @@ div.activity-top > div.last-online-users > div {
 }
 
 .final-card {
-    height: 100%;
     width: 100%;
     margin-top: 1vw;
     box-sizing: border-box;
@@ -544,4 +546,11 @@ div.activity-top > div.last-online-users > div {
     width: 100%;
     display: flex;
     flex-direction: column;
+}
+
+
+#addProductView {
+    position: absolute;
+    top: 10%;
+    height: unset;
 }

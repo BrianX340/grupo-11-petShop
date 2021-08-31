@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const { adminPanel, allProducts , searchProducts , createProducts , editProducts , deleteProducts } = require('../controllers/adminController')
+const productValidator = require('../validations/productCreateValidator')
 
 let productUploadImage = require('../middlewares/productUploadImage')
 
@@ -15,7 +16,7 @@ router.get('/allProducts', allProducts)
 router.get('/products/:name', searchProducts)
 
 //Create Products
-router.post('/products', productUploadImage.single("image"), createProducts)
+router.post('/products', productUploadImage.single("image"), productValidator, createProducts)
 
 //Edit Products
 router.put('/products/:id', editProducts)

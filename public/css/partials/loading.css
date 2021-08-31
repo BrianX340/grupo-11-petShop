@@ -1,0 +1,17 @@
+
+#loadingCard {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    background-color: #1e5f90b3;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+}
+
+
+#loadingCard img {
+    height: 160px;
+}
