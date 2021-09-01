@@ -26,7 +26,7 @@ module.exports = {
 
         searchText = req.params.search
         pet = req.query.pet
-        subCategory = req.query.subCategory
+        subCategory = req.query.category
 
         search = searchText ? searchProductByName(searchText) : searcherByPetsubCategory(pet,subCategory)
 

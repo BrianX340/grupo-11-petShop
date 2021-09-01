@@ -13,6 +13,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 13%;
 }
 
 .resultTitle div {
@@ -42,6 +43,10 @@
 
 @media (min-width: 450px) {
 
+    .resultTitle {
+        margin-top: 10%;
+    }
+
     .resultTitle div {
         border-radius: 12px;
         width: unset;
@@ -50,6 +55,15 @@
     .resultTitle div span {
         font-size: 20px;
         line-height: unset;
+    }
+
+}
+
+
+@media (min-width: 780px) {
+
+    .resultTitle {
+        margin-top: 5%;
     }
 
 }
