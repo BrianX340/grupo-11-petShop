@@ -16,11 +16,11 @@ module.exports = {
         res.render('index//home',{data})
     },
 
-    productDetail: (req,res) =>{
+/*     productDetail: (req,res) =>{
         //idProducto = req.params.id
         //res.render('index//productDetail',{producto})
         res.render('index//productDetail')
-    },
+    }, */
 
     productsSearch: (req,res)=>{
 

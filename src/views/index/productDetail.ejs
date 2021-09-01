@@ -23,16 +23,16 @@
                             <div class="container-info">
 
                                 <div class="container-title">
-                                    <h5 class="title-h5">Lorem ipsum dolor sit amet.</h5>
+                                    <h5 class="title-h5"><%= product.name %> </h5>
                                     <p class="subtitulo">Lorem ipsum</p>
                                 </div>
 
                                 <div class="container-price">
-                                    <div class="price">$$$$</div>
+                                    <div class="price">$<%= product.sellprice %> </div>
                                 </div>
 
                                 <div class="product-quantity">
-                                    <p>Cantidad :</p>
+                                    <p>Cantidad :</p> 
                                     <input type="number" id="cantidad" name="cantidad" min="1" max="10">
                                 </div>
 
@@ -57,21 +57,17 @@
                             <div class="box-gallery">
 
                                 <div class="box-img">
-                                    <img class="image-big" width="490" height="490" src="/img/product1.jpg">
+                                    <img class="image-big" width="490" height="500" src="/img/productos/<%= product.img[0]%>">
+                                    
                                 </div>
                                 <div class="images">
+                                    
                                     <div class="small-img">
-                                        <img class="img-zoom" width="70" height="70" src="/img/product1.jpg" onclick="showImg(this.src)">
+                                        <% product.img.forEach(img => { %>
+                                        <img class="img-zoom" width="80" height="80" src="/img/productos/<%- img%>" onclick="showImg(this.src)">
+                                       <% }) %> 
                                     </div>
-                                    <div class="small-img">
-                                        <img class="img-zoom" width="70" height="70" src="/img/img-1.jpg" onclick="showImg(this.src)">
-                                    </div>
-                                    <div class="small-img">
-                                        <img class="img-zoom" width="70" height="70" src="/img/img-3.jpg" onclick="showImg(this.src)">
-                                    </div>
-                                    <div class="small-img">
-                                        <img class="img-zoom" width="70" height="70" src="/img/img-4.jpg" onclick="showImg(this.src)">
-                                    </div>
+                                    
                                 </div>
 
                             </div>
@@ -90,57 +86,13 @@
                     <div class="container-descripcion">
                         <div class="box-descripcion">
                             <p class="p-Descripcion">
-                            <h4>Descripción</h4>
+                            <h4>Descripción:</h4>
                             </p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla vel, accusamus adipisci
-                            mollitia
-                            molestias
-                            illo placeat. Veniam ducimus qui eveniet cupiditate ipsam, perspiciatis natus autem, magni
-                            soluta harum,
-                            error rerum perferendis ut vel est assumenda? Iure voluptatum laudantium aliquam, a modi
-                            officia quae
-                            nam ea
-                            iste eius dolorum, et aut dolorem veritatis consequatur consequuntur quod mollitia
-                            praesentium iusto
-                            aperiam
-                            eveniet!
+                            <p><%= product.description %> </p>
                         </div>
                     </div>
 
-                    <div class="container-carac">
-                        <div class="box-carac">
-                            <h4 class="carac-h3">Caracteristicas</h4>
-                            <p>
-                                - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-
-                            </p>
-                            <p>
-                                - Lorem ipsum dolor sit amet consectetur adipisicing.
-
-                            </p>
-                            <p>
-                                - Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque iusto, magni
-                                voluptatem ipsum
-                                beatae et!
-
-                            </p>
-                            <p>
-                                - Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur ab eaque, qui
-                                vero, nobis
-                                laudantium pariatur illum ea corrupti nihil doloremque corporis cum! Reiciendis fugit
-                                sed tempora
-                                molestiae! Sunt, ad.
-                            </p>
-
-
-
-
-
-
-
-
-                        </div>
-                    </div>
+                    
                 </div>
 
 

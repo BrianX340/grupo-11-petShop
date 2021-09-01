@@ -18,11 +18,13 @@ errorRouter = require('./routes/errorRouter')
 adminRouter = require('./routes/adminRouter')
 indexRouter = require('./routes/indexRouter')
 userRouter = require('./routes/userRouter')
+productsRouter = require('./routes/products')
 
 /* ROUTES */
 app.use('/', indexRouter)
 app.use('/ps', userRouter)
 app.use('/admin',adminRouter)
+app.use('/products', productsRouter)
 
 app.use('*', errorRouter)
 
