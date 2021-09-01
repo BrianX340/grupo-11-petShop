@@ -2,6 +2,7 @@ var methodOverride = require('method-override');
 const express = require('express')
 const path = require('path');
 const app = express()
+const bodyParser = require('body-parser');
 
 /* VIEWS */
 app.set('views', path.join(__dirname, 'views'))
