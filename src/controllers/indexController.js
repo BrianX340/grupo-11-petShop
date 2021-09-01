@@ -37,6 +37,16 @@ module.exports = {
         res.render('index//searchPage', {data} )
 
 
+    },
+    detail: (req, res) => {
+
+        let productID = +req.params.id;
+
+        let product = products.find(product => product.id === productID)
+
+        res.render('index//productDetail', {
+            product
+        })
     }
 }
 
