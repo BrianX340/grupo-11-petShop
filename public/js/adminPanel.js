@@ -105,6 +105,11 @@ function clickListener() {
                 limpiarCampos()
                 event.preventDefault()
                 break
+
+            case 'cardCoverCLick':
+                productIdClicked = event.target.attributes[1].value
+                editProductMode(productIdClicked)
+                break
         }
 
 
@@ -178,6 +183,11 @@ function clickListener() {
         }
 
     })
+}
+
+//Activa la vista de edicion del elemento seleccionado
+function editProductMode(elementId){
+    
 }
 
 

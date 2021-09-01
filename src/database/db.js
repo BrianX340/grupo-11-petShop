@@ -10,6 +10,14 @@ function saveDatabase(){
 
 
 module.exports = {
+    oneProduct: (productId)=>{
+        getProduct = db.filter(product => product.id == productId)
+        if (getProduct[0]){
+            return getProduct[0]
+        } else {
+            return false
+        }
+    },
     saveOneProduct: (product)=>{
         db.push(product)
         saveDatabase()

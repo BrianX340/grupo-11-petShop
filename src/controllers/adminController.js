@@ -1,6 +1,10 @@
-const { getAllProducts, searchProductByName, saveOneProduct } = require('../database/db');
+const { oneProduct, getAllProducts, searchProductByName, saveOneProduct } = require('../database/db');
 
 module.exports = {
+    getOneProduct: (req,res)=>{
+        elementId = req.params.id
+        product = oneProduct(elementId)
+    },
     adminPanel: (req,res) =>{
         res.render('admin//adminPanel')
     },
