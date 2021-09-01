@@ -57,14 +57,14 @@
                             <div class="box-gallery">
 
                                 <div class="box-img">
-                                    <img class="image-big" width="490" height="500" src="/img/productos/<%= product.img[0]%>">
+                                    <img class="image-big" width="490" height="500" src="/img/products/<%= product.img[0]%>">
                                     
                                 </div>
                                 <div class="images">
                                     
                                     <div class="small-img">
                                         <% product.img.forEach(img => { %>
-                                        <img class="img-zoom" width="80" height="80" src="/img/productos/<%- img%>" onclick="showImg(this.src)">
+                                        <img class="img-zoom" width="80" height="80" src="/img/products/<%- img%>" onclick="showImg(this.src)">
                                        <% }) %> 
                                     </div>
                                     

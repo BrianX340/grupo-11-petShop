@@ -51,10 +51,10 @@ module.exports = {
                 }
                 break
             
-            case 'food':
-            case 'hygiene':
-            case 'toys':
-            case 'bed':
+            case 'Alimentos':
+            case 'Higiene':
+            case 'Juguetes':
+            case 'Camas':
                 if (pet == 'all'){
                     //retornamos la busqueda
                     return db
