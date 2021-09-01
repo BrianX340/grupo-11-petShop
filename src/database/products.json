@@ -13,7 +13,7 @@
         "pet": "cat",
         "subCategory": "Alimentos",
         "mark": "Meow Mix",
-        "img": ["alimentoGato6.jpg"]
+        "img": ["alimentoGato1.jpg"]
     },
     {
         "id": 2,
@@ -29,7 +29,7 @@
         "pet": "cat",
         "subCategory": "Higiene",
         "mark": "Arm & Hammer",
-        "img": ["alimentoGato6.jpg"]
+        "img": ["higieneGato2.jpg"]
     },
     {
         "id": 3,
@@ -45,7 +45,7 @@
         "pet": "cat",
         "subCategory": "Juguetes",
         "mark": "MeoHui",
-        "img": ["alimentoGato6.jpg"]
+        "img": ["jugueteGato3.jpg"]
     },
     {
         "id": 4,
@@ -58,10 +58,10 @@
         "discount": 82,
         "valoration": 2,
         "stock": 62,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Higiene",
         "mark": "Vet's Best",
-        "img": ["alimentoGato6.jpg"]
+        "img": ["higienePerro4.jpg"]
     },
     {
         "id": 5,
@@ -77,7 +77,7 @@
         "pet": "cat",
         "subCategory": "Camas",
         "mark": "Love's cabin",
-        "img": ["alimentoGato6.jpg"]
+        "img": ["camaGato5.jpg"]
     },
     {
         "id": 6,
@@ -109,7 +109,7 @@
         "pet": "dog",
         "subCategory": "Higiene",
         "mark": "Zesty Paws",
-        "img": ["alimentoGato6.jpg"]
+        "img": ["higienePerro7.jpg"]
     },
     {
         "id": 8,
@@ -125,7 +125,7 @@
         "pet": "dog",
         "subCategory": "Higiene",
         "mark": "Arm & Hammer",
-        "img": ["alimentoGato6.jpg"]
+        "img": ["higienePerro8.jpg"]
     },
     {
         "id": 9,
@@ -141,7 +141,7 @@
         "pet": "cat",
         "subCategory": "Camas",
         "mark": "Tempcore",
-        "img": ["alimentoGato6.jpg"]
+        "img": ["camaGato9.jpg"]
     },
     {
         "id": 10,
@@ -157,7 +157,7 @@
         "pet": "dog",
         "subCategory": "Alimentos",
         "mark": "Pedigree",
-        "img": ["alimentoGato6.jpg"]
+        "img": ["alimentoPerro10.jpg"]
     },
     {
         "id": 11,
@@ -186,7 +186,7 @@
         "discount": 22,
         "valoration": 2,
         "stock": 39,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Juguetes",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -202,7 +202,7 @@
         "discount": 63,
         "valoration": 4,
         "stock": 293,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Higiene",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -218,7 +218,7 @@
         "discount": 90,
         "valoration": 4,
         "stock": 112,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Alimentos",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -234,7 +234,7 @@
         "discount": 8,
         "valoration": 5,
         "stock": 157,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Juguetes",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -250,7 +250,7 @@
         "discount": null,
         "valoration": 2,
         "stock": 177,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Alimentos",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -266,7 +266,7 @@
         "discount": null,
         "valoration": 4,
         "stock": 293,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Alimentos",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -282,7 +282,7 @@
         "discount": 69,
         "valoration": 4,
         "stock": 99,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Camas",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -298,7 +298,7 @@
         "discount": 16,
         "valoration": 3,
         "stock": 148,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Juguetes",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -314,7 +314,7 @@
         "discount": null,
         "valoration": 3,
         "stock": 197,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Alimentos",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -330,7 +330,7 @@
         "discount": null,
         "valoration": 2,
         "stock": 150,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Juguetes",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -346,7 +346,7 @@
         "discount": null,
         "valoration": 5,
         "stock": 68,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Juguetes",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -362,7 +362,7 @@
         "discount": null,
         "valoration": 2,
         "stock": 300,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Juguetes",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -378,7 +378,7 @@
         "discount": 35,
         "valoration": 3,
         "stock": 173,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Camas",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -394,7 +394,7 @@
         "discount": 57,
         "valoration": 3,
         "stock": 239,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Juguetes",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -410,7 +410,7 @@
         "discount": null,
         "valoration": 4,
         "stock": 38,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Higiene",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -426,7 +426,7 @@
         "discount": 42,
         "valoration": 1,
         "stock": 110,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Juguetes",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -442,7 +442,7 @@
         "discount": 32,
         "valoration": 4,
         "stock": 190,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Alimentos",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -458,7 +458,7 @@
         "discount": 51,
         "valoration": 2,
         "stock": 119,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Alimentos",
         "mark": "",
         "img": ["alimentoGato6.jpg"]
@@ -474,7 +474,7 @@
         "discount": null,
         "valoration": 5,
         "stock": 121,
-        "pet": "cat",
+        "pet": "dog",
         "subCategory": "Camas",
         "mark": "",
         "img": ["alimentoGato6.jpg"]

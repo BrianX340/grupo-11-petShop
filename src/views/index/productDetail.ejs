@@ -24,12 +24,25 @@
 
                                 <div class="container-title">
                                     <h5 class="title-h5"><%= product.name %> </h5>
-                                    <p class="subtitulo">Lorem ipsum</p>
+                                    <p class="subtitulo">
+                                        <%= product.mark %>
+                                    </p>
                                 </div>
-
+    
                                 <div class="container-price">
-                                    <div class="price">$<%= product.sellPrice %> </div>
+                                    <div class="price">$<%= product.sellPrice %>
+                                    </div>
                                 </div>
+    
+                                <!-- <div class="product-color">
+                                    <label>Color :</label>
+                                    <select name="mes">
+                                        <option value="1">Negro</option>
+                                        <option value="2">Azul</option>
+                                        <option value="3">Rosa</option>
+                                        <option value="4">Amarrillo</option>
+                                    </select>
+                                </div> -->
 
                                 <div class="product-quantity">
                                     <p>Cantidad :</p> 
