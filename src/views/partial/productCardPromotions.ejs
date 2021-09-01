@@ -3,6 +3,13 @@
         <!--Comienza un item-->
             <div class="box-card">
                 <div>
+                    <div class='favourite'>
+                        <div class='coverHeart' productId='<%= product.id %>'></div>
+                        <figure>
+                            <img class='heartInactive' src="/files/heartInactive.svg" alt="">
+                            <img id='<%= product.id %>Heart' class='nodisplay' src="/files/heartActive.svg" alt="">
+                        </figure>
+                    </div>
                     <a href="/product/<%= product.id %>">
                         <div class='box-card-top'>
     

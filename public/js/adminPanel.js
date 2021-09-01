@@ -221,6 +221,7 @@ function productCreate() {
             response.json().then(function (data) {
                 if (data.status=='ok'){
                     //creado
+                    limpiarCampos()
                 } else {
                     //error
                 }

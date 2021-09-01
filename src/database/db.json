@@ -1,1 +1,47 @@
-[{"id":1,"name":"Comida para gatos","description":"Aqui va la descripcion del producto que esta a la venta","barcode":7794588675,"sellPrice":58.99,"buyPrice":50,"valoration":1,"stock":122,"pet":"cat","tag":"food","mark":"cat-chow","discount":20,"imagePath":"1630436195840_img_.jpg"},{"id":"","name":"asd","buyPrice":"1","sellPrice":"2","description":"qwe","amount":"123","barcode":"112233","mark":"nike","category":"Gato","subCategory":"Alimento","imagePath":"1630442671476_img_.jpg"},{"id":"","name":"","buyPrice":"","sellPrice":"","description":"","amount":"","barcode":"","mark":"","category":"","subCategory":"","imagePath":"productDefault.png"},{"id":"","name":"qwe","buyPrice":"","sellPrice":"1233","description":"comi comi dasa","amount":"123","barcode":"123","mark":"123","category":"123","subCategory":"123","imagePath":"productDefault.png"},{"id":"","name":"qwe","buyPrice":"123","sellPrice":"1233","description":"comi comi dasa","amount":"123","barcode":"123","mark":"123","category":"123","subCategory":"123","imagePath":"productDefault.png"}]
+[
+    {
+        "id": 1,
+        "name": "Comida para gatos",
+        "description": "Aqui va la descripcion del producto que esta a la venta",
+        "barcode": 7794588675,
+        "sellPrice": 58.99,
+        "buyPrice": 50,
+        "valoration": 1,
+        "stock": 122,
+        "pet": "cat",
+        "tag": "food",
+        "mark": "cat-chow",
+        "discount": 20,
+        "imagePath": "1630436195840_img_.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Comida para gatos",
+        "description": "Aqui va la descripcion del producto que esta a la venta",
+        "barcode": 7794588675,
+        "sellPrice": 58.99,
+        "buyPrice": 50,
+        "valoration": 1,
+        "stock": 122,
+        "pet": "cat",
+        "tag": "food",
+        "mark": "cat-chow",
+        "discount": 20,
+        "imagePath": "1630436195840_img_.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Comida para gatos",
+        "description": "Aqui va la descripcion del producto que esta a la venta",
+        "barcode": 7794588675,
+        "sellPrice": 58.99,
+        "buyPrice": 50,
+        "valoration": 1,
+        "stock": 122,
+        "pet": "cat",
+        "tag": "food",
+        "mark": "cat-chow",
+        "discount": 20,
+        "imagePath": "1630436195840_img_.jpg"
+    }
+]

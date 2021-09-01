@@ -7,6 +7,7 @@
     position: relative;
     height: 57vw;
     max-height: 330px;
+    margin-top: 10%;
   }
   
   .carousel__viewport {

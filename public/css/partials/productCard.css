@@ -6,6 +6,10 @@ a:-webkit-any-link {
     display: flex;
   }
 
+  .nodisplay {
+    display: none;
+  }
+
   
 
 .box-card {
@@ -107,6 +111,7 @@ a:-webkit-any-link {
   }
   
   .product-name {
+    font-weight: bold;
     cursor: pointer;
   }
   
@@ -192,6 +197,32 @@ a:-webkit-any-link {
     display: -ms-flexbox;
     display: flex;
   }
+
+  .favourite {
+    position: absolute;
+    right: 35px;
+    top: 10px;
+  }
+
+  .favourite figure {
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    position: relative;
+  }
+
+  .favourite figure img {
+    height: 100%;
+    position: absolute;
+  }
+
+  .coverHeart {
+    height: 30px;
+    position: absolute;
+    width: 30px;
+    z-index: 1;
+  }
+
 
   @media (min-width: 768px) {
     .box-card {
