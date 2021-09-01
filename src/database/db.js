@@ -19,8 +19,14 @@ module.exports = {
         }
     },
     saveOneProduct: (product)=>{
-        db.push(product)
-        saveDatabase()
+        try{
+            db.push(product)
+            saveDatabase()
+            return true
+        }
+        catch{
+            return false
+        }
     },
     getAllProducts: ()=>{
         return db //devolvemos la base de datos completa PRODUCTOS

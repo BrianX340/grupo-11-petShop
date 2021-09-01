@@ -46,7 +46,7 @@ module.exports = {
             buyPrice,
             sellPrice,
             description,
-            amount,
+            stock:amount,
             barcode,
             mark,
             category,
@@ -54,9 +54,12 @@ module.exports = {
             img
         }
 
-        saveOneProduct(newProduct);
+        if (saveOneProduct(newProduct)){
+            return res.send({status:"ok"})
+        }
+        return res.send({status:'error'})
 
-        res.send({status:"ok"})
+
 
 
     },

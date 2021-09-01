@@ -570,3 +570,8 @@ div.activity-top > div.last-online-users > div {
 #modifyProductSelectedView {
     display: none;
 }
+
+#modifySearchView {
+    display: flex;
+    flex-direction: column;
+}

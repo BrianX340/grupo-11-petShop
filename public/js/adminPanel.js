@@ -12,14 +12,22 @@ window.onload = () => {
 
 //Limpieza de Campos
 function limpiarCampos() {
+    
+    //ViewsReset
+    editMode(0)
 
     //Image
-    document.getElementById("searchInputConsult").value = ''
+    document.getElementById("imageProductAddPreview").innerHTML = "<img src='img/item-test.png' alt=''>"
+    document.getElementById("imageProductEditPreview").innerHTML = "<img src='img/item-test.png' alt=''>"
 
     //Searchs
     document.getElementById("imageContainer").value = ''
     document.getElementById("searchInputModify").value = ''
     document.getElementById("imageProductAddPreview").value = ''
+
+    //SearchResult
+    document.getElementById("modifySearchResult").innerHTML = ''
+    document.getElementById("detailSearchResult").innerHTML = ''
 
     //Carga de productos
     document.getElementById("inputNameAdd").value = ''
@@ -32,8 +40,16 @@ function limpiarCampos() {
     document.getElementById("inputDescriptionAdd").value = ''
     document.getElementById("inputSubCategoryAdd").value = ''
 
-    //Carga de Modify
-    document.getElementById("searchInputModify").value = ''
+    //Modify
+    document.getElementById("inputNameEdit").value = ''
+    document.getElementById("inputMarkEdit").value = ''
+    document.getElementById("inputAmountEdit").value = ''
+    document.getElementById("inputBarcodeEdit").value = ''
+    document.getElementById("inputBuyPriceEdit").value = ''
+    document.getElementById("inputCategoryEdit").value = ''
+    document.getElementById("inputSellPriceEdit").value = ''
+    document.getElementById("inputDescriptionEdit").value = ''
+    document.getElementById("inputSubCategoryEdit").value = ''
 
     //Carga de Consult
     document.getElementById("searchInputConsult").value = ''
@@ -100,6 +116,7 @@ function clickListener() {
         switch (elementClass) {
             case 'backButton':
                 backButtonController(previousView)
+                event.preventDefault()
                 break;
             case 'cleanInputs':
                 limpiarCampos()
@@ -216,7 +233,7 @@ function completarEditForm(product){
 
     console.log(product)
 
-    document.getElementById('imageProductEditPreview').innerHTML = `<img src='img/${product.img[0]}' alt=''>`
+    document.getElementById('imageProductEditPreview').innerHTML = `<img src='img/products/${product.img[0]}' alt=''>`
     document.getElementById('inputNameEdit').value = product.name
     document.getElementById('inputBuyPriceEdit').value = product.buyPrice
     document.getElementById('inputSellPriceEdit').value = product.sellPrice
@@ -229,7 +246,7 @@ function completarEditForm(product){
 
 }
 
-//Activa la vista de edicion del elemento seleccionado
+//Activa la vista de edicion del elemento seleccionado y realiza el fetch del elemento
 async function editProductMode(elementId){
     fetch(`${window.location.origin}/admin/getOneProduct/${elementId}`, {
         method: 'GET'
@@ -242,8 +259,7 @@ async function editProductMode(elementId){
             response.json().then(function (data) {
                 if (data.status=='ok'){
                     product = data.product
-                    document.getElementById('modifySearchView').style.display = 'none'
-                    document.getElementById('modifyProductSelectedView').style.display = 'flex'
+                    editMode(1)
                     completarEditForm(product)
 
                 } else {
@@ -256,6 +272,17 @@ async function editProductMode(elementId){
                 console.log("Fetch error: " + error);
             });
     
+}
+
+//Intercambia entre busqueda editar o edit mode
+function editMode(active){
+    if (active){
+        document.getElementById('modifyProductSelectedView').style.display = 'flex'
+        document.getElementById('modifySearchView').style.display = 'none'
+        return
+    }
+    document.getElementById('modifyProductSelectedView').style.display = 'none'
+        document.getElementById('modifySearchView').style.display = 'flex'
 }
 
 
@@ -311,7 +338,6 @@ function productCreate() {
             });
     
 }
-
 
 
 //Con esta funcion rellenamos los campos de resultados de productos segun el input donde se presiono
