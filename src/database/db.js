@@ -1,11 +1,11 @@
 let fs = require('fs');
 
-db = JSON.parse(fs.readFileSync('./src/database/db.json', "utf-8"))
+db = JSON.parse(fs.readFileSync('./src/database/products.json', "utf-8"))
 
 
 
 function saveDatabase(){
-    fs.writeFileSync(`./src/database/db.json`, JSON.stringify(db), "utf-8")
+    fs.writeFileSync(`./src/database/products.json`, JSON.stringify(db), "utf-8")
 }
 
 
@@ -39,8 +39,8 @@ module.exports = {
         saveDatabase()
     },
 
-    searcherByPetTag: (pet,tag)=>{
-        switch (tag){
+    searcherByPetsubCategory: (pet,subCategory)=>{
+        switch (subCategory){
             case 'all':
                 if (pet == 'all'){
                     //retornamos la busqueda
@@ -60,7 +60,7 @@ module.exports = {
                     return db
                 } else if (pet == 'cat' || pet == 'dog'){
                     //retornamos la busqueda filtrando todo lo de gato o perro
-                    return db.filter(producto => producto.tag == tag && producto.pet == pet)
+                    return db.filter(producto => producto.subCategory == subCategory && producto.pet == pet)
                 }
                 break
         }

@@ -426,19 +426,19 @@ div.activity-top > div.last-online-users > div {
     box-shadow: 0 2px 3px 0px rgb(0 0 0);
 }
 
-.addProductImage {
+.addProductImage , .editProductImage {
     width: 90%;
     height: 50vw;
     display: flex;
     position: relative;
 }
 
-.addProductImage > div:first-child {
+.addProductImage > div:first-child,.editProductImage > div:first-child {
     width: 100%;
     height: 100%;
 }
 
-.addProductImage > div:first-child figure {
+.addProductImage > div:first-child figure, .editProductImage > div:first-child figure {
     width: 100%;
     height: 65%;
     display: flex;
@@ -447,11 +447,11 @@ div.activity-top > div.last-online-users > div {
     margin-top: 2vw;
 }
 
-.addProductImage > div:first-child figure img {
+.addProductImage > div:first-child figure img, .editProductImage > div:first-child figure img {
     height: 100%;
 }
 
-.addProductImage > div:last-child {
+.addProductImage > div:last-child, .editProductImage > div:last-child {
     width: 132px;
     height: 25px;
     position: absolute;
@@ -565,4 +565,8 @@ div.activity-top > div.last-online-users > div {
     position: absolute;
     top: 10%;
     height: unset;
+}
+
+#modifyProductSelectedView {
+    display: none;
 }

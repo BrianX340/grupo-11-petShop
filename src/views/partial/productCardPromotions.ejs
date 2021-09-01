@@ -10,21 +10,21 @@
                             <img id='<%= product.id %>Heart' class='nodisplay' src="/files/heartActive.svg" alt="">
                         </figure>
                     </div>
-                    <a href="/product/<%= product.id %>">
+                    <a class='cardProductLink' href="/product/<%= product.id %>">
                         <div class='box-card-top'>
     
                             <div class='card-item-image'>
                                 <figure>
-                                    <img src="/img/products/<%= product.imagePath %>" alt="">
+                                    <img src="/img/products/<%= product.img %>" alt="">
                                 </figure>
                             </div>
 
-                            <div class='card-iem-name'>
-                                <span class='product-name'><%= product.name %></span>
+                            <div class='card-item-name'>
+                                <span class='product-name'><%= Array.from(product.name).slice(0,64).join('')+'...' %></span>
                             </div>
 
                             <div class='card-item-description'>
-                                <span><%= product.description %></span>
+                                <span><%= Array.from(product.description).slice(0,122).join('')+'...' %></span>
                             </div>
 
                             <div class='card-item-price'>

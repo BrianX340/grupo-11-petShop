@@ -269,9 +269,6 @@ a:-webkit-any-link {
     display: -ms-flexbox;
     display: flex;
   }
-  #carousel {
-    margin-top: 20px;
-  }
 
   #pet-categories .pet-duo > span {
     font-size: 30px;

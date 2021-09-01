@@ -261,7 +261,97 @@
                                     </section>
 
                                     <section id='modifyProductSelectedView'>
-                                        
+                                        <form id='formEdit' class="formCreate" method="POST" enctype="multipart/form-data">
+                                            <div class='finalCardTitle'><span>Carga de Productos</span></div>
+                                            
+                                            <div class='editProductImage'>
+                                                <div>
+                                                    <figure id='imageProductEditPreview'><img src="img/item-test.png" alt=""></figure>
+                                                </div>
+                                                <div>
+                                                    <span id="errorImageEdit" ></span>
+                                                </div>
+                                                <div><input id='imageContainerEdit' type="file" class="form-control" name="image" aria-label="file example"></div>
+                                            </div>
+        
+                                            <div class='formContainer'>
+        
+                                                <div class='inputsContainerBox'>
+        
+                                                    <div class="inputfield">
+                                                        <div>
+                                                            <span>Nombre</span>
+                                                            <input type="text" type="text" class="form-control" id="inputNameEdit" name="name">
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="inputfield">
+                                                        <div>
+                                                            <span>Precio Compra</span>
+                                                            <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="inputBuyPriceEdit" name="buyPrice">
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="inputfield">
+                                                        <div>
+                                                            <span>Precio Venta</span>
+                                                            <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="inputSellPriceEdit" name="sellPrice">
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="inputfield">
+                                                        <div>
+                                                            <span>Descripcion</span>
+                                                            <input type="text" id="inputDescriptionEdit" name="description">
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="inputfield">
+                                                        <div>
+                                                            <span>Cantidad</span>
+                                                            <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="inputAmountEdit" name="amount">
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="inputfield">
+                                                        <div>
+                                                            <span>Codigo de Barras</span>
+                                                            <input type="text" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="inputBarcodeEdit" name="barcode">
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="inputfield">
+                                                        <div>
+                                                            <span>Marca</span>
+                                                            <input type="text" id="inputMarkEdit" name="mark">
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="inputfield">
+                                                        <div>
+                                                            <span>Categoria</span>
+                                                            <input type="text" id="inputCategoryEdit" name="category">
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="inputfield">
+                                                        <div>
+                                                            <span>Subcategoria</span>
+                                                            <input type="text" id="inputSubCategoryEdit" name="subCategory">
+                                                        </div>
+                                                    </div>
+        
+                                                </div>
+        
+                                                <div class='buttonOptionProduct'>
+                                                    <button class='backButton'>Volver</button>
+                                                    <button class='cleanInputs'>Limpiar campos</button>
+                                                    <button id='productSaveEdit'>Salvar</button>
+                                                </div>
+        
+                                            </div>
+
+                                        </form>
                                     </section>
                                 
                                     

@@ -4,6 +4,17 @@ module.exports = {
     getOneProduct: (req,res)=>{
         elementId = req.params.id
         product = oneProduct(elementId)
+
+        if(product){
+            res.send({
+                status:'ok',
+                product
+            })
+        } else {
+            res.send({
+                status:'fail'
+            })
+        }
     },
     adminPanel: (req,res) =>{
         res.render('admin//adminPanel')
@@ -15,7 +26,7 @@ module.exports = {
         res.render('partial//resultProductSearch', {productos:searchProductByName(req.params.name)})
     },
     createProducts: (req,res) =>{
-        imagePath = req.file ? req.file.filename : "productDefault.png"
+        img = req.file ? [req.file.filename] : "productDefault.png"
 
         let {
             name,
@@ -40,7 +51,7 @@ module.exports = {
             mark,
             category,
             subCategory,
-            imagePath
+            img
         }
 
         saveOneProduct(newProduct);

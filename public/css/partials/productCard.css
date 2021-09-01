@@ -18,7 +18,6 @@ a:-webkit-any-link {
     margin-left: 10px;
     margin-right: 10px;
     width: 9.375rem;
-    height: 15.775rem;
     border-radius: 5px;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
@@ -35,6 +34,10 @@ a:-webkit-any-link {
     flex-direction: column;
   }
 
+  .cardProductLink {
+    height: 15.775rem;
+}
+
   
 .box-card > div {
     width: 100%;
@@ -45,7 +48,7 @@ a:-webkit-any-link {
   
   .box-card-top {
     width: 100%;
-    height: 85%;
+    height: 100%;
     display: flex;
     flex-direction: column;
   }
@@ -55,13 +58,12 @@ a:-webkit-any-link {
     font-family: system-ui;
     display: flex;
     justify-content: center;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 10px;
   }
   
   .box-card-top .card-item-image {
       width: 100%;
-      height: 100px;
+      height: 5.775rem;
       margin-top: 10px;
   }
 
@@ -79,8 +81,6 @@ a:-webkit-any-link {
     font-weight: bold;
     border-radius: 0px 0px 5px 5px;
     transition: 1s;
-    bottom: 0;
-    position: absolute;
   }
   
 
@@ -108,11 +108,13 @@ a:-webkit-any-link {
     font-size: 13px;
     transition: 1s;
     color: #4b4b4b;
+    height: 1.775rem;
   }
   
   .product-name {
     font-weight: bold;
     cursor: pointer;
+    width: 95%;
   }
   
   .card-item-name:hover {
@@ -124,6 +126,11 @@ a:-webkit-any-link {
   .card-item-description {
     width: 100%;
     font-size: 10px;
+    height: 3.775rem;
+  }
+
+  .card-item-description span {
+    width: 95%;
   }
   
   .card-item-price {
@@ -139,7 +146,6 @@ a:-webkit-any-link {
   }
 
   .card-item-valoration div {
-    height: 100%;
     display: flex;
     background-color: #2499d2;
     border-radius: 3vw;

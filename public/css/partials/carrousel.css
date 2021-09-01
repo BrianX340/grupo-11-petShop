@@ -7,7 +7,7 @@
     position: relative;
     height: 57vw;
     max-height: 330px;
-    margin-top: 10%;
+    margin-top: 15%;
   }
   
   .carousel__viewport {
@@ -67,6 +67,8 @@
 	-webkit-animation: carrousel-out 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: carrousel-out 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+
+
   
 @-webkit-keyframes carrousel-out {
     0% {
@@ -86,5 +88,13 @@
     100% {
       -webkit-transform: translateX(100%);
               transform: translateX(100%);
+    }
+  }
+
+
+
+  @media (min-width: 768px) {
+    #carousel {
+      margin-top: 10%;
     }
   }

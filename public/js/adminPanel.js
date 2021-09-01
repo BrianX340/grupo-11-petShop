@@ -185,8 +185,76 @@ function clickListener() {
     })
 }
 
+function getOneProduct(elementId){
+    var product;
+    fetch(`${window.location.origin}/admin/getOneProduct/${elementId}`, {
+        method: 'GET'
+    })
+        .then(function (response) {
+            if (response.status !== 200) {
+                console.log(`Looks like there was a problem. Status code: ${response.status}`);
+                return;
+            }
+            response.json().then(function (data) {
+                if (data.status=='ok'){
+                    product = data.product
+                } else {
+                    return false
+                }
+                loading(0)
+            });
+        })
+            .catch(function (error) {
+                console.log("Fetch error: " + error);
+            });
+    return product
+}
+
+
+
+function completarEditForm(product){
+
+    console.log(product)
+
+    document.getElementById('imageProductEditPreview').innerHTML = `<img src='img/${product.img[0]}' alt=''>`
+    document.getElementById('inputNameEdit').value = product.name
+    document.getElementById('inputBuyPriceEdit').value = product.buyPrice
+    document.getElementById('inputSellPriceEdit').value = product.sellPrice
+    document.getElementById('inputDescriptionEdit').value = product.description
+    document.getElementById('inputAmountEdit').value = product.stock
+    document.getElementById('inputBarcodeEdit').value = product.barcode
+    document.getElementById('inputMarkEdit').value = product.mark
+    document.getElementById('inputCategoryEdit').value = product.pet
+    document.getElementById('inputSubCategoryEdit').value = product.subCategory
+
+}
+
 //Activa la vista de edicion del elemento seleccionado
-function editProductMode(elementId){
+async function editProductMode(elementId){
+    fetch(`${window.location.origin}/admin/getOneProduct/${elementId}`, {
+        method: 'GET'
+    })
+        .then(function (response) {
+            if (response.status !== 200) {
+                console.log(`Looks like there was a problem. Status code: ${response.status}`);
+                return;
+            }
+            response.json().then(function (data) {
+                if (data.status=='ok'){
+                    product = data.product
+                    document.getElementById('modifySearchView').style.display = 'none'
+                    document.getElementById('modifyProductSelectedView').style.display = 'flex'
+                    completarEditForm(product)
+
+                } else {
+                    return false
+                }
+                loading(0)
+            });
+        })
+            .catch(function (error) {
+                console.log("Fetch error: " + error);
+            });
     
 }
 

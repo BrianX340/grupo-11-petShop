@@ -1,4 +1,4 @@
-const { getAllProducts , searchProductByName, searcherByPetTag } = require('../database/db');
+const { getAllProducts , searchProductByName, searcherByPetsubCategory } = require('../database/db');
 
 module.exports = {
     home: (req,res) =>{
@@ -26,9 +26,9 @@ module.exports = {
 
         searchText = req.params.search
         pet = req.query.pet
-        tag = req.query.tag
+        subCategory = req.query.subCategory
 
-        search = searchText ? searchProductByName(searchText) : searcherByPetTag(pet,tag)
+        search = searchText ? searchProductByName(searchText) : searcherByPetsubCategory(pet,subCategory)
 
         data = {
             search
