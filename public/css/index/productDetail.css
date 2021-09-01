@@ -191,13 +191,15 @@ div {
     order: -1;
 }
 
-@media (max-width: 800px) {
+
     .image-big{
         width: 100%;
-        height: 100%;
     }
 
-}
+
+/* .image-big{
+    width: 100%;
+} */
 
 .box-img {
     padding: 10px;

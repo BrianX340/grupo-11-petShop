@@ -30,7 +30,7 @@
         "pet": "1",
         "subcategory": "Higiene",
         "mark": "Arm & Hammer",
-        "img": ["higieneGaro2.jpg"]
+        "img": ["higieneGato2.jpg"]
     },
     {
         "id": 3,
@@ -131,7 +131,7 @@
     {
         "id": 9,
         "name": "Tempcore Cama de gato para gatos de interior",
-        "description": "",
+        "description": "Privacidad y comodidad: la cama para gatos TEMPCORE le da a tus amigos peludos algo de privacidad. Se sienten seguros y protegidos, mejorando su comodidad general. Debido a que tiene una entrada ancha con capucha, que los mantiene cómodos, frescos y transpirables. Una bola de felpa puede animar a los gatos a dormir, ya que es un juguete divertido que puede quemar la energía de los gatos",
         "barcode": "3576921052",
         "color": null,
         "sellprice": 5249,
@@ -146,8 +146,8 @@
     },
     {
         "id": 10,
-        "name": "",
-        "description": "",
+        "name": "Pedigree Comida seca para perros para adultos, sabor a pollo",
+        "description": "Cada perro se merece lo mejor ... es por eso que PEDIGREE Complete Nutrition Dry Dog Food ofrece una nutrición 100% completa y equilibrada para su perro adulto. Tiene los antioxidantes, vitaminas y minerales que los caninos necesitan para ayudar a mantener un estilo de vida saludable y el delicioso sabor a pollo asado que aman.",
         "barcode": "1124755411",
         "color": null,
         "sellprice": 9819,
@@ -157,8 +157,8 @@
         "stock": 221,
         "pet": "2",
         "subcategory": "Alimentos",
-        "mark": "",
-        "img": [""]
+        "mark": "Pedigree",
+        "img": ["alimentoPerro10.jpg"]
     },
     {
         "id": 11,
