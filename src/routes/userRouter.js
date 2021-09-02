@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const { carritoCompras , registroLogin , historialCompras, processRegister } = require('../controllers/userController')//
 
-const loginValidator = require('../validations/loginValidator')
+
 const registerValidator = require('../validations/registerValidator')
 
 
