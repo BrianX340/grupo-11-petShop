@@ -33,5 +33,5 @@ app.use((req,res, next)=>{
 
 
 app.listen(3000, ()=>{
-    console.log('Se esta ejecutando el servidor en localhost:3000')
+    console.log('Se esta ejecutando el servidor en: localhost:3000')
 })
