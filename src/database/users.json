@@ -6,7 +6,13 @@
         "email": "mrushby0@wordpress.org",
         "password": "wp0zO4",
         "category": "user",
-        "image": "user_1.jpg"
+        "image": "user_1.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 2,
@@ -15,7 +21,13 @@
         "email": "rshatliff1@economist.com",
         "password": "O1NhyjUUA",
         "category": "user",
-        "image": "user_2.jpg"
+        "image": "user_2.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 3,
@@ -24,7 +36,13 @@
         "email": "spreto2@cmu.edu",
         "password": "kQKH1txD",
         "category": "user",
-        "image": "user_3.jpg"
+        "image": "user_3.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 4,
@@ -33,7 +51,13 @@
         "email": "aellse3@shutterfly.com",
         "password": "ioPSKD",
         "category": "user",
-        "image": "user_4.jpg"
+        "image": "user_4.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 5,
@@ -42,7 +66,13 @@
         "email": "apaternoster4@cargocollective.com",
         "password": "DdaHvffbt",
         "category": "user",
-        "image": "user_5.jpg"
+        "image": "user_5.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 6,
@@ -51,7 +81,13 @@
         "email": "bcolwell5@aol.com",
         "password": "jTvqAppqWCo",
         "category": "user",
-        "image": "user_6.jpg"
+        "image": "user_6.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 7,
@@ -60,7 +96,13 @@
         "email": "gmasser6@sourceforge.net",
         "password": "zM2Azkrg",
         "category": "user",
-        "image": "user_7.jpg"
+        "image": "user_7.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 8,
@@ -69,7 +111,13 @@
         "email": "csweatman7@nydailynews.com",
         "password": "3f1vhej",
         "category": "user",
-        "image": "user_8.jpg"
+        "image": "user_8.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 9,
@@ -78,7 +126,13 @@
         "email": "mlarvor8@pen.io",
         "password": "FOWddQfWfS",
         "category": "user",
-        "image": "user_9.jpg"
+        "image": "user_9.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 10,
@@ -87,7 +141,13 @@
         "email": "ggrinov9@unesco.org",
         "password": "EiFoPGxM6",
         "category": "user",
-        "image": "user_10.jpg"
+        "image": "user_10.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 11,
@@ -96,7 +156,13 @@
         "email": "mbailessa@odnoklassniki.ru",
         "password": "tsWGjll8",
         "category": "user",
-        "image": "user_11.jpg"
+        "image": "user_11.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 12,
@@ -105,7 +171,13 @@
         "email": "ppiscottib@e-recht24.de",
         "password": "DcUkGSDhEj",
         "category": "user",
-        "image": "user_12.jpg"
+        "image": "user_12.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 13,
@@ -114,7 +186,13 @@
         "email": "dnoblettc@intel.com",
         "password": "r9RVRVHGMyX",
         "category": "user",
-        "image": "user_13.jpg"
+        "image": "user_13.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 14,
@@ -123,7 +201,13 @@
         "email": "rbrasteadd@paypal.com",
         "password": "urmyiNg",
         "category": "user",
-        "image": "user_14.jpg"
+        "image": "user_14.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 15,
@@ -132,7 +216,13 @@
         "email": "nvideneeve@reuters.com",
         "password": "i7zt9oB5QCSo",
         "category": "user",
-        "image": "user_15.jpg"
+        "image": "user_15.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 16,
@@ -141,7 +231,13 @@
         "email": "sdominellif@apple.com",
         "password": "JWzajtiE0S",
         "category": "user",
-        "image": "user_16.jpg"
+        "image": "user_16.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 17,
@@ -150,7 +246,13 @@
         "email": "afrankomg@psu.edu",
         "password": "C7iOUr",
         "category": "user",
-        "image": "user_17.jpg"
+        "image": "user_17.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 18,
@@ -159,7 +261,13 @@
         "email": "slagoh@reuters.com",
         "password": "su2qcRZsz61j",
         "category": "user",
-        "image": "user_18.jpg"
+        "image": "user_18.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 19,
@@ -168,7 +276,13 @@
         "email": "jvalentini@discovery.com",
         "password": "e6jenCClMv",
         "category": "user",
-        "image": "user_19.jpg"
+        "image": "user_19.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 20,
@@ -177,7 +291,13 @@
         "email": "hmccullyj@wikispaces.com",
         "password": "n9qB6gpIE3wj",
         "category": "user",
-        "image": "user_20.jpg"
+        "image": "user_20.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 21,
@@ -186,7 +306,13 @@
         "email": "igrabehamk@businessinsider.com",
         "password": "R30UU2",
         "category": "user",
-        "image": "user_21.jpg"
+        "image": "user_21.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 22,
@@ -195,7 +321,13 @@
         "email": "tbanburyl@chicagotribune.com",
         "password": "XwIwx28",
         "category": "user",
-        "image": "user_22.jpg"
+        "image": "user_22.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 23,
@@ -204,7 +336,13 @@
         "email": "cpickupm@fema.gov",
         "password": "XC8Fs5DmEjbR",
         "category": "user",
-        "image": "user_23.jpg"
+        "image": "user_23.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 24,
@@ -213,7 +351,13 @@
         "email": "bknuttonn@google.co.uk",
         "password": "k5e44U",
         "category": "user",
-        "image": "user_24.jpg"
+        "image": "user_24.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 25,
@@ -222,7 +366,13 @@
         "email": "nbaldacko@symantec.com",
         "password": "JZoIbVtn",
         "category": "user",
-        "image": "user_25.jpg"
+        "image": "user_25.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     },
     {
         "id": 26,
@@ -231,6 +381,12 @@
         "email": "bbumpassp@slideshare.net",
         "password": "zFEK81jd",
         "category": "user",
-        "image": "user_26.jpg"
+        "image": "user_26.jpg",
+        "comprasRealizadas":0,
+        "comprasCanceladas":0,
+        "comprasEnProgreso":0,
+        "logInCounter":0,
+        "productosVistos":[{"productId":2, "views":12}],
+        "productosComprados":[{"productId":2, "buys":12}]
     }
 ]
