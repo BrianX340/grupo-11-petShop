@@ -315,6 +315,7 @@ div.activity-top > div.last-online-users > div {
 }
 
 .final-card {
+    flex-direction: column;
     width: 100%;
     margin-top: 1vw;
     box-sizing: border-box;
@@ -575,4 +576,8 @@ div.activity-top > div.last-online-users > div {
 #modifySearchView {
     display: flex;
     flex-direction: column;
+}
+
+#productConsultView {
+
 }

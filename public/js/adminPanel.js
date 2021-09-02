@@ -125,9 +125,14 @@ function clickListener() {
 
             case 'cardCoverCLick':
                 productIdClicked = event.target.attributes[1].value
-                editProductMode(productIdClicked)
+
+                if(event.path[0].parentElement.parentElement.id=='detailSearchResult'){
+                    consultProductMode(productIdClicked)
+                }else{
+                    editProductMode(productIdClicked)
+                }
                 break
-        }
+            }
 
 
         //Inicio condicional depende del ID
@@ -231,8 +236,6 @@ function getOneProduct(elementId){
 
 function completarEditForm(product){
 
-    console.log(product)
-
     document.getElementById('imageProductEditPreview').innerHTML = `<img src='img/products/${product.img[0]}' alt=''>`
     document.getElementById('inputNameEdit').value = product.name
     document.getElementById('inputBuyPriceEdit').value = product.buyPrice
@@ -244,6 +247,34 @@ function completarEditForm(product){
     document.getElementById('inputCategoryEdit').value = product.pet
     document.getElementById('inputSubCategoryEdit').value = product.subCategory
 
+}
+
+
+
+function consultProductMode(productIdClicked){
+    fetch(`${window.location.origin}/admin/getOneProduct/${elementId}`, {
+        method: 'GET'
+    })
+        .then(function (response) {
+            if (response.status !== 200) {
+                console.log(`Looks like there was a problem. Status code: ${response.status}`);
+                return;
+            }
+            response.json().then(function (data) {
+                if (data.status=='ok'){
+                    product = data.product
+                    
+                    //completarConsultView(product)
+
+                } else {
+                    return false
+                }
+                loading(0)
+            });
+        })
+            .catch(function (error) {
+                console.log("Fetch error: " + error);
+            });
 }
 
 //Activa la vista de edicion del elemento seleccionado y realiza el fetch del elemento
@@ -556,7 +587,7 @@ function imageViewer() {
         }
     })
 
-    //para edicion de producto
+    //para edicion de product, este elemento no se encuentra disponible hasta realizar la busqueda en edit
     document.getElementById('editImageContainer').addEventListener('change', (event) => {
         let inputImage = document.getElementById('editImageContainer')
         var filePath = inputImage.value; //Capturo el valor del input
