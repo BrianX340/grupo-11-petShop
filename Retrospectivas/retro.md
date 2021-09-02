@@ -21,6 +21,10 @@
 ¿Qué deberían dejar de hacer?
 - Postergar tareas
 
+
+------------------------------------------------------------------------------
+
+
 ##Retrospectiva del Sprint 2
 
 ¿Qué hicieron bien en el sprint anterior?
@@ -29,10 +33,33 @@
 - Buena distribucion de las tareas
 
 ¿Qué hicieron mal?
-- Olviamos detalles en algunos html
+- Olvidamos detalles en algunos html
 
 ¿Qué deberían empezar a hacer?
 - Pensar que vistas nos faltan hacer
 
 ¿Qué deberían dejar de hacer?
-- -.-
+- .
+
+
+------------------------------------------------------------------------------
+
+
+##Retrospectiva del Sprint 3
+
+¿Qué hicieron bien en el sprint anterior?
+- Comunicacion eficiente.
+- Nos comunicamos de tal manera que todo el equipo este conforme.
+- Buena distribucion de las tareas
+
+¿Qué hicieron mal?
+- El equipo decidio que ne este sprint no hubo negativas
+
+¿Qué deberían empezar a hacer?
+- Pensar nuevas funcionalidades para el proyecto
+
+¿Qué deberían dejar de hacer?
+- .
+
+
+------------------------------------------------------------------------------
