@@ -16,10 +16,10 @@
         "img": [
             "alimentoGato1.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 2,
@@ -38,10 +38,10 @@
         "img": [
             "higieneGato2.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 3,
@@ -60,10 +60,10 @@
         "img": [
             "jugueteGato3.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 4,
@@ -82,10 +82,10 @@
         "img": [
             "higienePerro4.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 5,
@@ -104,10 +104,10 @@
         "img": [
             "camaGato5.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 6,
@@ -126,10 +126,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 7,
@@ -148,10 +148,10 @@
         "img": [
             "higienePerro7.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 8,
@@ -170,10 +170,10 @@
         "img": [
             "higienePerro8.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 9,
@@ -192,10 +192,10 @@
         "img": [
             "camaGato9.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 10,
@@ -214,10 +214,10 @@
         "img": [
             "alimentoPerro10.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 11,
@@ -236,10 +236,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 12,
@@ -258,10 +258,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 13,
@@ -280,10 +280,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 14,
@@ -302,10 +302,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 15,
@@ -324,10 +324,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 16,
@@ -346,10 +346,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 17,
@@ -368,10 +368,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 18,
@@ -390,10 +390,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 19,
@@ -412,10 +412,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 20,
@@ -434,10 +434,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 21,
@@ -456,10 +456,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 22,
@@ -478,10 +478,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 23,
@@ -500,10 +500,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 24,
@@ -522,10 +522,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 25,
@@ -544,10 +544,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 26,
@@ -566,10 +566,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 27,
@@ -588,10 +588,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 28,
@@ -610,10 +610,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 29,
@@ -632,10 +632,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 30,
@@ -654,10 +654,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 31,
@@ -676,10 +676,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 32,
@@ -698,10 +698,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 33,
@@ -720,10 +720,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 34,
@@ -742,10 +742,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 35,
@@ -764,10 +764,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 36,
@@ -786,10 +786,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 37,
@@ -808,10 +808,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 38,
@@ -830,10 +830,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 39,
@@ -852,10 +852,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 40,
@@ -874,10 +874,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 41,
@@ -896,10 +896,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 42,
@@ -918,10 +918,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 43,
@@ -940,10 +940,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 44,
@@ -962,10 +962,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 45,
@@ -984,10 +984,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 46,
@@ -1006,10 +1006,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 47,
@@ -1028,10 +1028,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 48,
@@ -1050,10 +1050,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 49,
@@ -1072,10 +1072,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": 50,
@@ -1094,10 +1094,10 @@
         "img": [
             "alimentoGato6.jpg"
         ],
-        "totalVentas":0,
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
+        "totalVistas": 0
     },
     {
         "id": "",
@@ -1110,12 +1110,14 @@
         "mark": "asd",
         "category": "dog",
         "subCategory": "food",
-        "img,": ["productDefault.png"],
-        "totalVentas":0,
+        "img,": [
+            "productDefault.png"
+        ],
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
-  },
+        "totalVistas": 0
+    },
     {
         "id": "",
         "name": "asd",
@@ -1127,12 +1129,14 @@
         "mark": "",
         "category": "",
         "subCategory": "",
-        "img,": ["productDefault.png"],
-        "totalVentas":0,
+        "img,": [
+            "productDefault.png"
+        ],
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
-  },
+        "totalVistas": 0
+    },
     {
         "id": "",
         "name": "asd",
@@ -1144,12 +1148,14 @@
         "mark": "",
         "category": "",
         "subCategory": "",
-        "img,": ["productDefault.png"],
-        "totalVentas":0,
+        "img,": [
+            "productDefault.png"
+        ],
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
-  },
+        "totalVistas": 0
+    },
     {
         "id": "",
         "name": "asd",
@@ -1161,12 +1167,14 @@
         "mark": "",
         "category": "",
         "subCategory": "",
-        "img,": ["productDefault.png"],
-        "totalVentas":0,
+        "img,": [
+            "productDefault.png"
+        ],
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
-  },
+        "totalVistas": 0
+    },
     {
         "id": "",
         "name": "",
@@ -1178,12 +1186,14 @@
         "mark": "",
         "category": "",
         "subCategory": "",
-        "img,": ["productDefault.png"],
-        "totalVentas":0,
+        "img,": [
+            "productDefault.png"
+        ],
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
-  },
+        "totalVistas": 0
+    },
     {
         "id": "",
         "name": "",
@@ -1195,12 +1205,14 @@
         "mark": "",
         "category": "",
         "subCategory": "",
-        "img,": ["productDefault.png"],
-        "totalVentas":0,
+        "img,": [
+            "productDefault.png"
+        ],
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
-  },
+        "totalVistas": 0
+    },
     {
         "id": "",
         "name": "",
@@ -1212,12 +1224,14 @@
         "mark": "",
         "category": "",
         "subCategory": "",
-        "img,": ["productDefault.png"],
-        "totalVentas":0,
+        "img,": [
+            "productDefault.png"
+        ],
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
-  },
+        "totalVistas": 0
+    },
     {
         "id": "",
         "name": "asd",
@@ -1229,12 +1243,14 @@
         "mark": "",
         "category": "",
         "subCategory": "",
-        "img,": ["productDefault.png"],
-        "totalVentas":0,
+        "img,": [
+            "productDefault.png"
+        ],
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
-  },
+        "totalVistas": 0
+    },
     {
         "id": "",
         "name": "asd",
@@ -1246,12 +1262,14 @@
         "mark": "",
         "category": "",
         "subCategory": "",
-        "img,": ["productDefault.png"],
-        "totalVentas":0,
+        "img,": [
+            "productDefault.png"
+        ],
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
-  },
+        "totalVistas": 0
+    },
     {
         "id": "",
         "name": "",
@@ -1263,12 +1281,14 @@
         "mark": "",
         "category": "",
         "subCategory": "",
-        "img,": ["productDefault.png"],
-        "totalVentas":0,
+        "img,": [
+            "productDefault.png"
+        ],
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
-  },
+        "totalVistas": 0
+    },
     {
         "id": "",
         "name": "",
@@ -1280,12 +1300,14 @@
         "mark": "",
         "category": "",
         "subCategory": "",
-        "img,": ["productDefault.png"],
-        "totalVentas":0,
+        "img,": [
+            "productDefault.png"
+        ],
+        "totalVentas": 0,
         "ventasEnProgreso": 0,
         "comprasCanceladas": 0,
-        "totalVistas":0
-  },
+        "totalVistas": 0
+    },
     {
         "id": "",
         "name": "asd",

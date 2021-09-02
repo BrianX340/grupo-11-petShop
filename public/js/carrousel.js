@@ -1,6 +1,6 @@
 slideIndex = 0;
 
-showSlides();
+//showSlides();
 
 async function showSlides() {
     slides = document.getElementsByClassName("carrouselImages");

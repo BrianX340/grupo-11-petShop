@@ -41,7 +41,7 @@ nav {
   
   .nav-top {
     width: 100%;
-    min-height: 55px;
+    min-height: 70px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;

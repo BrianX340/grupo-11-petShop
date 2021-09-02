@@ -16,7 +16,6 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.static(__dirname.replace('src','public')));
 
 /* ROUTERS */
-errorRouter = require('./routes/errorRouter')
 adminRouter = require('./routes/adminRouter')
 indexRouter = require('./routes/indexRouter')
 userRouter = require('./routes/userRouter')
@@ -27,7 +26,10 @@ app.use('/ps', userRouter)
 app.use('/admin',adminRouter)
 
 
-app.use('*', errorRouter)
+app.use((req,res, next)=>{
+    res.status(404).render('index//error')
+    next()
+})
 
 
 app.listen(3000, ()=>{
