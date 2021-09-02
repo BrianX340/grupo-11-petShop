@@ -16,7 +16,6 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.static(__dirname.replace('src','public')));
 
 /* ROUTERS */
-errorRouter = require('./routes/errorRouter')
 adminRouter = require('./routes/adminRouter')
 indexRouter = require('./routes/indexRouter')
 userRouter = require('./routes/userRouter')
