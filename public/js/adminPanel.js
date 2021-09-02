@@ -286,14 +286,20 @@ function editMode(active){
 }
 
 
+//resetGif
+function resetGif(id) {
+    var img = document.getElementById(id);
+    var imageUrl = img.src;
+    img.src = "";
+    img.src = imageUrl;
+};
+
 //Loading
 function loading(active){
     if (active){
         document.getElementById('loadingCard').style.display = 'flex'
     } else {
-        setTimeout(function(){ 
-            document.getElementById('loadingCard').style.display = 'none'
-         }, 500)
+        document.getElementById('loadingCard').style.display = 'none'
     }
 }
 
@@ -307,7 +313,7 @@ function scroolMenu(active){
 }
 
 //////////////////////////CRUD
-function productCreate() {
+async function productCreate() {
 
     //mostart pantalla de carga
     loading(1)
@@ -325,18 +331,42 @@ function productCreate() {
             }
             response.json().then(function (data) {
                 if (data.status=='ok'){
-                    //creado
+                    loading(0)
+                    operationSuccessful(1)
                     limpiarCampos()
                 } else {
-                    //error
+                    loading(0)
+                    operationSuccessful(0)
                 }
-                loading(0)
             });
         })
             .catch(function (error) {
                 console.log("Fetch error: " + error);
+                loading(0)
+                operationSuccessful(0)
             });
     
+}
+
+//Vista operacion exitosa
+function operationSuccessful(successful){
+    if (successful){
+        resetGif('successfulOperation') 
+        document.getElementById('operationSuccess').style.display = 'flex'
+        document.getElementById('successfulOperation').style.display = 'flex'
+        setTimeout(()=>{
+            document.getElementById('operationSuccess').style.display = 'none'
+            document.getElementById('successfulOperation').style.display = 'none'
+        },2500)
+    } else {
+        resetGif('failedOperation') 
+        document.getElementById('operationSuccess').style.display = 'flex'
+        document.getElementById('failedOperation').style.display = 'flex'
+        setTimeout(()=>{
+            document.getElementById('operationSuccess').style.display = 'none'
+            document.getElementById('failedOperation').style.display = 'none'
+        },2500)
+    }
 }
 
 
