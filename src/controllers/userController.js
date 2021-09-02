@@ -1,3 +1,6 @@
+
+const { } = require('express-validator')
+
 module.exports = {
     carritoCompras: (req,res) =>{
         res.render('users//carritoPage')
@@ -9,4 +12,14 @@ module.exports = {
     //    res.render('users//historial')
     //},
     //FAVORITOS
+
+    processRegister: (req, res) => {
+        let errors = validationResult(req)
+
+        if (errors.isEmpty()) {
+            
+        } else {
+            
+        }
+    },
 }
