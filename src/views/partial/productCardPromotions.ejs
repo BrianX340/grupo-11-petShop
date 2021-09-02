@@ -10,7 +10,7 @@
                             <img id='<%= product.id %>Heart' class='nodisplay' src="/files/heartActive.svg" alt="">
                         </figure>
                     </div>
-                    <a class='cardProductLink' href="/product/<%= product.id %>">
+                    <section class='cardProductLink' id='<%= product.id %>-item'>
                         <div class='box-card-top'>
     
                             <div class='card-item-image'>
@@ -20,15 +20,17 @@
                             </div>
 
                             <div class='card-item-name'>
-                                <span class='product-name'><%= Array.from(product.name).slice(0,64).join('')+'...' %></span>
-                            </div>
-
-                            <div class='card-item-description'>
-                                <span><%= Array.from(product.description).slice(0,122).join('')+'...' %></span>
+                                <a href="/products/detail/<%= product.id %>">
+                                    <span class='product-name'><%= Array.from(product.name).slice(0,64).join('')+'...' %></span>
+                                </a>
                             </div>
 
                             <div class='card-item-price'>
                                 <span>$<%= product.sellPrice %></span>
+                            </div>
+
+                            <div>
+                                <span class='viewDescriptionCard' cardId='<%= product.id %>' >Ver description...</span>
                             </div>
 
                             <div class='card-item-valoration'>
@@ -39,10 +41,16 @@
                                 </div>
                             </div>
                         </div>
-                    </a>
-                    <div class='box-card-bottom'>
-                        <span>Al carrito</span>
-                    </div>
+                        <div class='box-card-bottom'>
+                            <span>Al carrito</span>
+                        </div>
+                    </section>
+
+                    <section id='<%= product.id %>-description'>
+
+                    </section>
+                    
+                    
                 </div>
             </div>
         <!--fin del item-->

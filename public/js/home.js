@@ -33,10 +33,10 @@ window.onload = () => {
         }
 
         if (!funcion){
-            if (elementClass.includes('product-name')){
-                window.location.href = `${window.location.origin}`+'/productDetail'
+            if (elementClass == 'viewDescriptionCard'){
+                console.log(event)
             }
-        }
+        } 
 
         
     })
