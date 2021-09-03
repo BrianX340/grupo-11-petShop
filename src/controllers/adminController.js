@@ -17,7 +17,7 @@ module.exports = {
         }
     },
     adminPanel: (req,res) =>{
-        res.render('admin//adminPanel')
+        res.render('admin//adminPanelMobile')
     },
     allProducts: (req,res) =>{
         res.send(getAllProducts())

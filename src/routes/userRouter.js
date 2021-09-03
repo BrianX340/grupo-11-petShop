@@ -14,6 +14,6 @@ router.get('/login', registroLogin)
 
 
 
-router.post('/login', registerValidator, processRegister);
+router.post('/login',registerValidator, processRegister);
 
 module.exports = router
