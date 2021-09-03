@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:false}))
 app.use(express.static(__dirname.replace('src','public')));
-app.use(cookieParser);
+//app.use(cookieParser);
 /* app.use(session(
     {secret: "",
     resave: false,
