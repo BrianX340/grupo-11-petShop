@@ -13,9 +13,14 @@ module.exports = {
     //},
     //FAVORITOS
 
-    profile: (req, res) => {
-        let user = user.find()
+    profile: (req, res) =>{
+        let user = user.find(user => user.id === req.session.user.id)
+        res.render('userProfile', {
+            categories,
+            user
+        })
     },
+
 
     processLogin: (req, res) => {
         let errors = validationResult(req)
