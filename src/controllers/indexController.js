@@ -8,9 +8,7 @@ module.exports = {
             bestSells:info,
             promotions:info,
             carrouselImages:[
-                "/img/banersCarrousel/banner01.jpg",
-                "/img/banersCarrousel/banner02.jpg",
-                "/img/banersCarrousel/banner03.jpg"
+                "/img/banersCarrousel/banner01.jpg"
             ]
         }
         res.render('index//home',{data})
