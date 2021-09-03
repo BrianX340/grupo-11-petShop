@@ -1,5 +1,5 @@
 const {check, body} = require('express-validator');
-
+const { users } = require('../dataBase/db')
 module.exports = [
     check('user')
     .notEmpty()
@@ -7,10 +7,28 @@ module.exports = [
     .isEmail()
     .withMessage('Debes escribir un usuario válido'),
 
+    body('user')
+    .custom(value => {
+        let user1 = users.find( user => user.user === value)
+
+        if(user1 !== undefined){
+            return true
+        }else{
+            return false
+        }
+    })
+    .withMessage("User no registrado"),
+
     check('pass')
     .notEmpty()
     .withMessage('Debes escribir tu contraseña'),
 
+    body('pass')
+    .custom((value, {req}) => {
+        let user = users.find(user => user.email === req.body.email)
+
+        return bcrypt.compareSync(value, user)
+    }),
 
     check('user1')
     .notEmpty()
@@ -29,6 +47,17 @@ module.exports = [
     .withMessage('Debes escribir un email').bail()
     .isEmail()
     .withMessage('Debes escribir un email válido'),
+    body('email')
+    .custom(value => {
+        let user = users.find(user => user.email === value);
+
+        if(user === undefined){
+            return true
+        }else{
+            return false
+        }
+    })
+    .withMessage("Correo no registrado"),
 
     check('pass1')
     .notEmpty()

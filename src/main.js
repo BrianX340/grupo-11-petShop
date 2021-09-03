@@ -3,6 +3,7 @@ const express = require('express')
 const path = require('path');
 const app = express()
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser')
 
 /* VIEWS */
 app.set('views', path.join(__dirname, 'views'))
@@ -14,6 +15,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:false}))
 app.use(express.static(__dirname.replace('src','public')));
+app.use(cookieParser);
+app.use(session(
+    {secret: "",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 }
+}
+));
 
 /* ROUTERS */
 adminRouter = require('./routes/adminRouter')
