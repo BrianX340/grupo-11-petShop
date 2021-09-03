@@ -2,6 +2,8 @@ const express = require('express')
 const router = express.Router()
 const { getOneProduct, adminPanel, allProducts , searchProducts , createProducts , editProducts , deleteProducts } = require('../controllers/adminController')
 
+const { createProductValidator } = require('../validations/adminCrudValidator')
+
 let productUploadImage = require('../middlewares/productUploadImage')
 
 //Principal view
@@ -17,7 +19,7 @@ router.get('/allProducts', allProducts)
 router.get('/products/:name', searchProducts)
 
 //Create Products
-router.post('/products', productUploadImage.single("image"), createProducts)
+router.post('/products', /* s */ productUploadImage.single("image"), createProducts)
 
 //Edit Products
 router.put('/products/:id', editProducts)

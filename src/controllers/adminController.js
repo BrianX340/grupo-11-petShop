@@ -40,6 +40,8 @@ module.exports = {
             subCategory,
         } = req.body
 
+        console.log(req.body)
+
         newProduct = {
             id:"",
             name,

@@ -63,3 +63,22 @@
 
 
 ------------------------------------------------------------------------------
+
+##Retrospectiva del Sprint 4
+
+¿Qué hicieron bien en el sprint anterior?
+- Interfaz del panel de administrador estilo app mobile
+
+
+¿Qué hicieron mal?
+- No haber terminado por completo la vista de Panel de Administrador
+
+
+¿Qué deberían empezar a hacer?
+- La vista de panel de administrador va a requerir mucho trabajo adaptarla a desktop, asi que completare las funcionalidades de mobile y luego realizare una vista para desktop mas sencilla
+
+¿Qué deberían dejar de hacer?
+- .
+
+
+------------------------------------------------------------------------------
