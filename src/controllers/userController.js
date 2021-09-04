@@ -1,12 +1,16 @@
-
-const { } = require('express-validator')
+const { users, writeUsersJSON } = require('../database/db')
+const { validationResult } = require('express-validator')
 const bcrypt = require('bcryptjs')
+
 module.exports = {
     carritoCompras: (req,res) =>{
         res.render('users//carritoPage')
     },
-    registroLogin: (req,res) =>{
-        res.render('users//registroLogin')
+    register: (req,res) =>{
+        res.render('users//register')
+    },
+    login: (req,res) =>{
+        res.render('users//login')
     },
     //historialCompras: (req,res) =>{
     //    res.render('users//historial')
@@ -16,12 +20,65 @@ module.exports = {
     profile: (req, res) =>{
         let user = user.find(user => user.id === req.session.user.id)
         res.render('userProfile', {
-            categories,
-            user
+            user,
+            /* session, req.session */
         })
     },
 
 
+    /* profileEdit: (req, res) => {
+        let user = users.find(user => user.id === req.params.id)
+
+        res.render('userProfileEdit', //renderizar formulario
+        categories, //para header?
+        session: req.session
+        )
+    },
+    */
+
+   /* updateProfile: (req, res) => {
+    let errors = validationResult(req)
+
+    if (errors.isEmpty()) {
+        let user = users.find(user => user.id === +req.params.id)
+
+        let {
+            name,
+            last_name,
+            tel,
+            address,
+            pc,
+            province,
+            city,
+
+        } = req.body
+
+        user.name = name
+        user.last_name = last_name
+        user.tel = tel
+        user.address = address
+        user.pc = pc
+        user.province = province
+        user.city = city
+        user.avatar =  req.file ? req.file.filename : user.avatar
+
+        writeUsersJSON(users)
+
+        delete user.pass
+
+        req.session.user = user
+
+        res.redirect('/users/profile')
+
+    }else{
+        res.render('userProfileEdit), {
+            categories,
+            errors: errors.mapped(),
+            old:req.body,
+            session: req.session
+        }
+    }
+   }, */
     processLogin: (req, res) => {
         let errors = validationResult(req)
 
@@ -38,15 +95,20 @@ module.exports = {
                 rol: user.rol
             }
 
+            /* let time = 1000 * 60 * 60 *24
+            
+            if(req.body.remember){
+                res.cookie("usersPet", req.session.user, {expires: new Date(Date.now() + 900000), httpOnly : true})
+            } */
+
             res.locals.user = req.session.user
 
             /* res.send(res.session.user) */
             res.redirect('/')
 
         }else{
-            res.render('login', {
-                categories,
-                errors: errors.mapped(),
+            res.render('users//login', {
+                errors: errors.mapped()
             })
         }
     },
@@ -77,7 +139,7 @@ module.exports = {
                 last_name,
                 email,
                 pass : bcrypt.hashSync(pass1, user.pass),
-                avatar : req.file ? req.file.filename : "default-image.png",
+                /* avatar : req.file ? req.file.filename : "default-image.png", */
                 rol: "ROL_USER",
                 tel: "",
                 address: "",
@@ -88,16 +150,25 @@ module.exports = {
 
             users.push(newUser)
 
-            writeUsersJson(users)
+            writeUsersJSON(users)
 
-            res.redirect('/users/login')
+            res.redirect('users//login')
 
         } else {
-            res.render('register'), {
-                categories,
+            res.render('users//register'), {
                 errors: errors.mapped(),
                 old: req.body
             }
         }
     },
+
+    /* logout: (req, res) => {
+        req.session.destroy()
+
+        if(req.cookies.usersPet){
+            res.cookie('usersPet', '', {maxAge: -1})
+        }
+        res.redirect('/')
+    } */
+
 }

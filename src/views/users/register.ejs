@@ -17,24 +17,7 @@
 
     <section class="container-form">
         <div class="container">
-            <div class="user singinBox">
-                <div class="imgBx"><img class="imgBx-img" src="https://estaticos.muyinteresante.es/uploads/images/article/570b65e55bafe88a438b456a/perro_0.jpg"></div>
-                <div class="formBx">
-                    <form method="POST">
-                        <h2>Inicio de Sesion</h2>
-                        <input id="input-user" name="user" type="text" placeholder="Usuario">
-                        <% if (locals.errors && errors.user) { %>
-                            <small class="text-danger"><%= errors.user.msg %> </small>
-                        <% } %>
-                        <input id="input-password" type="password" name="pass" placeholder="Contraseña">
-                        <% if (locals.errors && errors.pass) { %>
-                            <small class="text-danger"><%= errors.pass.msg %> </small>
-                        <% } %>
-                        <input type="submit" value="Iniciar sesion">
-                        <p class="signup">¿No tienes cuenta? <a href="#" onclick="toggleForm();"> Obtén una cuenta.</a></p>
-                    </form>
-                </div>
-            </div>
+            
 
             <div class="user singupBox">
                 <div class="formBx">
@@ -65,7 +48,7 @@
                             <small class="text-danger"><%= errors.pass2.msg %> </small>
                         <% } %>
                         <input type="submit" value="Registrarse">
-                        <p class="signup">¿Ya tiene cuentra? <a href="#" onclick="toggleForm();"> Inicie sesion.</a></p>
+                        <p class="signup">¿Ya tiene cuentra? <a href="/ps/login"> Inicie sesion.</a></p>
                     </form>
                 </div>
                 <div class="imgBx"><img class="imgBx-img" src="/img/gato-forms.jpg"></div>
@@ -76,12 +59,12 @@
     <%- include('../partial/footer'); %>
 
     <script>
-        function toggleForm(){
+        /* function toggleForm(){
             section = document.querySelector('section');
             container = document.querySelector('.container');
             container.classList.toggle('active');
             section.classList.toggle('active');
-        }
+        } */
     </script>
 </body>
 
