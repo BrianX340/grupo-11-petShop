@@ -82,21 +82,20 @@
                         <div id='addProductView' class='noDisplay'>
                             <div class='final-card'>
                                 <form id='formCreateAdd' class="formCreate" method="POST" enctype="multipart/form-data">
-                                    <div class='finalCardTitle'><span>Carga de Productos</span></div>
                                     
-                                    <div class='addProductImage'>
-                                        <div>
-                                            <figure id='imageProductAddPreview'><img src="img/item-test.png" alt=""></figure>
-                                        </div>
-                                        <div>
-                                            <span id="errorImage" ></span>
-                                        </div>
-                                        <div><input id='imageContainer' type="file" class="form-control" name="image" aria-label="file example"></div>
-                                    </div>
+                                    
 
                                     <div class='formContainer'>
+                                        <div class='finalCardTitle'><span>Carga de Productos</span></div>
 
                                         <div class='inputsContainerBox'>
+
+                                            <div class="inputfield">
+                                                <div class='addImageButton'>
+                                                    <span>Imagen</span>
+                                                    <input id='imageContainer' type="file" class="form-control" name="image" aria-label="file example">
+                                                </div>
+                                            </div>
 
                                             <div class="inputfield">
                                                 <div>
@@ -149,15 +148,26 @@
 
                                             <div class="inputfield">
                                                 <div>
-                                                    <span>Categoria</span>
-                                                    <input type="text" id="inputCategoryAdd" name="category">
+                                                    <span>Animal</span>
+                                                    <!-- <input type="text" id="inputCategoryAdd" name="category"> -->
+                                                    <select name="category" id="inputCategoryAdd" form="formCreateAdd">
+                                                        <option value="default">Elija una categoria</option>
+                                                        <option value="gato">Gato</option>
+                                                        <option value="perro">Perro</option>
+                                                    </select>
                                                 </div>
                                             </div>
 
                                             <div class="inputfield">
                                                 <div>
-                                                    <span>Subcategoria</span>
-                                                    <input type="text" id="inputSubCategoryAdd" name="subCategory">
+                                                    <span>Tipo de Producto</span>
+                                                    <select name="subCategory" id="inputSubCategoryAdd" form="formCreateAdd">
+                                                        <option value="default">Elija tipo de producto</option>
+                                                        <option value="alimentos">Alimentos</option>
+                                                        <option value="higiene">Higiene</option>
+                                                        <option value="juguetes">Juguetes</option>
+                                                        <option value="camas">Camas</option>
+                                                    </select>
                                                 </div>
                                             </div>
 
@@ -176,7 +186,6 @@
 
                         <div id='modifyProductView' class='noDisplay'>
                             <div class='final-card'>
-                                <div>
 
                                     <section id='modifySearchView'>
 
@@ -196,31 +205,27 @@
 
                                     </section>
 
-                                    <section id='modifyProductSelectedView'>
-                                        <form id='formEdit' class="formCreate" method="POST" enctype="multipart/form-data">
-                                            <div class='finalCardTitle'><span>Modificar Producto</span></div>
+                                     <form id='formEdit' class="formCreate noDisplay" method="POST" enctype="multipart/form-data">
                                             
-                                            <div class='editProductImage'>
-                                                <div>
-                                                    <figure id='imageProductEditPreview'><img src="img/item-test.png" alt=""></figure>
-                                                </div>
-                                                <div>
-                                                    <span id="errorImageEdit" ></span>
-                                                </div>
-                                                <div><input id='imageContainerEdit' type="file" class="form-control" name="image" aria-label="file example"></div>
-                                            </div>
-        
                                             <div class='formContainer'>
-        
+                                                <div class='finalCardTitle'><span>Modificar Producto</span></div>
+                                            
                                                 <div class='inputsContainerBox'>
-        
+                                            
+                                                    <div class="inputfield">
+                                                        <div class='addImageButton'>
+                                                            <span>Imagen</span>
+                                                            <input id='imageContainerEdit' type="file" class="form-control" name="image" aria-label="file example">
+                                                        </div>
+                                                    </div>
+                                            
                                                     <div class="inputfield">
                                                         <div>
                                                             <span>Nombre</span>
                                                             <input type="text" type="text" class="form-control" id="inputNameEdit" name="name">
                                                         </div>
                                                     </div>
-        
+                                            
                                                     <div class="inputfield">
                                                         <div>
                                                             <span>Precio Compra</span>
@@ -234,65 +239,61 @@
                                                             <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="inputSellPriceEdit" name="sellPrice">
                                                         </div>
                                                     </div>
-        
+                                            
                                                     <div class="inputfield">
                                                         <div>
                                                             <span>Descripcion</span>
                                                             <input type="text" id="inputDescriptionEdit" name="description">
                                                         </div>
                                                     </div>
-        
+                                            
                                                     <div class="inputfield">
                                                         <div>
                                                             <span>Cantidad</span>
                                                             <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="inputAmountEdit" name="amount">
                                                         </div>
                                                     </div>
-        
+                                            
                                                     <div class="inputfield">
                                                         <div>
                                                             <span>Codigo de Barras</span>
                                                             <input type="text" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="inputBarcodeEdit" name="barcode">
                                                         </div>
                                                     </div>
-        
+                                            
                                                     <div class="inputfield">
                                                         <div>
                                                             <span>Marca</span>
                                                             <input type="text" id="inputMarkEdit" name="mark">
                                                         </div>
                                                     </div>
-        
+                                            
                                                     <div class="inputfield">
                                                         <div>
                                                             <span>Categoria</span>
                                                             <input type="text" id="inputCategoryEdit" name="category">
                                                         </div>
                                                     </div>
-        
+                                            
                                                     <div class="inputfield">
                                                         <div>
                                                             <span>Subcategoria</span>
                                                             <input type="text" id="inputSubCategoryEdit" name="subCategory">
                                                         </div>
                                                     </div>
-        
+                                            
                                                 </div>
-        
+                                            
                                                 <div class='buttonOptionProduct'>
                                                     <button class='backButton'>Volver</button>
                                                     <button class='cleanInputs'>Limpiar campos</button>
-                                                    <button id='productSaveEdit'>Salvar</button>
+                                                    <button id='productSaveEdit'>Cargar</button>
                                                 </div>
-        
+                                            
                                             </div>
 
-                                        </form>
-                                    </section>
-                                
+                                     </form>
                                     
-                                    
-                                </div>
                             </div>
                         </div>
                         

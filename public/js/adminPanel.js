@@ -6,7 +6,6 @@ window.onload = () => {
 
     keypressListener()
     clickListener()
-    imageViewer()
 
 }
 
@@ -16,14 +15,8 @@ function limpiarCampos() {
     //ViewsReset
     editMode(0)
 
-    //Image
-    document.getElementById("imageProductAddPreview").innerHTML = "<img src='img/item-test.png' alt=''>"
-    document.getElementById("imageProductEditPreview").innerHTML = "<img src='img/item-test.png' alt=''>"
-
     //Searchs
-    document.getElementById("imageContainer").value = ''
     document.getElementById("searchInputModify").value = ''
-    document.getElementById("imageProductAddPreview").value = ''
 
     //SearchResult
     document.getElementById("modifySearchResult").innerHTML = ''
@@ -115,12 +108,12 @@ function clickListener() {
 
         switch (elementClass) {
             case 'backButton':
-                backButtonController(previousView)
                 event.preventDefault()
+                backButtonController(previousView)
                 break;
             case 'cleanInputs':
-                limpiarCampos()
                 event.preventDefault()
+                limpiarCampos()
                 break
 
             case 'cardCoverCLick':
@@ -236,7 +229,6 @@ function getOneProduct(elementId){
 
 function completarEditForm(product){
 
-    document.getElementById('imageProductEditPreview').innerHTML = `<img src='img/products/${product.img[0]}' alt=''>`
     document.getElementById('inputNameEdit').value = product.name
     document.getElementById('inputBuyPriceEdit').value = product.buyPrice
     document.getElementById('inputSellPriceEdit').value = product.sellPrice
@@ -308,11 +300,13 @@ async function editProductMode(elementId){
 //Intercambia entre busqueda editar o edit mode
 function editMode(active){
     if (active){
-        document.getElementById('modifyProductSelectedView').style.display = 'flex'
+        backButtonView(1)
+        document.getElementById('formEdit').style.display = 'flex'
+        backButtonView(0) //Ocultamos el boton BACK
         document.getElementById('modifySearchView').style.display = 'none'
         return
     }
-    document.getElementById('modifyProductSelectedView').style.display = 'none'
+    document.getElementById('formEdit').style.display = 'none'
         document.getElementById('modifySearchView').style.display = 'flex'
 }
 
@@ -366,6 +360,12 @@ async function productCreate() {
                     operationSuccessful(1)
                     limpiarCampos()
                 } else {
+                    if (data.msg=='validacionesIncorrectas'){
+                        errorValidacionesEdit(data.errors)
+                    } else if (data.msg=='productNotCreate'){
+                        errorBox(data.error)
+                    }
+                    
                     loading(0)
                     operationSuccessful(0)
                 }
@@ -377,6 +377,12 @@ async function productCreate() {
                 operationSuccessful(0)
             });
     
+}
+
+
+//Control validaciones
+function errorValidacionesEdit(errors){
+    console.log(errors)
 }
 
 //Vista operacion exitosa
@@ -442,6 +448,7 @@ function cargarBusquedaProductosAlDom(elementId) {
 
 //Se encarga de volver a la vista anterior
 function backButtonController() {
+    backButtonView(1) //esta puesto porque ocultamos el boton back al ingresar a addproduct
     limpiarCampos()
     switch (previousView) {
         case 'panel-menu':
@@ -523,6 +530,11 @@ function panelProductViewController(idView) {
 
     if (idView == 'productOptionsViews') {
         previousView = 'panel-menu'
+        backButtonView(1)
+    } else if(idView == 'modifyProductView' || idView == 'consultProductView'){
+        //no hacer nada para seguir mostrando el boton flotante de BACK
+    } else if(idView == 'addProductView'){
+        backButtonView(0)
     }
 
 
@@ -559,6 +571,38 @@ function panelMoreViewController(idView) {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Funciones inutilizadas
+
 
 //Funcion encargada de mostrar la imagen en carga de productos
 function imageViewer() {

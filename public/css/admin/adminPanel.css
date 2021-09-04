@@ -8,12 +8,19 @@
     display: none;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     background-image: url(../../img/back.jpg);
     background-size: contain;
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 * {
@@ -35,10 +42,10 @@ figure {
 #adminPanel {
     position: relative;
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     overflow-y: hidden;
-    height: 100vh;
 }
 
 .panel-menu {
@@ -50,9 +57,9 @@ figure {
 }
 
 .panel-gral {
+    height: 100%;
     box-sizing: border-box;
-    margin-top: 2%;
-    width: 100%;
+    width: 100vw;
 }
 
 
@@ -73,12 +80,10 @@ figure {
 
 .board-box > div{
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
-    position: absolute;
 }
 
 .card-options {
@@ -322,7 +327,6 @@ div.activity-top > div.last-online-users > div {
 .final-card {
     flex-direction: column;
     width: 100%;
-    margin-top: 1vw;
     box-sizing: border-box;
     border-radius: 0.7vw;
     display: flex;
@@ -331,15 +335,15 @@ div.activity-top > div.last-online-users > div {
     position: relative;
 }
 
-.final-card > form, .final-card > div {
+.final-card > form, .final-card > div form.formCreate {
     width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     border-radius: 4.7vw;
-    background-color: #0e76a8;
-    box-shadow: 0 7px 6px rgb(0 0 0);
+    /* background-color: #0e76a8; */
+    /* box-shadow: 0 7px 6px rgb(0 0 0); */
     transition: all 1s ease;
     margin: 1vw;
 }
@@ -360,7 +364,7 @@ div.activity-top > div.last-online-users > div {
     align-items: center;
     font-size: 7vw;
     font-weight: bold;
-    margin-top: 1vw;
+    margin: 5px 0 5px 0px;
 }
 
 .finalCardTitle span {
@@ -368,12 +372,11 @@ div.activity-top > div.last-online-users > div {
 }
 
 .formContainer{
-    height: 90%;
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 6vw;
+   
 }
 
 .inputsContainerBox {
@@ -382,37 +385,39 @@ div.activity-top > div.last-online-users > div {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    
 }
 
 .inputfield {
     width: 100%;
-    margin-bottom: 4vw;
+    margin-bottom: 6px;
+    height: 10%;
 }
 
 .inputfield > div {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
 }
 
 .inputfield span {
     color: white;
     font-weight: bold;
-    font-size: 5vw;
-
+    font-size: 4vw;
 }
 
-.inputfield input {
+.inputfield input, .inputfield select {
     border-radius: 1vw;
     outline: none;
     border: none;
     padding-left: 5px;
-    width: 100%;
     background-color: #ffffffa6;
-    font-size: 5vw;
+    font-size: 13px;
     color: #4c4c4c;
     font-weight: bold;
     height: 8vw;
+    min-height: 7vw;
 }
 
 .buttonOptionProduct {
@@ -420,6 +425,8 @@ div.activity-top > div.last-online-users > div {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 10px;
+    
 }
 
 .buttonOptionProduct button {
@@ -435,7 +442,7 @@ div.activity-top > div.last-online-users > div {
 
 .addProductImage , .editProductImage {
     width: 90%;
-    height: 50vw;
+    height: 100px;
     display: flex;
     position: relative;
 }
@@ -497,7 +504,8 @@ div.activity-top > div.last-online-users > div {
 
 .modifySearchBox > div span {
     color: white;
-    font-size: 4vw;
+    font-size: 21px;
+    margin-bottom: 10px;
 }
 
 .modifySearchBox input {
@@ -507,7 +515,8 @@ div.activity-top > div.last-online-users > div {
     text-align: center;
     font-weight: bold;
     color: #0e76a8;
-    font-size: 4vw;
+    font-size: 21px;
+    width: 100%;
 }
 
 
@@ -585,9 +594,6 @@ div.activity-top > div.last-online-users > div {
 
 
 #addProductView {
-    position: absolute;
-    top: 10%;
-    height: unset;
 }
 
 #modifyProductSelectedView {
@@ -601,4 +607,23 @@ div.activity-top > div.last-online-users > div {
 
 #productConsultView {
 
+}
+
+#imageContainer, #imageContainerEdit {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 21px;
+    width: 130px;
+    margin: 0;
+    padding: 0;
+    border: 1px white solid;
+    min-height: unset;
+}
+
+.inputfield .addImageButton {
+    display: flex;
+    flex-direction: unset;
+    margin-top: 10px;
+    width: 80%;
 }

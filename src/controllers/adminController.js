@@ -1,4 +1,5 @@
 const { oneProduct, getAllProducts, searchProductByName, saveOneProduct } = require('../database/db');
+const { validationResult } = require('express-validator')
 
 module.exports = {
     getOneProduct: (req,res)=>{
@@ -28,41 +29,19 @@ module.exports = {
     createProducts: (req,res) =>{
         img = req.file ? [req.file.filename] : "productDefault.png"
 
-        let {
-            name,
-            buyPrice,
-            sellPrice,
-            description,
-            amount,
-            barcode,
-            mark,
-            category,
-            subCategory,
-        } = req.body
+        let errors = validationResult(req)
 
-        console.log(req.body)
+        if(errors.isEmpty()){
 
-        newProduct = {
-            id:"",
-            name,
-            buyPrice,
-            sellPrice,
-            description,
-            stock:amount,
-            barcode,
-            mark,
-            category,
-            subCategory,
-            img
+            newProduct = {id:"", ...req.body, img}
+    
+            if (saveOneProduct(newProduct)){
+                return res.send({status:"ok"})
+            }
+            return res.send({status:'error',msg:'productNotCreate',error:'El producto no ha sido creado!'})
+
         }
-
-        if (saveOneProduct(newProduct)){
-            return res.send({status:"ok"})
-        }
-        return res.send({status:'error'})
-
-
-
+        return res.send({status:'error',msg:'validacionesIncorrectas',errors})
 
     },
     editProducts: (req,res) =>{
