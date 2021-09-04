@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/users/forms.css">
+    <title>Forms</title>
+</head>
+
+<body id="body">
+
+    <%- include('../partial/header-invited'); %>
+
+        <section class="container-form">
+            <div class="container">
+                <div class="user singinBox">
+                    <div class="imgBx"><img class="imgBx-img"
+                            src="https://estaticos.muyinteresante.es/uploads/images/article/570b65e55bafe88a438b456a/perro_0.jpg">
+                    </div>
+                    <div class="formBx">
+                        <form method="POST">
+                            <h2>Inicio de Sesion</h2>
+                            <input id="input-user" name="user" type="text" placeholder="Usuario">
+                            <% if (locals.errors && errors.user) { %>
+                                <small class="text-danger">
+                                    <%= errors.user.msg %>
+                                </small>
+                                <% } %>
+                                    <input id="input-password" type="password" name="pass" placeholder="Contraseña">
+                                    <% if (locals.errors && errors.pass) { %>
+                                        <small class="text-danger">
+                                            <%= errors.pass.msg %>
+                                        </small>
+                                        <% } %>
+                                            <input type="submit" value="Iniciar sesion">
+                                            <p class="signup">¿No tienes cuenta? <a href="/ps/register">
+                                                    Obtén una cuenta.</a></p>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+        <%- include('../partial/footer'); %>
+
+            <script>
+                function toggleForm() {
+                    section = document.querySelector('section');
+                    container = document.querySelector('.container');
+                    container.classList.toggle('active');
+                    section.classList.toggle('active');
+                }
+            </script>
+</body>
+
+</html>

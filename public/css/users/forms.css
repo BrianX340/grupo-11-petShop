@@ -168,7 +168,7 @@ input[type="submit"]{
 /* formulario interactivo */
 
 
-.singupBox {
+/* .singupBox {
     pointer-events: none;
 }
 
@@ -191,7 +191,7 @@ input[type="submit"]{
 
 .container.active .singupBox .imgBx {
     top: 0;
-}
+} */
 
 
 .container .singinBox .formBx{

@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "user":"",
+        "user":"Mersy1",
         "first_name": "Mersey",
         "last_name": "Rushby",
         "email": "mrushby0@wordpress.org",
@@ -13,7 +13,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 2,
@@ -29,7 +35,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 3,
@@ -45,7 +57,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 4,
@@ -61,7 +79,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 5,
@@ -77,7 +101,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 6,
@@ -93,7 +123,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 7,
@@ -109,7 +145,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 8,
@@ -125,7 +167,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 9,
@@ -141,7 +189,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 10,
@@ -157,7 +211,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 11,
@@ -173,7 +233,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 12,
@@ -189,7 +255,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 13,
@@ -205,7 +277,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 14,
@@ -221,7 +299,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 15,
@@ -237,7 +321,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 16,
@@ -253,7 +343,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 17,
@@ -269,7 +365,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 18,
@@ -285,7 +387,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 19,
@@ -301,7 +409,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 20,
@@ -317,7 +431,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 21,
@@ -333,7 +453,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 22,
@@ -349,7 +475,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 23,
@@ -365,7 +497,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 24,
@@ -381,7 +519,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 25,
@@ -397,7 +541,13 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     },
     {
         "id": 26,
@@ -413,6 +563,12 @@
         "comprasEnProgreso":0,
         "logInCounter":0,
         "productosVistos":[{"productId":2, "views":12}],
-        "productosComprados":[{"productId":2, "buys":12}]
+        "productosComprados":[{"productId":2, "buys":12}],
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city":""
     }
 ]
