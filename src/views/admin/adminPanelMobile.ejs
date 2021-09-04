@@ -457,10 +457,18 @@
 
             <%- include('../partial/loadingCard'); %>
 
-            
-            <div id='operationSuccess'>
-                <img id='successfulOperation' src="/img/admin/ok.gif" alt="">
-                <img id='failedOperation' src="/img/admin/error.gif" alt="">
+            <%- include('../partial/operationSuccess'); %>
+
+            <div id='errorBox'>
+                <div>
+                    <img src="/files/errorCard.svg" alt="">
+                    <div class='errorBoxInfo'>
+                        <span>Ops!</span>
+                        <span>Se encontraron los siguientes errores: </span>
+                        <span id='boxErrorContainer'>error 1: debe ingresar name</span>
+                        <button>CERRAR</button>
+                    </div>
+                </div>
             </div>
 
             

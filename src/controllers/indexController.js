@@ -11,6 +11,7 @@ module.exports = {
                 "/img/banersCarrousel/banner01.jpg"
             ]
         }
+        console.log(data)
         res.render('index//home',{data})
     },
 

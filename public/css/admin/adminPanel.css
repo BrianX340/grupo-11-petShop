@@ -3,6 +3,7 @@
 @import url('../partials/loading.css');
 @import url('../partials/header-nav.css');
 @import url('../partials/operationSucess.css');
+@import url('../partials/errorBox.css');
 
 ::-webkit-scrollbar {
     display: none;
