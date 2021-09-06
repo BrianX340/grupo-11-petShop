@@ -1,5 +1,5 @@
 const {check, body} = require('express-validator');
-const { users } = require('../database/db')
+const { getUsers } = require('../database/db')
 
 
 module.exports = [
@@ -11,7 +11,7 @@ module.exports = [
 
     body('user')
     .custom(value => {
-        let user1 = users.find( user => user.user === value)
+        let user1 = getUsers().find( user => user.user === value)
 
         if(user1 !== undefined){
             return true

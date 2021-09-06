@@ -1,4 +1,4 @@
-const { users, writeUsersJSON } = require('../database/db')
+const { getUsers, writeUsersJSON } = require('../database/db')
 const { validationResult } = require('express-validator')
 const bcrypt = require('bcryptjs')
 
@@ -28,7 +28,6 @@ module.exports = {
 
     /* profileEdit: (req, res) => {
         let user = users.find(user => user.id === req.params.id)
-
         res.render('userProfileEdit', //renderizar formulario
         categories, //para header?
         session: req.session
@@ -38,10 +37,8 @@ module.exports = {
 
    /* updateProfile: (req, res) => {
     let errors = validationResult(req)
-
     if (errors.isEmpty()) {
         let user = users.find(user => user.id === +req.params.id)
-
         let {
             name,
             last_name,
@@ -50,9 +47,7 @@ module.exports = {
             pc,
             province,
             city,
-
         } = req.body
-
         user.name = name
         user.last_name = last_name
         user.tel = tel
@@ -61,15 +56,10 @@ module.exports = {
         user.province = province
         user.city = city
         user.avatar =  req.file ? req.file.filename : user.avatar
-
-        writeUsersJSON(users)
-
-        delete user.pass
-
-        req.session.user = user
-
+        writeUsersJSON(getUsers())
+        delete newUser.pass
+        req.session.user = newUser
         res.redirect('/users/profile')
-
     }else{
         res.render('userProfileEdit), {
             categories,
@@ -115,56 +105,47 @@ module.exports = {
 
     processRegister: (req, res) => {
         let errors = validationResult(req)
-
+        
         if (errors.isEmpty()) {
+            
             let lastId = 0;
-
-            users.forEach(user => {
+            
+            getUsers().forEach(user => {
                 if(user.id > lastId){
                     lastId = user.id
                 }
             })
-            let {
-                user,
-                name,
-                last_name,
-                email,
-                pass1
-            } = req.body
 
             let newUser = {
-                id : lastId + 1,
-                user,
-                name,
-                last_name,
-                email,
-                pass : bcrypt.hashSync(pass1, user.pass),
-                /* avatar : req.file ? req.file.filename : "default-image.png", */
+                id: lastId +1,
+                ...req.body,
                 rol: "ROL_USER",
                 tel: "",
                 address: "",
                 pc: "",
                 province: "",
-                city:"",
+                city:""
             }
+            delete newUser.pass2
+            newUser.pass = bcrypt.hashSync(newUser.pass, 10)
+            
 
-            users.push(newUser)
+            getUsers().push(newUser)
 
-            writeUsersJSON(users)
+            writeUsersJSON(getUsers())
 
-            res.redirect('users//login')
+            res.redirect('/ps/login')
 
         } else {
-            res.render('users//register'), {
+            res.render('users//register', {
                 errors: errors.mapped(),
                 old: req.body
-            }
+            })
         }
     },
 
     /* logout: (req, res) => {
         req.session.destroy()
-
         if(req.cookies.usersPet){
             res.cookie('usersPet', '', {maxAge: -1})
         }
