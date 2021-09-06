@@ -62,11 +62,11 @@ module.exports = {
         user.city = city
         user.avatar =  req.file ? req.file.filename : user.avatar
 
-        writeUsersJSON(users)
+        writeUsersJSON(getUsers())
 
-        delete user.pass
+        delete newUser.pass
 
-        req.session.user = user
+        req.session.user = newUser
 
         res.redirect('/users/profile')
 
@@ -115,10 +115,9 @@ module.exports = {
 
     processRegister: (req, res) => {
         let errors = validationResult(req)
-        console.log(errors)
-
-        console.log(req.body)
+        
         if (errors.isEmpty()) {
+            
             let lastId = 0;
             
             getUsers().forEach(user => {
@@ -148,10 +147,10 @@ module.exports = {
             res.redirect('/ps/login')
 
         } else {
-            res.render('users//register'), {
+            res.render('users//register', {
                 errors: errors.mapped(),
                 old: req.body
-            }
+            })
         }
     },
 

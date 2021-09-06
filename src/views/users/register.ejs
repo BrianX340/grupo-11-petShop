@@ -21,17 +21,19 @@
 
             <div class="user singupBox">
                 <div class="formBx">
-                    <form method="POST">
+                    <form  method="POST">
                         <h2>Registrate</h2>
-                        <input type="text" name="userName" placeholder="Usuario">
+                        <input type="text" name="userName" placeholder="Usuario" value="<%= locals.old && old.userName %>">
                         <% if (locals.errors && errors.userName) { %>
                             <small class="text-danger"><%= errors.userName.msg %> </small>
                         <% } %>
-                        <input type="text" name="name" placeholder="Nombre">
+                        
+                        <input type="text" name="name" placeholder="Nombre" value="<%= locals.old && old.name %>">
                         <% if (locals.errors && errors.name) { %>
                             <small class="text-danger"><%= errors.name.msg %> </small>
                         <% } %>
-                        <input type="text" name="last_name" placeholder="Apellido" <%= locals.old && old.last_name1 %>>
+
+                        <input type="text" name="last_name" placeholder="Apellido" value="<%= locals.old && old.last_name %>">
                         <% if (locals.errors && errors.last_name) { %>
                             <small class="text-danger"><%= errors.last_name.msg %> </small>
                         <% } %>
