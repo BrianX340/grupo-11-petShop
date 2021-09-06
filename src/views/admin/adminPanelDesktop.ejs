@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/admin/adminPanelDesktop.css">
+</head>
+<body>
+    <%- include('./headerAdmin'); %>
+
+    <section class='rowsContainer'>
+
+        <div class='rowOptions'>
+            <div class='topRow'><span>Productos</span></div>
+            <div class='boxOption'>
+                <a href="/admin/products/create">
+                    <div class='optionBox'>
+                        <img src="/files/productUpload.svg" alt="">
+                        <span>Agregar Producto</span>
+                    </div>
+                </a>
+                <a href="/admin/products/edit">
+                    <div class='optionBox'>
+                        <img src="/files/editProduct.svg" alt="">
+                        <span>Editar Producto</span>
+                    </div>
+                </a>
+                <a href="/admin/products/detail">
+                    <div class='optionBox'>
+                        <img src="/files/barcodeDetail.svg" alt="">
+                        <span>Detallar Producto</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class='rowOptions'>
+            <div class='topRow'><span>Clientes</span></div>
+            <div class='boxOption'>
+                <a href="/admin/clients/statistics">
+                    <div class='optionBox'>
+                        <img src="/files/statistics.svg" alt="">
+                        <span>Estadisticas de Clientes</span>
+                    </div>
+                </a>
+                <a href="/admin/clients/Buzon">
+                    <div class='optionBox'>
+                        <img src="/files/dogChat.svg" alt="">
+                        <span>Dog Chat</span>
+                    </div>
+                </a>
+                <a href="/admin/clients/online">
+                    <div class='optionBox'>
+                        <img src="/files/conecction.svg" alt="">
+                        <span>Clientes Online</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class='rowOptions'>
+            <div class='topRow'><span>Mas opciones</span></div>
+            <div class='boxOption'>
+                <a href="/admin/moreOptions/transactions">
+                    <div class='optionBox'>
+                        <img src="/files/transaction.svg" alt="">
+                        <span>Transacciones</span>
+                    </div>
+                </a>
+                <a href="/admin/moreOptions/statistics">
+                    <div class='optionBox'>
+                        <img src="/files/moneyStatistics.svg" alt="">
+                        <span>Estadisticas</span>
+                    </div>
+                </a>
+                <a href="/admin/moreOptions/otherOptions">
+                    <div class='optionBox'>
+                        <img src="/files/gear.svg" alt="">
+                        <span>Mas opciones</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>

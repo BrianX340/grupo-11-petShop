@@ -1,7 +1,6 @@
 let fs = require('fs');
 
 db = JSON.parse(fs.readFileSync('./src/database/products.json', "utf-8"))
-dbUsers = JSON.parse(fs.readFileSync('./src/database/users.json', "utf-8"))
 
 
 
@@ -11,13 +10,6 @@ function saveDatabase(){
 
 
 module.exports = {
-    writeUsersJSON: (dbUsers) => {
-        fs.writeFileSync(`./src/database/users.json`, JSON.stringify(dbUsers), "utf-8")
-    },
-    getUsers: () => {
-        return dbUsers
-    },
-
     oneProduct: (productId)=>{
         getProduct = db.filter(product => product.id == productId)
         if (getProduct[0]){

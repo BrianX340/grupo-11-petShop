@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Productos</title>
+    <link rel="stylesheet" href="/css/admin/products/editProducts.css">
+</head>
+
+<body>
+    
+    <%- include('../headerAdmin'); %>
+
+
+    <section id='modifyProductView' class='noDisplay'>
+        <section id='modifySearchView'>
+
+            <div class='finalCardTitle'><span>Modificar Producto</span></div>
+
+            <div id='searchModifyView' class='searchResultBox'>
+                <div class='modifySearchBox'>
+                    <div>
+                        <span>Buscar producto</span><input id='searchInputModify' type="text">
+                    </div>
+                </div>
+
+                <div id="modifySearchResult" class='resultBox'>
+                    <div class='resultCard'>
+                        <div>
+                            <figure><img src="/img/products/" alt=""></figure>
+                        </div>
+                        <div>
+                            <div>
+                                <span>Nombre: </span><span></span>
+                            </div>
+                            <div>
+                                <span>Codigo de barras: </span><span></span>
+                            </div>
+                        </div>
+                        <div class='cardCoverCLick' elementId=''></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <form id='formEdit' class="formCreate noDisplay" method="POST" enctype="multipart/form-data">
+
+            <div class='formContainer'>
+                <div class='finalCardTitle'><span>Modificar Producto</span></div>
+
+                <div class='inputsContainerBox'>
+
+                    <div class="inputfield">
+                        <div class='addImageButton'>
+                            <span>Imagen</span>
+                            <input id='imageContainerEdit' type="file" class="form-control" name="image"
+                                aria-label="file example">
+                        </div>
+                    </div>
+
+                    <div class="inputfield">
+                        <div>
+                            <span>Nombre</span>
+                            <input type="text" type="text" class="form-control" id="inputNameEdit" name="name">
+                        </div>
+                    </div>
+
+                    <div class="inputfield">
+                        <div>
+                            <span>Precio Compra</span>
+                            <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true"
+                                class="form-control" id="inputBuyPriceEdit" name="buyPrice">
+                        </div>
+                    </div>
+
+                    <div class="inputfield">
+                        <div>
+                            <span>Precio Venta</span>
+                            <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true"
+                                class="form-control" id="inputSellPriceEdit" name="sellPrice">
+                        </div>
+                    </div>
+
+                    <div class="inputfield">
+                        <div>
+                            <span>Descripcion</span>
+                            <input type="text" id="inputDescriptionEdit" name="description">
+                        </div>
+                    </div>
+
+                    <div class="inputfield">
+                        <div>
+                            <span>Cantidad</span>
+                            <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true"
+                                id="inputAmountEdit" name="amount">
+                        </div>
+                    </div>
+
+                    <div class="inputfield">
+                        <div>
+                            <span>Codigo de Barras</span>
+                            <input type="text" onkeydown="javascript: return event.keyCode == 69 ? false : true"
+                                id="inputBarcodeEdit" name="barcode">
+                        </div>
+                    </div>
+
+                    <div class="inputfield">
+                        <div>
+                            <span>Marca</span>
+                            <input type="text" id="inputMarkEdit" name="mark">
+                        </div>
+                    </div>
+
+                    <div class="inputfield">
+                        <div>
+                            <span>Categoria</span>
+                            <input type="text" id="inputCategoryEdit" name="category">
+                        </div>
+                    </div>
+
+                    <div class="inputfield">
+                        <div>
+                            <span>Subcategoria</span>
+                            <input type="text" id="inputSubCategoryEdit" name="subCategory">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class='buttonOptionProduct'>
+                    <button class='backButton'>Volver</button>
+                    <button class='cleanInputs'>Limpiar campos</button>
+                    <button id='productSaveEdit'>Cargar</button>
+                </div>
+
+            </div>
+
+        </form>
+    </section>
+</body>
+
+</html>l

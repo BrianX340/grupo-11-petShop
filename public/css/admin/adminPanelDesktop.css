@@ -1,0 +1,73 @@
+@import url('./header-navAdmin.css');
+@import url('../partials/background.css');
+@import url('./menuAdmin.css');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+.rowsContainer {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui;
+}
+
+.rowOptions {
+    width: 500px;
+    height: 120px;
+}
+
+.topRow {
+    display: flex;
+    height: 25px;
+}
+
+.topRow > span {
+    border-radius: 10px 10px 0px 0px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+
+
+.boxOption {
+    display: flex;
+    justify-content: space-around;
+    height: 90px;
+    align-items: center;
+    background-color: #0e76a8ad;
+    border-radius: 10px;
+}
+
+.boxOption a {
+    cursor: pointer;
+}
+
+.optionBox {
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.optionBox img {
+    width: 55px;
+    height: 55px;
+}
+
+.optionBox span {
+    font-weight: 400;
+    color: white;
+}

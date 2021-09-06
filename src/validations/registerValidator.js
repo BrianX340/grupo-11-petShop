@@ -1,39 +1,29 @@
 const {check, body} = require('express-validator');
-const { getUsers } = require('../database/db')
 
 
 module.exports = [
-    check('userName')
+
+
+    check('user1')
     .notEmpty()
-    .withMessage('Debes escribir un usuario')
-    .custom(value => {
-        let user = getUsers().find(user => user.userName === value)
+    .withMessage('Debes escribir el usuario'),
 
-        if(user === undefined){
-            return true
-        }else{
-            return false
-        }
-    })
-    .withMessage("usuario en uso"),
-
-    check('name')
+    check('name1')
     .notEmpty()
-    .withMessage('Debes escribir un nombre'),
+    .withMessage('Debes escribir un Nombre'),
 
-    check('last_name')
+    check('last_name1')
     .notEmpty()
-    .withMessage('Debes escribir un apellido'),
+    .withMessage('Debes escribir un Apellido'),
 
-    check('email')
+    check('email1')
     .notEmpty()
     .withMessage('Debes escribir un email').bail()
     .isEmail()
     .withMessage('Debes escribir un email válido'),
-
     body('email')
     .custom(value => {
-        let user = getUsers().find(user => user.email === value)
+        let user = users.find(user => user.email === value);
 
         if(user === undefined){
             return true
@@ -41,23 +31,23 @@ module.exports = [
             return false
         }
     })
-    .withMessage("Email ya registrado"),
+    .withMessage("Correo no registrado"),
 
-    check('pass')
+    check('pass1')
     .notEmpty()
     .withMessage('Debes escribir tu contraseña')
     .isLength({
         min: 6,
         max: 20
     })
-    .withMessage('La contraseña debe tener como mínimo de 6 a 20 caracteres'),
+    .withMessage('La contraseña debe tener entre 6 y 20 caracteres'),
 
     body('pass2')
-    .custom((value, {req}) => value !== req.body.pass ? false : true)
-    .withMessage('Las contraseñas no coinciden')
+    .custom((value, {req}) => value !== req.body.pass1 ? false : true)
+    .withMessage('Las contraseñas no coinciden'),
 
-    /* check('terms')
+    check('terms')
     .isString('on')
-    .withMessage('Debes aceptar los términos y condiciones') */
+    .withMessage('Debes aceptar los términos y condiciones')
 
 ]

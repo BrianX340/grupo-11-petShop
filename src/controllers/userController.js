@@ -1,4 +1,4 @@
-const { getUsers, writeUsersJSON } = require('../database/db')
+const { users, writeUsersJSON } = require('../database/db')
 const { validationResult } = require('express-validator')
 const bcrypt = require('bcryptjs')
 
@@ -62,11 +62,11 @@ module.exports = {
         user.city = city
         user.avatar =  req.file ? req.file.filename : user.avatar
 
-        writeUsersJSON(getUsers())
+        writeUsersJSON(users)
 
-        delete newUser.pass
+        delete user.pass
 
-        req.session.user = newUser
+        req.session.user = user
 
         res.redirect('/users/profile')
 
@@ -115,42 +115,50 @@ module.exports = {
 
     processRegister: (req, res) => {
         let errors = validationResult(req)
-        
+
         if (errors.isEmpty()) {
-            
             let lastId = 0;
-            
-            getUsers().forEach(user => {
+
+            users.forEach(user => {
                 if(user.id > lastId){
                     lastId = user.id
                 }
             })
+            let {
+                user,
+                name,
+                last_name,
+                email,
+                pass1
+            } = req.body
 
             let newUser = {
-                id: lastId +1,
-                ...req.body,
+                id : lastId + 1,
+                user,
+                name,
+                last_name,
+                email,
+                pass : bcrypt.hashSync(pass1, user.pass),
+                /* avatar : req.file ? req.file.filename : "default-image.png", */
                 rol: "ROL_USER",
                 tel: "",
                 address: "",
                 pc: "",
                 province: "",
-                city:""
+                city:"",
             }
-            delete newUser.pass2
-            newUser.pass = bcrypt.hashSync(newUser.pass, 10)
-            
 
-            getUsers().push(newUser)
+            users.push(newUser)
 
-            writeUsersJSON(getUsers())
+            writeUsersJSON(users)
 
-            res.redirect('/ps/login')
+            res.redirect('users//login')
 
         } else {
-            res.render('users//register', {
+            res.render('users//register'), {
                 errors: errors.mapped(),
                 old: req.body
-            })
+            }
         }
     },
 

@@ -2,23 +2,25 @@ const { oneProduct, getAllProducts, searchProductByName, saveOneProduct } = requ
 const { validationResult } = require('express-validator')
 
 module.exports = {
+    adminPanelView: (req,res) =>{
+        res.render('admin//adminPanelDesktop')
+    },
+    createProductView: (req,res)=> {
+        res.render('admin//products//addProduct')
+    },
+    deleteProductView: (req,res)=> {
+        res.render('admin//products//deleteProduct')
+    },
+    editProductView: (req,res)=> {
+        res.render('admin//products//editProduct')
+    },
+    detailProductView: (req,res)=> {
+        res.render('admin//products//detailProduct')
+    },
     getOneProduct: (req,res)=>{
         elementId = req.params.id
         product = oneProduct(elementId)
-
-        if(product){
-            res.send({
-                status:'ok',
-                product
-            })
-        } else {
-            res.send({
-                status:'fail'
-            })
-        }
-    },
-    adminPanel: (req,res) =>{
-        res.render('admin//adminPanelMobile')
+        product ? res.send({status:'ok',product}) : res.send({status:'fail'})
     },
     allProducts: (req,res) =>{
         res.send(getAllProducts())
@@ -26,29 +28,28 @@ module.exports = {
     searchProducts: (req,res) =>{
         res.render('partial//resultProductSearch', {productos:searchProductByName(req.params.name)})
     },
-    createProducts: (req,res) =>{
+    createProduct: (req,res) =>{
         img = req.file ? [req.file.filename] : "productDefault.png"
-
         let errors = validationResult(req)
 
         if(errors.isEmpty()){
-
             newProduct = {id:"", ...req.body, img}
     
             if (saveOneProduct(newProduct)){
                 return res.send({status:"ok"})
             }
             return res.send({status:'error',msg:'productNotCreate',error:'El producto no ha sido creado!'})
-
         }
         return res.send({status:'error',msg:'validacionesIncorrectas',errors})
-
     },
-    editProducts: (req,res) =>{
-        res.render('admin//adminPanel')
+    editProduct: (req,res) =>{
+        //res.render('admin//adminPanel')
     },
-    deleteProducts: (req,res) =>{
-        res.render('admin//adminPanel')
+    deleteProduct: (req,res) =>{
+        //res.render('admin//adminPanel')
+    },
+    detailProduct: (req,res) =>{
+        //res.render('admin//adminPanel')
     },
 }
 

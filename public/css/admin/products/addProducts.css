@@ -1,0 +1,19 @@
+@import url('../header-navAdmin.css');
+@import url('../../partials/background.css');
+@import url('../menuAdmin.css');
+
+.addProductSection {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui;
+}
+
+.inputfield {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

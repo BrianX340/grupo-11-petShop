@@ -5,7 +5,6 @@
 @import url('../partials/carrito.css');
 @import url('../partials/footer.css');
 @import url('../partials/background.css');
-@import url('../partials/login.css');
 
 *{
     margin: 0;
@@ -14,15 +13,12 @@
     font-family: system-ui;
 }
 
-.text-danger{
-    color: rgb(100, 29, 233);
-}
 .inicioF{
     text-decoration: none;
 }
 
 .container-form {
-    /* position:relative; */
+    position:relative;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -31,22 +27,27 @@
     transition: 0.5s;
 }
 
+@media (max-height: 990px){
+    .container-form{
+        height: 660px;
+    }
+}
 
 /* section.active {
     transition: 0.5s;
 } */
 
 section .container{
-    margin-top: 80px;
-    width: 860px;
-    height: 600px;
+    position: relative;
+    width: 800px;
+    height: 500px;
     background: rgb(248, 248, 248);
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .container .user {
-    /* position: absolute; */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;

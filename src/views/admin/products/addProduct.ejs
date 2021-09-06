@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Productos</title>
+    <link rel="stylesheet" href="/css/admin/products/addProducts.css">
+</head>
+
+<body>
+    <%- include('../headerAdmin'); %>
+
+        <section class='addProductSection'>
+            <div>
+
+                <form id='formCreateAdd' class="formCreate" method="POST" enctype="multipart/form-data">
+
+                    <div class='finalCardTitle'><span>Carga de Productos</span></div>
+
+                    <div class='inputsContainerBox'>
+
+                        <div class="inputfield">
+                            <div class='addImageButton'>
+                                <span>Imagen</span>
+                                <input id='imageContainer' type="file" class="form-control" name="image"
+                                    aria-label="file example">
+                            </div>
+                        </div>
+
+                        <div class="inputfield">
+                            
+                                <span>Nombre</span>
+                                <input type="text" type="text" class="form-control" id="inputNameAdd" name="name">
+                            
+                        </div>
+
+                        <div class="inputfield">
+                            
+                                <span>Precio Compra</span>
+                                <input type="number"
+                                    onkeydown="javascript: return event.keyCode == 69 ? false : true"
+                                    class="form-control" id="inputBuyPriceAdd" name="buyPrice">
+                            
+                        </div>
+
+                        <div class="inputfield">
+                            
+                                <span>Precio Venta</span>
+                                <input type="number"
+                                    onkeydown="javascript: return event.keyCode == 69 ? false : true"
+                                    class="form-control" id="inputSellPriceAdd" name="sellPrice">
+                            
+                        </div>
+
+                        <div class="inputfield">
+                            
+                                <span>Descripcion</span>
+                                <input type="text" id="inputDescriptionAdd" name="description">
+                            
+                        </div>
+
+                        <div class="inputfield">
+                            
+                                <span>Cantidad</span>
+                                <input type="number"
+                                    onkeydown="javascript: return event.keyCode == 69 ? false : true"
+                                    id="inputAmountAdd" name="amount">
+                            
+                        </div>
+
+                        <div class="inputfield">
+                            
+                                <span>Codigo de Barras</span>
+                                <input type="text" onkeydown="javascript: return event.keyCode == 69 ? false : true"
+                                    id="inputBarcodeAdd" name="barcode">
+                            
+                        </div>
+
+                        <div class="inputfield">
+                            
+                                <span>Marca</span>
+                                <input type="text" id="inputMarkAdd" name="mark">
+                            
+                        </div>
+
+                        <div class="inputfield">
+                                <span>Animal</span>
+                                <!-- <input type="text" id="inputCategoryAdd" name="category"> -->
+                                <select name="category" id="inputCategoryAdd" form="formCreateAdd">
+                                    <option value="default">Elija una categoria</option>
+                                    <option value="gato">Gato</option>
+                                    <option value="perro">Perro</option>
+                                </select>
+                        </div>
+
+                        <div class="inputfield">
+                                <span>Tipo de Producto</span>
+                                <select name="subCategory" id="inputSubCategoryAdd" form="formCreateAdd">
+                                    <option value="default">Elija tipo de producto</option>
+                                    <option value="alimentos">Alimentos</option>
+                                    <option value="higiene">Higiene</option>
+                                    <option value="juguetes">Juguetes</option>
+                                    <option value="camas">Camas</option>
+                                </select>
+                        </div>
+
+                    </div>
+
+                    <div class='buttonOptionProduct'>
+                        <button class='backButton'>Volver</button>
+                        <button class='cleanInputs'>Limpiar campos</button>
+                        <button id='productCreate'>Cargar</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+</body>
+
+</html>

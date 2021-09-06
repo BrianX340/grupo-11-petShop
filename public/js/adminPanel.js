@@ -1,7 +1,6 @@
 
 var actualView = ''
 var previousView = 'panel-menu'
-
 window.onload = () => {
 
     keypressListener()
