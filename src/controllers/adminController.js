@@ -17,6 +17,15 @@ module.exports = {
     detailProductView: (req,res)=> {
         res.render('admin//products//detailProduct')
     },
+    statisticsClientView: (req,res)=> {
+        res.render('admin//clients//clientStatistics')
+    },
+    buzonClientView: (req,res)=> {
+        res.render('admin//clients//clientBuzon')
+    },
+    onlineClientView: (req,res)=> {
+        res.render('admin//clients//clientOnline')
+    },
     getOneProduct: (req,res)=>{
         elementId = req.params.id
         product = oneProduct(elementId)

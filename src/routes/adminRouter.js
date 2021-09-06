@@ -16,6 +16,10 @@ const {
     deleteProductView,
     createProductView,
 
+    buzonClientView,
+    onlineClientView,
+    statisticsClientView,
+
     } = require('../controllers/adminController')
 
 const adminCrudValidator = require('../validations/adminCrudValidator')
@@ -32,6 +36,11 @@ router.get('/products/detail', detailProduct)
 router.get('/products/create', createProductView)
 router.get('/products/:name', searchProducts)
 router.get('/products/:id', detailProductView) //los que contengan :id deben ir debajo de los que utilizen la misma ruta
+
+router.get('/clients/statistics', statisticsClientView)
+router.get('/clients/buzon', buzonClientView)
+router.get('/clients/online', onlineClientView)
+
 
 
 
