@@ -31,18 +31,13 @@
     transition: 0.5s;
 }
 
-@media (max-height: 990px){
-    .container-form{
-        height: 660px;
-    }
-}
 
 /* section.active {
     transition: 0.5s;
 } */
 
 section .container{
-    /* position: relative; */
+    margin-top: 80px;
     width: 860px;
     height: 600px;
     background: rgb(248, 248, 248);
