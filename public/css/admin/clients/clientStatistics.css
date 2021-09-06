@@ -1,3 +1,57 @@
 @import url('../header-navAdmin.css');
 @import url('../../partials/background.css');
 @import url('../menuAdmin.css');
+
+
+#statisticsPanel {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    position: relative;
+}
+
+.containerGraph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    height: 59vw;
+    transform: scale(0.6);
+    position: absolute;
+    top: -12vw;
+}
+
+
+.master {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.genre {
+    left: -7vw;
+}
+
+.products {
+    right: -7vw;
+}
+
+.graph {   
+    width: 50vw;
+    height: 59vw;
+    border: 4px #0e76a8 solid;
+    box-sizing: content-box;
+    display: flex;
+    max-width: 352px;
+    max-height: 413px;
+}
+
+.titulo {
+    justify-content: center;
+    display: flex;
+    font-weight: bold;
+    color: white;
+    font-family: system-ui;
+    font-size: 12px;
+}

@@ -7,24 +7,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estadisticas de clientes</title>
     <link rel="stylesheet" href="/css/admin/clients/clientStatistics.css">
+    <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
 </head>
 
 <body>
-    
+
     <%- include('../headerAdmin'); %>
 
+        <div class='titulo'>
+            <h1>Estadisticas de Clientes</h1>
+        </div>
+        <div class='master'>
 
-    <section id='statisticsPanel'>
+            <section id='statisticsPanel'>
+
+                <div class='genre containerGraph'>
+                    <div id="genero" class='graph'></div>
+                </div>
+
+                <div class='animal containerGraph'>
+                    <div id="pets" class='graph'></div>
+                </div>
+
+                <div class='products containerGraph'>
+                    <div id="products" class='graph'></div>
+                </div>
+
+            </section>
 
 
-
-
-
-
-    </section>
-
-
+        </div>
 
 </body>
+
+<script>
+
+    
+
+    function generoGrafica() {
+        x = []
+        y = []
+
+        for (const [key, value] of Object.entries(<%- locals.data.generoData %>)) {
+            x.push(key)
+            y.push(value)
+        }
+
+
+
+        TESTER = document.getElementById('genero');
+
+        var trace1 = {
+            type: 'bar',
+            x: x,
+            y: y,
+            marker: {
+                color: '#C8A2C8',
+                line: {
+                    width: 2.5
+                }
+            }
+        };
+
+        var data = [trace1];
+
+        var layout = {
+            title: 'Genero',
+            font: { size: 12 }
+        };
+
+        var config = { responsive: true }
+
+        Plotly.newPlot(TESTER, data, layout, config);
+    }
+
+    function mascotaGrafica() {
+        TESTER = document.getElementById('pets');
+
+        var trace1 = {
+            type: 'bar',
+            x: ["Perros", "Gatos"],
+            y: [15, 12,],
+            marker: {
+                color: '#C8A2C8',
+                line: {
+                    width: 2.5
+                }
+            }
+        };
+
+        var data = [trace1];
+
+        var layout = {
+            title: 'Tipo de Mascota',
+            font: { size: 12 }
+        };
+
+        var config = { responsive: true }
+
+        Plotly.newPlot(TESTER, data, layout, config);
+    }
+
+    function productsGrafica() {
+        TESTER = document.getElementById('products');
+
+        var trace1 = {
+            type: 'bar',
+            x: ["Alimentos", "Higiene", "Juguetes", "Camas"],
+            y: [15, 12, 22, 7],
+            marker: {
+                color: '#C8A2C8',
+                line: {
+                    width: 2.5
+                }
+            }
+        };
+
+        var data = [trace1];
+
+        var layout = {
+            title: 'Productos comprados',
+            font: { size: 12 }
+        };
+
+        var config = { responsive: true }
+
+        Plotly.newPlot(TESTER, data, layout, config);
+    }
+
+    generoGrafica()
+    mascotaGrafica()
+    productsGrafica()
+
+</script>
 
 </html>

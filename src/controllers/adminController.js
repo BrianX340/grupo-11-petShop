@@ -1,5 +1,7 @@
 const { oneProduct, getAllProducts, searchProductByName, saveOneProduct } = require('../database/db');
 const { validationResult } = require('express-validator')
+const { generoData } = require('../database/statisticsDb');
+
 
 module.exports = {
     adminPanelView: (req,res) =>{
@@ -18,7 +20,11 @@ module.exports = {
         res.render('admin//products//detailProduct')
     },
     statisticsClientView: (req,res)=> {
-        res.render('admin//clients//clientStatistics')
+        res.render('admin//clients//clientStatistics',{
+            data:{
+                generoData:JSON.stringify(generoData()),
+            }
+        })
     },
     buzonClientView: (req,res)=> {
         res.render('admin//clients//clientBuzon')

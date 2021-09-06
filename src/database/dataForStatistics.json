@@ -1,65 +1,70 @@
 [
     {
-        "semana":0,
+        "semana":1,
         "fechaInicioRegistros":"20/06/2021",
         "fechaFinRegistros":"27/06/2021",
-        "usuariosRegistrados": 0,
-        "ventasRealizadas": 0,
-        "ventasCanceladas": 0,
-        "ventasEnProgreso": 0,
-        "dineroTotalVentas": 0,
-        "dineroTotalInvertido": 0,
+        "usuariosRegistrados": 52,
+        "ventasRealizadas": 24,
+        "ventasCanceladas": 2,
+        "ventasEnProgreso": 13,
+        "dineroTotalVentas": 3578.88,
+        "dineroTotalInvertido": 1050.37,
+
+        "generos":{
+            "hombres":12,
+            "mujeres":27
+        },
 
         "reclamos": {
             "gatos":{
-                "cantidadReclamos":0,
+                "cantidadReclamos":2,
                 "alimentos":0,
-                "higiene":0,
+                "higiene":1,
                 "juguetes":0,
-                "camas":0
+                "camas":1
             },
             "perros":{
-                "cantidadReclamos":0,
+                "cantidadReclamos":1,
                 "alimentos":0,
                 "higiene":0,
-                "juguetes":0,
+                "juguetes":1,
                 "camas":0
             }
         },
 
         "comprasHombres": {
             "gatos":{
-                "cantidadCompras":0,
-                "dinero" : 0,
-                "alimentos":0,
-                "higiene":0,
-                "juguetes":0,
-                "camas":0
+                "cantidadCompras":15,
+                "dinero" : 3500,
+                "alimentos":3,
+                "higiene":2,
+                "juguetes":12,
+                "camas":5
             },
             "perros":{
-                "cantidadCompras":0,
+                "cantidadCompras":5,
                 "dinero" : 0,
-                "alimentos":0,
-                "higiene":0,
+                "alimentos":3,
+                "higiene":2,
                 "juguetes":0,
-                "camas":0
+                "camas":1
             }
         },
 
         "comprasMujeres": {
             "gatos":{
-                "cantidadCompras":0,
-                "dinero" : 0,
-                "alimentos":0,
-                "higiene":0,
-                "juguetes":0,
-                "camas":0
+                "cantidadCompras":3,
+                "dinero" : 78.88,
+                "alimentos":2,
+                "higiene":1,
+                "juguetes":1,
+                "camas":2
             },
             "perros":{
-                "cantidadCompras":0,
+                "cantidadCompras":1,
                 "dinero" : 0,
                 "alimentos":0,
-                "higiene":0,
+                "higiene":1,
                 "juguetes":0,
                 "camas":0
             }
