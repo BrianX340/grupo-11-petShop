@@ -1,25 +1,26 @@
 const {check, body} = require('express-validator');
-const { getUsers } = require('../database/db')
+const { getUsers } = require('../database/db');
+let bcrypt = require('bcryptjs');
 
 
 module.exports = [
-    check('user')
+    check('email')
     .notEmpty()
-    .withMessage('Debes escribir el usuario').bail()
+    .withMessage('Debes escribir el correo electronico').bail()
     .isEmail()
-    .withMessage('Debes escribir un usuario válido'),
+    .withMessage('Debes escribir un correo válido'), 
 
-    body('user')
+    body('email')
     .custom(value => {
-        let user1 = getUsers().find( user => user.user === value)
+        let user = getUsers().find( user => user.email === value)
 
-        if(user1 !== undefined){
+        if(user !== undefined){
             return true
         }else{
             return false
         }
     })
-    .withMessage("User no registrado"),
+    .withMessage("Correo no registrado"),
 
     check('pass')
     .notEmpty()
@@ -27,8 +28,9 @@ module.exports = [
 
     body('pass')
     .custom((value, {req}) => {
-        let user = users.find(user => user.email === req.body.email)
+        let user = getUsers().find(user => user.email === req.body.email)
 
-        return bcrypt.compareSync(value, user)
-    }),
+        return bcrypt.compareSync(value, user.pass)
+    })
+    .withMessage('Contraseña inválida')
 ]

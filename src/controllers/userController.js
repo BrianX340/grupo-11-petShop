@@ -1,16 +1,19 @@
 const { getUsers, writeUsersJSON } = require('../database/db')
 const { validationResult } = require('express-validator')
-const bcrypt = require('bcryptjs')
+let bcrypt = require('bcryptjs')
 
 module.exports = {
     carritoCompras: (req,res) =>{
-        res.render('users//carritoPage')
+        res.render('users//carritoPage',
+        req.session)
     },
     register: (req,res) =>{
-        res.render('users//register')
+        res.render('users//register',
+        req.session)
     },
     login: (req,res) =>{
-        res.render('users//login')
+        res.render('users//login',
+        req.session)
     },
     //historialCompras: (req,res) =>{
     //    res.render('users//historial')
@@ -18,10 +21,11 @@ module.exports = {
     //FAVORITOS
 
     profile: (req, res) =>{
-        let user = user.find(user => user.id === req.session.user.id)
+        let user = getUsers().find(user => user.id === req.session.user.id)
         res.render('userProfile', {
             user,
-            /* session, req.session */
+            /* session,
+            req.session */
         })
     },
 
@@ -73,13 +77,13 @@ module.exports = {
         let errors = validationResult(req)
 
         if(errors.isEmpty()) {
-            let user = users.find(user => user.email === req.body.email)
+            let user = getUsers().find(user => user.email === req.body.email)
 
             req.session.user = {
                 id: user.id,
-                user: user.user,
+                user: user.userName,
                 name: user.name,
-                last_name: user.last_name,
+                last_name : user.last_name,
                 email: user.email,
                 avatar: user.avatar,
                 rol: user.rol
@@ -87,9 +91,9 @@ module.exports = {
 
             /* let time = 1000 * 60 * 60 *24
             
-            if(req.body.remember){
-                res.cookie("usersPet", req.session.user, {expires: new Date(Date.now() + 900000), httpOnly : true})
-            } */
+             if(req.body.remember){
+                res.cookie("usersPet", req.session.user, {expires: new Date(Date.now() + time), httpOnly : true})
+            }  */
 
             res.locals.user = req.session.user
 
@@ -98,7 +102,8 @@ module.exports = {
 
         }else{
             res.render('users//login', {
-                errors: errors.mapped()
+                errors: errors.mapped(),
+                session: req.session
             })
         }
     },
