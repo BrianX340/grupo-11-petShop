@@ -82,12 +82,23 @@
     }
 
     function mascotaGrafica() {
+
+        x = []
+        y = []
+
+        for (const [key, value] of Object.entries(<%- locals.data.tipoMascota %>)) {
+            x.push(key)
+            y.push(value)
+        }
+
+
+
         TESTER = document.getElementById('pets');
 
         var trace1 = {
             type: 'bar',
-            x: ["Perros", "Gatos"],
-            y: [15, 12,],
+            x: x,
+            y: y,
             marker: {
                 color: '#C8A2C8',
                 line: {
@@ -109,12 +120,23 @@
     }
 
     function productsGrafica() {
+
+        x = []
+        y = []
+
+        for (const [key, value] of Object.entries(<%- locals.data.ventas %>)) {
+            x.push(key)
+            y.push(value)
+        }
+
+
+
         TESTER = document.getElementById('products');
 
         var trace1 = {
             type: 'bar',
-            x: ["Alimentos", "Higiene", "Juguetes", "Camas"],
-            y: [15, 12, 22, 7],
+            x,
+            y,
             marker: {
                 color: '#C8A2C8',
                 line: {

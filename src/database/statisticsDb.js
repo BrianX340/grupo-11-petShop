@@ -14,7 +14,6 @@ module.exports = {
         hombresTotales = 0
         mujeresTotales = 0
         for (semana of db){
-            console.log(semana.generos.hombres)
             hombresTotales = hombresTotales+semana.generos.hombres
             mujeresTotales = mujeresTotales+semana.generos.mujeres
 
@@ -25,15 +24,41 @@ module.exports = {
         }
 
     },
-    saveOneProduct: (product)=>{
-        try{
-            db.push(product)
-            saveDatabase()
-            return true
+    mascotaData: ()=>{
+        gatosTotales = 0
+        perrosTotales = 0
+        for (semana of db){
+            gatosTotales = gatosTotales+semana.mascotas.gatos
+            perrosTotales = perrosTotales+semana.mascotas.perros
+
         }
-        catch{
-            return false
+        console.log(gatosTotales,perrosTotales)
+        return {
+            gatos:gatosTotales,
+            perros:perrosTotales
         }
+
+    },
+    ventasData: ()=>{
+        alimentosTotales = 0
+        higieneTotales = 0
+        juguetesTotales = 0
+        camasTotales = 0
+        for (semana of db){
+            alimentosTotales = alimentosTotales+semana.ventas.alimentos
+            higieneTotales = higieneTotales+semana.ventas.higiene
+            juguetesTotales = juguetesTotales+semana.ventas.juguetes
+            camasTotales = camasTotales+semana.ventas.camas
+
+        }
+        console.log(gatosTotales,perrosTotales)
+        return {
+            alimentos:alimentosTotales,
+            higiene:higieneTotales,
+            juguetes:juguetesTotales,
+            camas:camasTotales
+        }
+
     },
     getAllProducts: ()=>{
         return db //devolvemos la base de datos completa PRODUCTOS

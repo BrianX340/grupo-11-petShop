@@ -15,6 +15,18 @@
             "mujeres":27
         },
 
+        "mascotas":{
+            "gatos":22,
+            "perros":33
+        },
+
+        "ventas":{
+            "alimentos":12,
+            "higiene":30,
+            "juguetes":15,
+            "camas":8
+        },
+
         "reclamos": {
             "gatos":{
                 "cantidadReclamos":2,

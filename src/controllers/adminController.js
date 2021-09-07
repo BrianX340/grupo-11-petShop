@@ -1,6 +1,6 @@
 const { oneProduct, getAllProducts, searchProductByName, saveOneProduct } = require('../database/db');
 const { validationResult } = require('express-validator')
-const { generoData } = require('../database/statisticsDb');
+const { generoData, mascotaData, ventasData } = require('../database/statisticsDb');
 
 
 module.exports = {
@@ -23,6 +23,8 @@ module.exports = {
         res.render('admin//clients//clientStatistics',{
             data:{
                 generoData:JSON.stringify(generoData()),
+                tipoMascota:JSON.stringify(mascotaData()),
+                ventas:JSON.stringify(ventasData()),
             }
         })
     },
