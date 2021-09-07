@@ -7,10 +7,12 @@ module.exports = {
         res.render('users//carritoPage',
         req.session)
     },
+    /* Formulario de registro */
     register: (req,res) =>{
         res.render('users//register',
         req.session)
     },
+    /* Formulario de inicio de sesión */
     login: (req,res) =>{
         res.render('users//login',
         req.session)
@@ -20,6 +22,8 @@ module.exports = {
     //},
     //FAVORITOS
 
+
+    /* Perfil de usuario */
     profile: (req, res) =>{
         let user = getUsers().find(user => user.id === req.session.user.id)
         res.render('userProfile', {
@@ -93,12 +97,13 @@ module.exports = {
             
              if(req.body.remember){
                 res.cookie("usersPet", req.session.user, {expires: new Date(Date.now() + time), httpOnly : true})
-            }  */
+            } */  
 
             res.locals.user = req.session.user
 
-            /* res.send(res.session.user) */
-            res.redirect('/')
+            /* res.send(req.session.user) */
+
+            res.redirect('/') 
 
         }else{
             res.render('users//login', {
@@ -125,6 +130,7 @@ module.exports = {
                 id: lastId +1,
                 ...req.body,
                 rol: "ROL_USER",
+                avatar: "default-image.jpg",
                 tel: "",
                 address: "",
                 pc: "",
@@ -149,12 +155,12 @@ module.exports = {
         }
     },
 
-    /* logout: (req, res) => {
+    logout: (req, res) => {
         req.session.destroy()
         if(req.cookies.usersPet){
             res.cookie('usersPet', '', {maxAge: -1})
         }
         res.redirect('/')
-    } */
+    } 
 
 }

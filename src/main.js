@@ -3,8 +3,8 @@ const express = require('express')
 const path = require('path');
 const app = express()
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser')
-let session = require('express-session');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 /* VIEWS */
 app.set('views', path.join(__dirname, 'views'))
@@ -16,14 +16,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:false}))
 app.use(express.static(__dirname.replace('src','public')));
-/* app.use(cookieParser()); 
+app.use(cookieParser()); 
 app.use(session(
-    {secret: "",
+    {secret: "mySecret",
     resave: false,
     saveUninitialized: true,
     cookie: { maxAge: 60000 }
 }
-)); */
+));
 
 /* ROUTERS */
 adminRouter = require('./routes/adminRouter')

@@ -6,9 +6,9 @@ let bcrypt = require('bcryptjs');
 module.exports = [
     check('email')
     .notEmpty()
-    .withMessage('Debes escribir el correo electronico').bail()
+    .withMessage('Debes ingresar el correo electronico').bail()
     .isEmail()
-    .withMessage('Debes escribir un correo válido'), 
+    .withMessage('Debes ingresar un correo válido'), 
 
     body('email')
     .custom(value => {

@@ -41,7 +41,7 @@ module.exports =
             return false
         }
     })
-    .withMessage("Email ya registrado"),
+    .withMessage("Email ya en uso"),
 
     check('pass')
     .notEmpty()
