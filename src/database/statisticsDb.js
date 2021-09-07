@@ -1,11 +1,11 @@
 let fs = require('fs');
 
-db = JSON.parse(fs.readFileSync('./src/database/dataForStatistics.json', "utf-8"))
+dbStatistics = JSON.parse(fs.readFileSync('./src/database/dataForStatistics.json', "utf-8"))
 
 
 
 function saveDatabase(){
-    fs.writeFileSync(`./src/database/dataForStatistics.json`, JSON.stringify(db), "utf-8")
+    fs.writeFileSync(`./src/database/dataForStatistics.json`, JSON.stringify(dbStatistics), "utf-8")
 }
 
 
@@ -13,7 +13,7 @@ module.exports = {
     generoData: ()=>{
         hombresTotales = 0
         mujeresTotales = 0
-        for (semana of db){
+        for (semana of dbStatistics){
             hombresTotales = hombresTotales+semana.generos.hombres
             mujeresTotales = mujeresTotales+semana.generos.mujeres
 
@@ -27,7 +27,7 @@ module.exports = {
     mascotaData: ()=>{
         gatosTotales = 0
         perrosTotales = 0
-        for (semana of db){
+        for (semana of dbStatistics){
             gatosTotales = gatosTotales+semana.mascotas.gatos
             perrosTotales = perrosTotales+semana.mascotas.perros
 
@@ -44,7 +44,7 @@ module.exports = {
         higieneTotales = 0
         juguetesTotales = 0
         camasTotales = 0
-        for (semana of db){
+        for (semana of dbStatistics){
             alimentosTotales = alimentosTotales+semana.ventas.alimentos
             higieneTotales = higieneTotales+semana.ventas.higiene
             juguetesTotales = juguetesTotales+semana.ventas.juguetes
@@ -61,12 +61,12 @@ module.exports = {
 
     },
     getAllProducts: ()=>{
-        return db //devolvemos la base de datos completa PRODUCTOS
+        return dbStatistics //devolvemos la base de datos completa PRODUCTOS
     },
     
     searchProductByName: (productName)=>{
         //Filtramos la base de datos, devolvera los resultados que incluyan el texto recibido por parametro
-        return db.filter((product)=> product.name.toLowerCase().includes(productName.toLowerCase()) )
+        return dbStatistics.filter((product)=> product.name.toLowerCase().includes(productName.toLowerCase()) )
     },
 
     searchOne: (id)=>{
