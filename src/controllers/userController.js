@@ -26,10 +26,9 @@ module.exports = {
     /* Perfil de usuario */
     profile: (req, res) =>{
         let user = getUsers().find(user => user.id === req.session.user.id)
-        res.render('userProfile', {
+        res.render('users//userProfile', {
             user,
-            /* session,
-            req.session */
+            session: req.session
         })
     },
 
@@ -93,11 +92,11 @@ module.exports = {
                 rol: user.rol
             }
 
-            /* let time = 1000 * 60 * 60 *24
+            let time = 1000 * 60 * 60 *24
             
              if(req.body.remember){
                 res.cookie("usersPet", req.session.user, {expires: new Date(Date.now() + time), httpOnly : true})
-            } */  
+            }   
 
             res.locals.user = req.session.user
 
