@@ -1,0 +1,81 @@
+@charset "UTF-8";
+@import url('../partials/header-nav.css');
+@import url('../partials/wsp-chat.css');
+@import url('../partials/menu-mobile.css');
+@import url('../partials/carrito.css');
+@import url('../partials/footer.css');
+@import url('../partials/background.css');
+
+.userProfile_container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .userProfileBodySection{
+    display: flex;
+    justify-content: center;
+} */
+
+.form_editProfileContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.editProfile-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
+    padding: 16px;
+    border-radius: 13px;
+}
+
+@media (min-width: 600px){
+    .editProfile-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 800px;
+    }
+}
+
+.editProfile_inputContainer{
+    margin: 10px 0;
+}
+
+.editProfile_input {
+    border-radius: 10px;
+    width: 200px;
+    height: 26px;
+    background-color: lightgray;
+    border-style: none;
+}
+
+.editProfile_select{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.editProfile_botonContainer{
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+}
+.editProfile_boton{
+    border-radius: 5px;
+    border-style: none;
+    width: 100px;
+    height: 23px;
+}
+
+.editProfile_selectContainer{
+    border-radius: 10px;
+    width: 200px;
+    height: 26px;
+    background-color: lightgray;
+    border-style: none;
+}
