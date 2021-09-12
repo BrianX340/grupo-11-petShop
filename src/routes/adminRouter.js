@@ -16,9 +16,8 @@ const {
     deleteProductView,
     createProductView,
 
-    buzonClientView,
-    onlineClientView,
-    statisticsClientView,
+    statisticsView,
+    transactionView,
 
     } = require('../controllers/adminController')
 
@@ -37,9 +36,9 @@ router.get('/products/create', createProductView)
 router.get('/products/:name', searchProducts)
 router.get('/products/:id', detailProductView) //los que contengan :id deben ir debajo de los que utilizen la misma ruta
 
-router.get('/clients/statistics', statisticsClientView)
-router.get('/clients/buzon', buzonClientView)
-router.get('/clients/online', onlineClientView)
+router.get('/statistics', statisticsView)
+
+router.get('/transactions', transactionView)
 
 
 

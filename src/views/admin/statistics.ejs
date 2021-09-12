@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadisticas de clientes</title>
+    <link rel="stylesheet" href="/css/admin/statistics.css">
+    <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
+</head>
+
+<body>
+
+    <%- include('./headerAdmin'); %>
+    
+    <section class='container'>
+        <div class='titulo'>
+            <h1>Estadisticas de Clientes</h1>
+        </div>
+        <div class='master'>
+            
+            <section class='statisticsPanel'>
+
+                <div class='left containerGraph'>
+                    <div id="genero" class='graph'></div>
+                </div>
+                
+                <div class='animal containerGraph'>
+                    <div id="pets" class='graph'></div>
+                </div>
+
+                <div class='right containerGraph'>
+                    <div id="products" class='graph'></div>
+                </div>
+                
+            </section>
+            
+        </div>
+    </section>
+
+    <section class='container'>
+        <div class='titulo'>
+            <h1>Estadisticas de ventas</h1>
+        </div>
+        <div class='master'>
+            
+            <section class='statisticsPanel'>
+
+                <div class='concretadasC left containerGraph'>
+                    <div id="ventasConcretadas" class='concretadas graph'></div>
+                </div>
+
+                <div class='anuladas right containerGraph'>
+                    <div id="ventasAnuladas" class='graph'></div>
+                </div>
+                
+            </section>
+            
+        </div>
+    </section>
+
+</body>
+
+<script>
+
+    function ventasAnuladasGrafica() {
+                x = []
+                y = []
+
+                for (const [key, value] of Object.entries(<%- locals.data.anuladasData %>)) {
+                    x.push(key)
+                    y.push(value)
+                }
+
+
+
+                TESTER = document.getElementById('ventasAnuladas');
+
+                var trace1 = {
+                    type: 'bar',
+                    x: x,
+                    y: y,
+                    marker: {
+                        color: '#C8A2C8',
+                        line: {
+                            width: 2.5
+                        }
+                    }
+                };
+
+                var data = [trace1];
+
+                var layout = {
+                    title: 'Anuladas',
+                    font: { size: 12 }
+                };
+
+                var config = { responsive: true }
+
+                Plotly.newPlot(TESTER, data, layout, config);
+            }
+
+    function concretadasGrafica() {
+            x = []
+            y = []
+
+            for (const [key, value] of Object.entries(<%- locals.data.concretadasData %>)) {
+                x.push(key)
+                y.push(value)
+            }
+
+
+
+            TESTER = document.getElementById('ventasConcretadas');
+
+            var trace1 = {
+                type: 'bar',
+                x: x,
+                y: y,
+                marker: {
+                    color: '#C8A2C8',
+                    line: {
+                        width: 2.5
+                    }
+                }
+            };
+
+            var data = [trace1];
+
+            var layout = {
+                title: 'Concretadas',
+                font: { size: 12 }
+            };
+
+            var config = { responsive: true }
+
+            Plotly.newPlot(TESTER, data, layout, config);
+        }
+
+    function generoGrafica() {
+        x = []
+        y = []
+
+        for (const [key, value] of Object.entries(<%- locals.data.generoData %>)) {
+            x.push(key)
+            y.push(value)
+        }
+
+
+
+        TESTER = document.getElementById('genero');
+
+        var trace1 = {
+            type: 'bar',
+            x: x,
+            y: y,
+            marker: {
+                color: '#C8A2C8',
+                line: {
+                    width: 2.5
+                }
+            }
+        };
+
+        var data = [trace1];
+
+        var layout = {
+            title: 'Genero',
+            font: { size: 12 }
+        };
+
+        var config = { responsive: true }
+
+        Plotly.newPlot(TESTER, data, layout, config);
+    }
+
+    function mascotaGrafica() {
+
+        x = []
+        y = []
+
+        for (const [key, value] of Object.entries(<%- locals.data.tipoMascotaData %>)) {
+            x.push(key)
+            y.push(value)
+        }
+
+
+
+        TESTER = document.getElementById('pets');
+
+        var trace1 = {
+            type: 'bar',
+            x: x,
+            y: y,
+            marker: {
+                color: '#C8A2C8',
+                line: {
+                    width: 2.5
+                }
+            }
+        };
+
+        var data = [trace1];
+
+        var layout = {
+            title: 'Tipo de Mascota',
+            font: { size: 12 }
+        };
+
+        var config = { responsive: true }
+
+        Plotly.newPlot(TESTER, data, layout, config);
+    }
+
+    function productsGrafica() {
+
+        x = []
+        y = []
+
+        for (const [key, value] of Object.entries(<%- locals.data.ventasData %>)) {
+            x.push(key)
+            y.push(value)
+        }
+
+
+
+        TESTER = document.getElementById('products');
+
+        var trace1 = {
+            type: 'bar',
+            x,
+            y,
+            marker: {
+                color: '#C8A2C8',
+                line: {
+                    width: 2.5
+                }
+            }
+        };
+
+        var data = [trace1];
+
+        var layout = {
+            title: 'Productos comprados',
+            font: { size: 12 }
+        };
+
+        var config = { responsive: true }
+
+        Plotly.newPlot(TESTER, data, layout, config);
+    }
+
+    generoGrafica()
+    mascotaGrafica()
+    productsGrafica()
+    concretadasGrafica()
+    ventasAnuladasGrafica()
+
+</script>
+
+</html>

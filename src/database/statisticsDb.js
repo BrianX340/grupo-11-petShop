@@ -10,6 +10,21 @@ function saveDatabase(){
 
 
 module.exports = {
+    anuladasData: ()=>{
+        anuladas = {}
+        for (semana of dbStatistics){
+            anuladas[`semana${semana.semana}`] = semana.ventasCanceladas
+        }
+        return anuladas
+    },
+    concretadasData: ()=>{
+        concretadas = {}
+        for (semana of dbStatistics){
+            concretadas[`semana${semana.semana}`] = semana.ventasRealizadas
+        }
+        return concretadas
+
+    },
     generoData: ()=>{
         hombresTotales = 0
         mujeresTotales = 0
@@ -32,7 +47,6 @@ module.exports = {
             perrosTotales = perrosTotales+semana.mascotas.perros
 
         }
-        console.log(gatosTotales,perrosTotales)
         return {
             gatos:gatosTotales,
             perros:perrosTotales
@@ -51,7 +65,6 @@ module.exports = {
             camasTotales = camasTotales+semana.ventas.camas
 
         }
-        console.log(gatosTotales,perrosTotales)
         return {
             alimentos:alimentosTotales,
             higiene:higieneTotales,
