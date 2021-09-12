@@ -19,20 +19,14 @@ module.exports = {
     detailProductView: (req,res)=> {
         res.render('admin//products//detailProduct')
     },
-    statisticsClientView: (req,res)=> {
-        res.render('admin//clients//clientStatistics',{
+    statisticsView: (req,res)=> {
+        res.render('admin//statistics',{
             data:{
                 generoData:JSON.stringify(generoData()),
                 tipoMascota:JSON.stringify(mascotaData()),
                 ventas:JSON.stringify(ventasData()),
             }
         })
-    },
-    buzonClientView: (req,res)=> {
-        res.render('admin//clients//clientBuzon')
-    },
-    onlineClientView: (req,res)=> {
-        res.render('admin//clients//clientOnline')
     },
     getOneProduct: (req,res)=>{
         elementId = req.params.id

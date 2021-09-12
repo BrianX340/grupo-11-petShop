@@ -32,7 +32,6 @@ module.exports = {
             perrosTotales = perrosTotales+semana.mascotas.perros
 
         }
-        console.log(gatosTotales,perrosTotales)
         return {
             gatos:gatosTotales,
             perros:perrosTotales
@@ -51,7 +50,6 @@ module.exports = {
             camasTotales = camasTotales+semana.ventas.camas
 
         }
-        console.log(gatosTotales,perrosTotales)
         return {
             alimentos:alimentosTotales,
             higiene:higieneTotales,

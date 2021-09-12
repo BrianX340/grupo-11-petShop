@@ -1,6 +1,6 @@
-@import url('../header-navAdmin.css');
-@import url('../../partials/background.css');
-@import url('../menuAdmin.css');
+@import url('./header-navAdmin.css');
+@import url('../partials/background.css');
+@import url('./menuAdmin.css');
 
 
 #statisticsPanel {
@@ -54,4 +54,15 @@
     color: white;
     font-family: system-ui;
     font-size: 12px;
+}
+
+
+@media (min-width: 1000px){
+    #statisticsPanel {
+        width: 1100px;
+    }
+
+    .containerGraph {
+        width: 60%;
+    }
 }
