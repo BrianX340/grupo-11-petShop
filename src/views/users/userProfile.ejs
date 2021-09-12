@@ -13,12 +13,10 @@
     <%- include('../partial/header-invited'); %>
 
         <body class="userProfileBody">
-            <div class="userMancha">
-                <img src="/images/manchas/pngwing.com (5).png" alt="">
-            </div>
+            
             <main class="userProfile">
                 <div class="avatar">
-                    <img src="" alt="">
+                    <img src="/img/userAvatar/<%= user.avatar %>" alt="">
                 </div>
                 <div class="userProfile-container">
                     <section class="userName_box">
@@ -29,6 +27,8 @@
                         <div class="userProfile_box">
                             <h3 class="userProfile_title">Datos personales:</h3>
                             <p class="userProfile_item">Nombre: <%= user.name %>
+                            </p>
+                            <p class="userProfile_item">Apellido: <%= user.last_name %>
                             </p>
                             <p class="userProfile_item">Email: <%= user.email %>
                             </p>

@@ -142,6 +142,10 @@ nav {
     font-weight: bold;
     font-family: system-ui;
   }
+
+  .header_lg{
+    display: flex;
+  }
   
   /* END NAV */
 

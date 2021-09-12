@@ -129,7 +129,7 @@ module.exports = {
                 id: lastId +1,
                 ...req.body,
                 rol: "ROL_USER",
-                avatar: "default-image.jpg",
+                avatar: "",
                 tel: "",
                 address: "",
                 pc: "",
