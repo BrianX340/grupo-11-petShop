@@ -10,6 +10,21 @@ function saveDatabase(){
 
 
 module.exports = {
+    anuladasData: ()=>{
+        anuladas = {}
+        for (semana of dbStatistics){
+            anuladas[`semana${semana.semana}`] = semana.ventasCanceladas
+        }
+        return anuladas
+    },
+    concretadasData: ()=>{
+        concretadas = {}
+        for (semana of dbStatistics){
+            concretadas[`semana${semana.semana}`] = semana.ventasRealizadas
+        }
+        return concretadas
+
+    },
     generoData: ()=>{
         hombresTotales = 0
         mujeresTotales = 0

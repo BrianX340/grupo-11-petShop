@@ -1,6 +1,6 @@
 const { oneProduct, getAllProducts, searchProductByName, saveOneProduct } = require('../database/db');
 const { validationResult } = require('express-validator')
-const { generoData, mascotaData, ventasData } = require('../database/statisticsDb');
+const { generoData, mascotaData, ventasData, concretadasData, anuladasData } = require('../database/statisticsDb');
 
 
 module.exports = {
@@ -19,12 +19,17 @@ module.exports = {
     detailProductView: (req,res)=> {
         res.render('admin//products//detailProduct')
     },
+    transactionView: (req,res)=>{
+        res.render('admin//transactions')
+    },
     statisticsView: (req,res)=> {
         res.render('admin//statistics',{
             data:{
                 generoData:JSON.stringify(generoData()),
-                tipoMascota:JSON.stringify(mascotaData()),
-                ventas:JSON.stringify(ventasData()),
+                tipoMascotaData:JSON.stringify(mascotaData()),
+                ventasData:JSON.stringify(ventasData()),
+                concretadasData:JSON.stringify(concretadasData()),
+                anuladasData:JSON.stringify(anuladasData()),
             }
         })
     },

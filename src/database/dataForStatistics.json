@@ -113,5 +113,61 @@
                 "ganancia":0
             }
         ]
+    },
+    {
+        "semana":2,
+        "fechaInicioRegistros":"20/06/2021",
+        "fechaFinRegistros":"27/06/2021",
+        "usuariosRegistrados": 52,
+        "ventasRealizadas": 34,
+        "ventasCanceladas": 12,
+        "ventasEnProgreso": 3,
+        "dineroTotalVentas": 3578.88,
+        "dineroTotalInvertido": 1050.37,
+
+        "generos":{
+            "hombres":12,
+            "mujeres":27
+        },
+
+        "mascotas":{
+            "gatos":22,
+            "perros":33
+        },
+
+        "ventas":{
+            "alimentos":12,
+            "higiene":30,
+            "juguetes":15,
+            "camas":8
+        }
+    },
+    {
+        "semana":3,
+        "fechaInicioRegistros":"20/06/2021",
+        "fechaFinRegistros":"27/06/2021",
+        "usuariosRegistrados": 22,
+        "ventasRealizadas": 12,
+        "ventasCanceladas": 33,
+        "ventasEnProgreso": 3,
+        "dineroTotalVentas": 3578.88,
+        "dineroTotalInvertido": 1050.37,
+
+        "generos":{
+            "hombres":12,
+            "mujeres":27
+        },
+
+        "mascotas":{
+            "gatos":22,
+            "perros":33
+        },
+
+        "ventas":{
+            "alimentos":12,
+            "higiene":30,
+            "juguetes":15,
+            "camas":8
+        }
     }
 ]
