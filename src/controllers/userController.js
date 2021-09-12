@@ -32,20 +32,21 @@ module.exports = {
         })
     },
 
-
-    /* profileEdit: (req, res) => {
-        let user = users.find(user => user.id === req.params.id)
-        res.render('userProfileEdit', //renderizar formulario
-        categories, //para header?
-        session: req.session
+    /* Edición de perfil */
+    profileEdit: (req, res) => {
+        let user = getUsers().find(user => user.id === req.params.id)
+        res.render('users//editProfile', {//renderizar formulario
+            user,
+            session: req.session}
         )
     },
-    */
-
-   /* updateProfile: (req, res) => {
+    
+    /* actualización de perfil */
+    updateProfile: (req, res) => {
     let errors = validationResult(req)
     if (errors.isEmpty()) {
-        let user = users.find(user => user.id === +req.params.id)
+        let user = getUsers().find(user => user.id === +req.params.id)
+
         let {
             name,
             last_name,
@@ -53,8 +54,9 @@ module.exports = {
             address,
             pc,
             province,
-            city,
+            city
         } = req.body
+
         user.name = name
         user.last_name = last_name
         user.tel = tel
@@ -62,20 +64,22 @@ module.exports = {
         user.pc = pc
         user.province = province
         user.city = city
-        user.avatar =  req.file ? req.file.filename : user.avatar
+        /* user.avatar = req.file ? req.file.filename : user.avatar */
+
         writeUsersJSON(getUsers())
-        delete newUser.pass
-        req.session.user = newUser
-        res.redirect('/users/profile')
+
+        delete user.pass
+
+        req.session.user = user
+        res.redirect('/ps/profile')
     }else{
-        res.render('userProfileEdit), {
-            categories,
+        res.render('users//editProfile', {
             errors: errors.mapped(),
             old:req.body,
             session: req.session
-        }
+        })
     }
-   }, */
+   },
     processLogin: (req, res) => {
         let errors = validationResult(req)
 

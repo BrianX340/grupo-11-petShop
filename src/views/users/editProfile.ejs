@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edición de perfil</title>
+    <link rel="stylesheet" href="">
+</head>
+<body class="userProfileBody">
+
+    <%- include('../partial/header-invited'); %>
+
+    <main class="editProfile-container">
+
+        <h3 class="userTitle">Edita tu perfil</h3>
+
+        <form method="POST" enctype="multipart/form-data" class="form_editProfile">
+            <section class="form_editProfileContainer">
+                <div class="editProfile_inputContainer">
+                    <input class="editProfile_input" type="text" name="name" placeholder="Nombre">
+                </div>
+                <div class="editProfile_inputContainer">
+                    <input class="editProfile_input" type="text" name="last_name" placeholder="Apellido">
+                </div>
+                <div class="editProfile_inputContainer">
+                    <input class="editProfile_input" type="email" name="email" placeholder="Ingresá tu email">
+                </div>
+                <div class="editProfile_inputContainer">
+                    <input class="editProfile_input" type="text" name="tel" placeholder="Ingresá tu teléfono">
+                </div>
+                <div class="editProfile_inputContainer">
+                    <input class="editProfile_input" type="text" name="address" placeholder="Domicilio">
+                </div>
+                <div class="editProfile_inputContainer">
+                    <input class="editProfile_input" type="text" name="pc" placeholder="Código postal">
+                </div>
+            </section>
+
+            <div class="editProfile_inputContainer">
+                <select name="province" id="">
+                    <option value="">Provincia</option>
+                </select>
+            </div>
+            <div class="editProfile_inputContainer">
+                <select name="city" id="">
+                    <option value="">Localidad</option>
+                </select>
+            </div>
+            <!-- <div class="input-file">
+                <p>Cambiar foto de perfil</p>
+                <input type="file" name="avatar">
+            </div> -->
+
+            <button type="submit" class="btn btn-ad-primary">
+                GUARDAR
+            </button>
+
+        </form>
+    </main>
+
+
+    <%- include('../partial/footer'); %>
+
+</body>
+</html>
