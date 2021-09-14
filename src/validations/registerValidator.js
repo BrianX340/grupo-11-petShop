@@ -53,10 +53,10 @@ module.exports =
 
     body('pass2')
     .custom((value, {req}) => value !== req.body.pass ? false : true)
-    .withMessage('Las contraseñas no coinciden')
+    .withMessage('Las contraseñas no coinciden'),
     
-    /* check('terms')
+    check('terms')
     .isString('on')
-    .withMessage('Debes aceptar los términos y condiciones') */
+    .withMessage('Debes aceptar los términos y condiciones')
 
 ]

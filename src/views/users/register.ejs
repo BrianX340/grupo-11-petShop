@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/users/forms.css">
-    <title>Registarse</title>
+    <title>Registrarse</title>
 </head>
 
 <body id="body">
@@ -21,7 +21,7 @@
 
             <div class="user singupBox">
                 <div class="formBx">
-                    <form  method="POST">
+                    <form action="/ps/register" method="POST">
                         <h2>Registrate</h2>
                         <input type="text" name="userName" placeholder="Usuario" value="<%= locals.old && old.userName %>">
                         <% if (locals.errors && errors.userName) { %>
@@ -49,6 +49,15 @@
                         <% if (locals.errors && errors.pass2) { %>
                             <small class="text-danger"><%= errors.pass2.msg %> </small>
                         <% } %>
+                        <div class="registerCheck">
+                            <input class="checkRegisterlogin" type="checkbox" name="terms" id="check">
+                            <label for="check">Acepto los términos y condiciones</label>
+                        </div>    
+                            <% if (locals.errors && errors.terms) { %>
+                                <small class="text-danger"><%= errors.terms.msg %> </small>
+                            <% } %>
+                        
+                        
                         <input type="submit" value="Registrarse">
                         <p class="signup">¿Ya tiene cuentra? <a href="/ps/login"> Inicie sesion.</a></p>
                     </form>

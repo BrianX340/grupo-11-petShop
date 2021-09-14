@@ -69,8 +69,8 @@ module.exports = {
 
             writeUsersJSON(getUsers())
 
-            delete user.pass
-
+/*             delete user.pass
+ */
             req.session.user = user
             
 
@@ -89,6 +89,7 @@ module.exports = {
 
         if(errors.isEmpty()) {
             let user = getUsers().find(user => user.email === req.body.email)
+            
 
             req.session.user = {
                 id: user.id,
@@ -108,12 +109,12 @@ module.exports = {
 
             res.locals.user = req.session.user
 
-            /* res.send(req.session.user) */
+           /*  res.send(req.session.user) */
 
-            res.redirect('/ps/profile') 
+            res.redirect('/')  
 
         }else{
-            res.render('/users//login', {
+            res.render('users//login', {
                 errors: errors.mapped(),
                 session: req.session
             })

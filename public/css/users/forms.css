@@ -161,6 +161,11 @@ input[type="submit"]{
     font-weight: 300;
 }
 
+.checkRegisterlogin{
+    width: 30px;
+}
+
+
 /* link para cambiar el formulario */
 
 .singup a{

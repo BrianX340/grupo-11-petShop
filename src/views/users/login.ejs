@@ -34,15 +34,20 @@
                                     <%= errors.pass.msg %>
                                 </small>
                             <% } %>
+
+                            <div class="">
+                                <input class="checkRegisterlogin" type="checkbox" name="remember" id="check">
+                                <label for="check">Recordar</label>
+                            </div>
+
                             <input type="submit" value="Iniciar sesion">
                             <p class="signup">¿No tienes cuenta? <a href="/ps/register">
                                 Obtén una cuenta.</a>
                             </p>
+                            
                         </form>
                     </div>
                 </div>
-
-
             </div>
         </section>
         <%- include('../partial/footer'); %>
