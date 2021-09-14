@@ -34,52 +34,56 @@ module.exports = {
 
     /* Edición de perfil */
     profileEdit: (req, res) => {
-        let user = getUsers().find(user => user.id === req.params.id)
-        res.render('users//editProfile', {//renderizar formulario
-            user,
+        let user = getUsers().find(user => user.id === req.session.user.id)
+        /* res.send(user) */
+        res.render('users//editProfile', //renderizar formulario
+            {user,
             session: req.session}
         )
     },
     
     /* actualización de perfil */
     updateProfile: (req, res) => {
-    let errors = validationResult(req)
-    if (errors.isEmpty()) {
-        let user = getUsers().find(user => user.id === +req.params.id)
+        let errors = validationResult(req)
 
-        let {
-            name,
-            last_name,
-            tel,
-            address,
-            pc,
-            province,
-            city
-        } = req.body
+        if (errors.isEmpty()) {
+            let user = getUsers().find(user => user.id === +req.params.id)
+            let {
+                name,
+                last_name,
+                tel,
+                address,
+                pc,
+                province,
+                city
+            } = req.body
 
-        user.name = name
-        user.last_name = last_name
-        user.tel = tel
-        user.address = address
-        user.pc = pc
-        user.province = province
-        user.city = city
-        /* user.avatar = req.file ? req.file.filename : user.avatar */
+            user.name = name
+            user.last_name = last_name
+            user.tel = tel
+            user.address = address
+            user.pc = pc
+            user.province = province
+            user.city = city
+            /* user.avatar = req.file ? req.file.filename : user.avatar */
 
-        writeUsersJSON(getUsers())
+            writeUsersJSON(getUsers())
 
-        delete user.pass
+            delete user.pass
 
-        req.session.user = user
-        res.redirect('/ps/profile')
-    }else{
-        res.render('users//editProfile', {
-            errors: errors.mapped(),
-            old:req.body,
-            session: req.session
-        })
-    }
-   },
+            req.session.user = user
+            
+
+            res.redirect('/ps/profile')
+
+        }else{
+            res.render('users/editProfile', {
+                errors: errors.mapped(),
+                old:req.body,
+                session: req.session
+            })
+        }
+    },
     processLogin: (req, res) => {
         let errors = validationResult(req)
 
@@ -106,10 +110,10 @@ module.exports = {
 
             /* res.send(req.session.user) */
 
-            res.redirect('/') 
+            res.redirect('/ps/profile') 
 
         }else{
-            res.render('users//login', {
+            res.render('/users//login', {
                 errors: errors.mapped(),
                 session: req.session
             })
@@ -153,7 +157,8 @@ module.exports = {
         } else {
             res.render('users//register', {
                 errors: errors.mapped(),
-                old: req.body
+                old: req.body,
+                session: req.session
             })
         }
     },

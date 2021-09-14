@@ -18,6 +18,10 @@
     "url": "https://github.com/BrianX340/Team-11/issues"
   },
   "homepage": "https://github.com/BrianX340/Team-11#readme",
+  "nodemonConfig": {
+    "ignore":"src/database/*.json"
+  },
+
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",

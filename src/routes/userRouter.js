@@ -1,6 +1,15 @@
 const express = require('express')
 const router = express.Router()
-const { carritoCompras, historialCompras, processRegister, processLogin, register, login, profile, logout, profileEdit, updateProfile } = require('../controllers/userController')
+const { carritoCompras, 
+    historialCompras, 
+    processRegister, 
+    processLogin, 
+    register, 
+    login, 
+    profile, 
+    logout, 
+    profileEdit, 
+    updateProfile } = require('../controllers/userController')
 
 
 const loginValidator = require('../validations/loginValidator')
@@ -20,12 +29,13 @@ router.post('/register', registerValidator, processRegister);
 router.get('/login', login);
 router.post('/login', loginValidator, processLogin);
 
-/* router.get('logout', userSessionCheck,logout) */
+router.get('logout', userSessionCheck, logout)
 
 
 /* Perfil de usuario */
+
 router.get('/profile', userSessionCheck, profile);
 router.get('/profile/edit/:id', userSessionCheck, profileEdit); //me renderiza el formulario 
-router.put('/profile/edit/:id', /* uploadUserAvatar.single('avatar') ,*/updateProfile);
+router.put('/profile/edit/:id', /* uploadUserAvatar.single('avatar') ,*/ updateProfile);
 
 module.exports = router
