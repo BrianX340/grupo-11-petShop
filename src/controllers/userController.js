@@ -98,6 +98,7 @@ module.exports = {
                 last_name : user.last_name,
                 email: user.email,
                 avatar: user.avatar,
+                favorites : user.favorites,
                 rol: user.rol
             }
 
@@ -143,7 +144,8 @@ module.exports = {
                 address: "",
                 pc: "",
                 province: "",
-                city:""
+                city:"",
+                favorites: {}
             }
             delete newUser.pass2
             newUser.pass = bcrypt.hashSync(newUser.pass, 10)

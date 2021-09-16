@@ -1,16 +1,39 @@
 let fs = require('fs');
+const path = require('path')
 
 db = JSON.parse(fs.readFileSync('./src/database/products.json', "utf-8"))
 dbUsers = JSON.parse(fs.readFileSync('./src/database/users.json', "utf-8"))
 
 
 
-function saveDatabase(){
-    fs.writeFileSync(`./src/database/products.json`, JSON.stringify(db), "utf-8")
+function saveDB(db, nameFile){   
+    fs.writeFileSync(path.join(__dirname, `../database/${nameFile}`), JSON.stringify(db), "utf-8")
 }
 
 
 module.exports = {
+    addUserFavorite : (userId, productId) => {
+        dbUsers.find(user => {
+           
+            if (user.id == userId) {
+                user.favorites[productId] = true 
+                
+                saveDB(dbUsers, 'users.json')
+            } 
+        })
+        return true
+    },
+    deleteUserFavorite : (userId, productId) => {
+        dbUsers.find(user => {
+           
+            if (user.id == userId) {
+                delete user.favorites[productId]
+                
+                saveDB(dbUsers, 'users.json')
+            } 
+        })
+        return true
+    },
     writeUsersJSON: (dbUsers) => {
         fs.writeFileSync(`./src/database/users.json`, JSON.stringify(dbUsers), "utf-8")
     },
@@ -29,7 +52,7 @@ module.exports = {
     saveOneProduct: (product)=>{
         try{
             db.push(product)
-            saveDatabase()
+            saveDB(db, 'products.json')
             return true
         }
         catch{
@@ -47,10 +70,6 @@ module.exports = {
 
     searchOne: (id)=>{
         //return db.find()
-    },
-
-    saveDb: ()=>{
-        saveDatabase()
     },
 
     searcherByPetsubCategory: (pet,subCategory)=>{
