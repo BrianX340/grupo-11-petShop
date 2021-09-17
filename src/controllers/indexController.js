@@ -5,12 +5,16 @@ module.exports = {
         //productos que se visualizan en el home 
         info = getAllProducts()
         data = {
+            favorites: [],
             bestSells:info,
             promotions:info,
+            user : req.session.user ? req.session.user : '',
+            favorites: req.session.user ? req.session.user.favorites : '',
             carrouselImages:[
                 "/img/banersCarrousel/banner01.jpg"
             ]
         }
+        
         res.render('index//home',{data, session: req.session.user ? req.session.user : ""})
     },
 

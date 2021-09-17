@@ -6,8 +6,13 @@
                     <div class='favourite'>
                         <div class='coverHeart' productId='<%= product.id %>'></div>
                         <figure>
-                            <img class='heartInactive' src="/files/heartInactive.svg" alt="">
-                            <img id='<%= product.id %>Heart' class='nodisplay' src="/files/heartActive.svg" alt="">
+                            <% if (data.favorites[product.id]) { %>
+                                <img class='heartInactive' src="/files/heartInactive.svg" alt="">
+                                <img id='<%= product.id %>Heart' style='display:flex;' src="/files/heartActive.svg" alt="">
+                            <% } else { %>
+                                <img class='heartInactive' src="/files/heartInactive.svg" alt="">
+                                <img id='<%= product.id %>Heart' class='nodisplay' src="/files/heartActive.svg" alt="">
+                            <% } %>
                         </figure>
                     </div>
                     <a class='cardProductLink' href="/product/<%= product.id %>">
