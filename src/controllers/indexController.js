@@ -11,7 +11,7 @@ module.exports = {
                 "/img/banersCarrousel/banner01.jpg"
             ]
         }
-        res.render('index//home',{data})
+        res.render('index//home',{data, session: req.session.user ? req.session.user : ""})
     },
 
 /*     productDetail: (req,res) =>{

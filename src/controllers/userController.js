@@ -5,17 +5,17 @@ let bcrypt = require('bcryptjs')
 module.exports = {
     carritoCompras: (req,res) =>{
         res.render('users//carritoPage',
-        req.session)
+        {session: req.session.user ? req.session.user : ""})
     },
     /* Formulario de registro */
     register: (req,res) =>{
         res.render('users//register',
-        req.session)
+        {session: req.session.user ? req.session.user : ""})
     },
     /* Formulario de inicio de sesión */
     login: (req,res) =>{
         res.render('users//login',
-        req.session)
+        {session: req.session.user ? req.session.user : ""})
     },
     //historialCompras: (req,res) =>{
     //    res.render('users//historial')
@@ -28,7 +28,7 @@ module.exports = {
         let user = getUsers().find(user => user.id === req.session.user.id)
         res.render('users//userProfile', {
             user,
-            session: req.session
+            session: req.session.user ? req.session.user : ""
         })
     },
 
@@ -38,7 +38,8 @@ module.exports = {
         /* res.send(user) */
         res.render('users//editProfile', //renderizar formulario
             {user,
-            session: req.session}
+            session: req.session.user ? req.session.user : ""
+        }
         )
     },
     
@@ -80,7 +81,7 @@ module.exports = {
             res.render('users/editProfile', {
                 errors: errors.mapped(),
                 old:req.body,
-                session: req.session
+                session: req.session.user ? req.session.user : ""
             })
         }
     },
@@ -116,7 +117,7 @@ module.exports = {
         }else{
             res.render('users//login', {
                 errors: errors.mapped(),
-                session: req.session
+                session: req.session.user ? req.session.user : ""
             })
         }
     },
@@ -159,7 +160,7 @@ module.exports = {
             res.render('users//register', {
                 errors: errors.mapped(),
                 old: req.body,
-                session: req.session
+                session: req.session.user ? req.session.user : ""
             })
         }
     },
