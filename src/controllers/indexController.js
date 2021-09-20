@@ -15,7 +15,11 @@ module.exports = {
             ]
         }
         
+<<<<<<< HEAD
         res.render('index//home',{data})
+=======
+        res.render('index//home',{data, session: req.session ? req.session : ""})
+>>>>>>> 115ee5098674d8fadffeafc8da060c7b7cadcf08
     },
 
 /*     productDetail: (req,res) =>{

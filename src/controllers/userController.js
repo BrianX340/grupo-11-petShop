@@ -56,7 +56,7 @@ module.exports = {
                 last_name,
                 tel,
                 address,
-                cp,
+                pc,
                 province,
                 city,
             } = req.body
@@ -65,7 +65,7 @@ module.exports = {
             user.last_name = last_name
             user.tel = tel
             user.address = address
-            user.cp = cp
+            user.pc = pc
             user.province = province
             user.city = city
             user.avatar = req.file ? req.file.filename : user.avatar 
@@ -144,7 +144,7 @@ module.exports = {
                 avatar: "cat01.svg",
                 tel: "",
                 address: "",
-                cp: "",
+                pc: "",
                 province: "",
                 city:"",
                 favorites: {}
