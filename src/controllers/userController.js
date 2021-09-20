@@ -56,26 +56,23 @@ module.exports = {
                 last_name,
                 tel,
                 address,
-                pc,
+                cp,
                 province,
                 city,
-                avatar,
             } = req.body
 
             user.name = name
             user.last_name = last_name
             user.tel = tel
             user.address = address
-            user.pc = pc
+            user.cp = cp
             user.province = province
             user.city = city
-            user.avatar = avatar
-            /* user.avatar = req.file ? req.file.filename : user.avatar */
+            user.avatar = req.file ? req.file.filename : user.avatar 
 
             writeUsersJSON(getUsers())
 
-/*             delete user.pass
- */
+
             req.session.user = user
             
 
@@ -147,7 +144,7 @@ module.exports = {
                 avatar: "cat01.svg",
                 tel: "",
                 address: "",
-                pc: "",
+                cp: "",
                 province: "",
                 city:"",
                 favorites: {}
