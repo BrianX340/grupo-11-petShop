@@ -29,7 +29,7 @@ router.post('/register', registerValidator, processRegister);
 router.get('/login', login);
 router.post('/login', loginValidator, processLogin);
 
-router.get('logout', userSessionCheck, logout)
+router.get('/logout', userSessionCheck, logout)
 
 
 /* Perfil de usuario */

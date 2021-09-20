@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/users/forms.css">
+    <link rel="stylesheet" href="/css/users/formss.css">
     <title>Registrarse</title>
 </head>
 
@@ -16,13 +16,13 @@
  
 
     <section class="container-form">
-        <div class="container">
+        <div class="container-relog">
             
 
             <div class="user singupBox">
                 <div class="formBx">
                     <form action="/ps/register" method="POST">
-                        <h2>Registrate</h2>
+                        <h2>Registro</h2>
                         <input type="text" name="userName" placeholder="Usuario" value="<%= locals.old && old.userName %>">
                         <% if (locals.errors && errors.userName) { %>
                             <small class="text-danger"><%= errors.userName.msg %> </small>
@@ -59,11 +59,11 @@
                         
                         
                         <input type="submit" value="Registrarse">
-                        <p class="signup">¿Ya tiene cuentra? <a href="/ps/login"> Inicie sesion.</a></p>
+                        <p class="signup">¿Ya tiene cuenta? <a href="/ps/login"> Inicie sesión.</a></p>
                     </form>
-                </div>
-                <div class="imgBx"><img class="imgBx-img" src="/img/gato-forms.jpg"></div>
-            </div>
+<!--                   </div>
+              <div class="imgBx"><img class="imgBx-img" src="/img/gato-forms.jpg"></div>
+            </div> -->
         </div>
     </section>
 

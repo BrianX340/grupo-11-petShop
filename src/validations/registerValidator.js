@@ -6,6 +6,11 @@ module.exports =
     check('userName')
     .notEmpty()
     .withMessage('Debes escribir un usuario')
+    .isLength({
+        min: 4,
+        max: 10
+    })
+    .withMessage('El usuario debe tener como mínimo de 4 a 10 caracteres')
     .custom(value => {
         let user = getUsers().find(user => user.userName === value)
 
@@ -19,7 +24,11 @@ module.exports =
 
     check('name')
     .notEmpty()
-    .withMessage('Debes escribir un nombre'),
+    .withMessage('Debes escribir un nombre')
+    .isLength({
+        min: 3,
+    })
+    .withMessage('El nombre debe tener como mínimo 3 caracteres'),
 
     check('last_name')
     .notEmpty()
@@ -45,6 +54,7 @@ module.exports =
 
     check('pass')
     .notEmpty()
+    .withMessage('Debes escribir una contraseña')
     .isLength({
         min: 6,
         max: 20
