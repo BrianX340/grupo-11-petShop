@@ -27,30 +27,26 @@
                                 <ul>
                                     <li>
                                         <a href="#">
-                                            <%- session.user %>
+                                            <%= session.user %>
                                         </a>
-
-                                        <!-- start menu desplegable -->
                                         <ul>
                                             <li class="li-menu"><a href="/ps/profile">Mi perfil</a></li>
                                             <li class="li-menu"><a href="/ps/logout">Cerrar sesión</a></li>
+                                            
                                         </ul>
-                                        <!-- end menu desplegable -->
                                     </li>
                                 </ul>
 
                                 <% } else { %>
                                     <ul>
                                         <li><a href="#">Cuenta</a>
-                                            <!-- start menu desplegable -->
                                             <ul>
                                                 <li class="li-menu"><a href="/ps/login">Iniciar sesion</a></li>
                                                 <li class="li-menu"><a href="/ps/register">Registrarse</a></li>
                                             </ul>
-                                            <!-- end menu desplegable -->
                                         </li>
                                     </ul>
-                                    <% } %>
+                                <% } %>
 
                         </div>
 

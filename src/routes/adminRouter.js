@@ -24,21 +24,21 @@ const {
 const adminCrudValidator = require('../validations/adminCrudValidator')
 /* */
 let productUploadImage = require('../middlewares/productUploadImage')
-
+let userAdminCheck = require('../middlewares/userAdminCheck')
 //Views
 router.get('/temporal', (req,res)=>{
     res.render("admin//adminPanelMobile")
 })
-router.get('/', adminPanelView)
-router.get('/products/edit', editProductView)
-router.get('/products/detail', detailProduct)
-router.get('/products/create', createProductView)
-router.get('/products/:name', searchProducts)
+router.get('/', userAdminCheck, adminPanelView)
+router.get('/products/edit', userAdminCheck, editProductView)
+router.get('/products/detail', userAdminCheck, detailProduct)
+router.get('/products/create', userAdminCheck, createProductView)
+router.get('/products/:name', userAdminCheck, searchProducts)
 router.get('/products/:id', detailProductView) //los que contengan :id deben ir debajo de los que utilizen la misma ruta
 
-router.get('/statistics', statisticsView)
+router.get('/statistics', userAdminCheck, statisticsView)
 
-router.get('/transactions', transactionView)
+router.get('/transactions', userAdminCheck, transactionView)
 
 
 
