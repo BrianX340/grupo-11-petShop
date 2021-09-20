@@ -1,6 +1,11 @@
 
 /* NAV MOBILE */
 
+a:-webkit-any-link {
+  color: unser;
+  cursor: pointer;
+  text-decoration: unset;
+}
 
 body .desktop {
     display: none;
