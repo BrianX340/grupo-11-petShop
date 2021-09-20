@@ -4,7 +4,12 @@
             <div class="box-card">
                 <div>
                     <div class='favourite'>
-                        <div class='coverHeart' productId='<%= product.id %>'></div>
+                        <% if (data.session.user) { %>
+                            <div class='coverHeart' productId='<%= product.id %>' userid='<%= data.session.user.id %>'></div>
+                        <% } else { %>
+                            <div class='coverHeart' productId='<%= product.id %>'></div>
+                        <% } %>
+
                         <% if (data.favorites[product.id]) { %>
                             <img class='heartInactive' src="/files/heartInactive.svg" alt="">
                             <img id='<%= product.id %>Heart' style='display:flex;' class='heart-out' src="/files/heartActive.svg" alt="">

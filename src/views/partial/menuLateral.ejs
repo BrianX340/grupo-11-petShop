@@ -9,7 +9,7 @@
             <span id='sidebar-close' href="">X</span>
         </div>
 
-        <% if (session.user) { %>
+        <% if (data.session.user) { %>
             <%- include('./lateralLoged'); %>
         <% } else { %>
             <%- include('./lateralInvited'); %>
