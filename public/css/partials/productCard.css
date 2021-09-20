@@ -33,9 +33,6 @@ a:-webkit-any-link {
   flex-direction: column;
 }
 
-.cardProductLink {
-  
-}
 
 .box-card>div {
   position: relative;
@@ -225,6 +222,42 @@ a:-webkit-any-link {
   color: #393dd8;
   font-weight: 400;
 }
+
+
+
+
+.slide-bck-center {
+	-webkit-animation: slide-bck-center 0.45s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: slide-bck-center 0.45s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+
+@-webkit-keyframes slide-bck-center {
+  0% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  100% {
+    -webkit-transform: translateZ(-400px);
+            transform: translateZ(-400px);
+  }
+}
+@keyframes slide-bck-center {
+  0% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  100% {
+    -webkit-transform: translateZ(-400px);
+            transform: translateZ(-400px);
+  }
+}
+
+
+
+
+
+
+
 
 @media (min-width: 450px) {
 

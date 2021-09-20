@@ -1,4 +1,4 @@
-const { getUsers, writeUsersJSON } = require('../database/db')
+const { getUsers, writeUsersJSON, getAvatarList } = require('../database/db')
 const { validationResult } = require('express-validator')
 let bcrypt = require('bcryptjs')
 
@@ -37,9 +37,11 @@ module.exports = {
         let user = getUsers().find(user => user.id === req.session.user.id)
         /* res.send(user) */
         res.render('users//editProfile', //renderizar formulario
-            {user,
-            session: req.session.user ? req.session.user : ""
-        }
+            {
+                user,
+                session: req.session.user ? req.session.user : "",
+                avatarList: getAvatarList()
+            }
         )
     },
     
@@ -56,7 +58,8 @@ module.exports = {
                 address,
                 pc,
                 province,
-                city
+                city,
+                avatar,
             } = req.body
 
             user.name = name
@@ -66,6 +69,7 @@ module.exports = {
             user.pc = pc
             user.province = province
             user.city = city
+            user.avatar = avatar
             /* user.avatar = req.file ? req.file.filename : user.avatar */
 
             writeUsersJSON(getUsers())
@@ -140,7 +144,7 @@ module.exports = {
                 id: lastId +1,
                 ...req.body,
                 rol: "ROL_USER",
-                avatar: "",
+                avatar: "cat01.svg",
                 tel: "",
                 address: "",
                 pc: "",

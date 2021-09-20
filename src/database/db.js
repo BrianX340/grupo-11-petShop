@@ -3,7 +3,7 @@ const path = require('path')
 
 db = JSON.parse(fs.readFileSync('./src/database/products.json', "utf-8"))
 dbUsers = JSON.parse(fs.readFileSync('./src/database/users.json', "utf-8"))
-
+dbPetshop = JSON.parse(fs.readFileSync('./src/database/petshop.json', "utf-8"))[0]
 
 
 function saveDB(db, nameFile){   
@@ -12,6 +12,10 @@ function saveDB(db, nameFile){
 
 
 module.exports = {
+    getAvatarList: ()=>{
+        nombreAvatares = [...dbPetshop.avatares.gatos,...dbPetshop.avatares.perros]
+        return nombreAvatares
+    },
     addUserFavorite : (userId, productId) => {
         dbUsers.find(user => {
            

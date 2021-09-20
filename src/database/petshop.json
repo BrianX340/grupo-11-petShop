@@ -1,0 +1,8 @@
+[
+    {
+        "avatares": {
+            "gatos": ["c01.svg","c02.svg","c03.svg"],
+            "perros": ["d01.svg","d02.svg","d03.svg"]
+        }
+    }
+]

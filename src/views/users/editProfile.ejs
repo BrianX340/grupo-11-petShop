@@ -58,7 +58,31 @@
                             </select>
                         </div>
 
+                        <div class="avatarSelect">
+                            <input type="text" id='avatarId' name='avatar' style='display:none'>
+                            <button id='selectAvatarButton'>
+                                Seleccionar Avatar
+                            </button>
+                            <div id='avatarBox'>
+                                <div>
+                                    <div class='tituloSelectAvatar'>
+                                        <span>Seleccione un Avatar</span>
+                                    </div>
+                                    <div class='avatarsContainer'>
+                                        <% avatarList.forEach(avatarDir => { %>
+                                            <div class='imgAvatar'>
+                                                <figure>
+                                                    <img src="/img/avatars/<%= avatarDir %>" id='<%= avatarDir %>' class='avatarClicked' alt="">
+                                                </figure>
+                                            </div>
+                                        <% }) %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </section>
+
 
                     <div class="editProfile_botonContainer">
                         <button type="submit" class="editProfile_boton">
@@ -73,6 +97,7 @@
 
     <%- include('../partial/footer'); %>
 
-</body>
 
+</body>
+<script src="/js/editProfile.js"></script>
 </html>
