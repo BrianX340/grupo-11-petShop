@@ -36,7 +36,7 @@ module.exports = {
             search
         }
 
-        res.render('index//searchPage', {data} )
+        res.render('index//searchPage', {data, session: req.session.user ? req.session.user : ""} )
 
 
     },
@@ -47,7 +47,8 @@ module.exports = {
         let product = oneProduct(productId)
 
         res.render('index//productDetail', {
-            product
+            product,
+            session: req.session.user ? req.session.user : ""
         })
     }
 }

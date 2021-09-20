@@ -16,17 +16,17 @@ const loginValidator = require('../validations/loginValidator')
 const registerValidator = require('../validations/registerValidator')
 
 const userSessionCheck = require('../middlewares/userSessionCheck')
-
+const userLog = require('../middlewares/userLog')
 
 router.get('/cart', carritoCompras)
 //router.get('/purchases', historialCompras)
 
 /* Registro */
-router.get('/register', register);
+router.get('/register', userLog, register);
 router.post('/register', registerValidator, processRegister);
 
 /* Inicio de sesion */
-router.get('/login', login);
+router.get('/login', userLog, login);
 router.post('/login', loginValidator, processLogin);
 
 router.get('/logout', userSessionCheck, logout)
@@ -36,6 +36,6 @@ router.get('/logout', userSessionCheck, logout)
 
 router.get('/profile', userSessionCheck, profile);
 router.get('/profile/edit/:id', userSessionCheck, profileEdit); //me renderiza el formulario 
-router.put('/profile/edit/:id', /* uploadUserAvatar.single('avatar') ,*/ updateProfile);
+router.put('/profile/edit/:id', updateProfile);
 
 module.exports = router
