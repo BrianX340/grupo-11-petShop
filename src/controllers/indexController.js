@@ -15,7 +15,7 @@ module.exports = {
             ]
         }
         
-        res.render('index//home',{data, session: req.session.user ? req.session.user : ""})
+        res.render('index//home',{data, session: req.session ? req.session : ""})
     },
 
 /*     productDetail: (req,res) =>{
@@ -36,7 +36,7 @@ module.exports = {
             search
         }
 
-        res.render('index//searchPage', {data, session: req.session.user ? req.session.user : ""} )
+        res.render('index//searchPage', {data, session: req.session ? req.session : ""} )
 
 
     },
@@ -48,7 +48,7 @@ module.exports = {
 
         res.render('index//productDetail', {
             product,
-            session: req.session.user ? req.session.user : ""
+            session: req.session ? req.session : ""
         })
     }
 }
