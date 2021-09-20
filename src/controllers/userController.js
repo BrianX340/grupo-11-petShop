@@ -5,17 +5,17 @@ let bcrypt = require('bcryptjs')
 module.exports = {
     carritoCompras: (req,res) =>{
         res.render('users//carritoPage',
-        {session: req.session.user ? req.session.user : ""})
+        {session: req.session ? req.session : ""})
     },
     /* Formulario de registro */
     register: (req,res) =>{
         res.render('users//register',
-        {session: req.session.user ? req.session.user : ""})
+        {session: req.session ? req.session : ""})
     },
     /* Formulario de inicio de sesión */
     login: (req,res) =>{
         res.render('users//login',
-        {session: req.session.user ? req.session.user : ""})
+        {session: req.session ? req.session : ""})
     },
     //historialCompras: (req,res) =>{
     //    res.render('users//historial')
@@ -28,7 +28,7 @@ module.exports = {
         let user = getUsers().find(user => user.id === req.session.user.id)
         res.render('users//userProfile', {
             user,
-            session: req.session.user ? req.session.user : ""
+            session: req.session ? req.session : ""
         })
     },
 
@@ -39,7 +39,7 @@ module.exports = {
         res.render('users//editProfile', //renderizar formulario
             {
                 user,
-                session: req.session.user ? req.session.user : "",
+                session: req.session ? req.session : "",
                 avatarList: getAvatarList()
             }
         )
@@ -85,7 +85,7 @@ module.exports = {
             res.render('users/editProfile', {
                 errors: errors.mapped(),
                 old:req.body,
-                session: req.session.user ? req.session.user : ""
+                session: req.session ? req.session : ""
             })
         }
     },
@@ -122,7 +122,7 @@ module.exports = {
         }else{
             res.render('users//login', {
                 errors: errors.mapped(),
-                session: req.session.user ? req.session.user : ""
+                session: req.session ? req.session : ""
             })
         }
     },
@@ -143,7 +143,7 @@ module.exports = {
             let newUser = {
                 id: lastId +1,
                 ...req.body,
-                rol: "ROL_USER",
+                rol: "USER",
                 avatar: "cat01.svg",
                 tel: "",
                 address: "",
@@ -166,7 +166,7 @@ module.exports = {
             res.render('users//register', {
                 errors: errors.mapped(),
                 old: req.body,
-                session: req.session.user ? req.session.user : ""
+                session: req.session ? req.session : ""
             })
         }
     },
