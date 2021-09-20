@@ -24,21 +24,21 @@ const {
 const adminCrudValidator = require('../validations/adminCrudValidator')
 /* */
 let productUploadImage = require('../middlewares/productUploadImage')
-let userAdminCheck = require('../middlewares/userAdminCheck')
+const isAdminContinue = require('../middlewares/isAdminContinue')
 //Views
 router.get('/temporal', (req,res)=>{
     res.render("admin//adminPanelMobile")
 })
-router.get('/', userAdminCheck, adminPanelView)
-router.get('/products/edit', userAdminCheck, editProductView)
-router.get('/products/detail', userAdminCheck, detailProduct)
-router.get('/products/create', userAdminCheck, createProductView)
-router.get('/products/:name', userAdminCheck, searchProducts)
-router.get('/products/:id', detailProductView) //los que contengan :id deben ir debajo de los que utilizen la misma ruta
+router.get('/', isAdminContinue, adminPanelView)
+router.get('/products/edit', isAdminContinue, editProductView)
+router.get('/products/detail', isAdminContinue, detailProduct)
+router.get('/products/create', isAdminContinue, createProductView)
+router.get('/products/:name', isAdminContinue, searchProducts)
+router.get('/products/:id', isAdminContinue, detailProductView) //los que contengan :id deben ir debajo de los que utilizen la misma ruta
 
-router.get('/statistics', userAdminCheck, statisticsView)
+router.get('/statistics', isAdminContinue, statisticsView)
 
-router.get('/transactions', userAdminCheck, transactionView)
+router.get('/transactions', isAdminContinue, transactionView)
 
 
 
