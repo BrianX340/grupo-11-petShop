@@ -1,5 +1,71 @@
-<<<<<<< HEAD
-[{"id":1,"userName":"Mersy1","name":"Mersey","last_name":"Rushby","email":"mrushby0@wordpress.org","pass":"wp0zO4","rol":"ROL_USER","tel":"","address":"","cp":"","province":"","city":"","avatar":"c01.svg","favorites":{},"comprasRealizadas":0,"comprasCanceladas":0,"comprasEnProgreso":0,"logInCounter":0,"productosVistos":[{"productId":2,"views":12}],"productosComprados":[{"productId":2,"buys":12}]},{"id":2,"userName":"brianx340","name":"Brian","last_name":"Rodriguez","email":"brianx340@gmail.com","pass":"$2a$10$xxGGtaUmoDV74jzUS03H9.f1NWE6lVql5VRStbAtJZT2zbtGL7jWq","terms":"on","rol":"ROL_USER","avatar":"d02.svg","tel":"","address":"","province":"","city":"","favorites":{"1":true,"2":true,"5":true,"10":true}},{"id":3,"userName":"Pepit","name":"fati","last_name":"casc","email":"fatc751@gmail.com","pass":"$2a$10$FvPUngu025/9vYPJbLYrKujmgNd92lhTvNlurnez.1xw/qCgx1l6W","terms":"on","rol":"ROL_USER","avatar":"c02.svg","tel":"1232345677","address":"trsrsy","province":"","city":"","favorites":{}}]
-=======
-[{"id":1,"userName":"Mersy1","name":"Mersey","last_name":"Rushby","email":"mrushby0@wordpress.org","pass":"wp0zO4","rol":"ROL_USER","tel":"","address":"","cp":"","province":"","city":"","avatar":"c01.svg","favorites":{},"comprasRealizadas":0,"comprasCanceladas":0,"comprasEnProgreso":0,"logInCounter":0,"productosVistos":[{"productId":2,"views":12}],"productosComprados":[{"productId":2,"buys":12}]},{"id":2,"userName":"brianx340","name":"Brian","last_name":"Rodriguez","email":"brianx340@gmail.com","pass":"$2a$10$xxGGtaUmoDV74jzUS03H9.f1NWE6lVql5VRStbAtJZT2zbtGL7jWq","terms":"on","rol":"ROL_USER","avatar":"d02.svg","tel":"","address":"","cp":"","province":"","city":"","favorites":{"1":true,"2":true,"5":true,"10":true}},{"id":3,"userName":"Pepit","name":"fati","last_name":"casc","email":"fatc751@gmail.com","pass":"$2a$10$FvPUngu025/9vYPJbLYrKujmgNd92lhTvNlurnez.1xw/qCgx1l6W","terms":"on","rol":"ROL_USER","avatar":"c02.svg","tel":"06","address":"trsrsy","province":"","city":"","favorites":{},"pc":"1234"}]
->>>>>>> 115ee5098674d8fadffeafc8da060c7b7cadcf08
+[
+    {
+        "id": 1,
+        "userName": "Mersy1",
+        "name": "Mersey",
+        "last_name": "Rushby",
+        "email": "mrushby0@wordpress.org",
+        "pass": "wp0zO4",
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "cp": "",
+        "province": "",
+        "city": "",
+        "avatar": "c01.svg",
+        "favorites": {},
+        "comprasRealizadas": 0,
+        "comprasCanceladas": 0,
+        "comprasEnProgreso": 0,
+        "logInCounter": 0,
+        "productosVistos": [
+            {
+                "productId": 2,
+                "views": 12
+            }
+        ],
+        "productosComprados": [
+            {
+                "productId": 2,
+                "buys": 12
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "userName": "brianx340",
+        "name": "Brian",
+        "last_name": "Rodriguez",
+        "email": "brianx340@gmail.com",
+        "pass": "$2a$10$xxGGtaUmoDV74jzUS03H9.f1NWE6lVql5VRStbAtJZT2zbtGL7jWq",
+        "terms": "on",
+        "rol": "ROL_USER",
+        "avatar": "d02.svg",
+        "tel": "",
+        "address": "",
+        "province": "",
+        "city": "",
+        "favorites": {
+            "1": true,
+            "2": true,
+            "5": true,
+            "10": true
+        }
+    },
+    {
+        "id": 3,
+        "userName": "Pepit",
+        "name": "fati",
+        "last_name": "casc",
+        "email": "fatc751@gmail.com",
+        "pass": "$2a$10$FvPUngu025/9vYPJbLYrKujmgNd92lhTvNlurnez.1xw/qCgx1l6W",
+        "terms": "on",
+        "rol": "ROL_USER",
+        "avatar": "c02.svg",
+        "tel": "1232345677",
+        "address": "trsrsy",
+        "province": "",
+        "city": "",
+        "favorites": {}
+    }
+]
