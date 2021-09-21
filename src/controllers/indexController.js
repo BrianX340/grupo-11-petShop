@@ -46,9 +46,13 @@ module.exports = {
 
         let product = oneProduct(productId)
 
-        res.render('index//productDetail', {
+        data = {
             product,
             session: req.session ? req.session : ""
+        }
+
+        res.render('index//productDetail', {
+            data
         })
     }
 }

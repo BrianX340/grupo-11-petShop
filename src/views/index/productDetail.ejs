@@ -23,14 +23,14 @@
                             <div class="container-info">
 
                                 <div class="container-title">
-                                    <h5 class="title-h5"><%= product.name %> </h5>
+                                    <h5 class="title-h5"><%= data.product.name %> </h5>
                                     <p class="subtitulo">
-                                        <%= product.mark %>
+                                        <%= data.product.mark %>
                                     </p>
                                 </div>
     
                                 <div class="container-price">
-                                    <div class="price">$<%= product.sellPrice %>
+                                    <div class="price">$<%= data.product.sellPrice %>
                                     </div>
                                 </div>
     
@@ -70,13 +70,13 @@
                             <div class="box-gallery">
 
                                 <div class="box-img">
-                                    <img class="image-big" width="490" height="500" src="/img/products/<%= product.img[0]%>">
+                                    <img class="image-big" width="490" height="500" src="/img/products/<%= data.product.img[0]%>">
                                     
                                 </div>
                                 <div class="images">
                                     
                                     <div class="small-img">
-                                        <% product.img.forEach(img => { %>
+                                        <% data.product.img.forEach(img => { %>
                                         <img class="img-zoom" width="80" height="80" src="/img/products/<%- img%>" onclick="showImg(this.src)">
                                        <% }) %> 
                                     </div>
@@ -85,15 +85,8 @@
 
                             </div>
                         </div>
-
-
                     </div>
                 </div>
-
-
-
-
-
 
                 <div class="containerInformacion">
                     <div class="container-descripcion">
@@ -101,27 +94,23 @@
                             <p class="p-Descripcion">
                             <h4>Descripción:</h4>
                             </p>
-                            <p><%= product.description %> </p>
+                            <p><%= data.product.description %> </p>
                         </div>
                     </div>
 
-                    
                 </div>
-
 
             </div>
 
             <%- include('../partial/footer'); %>
 
-                <script>
-                    let bigImg = document.querySelector('.box-img img');
-                    function showImg(pic) {
-                        bigImg.src = pic;
-                    }
-                </script>
-
-
-
 </body>
+
+<script>
+    let bigImg = document.querySelector('.box-img img');
+    function showImg(pic) {
+        bigImg.src = pic;
+    }
+</script>
 
 </html>
