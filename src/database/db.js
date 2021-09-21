@@ -5,6 +5,9 @@ db = JSON.parse(fs.readFileSync('./src/database/products.json', "utf-8"))
 dbUsers = JSON.parse(fs.readFileSync('./src/database/users.json', "utf-8"))
 dbPetshop = JSON.parse(fs.readFileSync('./src/database/petshop.json', "utf-8"))[0]
 
+dbBestSellsProducts = JSON.parse(fs.readFileSync('./src/database/bestSellsProducts.json', "utf-8"))
+dbPromotionsProducts = JSON.parse(fs.readFileSync('./src/database/promotionsProducts.json', "utf-8"))
+
 
 function saveDB(db, nameFile){   
     fs.writeFileSync(path.join(__dirname, `../database/${nameFile}`), JSON.stringify(db), "utf-8")
@@ -12,6 +15,12 @@ function saveDB(db, nameFile){
 
 
 module.exports = {
+    getPromotions: ()=>{
+        return dbPromotionsProducts
+    },
+    getBestSells: ()=>{
+        return dbBestSellsProducts
+    },
     getAvatarList: ()=>{
         nombreAvatares = [...dbPetshop.avatares.gatos,...dbPetshop.avatares.perros]
         return nombreAvatares

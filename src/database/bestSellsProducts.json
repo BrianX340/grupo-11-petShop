@@ -1,0 +1,132 @@
+[{
+    "id": 1,
+    "name": "Meow Mix Original Choice Dry Cat Food",
+    "description": "Con los deliciosos sabores de pollo, pavo, salmón y pescado del océano, los gatos piden Meow Mix Original Choice comida para gatos por su nombre. Es la mezcla perfecta para ayudarte a conectar con tu gato a través de una comida saludable. Nutrición 100% completa y equilibrada. Proporciona todas las vitaminas y minerales esenciales. Proteína de alta calidad para ayudar a apoyar músculos fuertes y sanos.",
+    "barcode": "9932289221",
+    "color": null,
+    "sellPrice": 1924,
+    "buyPrice": 3459,
+    "discount": 24,
+    "valoration": 3,
+    "stock": 65,
+    "pet": "cat",
+    "subCategory": "Alimentos",
+    "mark": "Meow Mix",
+    "img": [
+        "alimentoGato1.jpg"
+    ],
+    "totalVentas": 0,
+    "ventasEnProgreso": 0,
+    "comprasCanceladas": 0,
+    "totalVistas": 0
+},
+{
+    "id": 2,
+    "name": "Mentas dentales para gatos, kit dental para gatos",
+    "description": "Limpia los dientes de tu gato con el nombre en el que confías. La pasta dental de cuidado avanzado Arm & Hammer está formulada con bicarbonato de sodio, que se disuelve en partículas finas, lo que resulta en una limpieza más profunda. Los ingredientes naturales ayudan a combatir el sarro, limpiar los dientes y refrescar el aliento. Incluye una pasta de dientes de 2.5 onzas, 1 cepillo de dientes de doble cabeza y 1 cepillo de dedo. Instrucciones: Por primera vez cepillos, coloque una pequeña cantidad de pasta de dientes en su dedo e invite al gato a lamerla. Lentamente progresa a frotar el dedo a lo largo de la línea de las encías y los dientes. Luego ponga una pequeña cantidad de pasta de dientes en el cepillo de dientes y repita. Haz de esto siempre una experiencia positiva para tu mascota. Para obtener los mejores resultados, cepille 2-3 veces por semana. Ingredientes: sorbitol, agua, sílice hidratada, carbonato de calcio, polisorbato 20, pirofosfato tetrasódico, goma de celulosa, cloruro de sodio, sabor, bicarbonato de sodio, gluconato de zinc, glicerina, proteasas, timol Advertencias: Evitar el contacto con los ojos. Mantener fuera del alcance de los niños. Almacenar a temperatura ambiente. No destinados a uso humano.",
+    "barcode": "8050788938",
+    "color": null,
+    "sellPrice": 7668,
+    "buyPrice": 4968,
+    "discount": null,
+    "valoration": 1,
+    "stock": 144,
+    "pet": "cat",
+    "subCategory": "Higiene",
+    "mark": "Arm & Hammer",
+    "img": [
+        "higieneGato2.jpg"
+    ],
+    "totalVentas": 0,
+    "ventasEnProgreso": 0,
+    "comprasCanceladas": 0,
+    "totalVistas": 0
+},
+{
+    "id": 3,
+    "name": "MeoHui Juguetes de plumas de gato interactivos",
+    "description": "Juguete interactivo clásico para gatos: esta varita de juguete interactiva ayudará a tus gatos de interior a voltear, saltar, perseguir. Gran manera de sacar la energía de tus gatos y hacer más ejercicio, haciendo que tu gato sea liberado y feliz. Adecuado para gatitos y gatos de todas las edades y tamaños. Un gran juguete para pasar un tiempo de calidad con tu amigo felino. Disfruta del tiempo de felicidad con nuestro juguete. Este es un juguete clásico para gatos de interior, dale a tu bebé peludo una oportunidad",
+    "barcode": "6191780990",
+    "color": null,
+    "sellPrice": 4426,
+    "buyPrice": 5519,
+    "discount": null,
+    "valoration": 2,
+    "stock": 154,
+    "pet": "cat",
+    "subCategory": "Juguetes",
+    "mark": "MeoHui",
+    "img": [
+        "jugueteGato3.jpg"
+    ],
+    "totalVentas": 0,
+    "ventasEnProgreso": 0,
+    "comprasCanceladas": 0,
+    "totalVistas": 0
+},
+{
+    "id": 4,
+    "name": "Vet's Best Gel de pasta dental enzimática para perros",
+    "description": "Proporcione el mejor cuidado dental para su perro con el mejor kit completo de cepillo de dientes y gel enzimático para el cuidado dental de Vet. Nuestra pasta de dientes formulada por veterinarios contiene enzimas e ingredientes naturales (que incluyen aceite de neem, extracto de semilla de pomelo, bicarbonato de sodio y aloe) que limpian suavemente la placa y el sarro mientras refrescan el aliento de su perro. El kit incluye nuestro cepillo de dientes de tres cabezas, que hace que el cepillado sea rápido y conveniente. Se colocan tres cabezas de cerdas para que se formen alrededor de cada diente, limpiando eficientemente desde todos los ángulos simultáneamente.",
+    "barcode": "3739302399",
+    "color": null,
+    "sellPrice": 5024,
+    "buyPrice": 6480,
+    "discount": 82,
+    "valoration": 2,
+    "stock": 62,
+    "pet": "dog",
+    "subCategory": "Higiene",
+    "mark": "Vet's Best",
+    "img": [
+        "higienePerro4.jpg"
+    ],
+    "totalVentas": 0,
+    "ventasEnProgreso": 0,
+    "comprasCanceladas": 0,
+    "totalVistas": 0
+},
+{
+    "id": 5,
+    "name": "Cama estilo cojín, redonda para gatos ",
+    "description": "En la cabina de Love, nos esforzamos por proporcionar productos funcionales de gama alta a nuestros amigos esponjosos. Estamos orgullosos de presentar la cama para mascotas de la cabaña del amor, porque tu mascota merece una buena noche de sueño. El lema de la cabaña del amor es: 'Caliente tu sueño'.",
+    "barcode": "0478783302",
+    "color": null,
+    "sellPrice": 5669,
+    "buyPrice": 4256,
+    "discount": null,
+    "valoration": 1,
+    "stock": 127,
+    "pet": "cat",
+    "subCategory": "Camas",
+    "mark": "Love's cabin",
+    "img": [
+        "camaGato5.jpg"
+    ],
+    "totalVentas": 0,
+    "ventasEnProgreso": 0,
+    "comprasCanceladas": 0,
+    "totalVistas": 0
+},
+{
+    "id": 6,
+    "name": "Fancy Feast",
+    "description": "Alimenta a tu gato nutritivas y deliciosas comidas que deleiten sus sentidos con la comida húmeda de Purina Fancy Feast Classic Paté. Cada variedad suministra una nutrición 100% completa y equilibrada con vitaminas y minerales esenciales para apoyar su salud corporal. Las fórmulas ricas en proteínas sin granos cuentan con carne, aves o mariscos reales junto con otros ingredientes saludables por la calidad que esperas de Fancy Feast. A los gatos les encanta el aroma tentador, el gran sabor y la textura tierna de nuestras entradas clásicas de paté.",
+    "barcode": "4516960451",
+    "color": null,
+    "sellPrice": 9607,
+    "buyPrice": 947,
+    "discount": null,
+    "valoration": 2,
+    "stock": 4,
+    "pet": "cat",
+    "subCategory": "Alimentos",
+    "mark": "Purina",
+    "img": [
+        "alimentoGato6.jpg"
+    ],
+    "totalVentas": 0,
+    "ventasEnProgreso": 0,
+    "comprasCanceladas": 0,
+    "totalVistas": 0
+}]
