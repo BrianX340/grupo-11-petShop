@@ -10,7 +10,6 @@ module.exports = {
             session: req.session ? req.session : ""
         }
 
-
         res.status(200).render('admin//adminPanelDesktop',{data})
     },
     createProductView: (req,res)=> {

@@ -1,0 +1,6 @@
+method: GET ## direccion: undefined ## ruta: / ## fecha: Tue Sep 21 2021 02:53:43 GMT-0300 (hora estándar de Argentina) 
+method: GET ## direccion: undefined ## ruta: /img/products/ ## fecha: Tue Sep 21 2021 02:53:44 GMT-0300 (hora estándar de Argentina) 
+method: GET ## direccion: undefined ## ruta: /css/index/home.css.map ## fecha: Tue Sep 21 2021 02:53:44 GMT-0300 (hora estándar de Argentina) 
+method: GET ## direccion: undefined ## ruta: /img/products/ ## fecha: Tue Sep 21 2021 02:53:44 GMT-0300 (hora estándar de Argentina) 
+method: GET ## direccion: undefined ## ruta: /img/products/ ## fecha: Tue Sep 21 2021 02:53:44 GMT-0300 (hora estándar de Argentina) 
+method: GET ## direccion: undefined ## ruta: /favicon.ico ## fecha: Tue Sep 21 2021 02:53:45 GMT-0300 (hora estándar de Argentina) 
