@@ -5,6 +5,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
+const serverLogs = require('./middlewares/serverLogs');
 
 /* VIEWS */
 app.set('views', path.join(__dirname, 'views'))
@@ -24,6 +25,7 @@ app.use(session(
     cookie: { maxAge: 900000 }
 }
 ))
+app.use(serverLogs)
 
 /* ROUTERS */
 adminRouter = require('./routes/adminRouter')
@@ -44,6 +46,6 @@ app.use((req,res, next)=>{
 })
 
 
-app.listen(3000, '192.168.0.14', ()=>{
+app.listen(3000, ()=>{
     console.log('Se esta ejecutando el servidor en: localhost:3000')
 })
