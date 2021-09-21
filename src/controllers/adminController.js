@@ -6,13 +6,12 @@ const { generoData, mascotaData, ventasData, concretadasData, anuladasData } = r
 module.exports = {
     adminPanelView: (req,res) =>{
 
-
-
-        version = "mobile"
         data = {
             session: req.session ? req.session : ""
         }
-        res.render('admin//adminPanelDesktop',{data})
+
+
+        res.status(200).render('admin//adminPanelDesktop',{data})
     },
     createProductView: (req,res)=> {
         data = {
