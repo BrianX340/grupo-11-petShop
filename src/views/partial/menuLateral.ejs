@@ -10,7 +10,11 @@
         </div>
 
         <% if (data.session.user) { %>
-            <%- include('./lateralLoged'); %>
+            <% if (data.session.user.rol == 'USER') { %>
+                <%- include('./lateralLoged'); %>
+            <% } else if (data.session.user.rol == 'ADMIN') { %>
+                <%- include('./lateralAdmin'); %>
+            <% } %>
         <% } else { %>
             <%- include('./lateralInvited'); %>
         <% } %>

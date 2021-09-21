@@ -1,4 +1,5 @@
 <%- include('./menuLateral'); %>
+<link rel="stylesheet" href="/css/partials/headerNav.css">
     <div class='navPlaceTop'></div>
     <header id='header-invited'>
         <nav id='nav-mobile'>
@@ -23,21 +24,34 @@
                     <nav id="menu-nav">
                         <!-- start menu -->
                         <div class="nav-desplegable">
+                            
                             <% if (data.session.user) { %>
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <%- data.session.user.name %>
-                                        </a>
+                                <% if (data.session.user.rol == 'USER') { %>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <%- data.session.user.name %>
+                                            </a>
+                                            <ul>
+                                                <li class="li-menu"><a href="/ps/profile">Mi perfil</a></li>
+                                                <li class="li-menu"><a href="/ps/logout">Cerrar sesión</a></li>
+                                                
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                <% } else if (data.session.user.rol == 'ADMIN') { %>
                                         <ul>
-                                            <li class="li-menu"><a href="/ps/profile">Mi perfil</a></li>
-                                            <li class="li-menu"><a href="/ps/logout">Cerrar sesión</a></li>
-                                            
+                                            <li>
+                                                <a href="#">
+                                                    Admin
+                                                </a>
+                                                <ul>
+                                                    <li class="li-menu"><a href="/ps/logout">Cerrar sesión</a></li>
+                                                </ul>
+                                            </li>
                                         </ul>
-                                    </li>
-                                </ul>
-
-                                <% } else { %>
+                                <% } %>
+                            <% } else { %>
                                     <ul>
                                         <li><a href="#">Cuenta</a>
                                             <ul>
@@ -46,7 +60,7 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                <% } %>
+                            <% } %>
 
                         </div>
 

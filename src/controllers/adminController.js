@@ -5,26 +5,52 @@ const { generoData, mascotaData, ventasData, concretadasData, anuladasData } = r
 
 module.exports = {
     adminPanelView: (req,res) =>{
-        res.render('admin//adminPanelDesktop')
+
+
+
+        version = "mobile"
+        data = {
+            session: req.session ? req.session : ""
+        }
+        res.render('admin//adminPanelDesktop',{data})
     },
     createProductView: (req,res)=> {
-        res.render('admin//products//addProduct')
+        data = {
+            session: req.session ? req.session : ""
+        }
+        res.render('admin//products//addProduct',{data})
     },
     deleteProductView: (req,res)=> {
-        res.render('admin//products//deleteProduct')
+        data = {
+            session: req.session ? req.session : ""
+        }
+        res.render('admin//products//deleteProduct',{data})
     },
     editProductView: (req,res)=> {
-        res.render('admin//products//editProduct')
+        data = {
+            session: req.session ? req.session : ""
+        }
+        res.render('admin//products//editProduct',{data})
     },
     detailProductView: (req,res)=> {
-        res.render('admin//products//detailProduct')
+        data = {
+            session: req.session ? req.session : ""
+        }
+        res.render('admin//products//detailProduct',{data})
     },
     transactionView: (req,res)=>{
-        res.render('admin//transactions')
+        data = {
+            session: req.session ? req.session : ""
+        }
+        res.render('admin//transactions',{data})
     },
     statisticsView: (req,res)=> {
+        data = {
+            session: req.session ? req.session : ""
+        }
         res.render('admin//statistics',{
             data:{
+                session: req.session ? req.session : "",
                 generoData:JSON.stringify(generoData()),
                 tipoMascotaData:JSON.stringify(mascotaData()),
                 ventasData:JSON.stringify(ventasData()),
@@ -65,7 +91,7 @@ module.exports = {
         //res.render('admin//adminPanel')
     },
     detailProduct: (req,res) =>{
-        //res.render('admin//adminPanel')
+        res.render('admin//adminPanel')
     },
 }
 
