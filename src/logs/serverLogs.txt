@@ -32,3 +32,5 @@ method: GET ## direccion: undefined ## ruta: / ## fecha: Tue Sep 21 2021 17:47:4
 method: GET ## direccion: undefined ## ruta: /img/products/ ## fecha: Tue Sep 21 2021 17:47:46 GMT-0300 (hora estándar de Argentina) 
 method: GET ## direccion: undefined ## ruta: /favicon.ico ## fecha: Tue Sep 21 2021 17:47:47 GMT-0300 (hora estándar de Argentina) 
 method: GET ## direccion: undefined ## ruta: / ## fecha: Tue Sep 21 2021 17:55:23 GMT-0300 (hora estándar de Argentina) 
+method: GET ## direccion: undefined ## ruta: / ## fecha: Tue Sep 21 2021 18:01:58 GMT-0300 (hora estándar de Argentina) 
+method: GET ## direccion: undefined ## ruta: /css/index/home.css.map ## fecha: Tue Sep 21 2021 18:01:58 GMT-0300 (hora estándar de Argentina) 

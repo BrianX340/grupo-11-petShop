@@ -21,8 +21,7 @@ app.use(cookieParser())
 app.use(session(
     {secret: "mySecret",
     resave: false,
-    saveUninitialized: true,
-    cookie: { maxAge: 900000 }
+    saveUninitialized: true
 }
 ))
 app.use(serverLogs)
