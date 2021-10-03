@@ -2,70 +2,66 @@ module.exports = (sequalize, dataTypes) => {
 
     let { INTEGER, STRING } = dataTypes
 
-    return sequalize.define('Users', {
+    User = sequalize.define('Users', {
         id: {
-            type: INTEGER(6),
+            type: INTEGER(),
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
-        userName: {
-            type: STRING(),
-            allowNull: false
-        },
         name: {
-            type: STRING(),
+            type: STRING(50),
             allowNull: false
         },
-        last_name: {
-            type: STRING(),
+        lastName: {
+            type: STRING(50),
             allowNull: false
         },
         email: {
-            type: STRING(),
+            type: STRING(50),
             allowNull: false
         },
         pass: {
             type: STRING(),
             allowNull: false
         },
-        terms: {
+        salt: {
             type: STRING(),
             allowNull: false
         },
-        rol: {
-            type: STRING(),
-            allowNull: false
-        },
-        avatar: {
+        role: {
             type: STRING(),
             allowNull: false
         },
         tel: {
             type: INTEGER(),
             allowNull: false
-        },
-        address: {
-            type: STRING(),
-            allowNull: false
-        },
-        province: {
-            type: STRING(),
-            allowNull: false
-        },
-        city: {
-            type: STRING(),
-            allowNull: false
-        },
-        favorites: {
-            type: INTEGER(),
-            allowNull: false
-        },
-        carrito: {
-            type: INTEGER()
         }
     }, {
         tableName: "usuarios",
         timestamps: true
     })
+
+    User.associate = (models) => {
+        User.hasOne(models.Address, {
+            as: "address",
+            foreignKey:"userId",
+            timestamps: false
+        })
+        User.hasOne(models.Favorites, {
+            as: "favorites",
+            foreignKey:"userId",
+            timestamps: false
+        })
+        User.hasOne(models.Cart, {
+            as: "cart",
+            foreignKey:"userId",
+            timestamps: false
+        })
+        User.hasOne(models.Avatar, {
+            as: "avatar",
+            foreignKey:"userId",
+            timestamps: false
+        })
+    }
 }
