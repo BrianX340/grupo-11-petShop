@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const serverLogs = require('./middlewares/serverLogs');
+let localsCheck = require('./middlewares/localsCheck')
 
 /* VIEWS */
 app.set('views', path.join(__dirname, 'views'))
@@ -21,11 +22,11 @@ app.use(cookieParser())
 app.use(session(
     {secret: "mySecret",
     resave: false,
-    saveUninitialized: true,
-    cookie: { maxAge: 900000 }
+    saveUninitialized: true
 }
 ))
 app.use(serverLogs)
+app.use(localsCheck)
 
 /* ROUTERS */
 adminRouter = require('./routes/adminRouter')
