@@ -15,11 +15,6 @@ module.exports = (sequalize, dataTypes) => {
     })
 
     Favorites.associate = (models) => {
-        Favorites.belongsToMany(models.Product, {
-            as: "products",
-            foreignKey:"favoritesId",
-            through: "FavoritesProducts"
-        })
         Favorites.belongsTo(models.User, {
             as: "user",
             foreignKey:{ name : "userId", allowNull : false}

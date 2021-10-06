@@ -30,7 +30,7 @@ module.exports = (sequalize, dataTypes) => {
             allowNull: false
         },
         role: {
-            type: STRING(),
+            type: INTEGER(),
             allowNull: false
         },
         tel: {
