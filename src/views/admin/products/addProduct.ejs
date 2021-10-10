@@ -7,6 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Productos</title>
     <link rel="stylesheet" href="/css/admin/products/addProducts.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -15,109 +27,107 @@
         <section class='addProductSection'>
             <div>
 
-                <form id='formCreateAdd' class="formCreate" method="POST" enctype="multipart/form-data">
+                <form action="/admin/products/create" id='formCreateAdd' class="formCreate" method="POST" enctype="multipart/form-data">
 
                     <div class='finalCardTitle'><span>Carga de Productos</span></div>
 
                     <div class='inputsContainerBox'>
 
-                        <div class="inputfield">
-                            <div class='addImageButton'>
-                                <span>Imagen</span>
-                                <input id='imageContainer' type="file" class="form-control" name="image"
-                                    aria-label="file example">
-                            </div>
+
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Imagen: </span>
+                            <input type="file" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputNameAdd" name="image">
                         </div>
 
-                        <div class="inputfield">
-                            
-                                <span>Nombre</span>
-                                <input type="text" type="text" class="form-control" id="inputNameAdd" name="name">
-                            
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Nombre: </span>
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputNameAdd" name="name">
                         </div>
 
-                        <div class="inputfield">
-                            
-                                <span>Precio Compra</span>
-                                <input type="number"
-                                    onkeydown="javascript: return event.keyCode == 69 ? false : true"
-                                    class="form-control" id="inputBuyPriceAdd" name="buyPrice">
-                            
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Precio Compra: </span>
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputNameAdd" name="buyPrice">
                         </div>
 
-                        <div class="inputfield">
-                            
-                                <span>Precio Venta</span>
-                                <input type="number"
-                                    onkeydown="javascript: return event.keyCode == 69 ? false : true"
-                                    class="form-control" id="inputSellPriceAdd" name="sellPrice">
-                            
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Precio Venta: </span>
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputSellPriceAdd" name="sellPrice">
                         </div>
 
-                        <div class="inputfield">
-                            
-                                <span>Descripcion</span>
-                                <input type="text" id="inputDescriptionAdd" name="description">
-                            
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Descripcion: </span>
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputDescriptionAdd" name="description">
                         </div>
 
-                        <div class="inputfield">
-                            
-                                <span>Cantidad</span>
-                                <input type="number"
-                                    onkeydown="javascript: return event.keyCode == 69 ? false : true"
-                                    id="inputAmountAdd" name="amount">
-                            
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Cantidad: </span>
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputAmountAdd" name="amount">
                         </div>
 
-                        <div class="inputfield">
-                            
-                                <span>Codigo de Barras</span>
-                                <input type="text" onkeydown="javascript: return event.keyCode == 69 ? false : true"
-                                    id="inputBarcodeAdd" name="barcode">
-                            
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Codigo de Barras: </span>
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputBarcodeAdd" name="barcode">
                         </div>
 
-                        <div class="inputfield">
-                            
-                                <span>Marca</span>
-                                <input type="text" id="inputMarkAdd" name="mark">
-                            
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Marca: </span>
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputMarkAdd" name="mark">
                         </div>
 
-                        <div class="inputfield">
-                                <span>Animal</span>
-                                <!-- <input type="text" id="inputCategoryAdd" name="category"> -->
-                                <select name="category" id="inputCategoryAdd" form="formCreateAdd">
-                                    <option value="default">Elija una categoria</option>
-                                    <option value="gato">Gato</option>
-                                    <option value="perro">Perro</option>
-                                </select>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Animal: </span>
+                            <select hidden class="form-control" name="category" id="inputCategoryAdd" form="formCreateAdd">
+                                <option value="default">Elija una categoria</option>
+                                <option value="0">Gato</option>
+                                <option value="1">Perro</option>
+                            </select>
                         </div>
 
-                        <div class="inputfield">
-                                <span>Tipo de Producto</span>
-                                <select name="subCategory" id="inputSubCategoryAdd" form="formCreateAdd">
-                                    <option value="default">Elija tipo de producto</option>
-                                    <option value="alimentos">Alimentos</option>
-                                    <option value="higiene">Higiene</option>
-                                    <option value="juguetes">Juguetes</option>
-                                    <option value="camas">Camas</option>
-                                </select>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Tipo de Producto: </span>
+                            <select class="form-control" name="subCategory" id="inputSubCategoryAdd" form="formCreateAdd">
+                                <option hidden value="default">Elija tipo de producto</option>
+                                <option value="alimentos">Alimentos</option>
+                                <option value="higiene">Higiene</option>
+                                <option value="juguetes">Juguetes</option>
+                                <option value="camas">Camas</option>
+                            </select>
                         </div>
+
 
                     </div>
 
-                    <div class='buttonOptionProduct'>
-                        <button class='backButton'>Volver</button>
-                        <button class='cleanInputs'>Limpiar campos</button>
-                        <button id='productCreate'>Cargar</button>
+                    <div class="btn-group buttonOptionProduct" role="group" aria-label="...">
+                        <button type="button" class="btn btn-default backButton">Volver</button>
+                        <button type="button" class="btn btn-default cleanInputs">Limpiar campos</button>
+                        <button type="submit" class="btn btn-default" id='productCreate'>Cargar</button>
                     </div>
 
                 </form>
             </div>
         </section>
 
+
+
+
+        <% if (data.productStatus == 'created') { %>
+            <div id='operationSuccess'>
+                <img id='successfulOperation' src="/img/admin/ok.gif" alt="">
+            </div>
+            <% } else if (data.productStatus == 'failed') { %>
+                <div id='operationSuccess'>
+                    <img id='failedOperation' src="/img/admin/error.gif" alt="">
+                </div>
+                <% } %>
+
 </body>
+
+<script>
+    setTimeout(() => {
+        document.getElementById('operationSuccess').style.display = 'none'
+        document.getElementById('successfulOperation').style.display = 'none'
+    }, 2500)
+</script>
 
 </html>

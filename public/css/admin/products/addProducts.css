@@ -1,6 +1,26 @@
 @import url('../header-navAdmin.css');
 @import url('../../partials/background.css');
 @import url('../menuAdmin.css');
+#operationSuccess {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    background-color: #ffffffc2;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+}
+
+#successfulOperation {
+    width: 350px;
+}
+
+#failedOperation {
+    width: 350px;
+    display: none;
+}
 
 .addProductSection {
     width: 100%;
@@ -10,10 +30,38 @@
     justify-content: center;
     align-items: center;
     font-family: system-ui;
+    margin-top: 50px;
 }
 
 .inputfield {
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.inputsContainerBox {
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 350px;
+}
+
+.finalCardTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.buttonOptionProduct {
+    margin-top: 20px;
+}
+
+#formCreateAdd {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }

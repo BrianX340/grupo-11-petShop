@@ -1,15 +1,15 @@
 const express = require('express')
 const router = express.Router()
-const { 
+const {
     allProducts,
     getOneProduct,
     searchProducts,
-    
+
     editProduct,
     detailProduct,
     deleteProduct,
     createProduct,
-    
+
     adminPanelView,
     editProductView,
     detailProductView,
@@ -19,14 +19,14 @@ const {
     statisticsView,
     transactionView,
 
-    } = require('../controllers/adminController')
+} = require('../controllers/adminController')
 
 const adminCrudValidator = require('../validations/adminCrudValidator')
-/* */
+    /* */
 let productUploadImage = require('../middlewares/productUploadImage')
 const isAdminContinue = require('../middlewares/isAdminContinue')
-//Views
-router.get('/temporal', (req,res)=>{
+    //Views
+router.get('/temporal', (req, res) => {
     res.render("admin//adminPanelMobile")
 })
 router.get('/', isAdminContinue, adminPanelView)
@@ -51,7 +51,7 @@ router.delete('/products/:id', deleteProduct)
 router.put('/products/:id', productUploadImage.single("image"), editProduct)
 
 //Create Products
-router.post('/products', productUploadImage.single("image"), adminCrudValidator, createProduct)
+router.post('/products/create', productUploadImage.single("image"), adminCrudValidator, createProduct)
 
 
 

@@ -63,9 +63,9 @@ module.exports = [
 
     body('category')
     .custom(value => {
-        switch (value){
-            case 'gato':
-            case 'perro':
+        switch (value) {
+            case '0':
+            case '1':
                 return true
                 break
             default:
@@ -78,7 +78,7 @@ module.exports = [
 
     body('subCategory')
     .custom(value => {
-        switch (value){
+        switch (value) {
             case 'alimentos':
             case 'higiene':
             case 'juguetes':

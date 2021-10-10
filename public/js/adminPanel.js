@@ -1,4 +1,3 @@
-
 var actualView = ''
 var previousView = 'panel-menu'
 window.onload = () => {
@@ -10,7 +9,7 @@ window.onload = () => {
 
 //Limpieza de Campos
 function limpiarCampos() {
-    
+
     //ViewsReset
     editMode(0)
 
@@ -64,8 +63,7 @@ function keypressListener() {
         try {
             elementId = event.path[0].id
             elementClass = event.path[0].className
-        }
-        catch {
+        } catch {
             elementId = event.target.id
             elementClass = event.path[0].className
         }
@@ -98,99 +96,29 @@ function clickListener() {
         try {
             elementId = event.path[0].id
             elementClass = event.path[0].className
-        }
-        catch {
+        } catch {
             elementId = event.target.id
             elementClass = event.path[0].className
         }
         //Fin captura
 
         switch (elementClass) {
-            case 'backButton':
-                event.preventDefault()
-                backButtonController(previousView)
-                break;
             case 'cleanInputs':
                 event.preventDefault()
                 limpiarCampos()
                 break
-
-            case 'cardCoverCLick':
-                productIdClicked = event.target.attributes[1].value
-
-                if(event.path[0].parentElement.parentElement.id=='detailSearchResult'){
-                    consultProductMode(productIdClicked)
-                }else{
-                    editProductMode(productIdClicked)
-                }
-                break
-            }
+        }
 
 
         //Inicio condicional depende del ID
         switch (elementId) {
-
-            //Inicio casos boton BACK
-            case 'globalBackButton':
-                backButtonController(previousView)
-                break;
-
-            /////////////////////////////////////////////////////////////////////////////INICIO VISTA PRINCIPAL
-
-            //Inicio casos menu principal
-            case 'box-products':
-                principalViewController('panel-products')
-                break;
-            case 'box-client':
-                principalViewController('panel-clients')
-                break;
-            case 'box-ventas':
-                principalViewController('panel-moreOptions')
-                break;
-
-            /////////////////////////////////////////////////////////////////////////////INICIO VISTA PRODUCTOS
-            //Inicio casos panel menu products
-            case 'productsLoaderButton':
-                panelProductViewController('addProductView')
-                break;
-            case 'productsEditButton':
-                panelProductViewController('modifyProductView')
-                break;
-            case 'productsDetailButton':
-                panelProductViewController('consultProductView')
-                break;
-
-            /////////////////////////////////////////////////////////////////////////////INICIO VISTA CLIENTES
-            //Inicio casos panel menu clients
-            case 'clientStatistics':
-                panelClientsViewController('clientStatisticsView')
-                break;
-            case 'dogChat':
-                panelClientsViewController('dogChatView')
-                break;
-            case 'clientsOnline':
-                panelClientsViewController('clientOnlineView')
-                break;
-
-            /////////////////////////////////////////////////////////////////////////////INICIO VISTA MORE OPTIONS
-            //Inicio casos panel menu moreOptions
-            case 'transactions':
-                panelMoreViewController('transactionsView')
-                break;
-            case 'statistics':
-                panelMoreViewController('moneyStatisticsView')
-                break;
-            case 'advanceOptions':
-                panelMoreViewController('advanceConfigurationView')
-                break;
-
             /////////////////////////////////////////////////////////////////////////////METODOS
             //Inicio carga producto
 
             case 'productCreate':
                 productCreate()
                 event.preventDefault()
-                break 
+                break
 
 
 
@@ -199,18 +127,18 @@ function clickListener() {
     })
 }
 
-function getOneProduct(elementId){
+function getOneProduct(elementId) {
     var product;
     fetch(`${window.location.origin}/admin/getOneProduct/${elementId}`, {
-        method: 'GET'
-    })
-        .then(function (response) {
+            method: 'GET'
+        })
+        .then(function(response) {
             if (response.status !== 200) {
                 console.log(`Looks like there was a problem. Status code: ${response.status}`);
                 return;
             }
-            response.json().then(function (data) {
-                if (data.status=='ok'){
+            response.json().then(function(data) {
+                if (data.status == 'ok') {
                     product = data.product
                 } else {
                     return false
@@ -218,15 +146,15 @@ function getOneProduct(elementId){
                 loading(0)
             });
         })
-            .catch(function (error) {
-                console.log("Fetch error: " + error);
-            });
+        .catch(function(error) {
+            console.log("Fetch error: " + error);
+        });
     return product
 }
 
 
 
-function completarEditForm(product){
+function completarEditForm(product) {
 
     document.getElementById('inputNameEdit').value = product.name
     document.getElementById('inputBuyPriceEdit').value = product.buyPrice
@@ -242,19 +170,19 @@ function completarEditForm(product){
 
 
 
-function consultProductMode(productIdClicked){
+function consultProductMode(productIdClicked) {
     fetch(`${window.location.origin}/admin/getOneProduct/${elementId}`, {
-        method: 'GET'
-    })
-        .then(function (response) {
+            method: 'GET'
+        })
+        .then(function(response) {
             if (response.status !== 200) {
                 console.log(`Looks like there was a problem. Status code: ${response.status}`);
                 return;
             }
-            response.json().then(function (data) {
-                if (data.status=='ok'){
+            response.json().then(function(data) {
+                if (data.status == 'ok') {
                     product = data.product
-                    
+
                     //completarConsultView(product)
 
                 } else {
@@ -263,23 +191,23 @@ function consultProductMode(productIdClicked){
                 loading(0)
             });
         })
-            .catch(function (error) {
-                console.log("Fetch error: " + error);
-            });
+        .catch(function(error) {
+            console.log("Fetch error: " + error);
+        });
 }
 
 //Activa la vista de edicion del elemento seleccionado y realiza el fetch del elemento
-async function editProductMode(elementId){
+async function editProductMode(elementId) {
     fetch(`${window.location.origin}/admin/getOneProduct/${elementId}`, {
-        method: 'GET'
-    })
-        .then(function (response) {
+            method: 'GET'
+        })
+        .then(function(response) {
             if (response.status !== 200) {
                 console.log(`Looks like there was a problem. Status code: ${response.status}`);
                 return;
             }
-            response.json().then(function (data) {
-                if (data.status=='ok'){
+            response.json().then(function(data) {
+                if (data.status == 'ok') {
                     product = data.product
                     editMode(1)
                     completarEditForm(product)
@@ -290,15 +218,15 @@ async function editProductMode(elementId){
                 loading(0)
             });
         })
-            .catch(function (error) {
-                console.log("Fetch error: " + error);
-            });
-    
+        .catch(function(error) {
+            console.log("Fetch error: " + error);
+        });
+
 }
 
 //Intercambia entre busqueda editar o edit mode
-function editMode(active){
-    if (active){
+function editMode(active) {
+    if (active) {
         backButtonView(1)
         document.getElementById('formEdit').style.display = 'flex'
         backButtonView(0) //Ocultamos el boton BACK
@@ -306,7 +234,7 @@ function editMode(active){
         return
     }
     document.getElementById('formEdit').style.display = 'none'
-        document.getElementById('modifySearchView').style.display = 'flex'
+    document.getElementById('modifySearchView').style.display = 'flex'
 }
 
 
@@ -319,8 +247,8 @@ function resetGif(id) {
 };
 
 //Loading
-function loading(active){
-    if (active){
+function loading(active) {
+    if (active) {
         document.getElementById('loadingCard').style.display = 'flex'
     } else {
         document.getElementById('loadingCard').style.display = 'none'
@@ -328,11 +256,11 @@ function loading(active){
 }
 
 //ScrollApp
-function scroolMenu(active){
-    if (active){
+function scroolMenu(active) {
+    if (active) {
         document.getElementById('adminPanel').style.overflowY = 'scroll'
     } else {
-        document.getElementById('adminPanel').style.overflowY= 'hidden'
+        document.getElementById('adminPanel').style.overflowY = 'hidden'
     }
 }
 
@@ -345,63 +273,63 @@ async function productCreate() {
     const data = new FormData(document.getElementById("formCreateAdd"))
 
     fetch(`${window.location.origin}/admin/products`, {
-        method: 'POST',
-        body: data,
-    })
-        .then(function (response) {
+            method: 'POST',
+            body: data,
+        })
+        .then(function(response) {
             if (response.status !== 200) {
                 console.log(`Looks like there was a problem. Status code: ${response.status}`);
                 return;
             }
-            response.json().then(function (data) {
-                if (data.status=='ok'){
+            response.json().then(function(data) {
+                if (data.status == 'ok') {
                     loading(0)
                     operationSuccessful(1)
                     limpiarCampos()
                 } else {
-                    if (data.msg=='validacionesIncorrectas'){
+                    if (data.msg == 'validacionesIncorrectas') {
                         errorValidacionesEdit(data.errors)
-                    } else if (data.msg=='productNotCreate'){
+                    } else if (data.msg == 'productNotCreate') {
                         errorBox(data.error)
                     }
-                    
+
                     loading(0)
                     operationSuccessful(0)
                 }
             });
         })
-            .catch(function (error) {
-                console.log("Fetch error: " + error);
-                loading(0)
-                operationSuccessful(0)
-            });
-    
+        .catch(function(error) {
+            console.log("Fetch error: " + error);
+            loading(0)
+            operationSuccessful(0)
+        });
+
 }
 
 
 //Control validaciones
-function errorValidacionesEdit(errors){
+function errorValidacionesEdit(errors) {
     console.log(errors)
 }
 
 //Vista operacion exitosa
-function operationSuccessful(successful){
-    if (successful){
-        resetGif('successfulOperation') 
+function operationSuccessful(successful) {
+    if (successful) {
+        resetGif('successfulOperation')
         document.getElementById('operationSuccess').style.display = 'flex'
         document.getElementById('successfulOperation').style.display = 'flex'
-        setTimeout(()=>{
+        setTimeout(() => {
             document.getElementById('operationSuccess').style.display = 'none'
             document.getElementById('successfulOperation').style.display = 'none'
-        },2500)
+        }, 2500)
     } else {
-        resetGif('failedOperation') 
+        resetGif('failedOperation')
         document.getElementById('operationSuccess').style.display = 'flex'
         document.getElementById('failedOperation').style.display = 'flex'
-        setTimeout(()=>{
+        setTimeout(() => {
             document.getElementById('operationSuccess').style.display = 'none'
             document.getElementById('failedOperation').style.display = 'none'
-        },2500)
+        }, 2500)
     }
 }
 
@@ -411,11 +339,11 @@ function cargarBusquedaProductosAlDom(elementId) {
     textoBusqueda = document.getElementById(elementId).value
 
     fetch(`${window.location.origin}/admin/products/${textoBusqueda}`, {
-        method: "GET",
-        cache: 'no-cache',
-        mode: 'no-cors',
-    })
-        .then(function (response) {
+            method: "GET",
+            cache: 'no-cache',
+            mode: 'no-cors',
+        })
+        .then(function(response) {
             if (response.status !== 200) {
                 console.log(`Looks like there was a problem. Status code: ${response.status}`);
                 return;
@@ -439,7 +367,7 @@ function cargarBusquedaProductosAlDom(elementId) {
             }
 
         })
-        .catch(function (error) {
+        .catch(function(error) {
             console.log("Fetch error: " + error);
         });
 }
@@ -530,9 +458,9 @@ function panelProductViewController(idView) {
     if (idView == 'productOptionsViews') {
         previousView = 'panel-menu'
         backButtonView(1)
-    } else if(idView == 'modifyProductView' || idView == 'consultProductView'){
+    } else if (idView == 'modifyProductView' || idView == 'consultProductView') {
         //no hacer nada para seguir mostrando el boton flotante de BACK
-    } else if(idView == 'addProductView'){
+    } else if (idView == 'addProductView') {
         backButtonView(0)
     }
 
@@ -621,7 +549,7 @@ function imageViewer() {
             // Image preview
             if (inputImage.files && inputImage.files[0]) {
                 var reader = new FileReader();
-                reader.onload = function (e) {
+                reader.onload = function(e) {
                     document.getElementById('imageProductAddPreview').innerHTML = '<img src="' + e.target.result + '"/>';
                 };
                 reader.readAsDataURL(inputImage.files[0]);
@@ -646,7 +574,7 @@ function imageViewer() {
             // Image preview
             if (inputImage.files && inputImage.files[0]) {
                 var reader = new FileReader();
-                reader.onload = function (e) {
+                reader.onload = function(e) {
                     document.getElementById('imageProductEditPreview').innerHTML = '<img src="' + e.target.result + '"/>';
                 };
                 reader.readAsDataURL(inputImage.files[0]);
