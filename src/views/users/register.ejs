@@ -13,7 +13,6 @@
     
     <%- include('../partial/header'); %>
 
- 
 
     <section class="container-form">
         <div class="container-relog">
@@ -23,16 +22,11 @@
                 <div class="formBx">
                     <form action="/ps/register" method="POST">
                         <h2>Registro</h2>
-                        <input type="text" name="userName" placeholder="Usuario" value="<%= locals.old && old.userName %>">
-                        <% if (locals.errors && errors.userName) { %>
-                            <small class="text-danger"><%= errors.userName.msg %> </small>
-                        <% } %>
                         
                         <input type="text" name="name" placeholder="Nombre" value="<%= locals.old && old.name %>">
                         <% if (locals.errors && errors.name) { %>
                             <small class="text-danger"><%= errors.name.msg %> </small>
                         <% } %>
-
                         <input type="text" name="last_name" placeholder="Apellido" value="<%= locals.old && old.last_name %>">
                         <% if (locals.errors && errors.last_name) { %>
                             <small class="text-danger"><%= errors.last_name.msg %> </small>
@@ -62,7 +56,7 @@
                         <p class="signup">¿Ya tiene cuenta? <a href="/ps/login"> Inicie sesión.</a></p>
                     </form>
 <!--                   </div>
-              <div class="imgBx"><img class="imgBx-img" src="/img/gato-forms.jpg"></div>
+<div class="imgBx"><img class="imgBx-img" src="/img/gato-forms.jpg"></div>
             </div> -->
         </div>
     </section>

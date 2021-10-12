@@ -3,24 +3,6 @@ const { getUsers } = require('../database/db');
 
 module.exports = 
 [
-    check('userName')
-    .notEmpty()
-    .withMessage('Debes escribir un usuario')
-    .isLength({
-        min: 4,
-        max: 10
-    })
-    .withMessage('El usuario debe tener como mínimo de 4 a 10 caracteres')
-    .custom(value => {
-        let user = getUsers().find(user => user.userName === value)
-
-        if(user === undefined){
-            return true
-        }else{
-            return false
-        }
-    })
-    .withMessage("usuario en uso"),
 
     check('name')
     .notEmpty()

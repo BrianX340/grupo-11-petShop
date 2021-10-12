@@ -1,7 +1,6 @@
 [
     {
         "id": 1,
-        "userName": "Mersy1",
         "name": "Mersey",
         "last_name": "Rushby",
         "email": "mrushby0@wordpress.org",
@@ -33,7 +32,6 @@
     },
     {
         "id": 2,
-        "userName": "brianx340",
         "name": "Brian",
         "last_name": "Rodriguez",
         "email": "brianx340@gmail.com",
@@ -55,7 +53,6 @@
     },
     {
         "id": 3,
-        "userName": "Pepit",
         "name": "fati",
         "last_name": "casc",
         "email": "fatc751@gmail.com",
@@ -71,7 +68,7 @@
     },
     {
         "id": 4,
-        "userName": "admin",
+        "name": "admin",
         "email": "admin@admin.com",
         "pass": "$2a$10$ZQguIUDl5hDPyIU31OsY.e2JvZLQVJDDJks8J9OOYWCTL49DUZXn6",
         "rol": "ADMIN",

@@ -4,18 +4,26 @@ let bcrypt = require('bcryptjs')
 
 module.exports = {
     carritoCompras: (req,res) =>{
-        res.render('users//carritoPage',
-        {session: req.session ? req.session : ""})
+        data = {
+            session: req.session ? req.session : ""
+        }
+        res.render('users//carritoPage', {data})
     },
     /* Formulario de registro */
     register: (req,res) =>{
+        data = {
+            session: req.session ? req.session : ""
+        }
         res.render('users//register',
-        {session: req.session ? req.session : ""})
+        {data})
     },
     /* Formulario de inicio de sesión */
     login: (req,res) =>{
+        data = {
+            session: req.session ? req.session : ""
+        }
         res.render('users//login',
-        {session: req.session ? req.session : ""})
+        {data})
     },
     //historialCompras: (req,res) =>{
     //    res.render('users//historial')
@@ -26,9 +34,12 @@ module.exports = {
     /* Perfil de usuario */
     profile: (req, res) =>{
         let user = getUsers().find(user => user.id === req.session.user.id)
+        data = {
+            session: req.session ? req.session : ""
+        }
         res.render('users//userProfile', {
             user,
-            session: req.session ? req.session : ""
+            data
         })
     },
 
@@ -36,10 +47,13 @@ module.exports = {
     profileEdit: (req, res) => {
         let user = getUsers().find(user => user.id === req.session.user.id)
         /* res.send(user) */
+        data = {
+            session: req.session ? req.session : ""
+        }
         res.render('users//editProfile', //renderizar formulario
             {
                 user,
-                session: req.session ? req.session : "",
+                data,
                 avatarList: getAvatarList()
             }
         )
@@ -48,7 +62,9 @@ module.exports = {
     /* actualización de perfil */
     updateProfile: (req, res) => {
         let errors = validationResult(req)
-
+        data = {
+            session: req.session ? req.session : ""
+        }
         if (errors.isEmpty()) {
             let user = getUsers().find(user => user.id === +req.params.id)
             let {
@@ -82,20 +98,20 @@ module.exports = {
             res.render('users/editProfile', {
                 errors: errors.mapped(),
                 old:req.body,
-                session: req.session ? req.session : ""
+                data
             })
         }
     },
     processLogin: (req, res) => {
         let errors = validationResult(req)
-
+        data = {
+            session: req.session ? req.session : ""
+        }
         if(errors.isEmpty()) {
             let user = getUsers().find(user => user.email === req.body.email)
-            
 
             req.session.user = {
                 id: user.id,
-                user: user.userName,
                 name: user.name,
                 last_name : user.last_name,
                 email: user.email,
@@ -106,7 +122,7 @@ module.exports = {
 
             let time = 1000 * 60 * 60 *24
             
-             if(req.body.remember){
+            if(req.body.remember){
                 res.cookie("usersPet", req.session.user, {expires: new Date(Date.now() + time), httpOnly : true})
             }   
 
@@ -119,14 +135,16 @@ module.exports = {
         }else{
             res.render('users//login', {
                 errors: errors.mapped(),
-                session: req.session ? req.session : ""
+                data
             })
         }
     },
 
     processRegister: (req, res) => {
         let errors = validationResult(req)
-        
+        data = {
+            session: req.session ? req.session : ""
+        }
         if (errors.isEmpty()) {
             
             let lastId = 0;
@@ -163,7 +181,7 @@ module.exports = {
             res.render('users//register', {
                 errors: errors.mapped(),
                 old: req.body,
-                session: req.session ? req.session : ""
+                data
             })
         }
     },
