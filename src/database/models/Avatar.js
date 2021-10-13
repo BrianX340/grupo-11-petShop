@@ -2,28 +2,27 @@ module.exports = (sequalize, dataTypes) => {
 
     let { INTEGER, STRING } = dataTypes
 
-    Categories = sequalize.define('Categories', {
+    Avatar = sequalize.define('Avatar', {
         id: {
             type: INTEGER(),
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
-        name: {
-            type: STRING(50),
+        path: {
+            type: STRING(),
             allowNull: false
         }
     }, {
-        tableName: "categories",
+        tableName: "avatar",
         timestamps: true
     })
 
-    Categories.associate = (models) => {
-        Categories.hasMany(models.Product, {
-            as: "products",
-            foreignKey:"categoryId"
-        })
+    Avatar.associate = (models) => {
+        Avatar.belongsTo(models.User, { foreignKey: 'userId' })
     }
 
-    return Categories
+
+
+    return Avatar
 }

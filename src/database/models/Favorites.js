@@ -1,6 +1,6 @@
 module.exports = (sequalize, dataTypes) => {
 
-    let { INTEGER} = dataTypes
+    let { INTEGER } = dataTypes
 
     Favorites = sequalize.define('Favorites', {
         id: {
@@ -15,10 +15,11 @@ module.exports = (sequalize, dataTypes) => {
     })
 
     Favorites.associate = (models) => {
-        Favorites.belongsTo(models.User, {
-            as: "user",
-            foreignKey:{ name : "userId", allowNull : false}
-        })
+        Favorites.belongsTo(models.User, { foreignKey: 'userId' })
+            /* Favorites.belongsTo(models.User, {
+                as: "user",
+                foreignKey:{ name : "userId", allowNull : false}
+            }) */
     }
     return Favorites
 }

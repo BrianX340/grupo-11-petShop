@@ -35,11 +35,7 @@ module.exports = (sequalize, dataTypes) => {
     })
 
     Address.associate = (models) => {
-        Address.belongsTo(models.User, {
-            as: "user",
-            foreignKey:"userId",
-            timestamps: false
-        })
+        Address.belongsTo(models.User, { foreignKey: 'userId' })
     }
     return Address
 }

@@ -10,67 +10,67 @@
 </head>
 
 <body id="body">
-    
+
     <%- include('../partial/header'); %>
 
 
-    <section class="container-form">
-        <div class="container-relog">
-            
+        <section class="container-form">
+            <div class="container-relog">
 
-            <div class="user singupBox">
-                <div class="formBx">
-                    <form action="/ps/register" method="POST">
-                        <h2>Registro</h2>
-                        
-                        <input type="text" name="name" placeholder="Nombre" value="<%= locals.old && old.name %>">
-                        <% if (locals.errors && errors.name) { %>
-                            <small class="text-danger"><%= errors.name.msg %> </small>
-                        <% } %>
-                        <input type="text" name="last_name" placeholder="Apellido" value="<%= locals.old && old.last_name %>">
-                        <% if (locals.errors && errors.last_name) { %>
-                            <small class="text-danger"><%= errors.last_name.msg %> </small>
-                        <% } %>
-                        <input id="input-email" type="email" name="email" placeholder="Correo electronico">
-                        <% if (locals.errors && errors.email) { %>
-                            <small class="text-danger"><%= errors.email.msg %> </small>
-                        <% } %>
-                        <input id="input-password" type="password" name="pass" placeholder="Contraseña">
-                        <% if (locals.errors && errors.pass) { %>
-                            <small class="text-danger"><%= errors.pass.msg %> </small>
-                        <% } %>
-                        <input type="password" name="pass2" placeholder="Reingrese la contraseña">
-                        <% if (locals.errors && errors.pass2) { %>
-                            <small class="text-danger"><%= errors.pass2.msg %> </small>
-                        <% } %>
-                        <div class="registerCheck">
-                            <input class="checkRegisterlogin" type="checkbox" name="terms" id="check">
-                            <label for="check">Acepto los términos y condiciones</label>
-                        </div>    
-                            <% if (locals.errors && errors.terms) { %>
-                                <small class="text-danger"><%= errors.terms.msg %> </small>
-                            <% } %>
-                        
-                        
-                        <input type="submit" value="Registrarse">
-                        <p class="signup">¿Ya tiene cuenta? <a href="/ps/login"> Inicie sesión.</a></p>
-                    </form>
-<!--                   </div>
+
+                <div class="user singupBox">
+                    <div class="formBx">
+                        <form action="/ps/register" method="POST">
+                            <h2>Registro</h2>
+
+                            <input type="text" name="name" placeholder="Nombre" value="<%= locals.old && old.name %>">
+                            <% if (locals.errors && errors.name) { %>
+                                <small class="text-danger"><%= errors.name.msg %> </small>
+                                <% } %>
+                                    <input type="text" name="lastName" placeholder="Apellido" value="<%= locals.old && old.last_name %>">
+                                    <% if (locals.errors && errors.last_name) { %>
+                                        <small class="text-danger"><%= errors.last_name.msg %> </small>
+                                        <% } %>
+                                            <input id="input-email" type="email" name="email" placeholder="Correo electronico">
+                                            <% if (locals.errors && errors.email) { %>
+                                                <small class="text-danger"><%= errors.email.msg %> </small>
+                                                <% } %>
+                                                    <input id="input-password" type="password" name="pass" placeholder="Contraseña">
+                                                    <% if (locals.errors && errors.pass) { %>
+                                                        <small class="text-danger"><%= errors.pass.msg %> </small>
+                                                        <% } %>
+                                                            <input type="password" name="pass2" placeholder="Reingrese la contraseña">
+                                                            <% if (locals.errors && errors.pass2) { %>
+                                                                <small class="text-danger"><%= errors.pass2.msg %> </small>
+                                                                <% } %>
+                                                                    <div class="registerCheck">
+                                                                        <input class="checkRegisterlogin" type="checkbox" name="terms" id="check">
+                                                                        <label for="check">Acepto los términos y condiciones</label>
+                                                                    </div>
+                                                                    <% if (locals.errors && errors.terms) { %>
+                                                                        <small class="text-danger"><%= errors.terms.msg %> </small>
+                                                                        <% } %>
+
+
+                                                                            <input type="submit" value="Registrarse">
+                                                                            <p class="signup">¿Ya tiene cuenta? <a href="/ps/login"> Inicie sesión.</a></p>
+                        </form>
+                        <!--                   </div>
 <div class="imgBx"><img class="imgBx-img" src="/img/gato-forms.jpg"></div>
             </div> -->
-        </div>
-    </section>
+                    </div>
+        </section>
 
-    <%- include('../partial/footer'); %>
+        <%- include('../partial/footer'); %>
 
-    <script>
-        /* function toggleForm(){
-            section = document.querySelector('section');
-            container = document.querySelector('.container');
-            container.classList.toggle('active');
-            section.classList.toggle('active');
-        } */
-    </script>
+            <script>
+                /* function toggleForm(){
+                            section = document.querySelector('section');
+                            container = document.querySelector('.container');
+                            container.classList.toggle('active');
+                            section.classList.toggle('active');
+                        } */
+            </script>
 </body>
 
 </html>

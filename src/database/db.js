@@ -1,49 +1,48 @@
-let fs = require('fs');
-const path = require('path')
-
-db = JSON.parse(fs.readFileSync('./src/database/products.json', "utf-8"))
-dbUsers = JSON.parse(fs.readFileSync('./src/database/users.json', "utf-8"))
-dbPetshop = JSON.parse(fs.readFileSync('./src/database/petshop.json', "utf-8"))[0]
-
-dbBestSellsProducts = JSON.parse(fs.readFileSync('./src/database/bestSellsProducts.json', "utf-8"))
-dbPromotionsProducts = JSON.parse(fs.readFileSync('./src/database/promotionsProducts.json', "utf-8"))
-
-
-function saveDB(db, nameFile){   
-    fs.writeFileSync(path.join(__dirname, `../database/${nameFile}`), JSON.stringify(db), "utf-8")
-}
-
+const db = require('./models')
 
 module.exports = {
-    getPromotions: ()=>{
+    userCreate: (userData) => {
+        return db.User.create(userData)
+            .then(user => {
+                if (user[0]) {
+                    return user[0]
+                } else {
+                    return false
+                }
+
+            }).catch(err => {
+                console.log('ERROR RARO', err)
+            })
+    },
+    getPromotions: () => {
         return dbPromotionsProducts
     },
-    getBestSells: ()=>{
+    getBestSells: () => {
         return dbBestSellsProducts
     },
-    getAvatarList: ()=>{
-        nombreAvatares = [...dbPetshop.avatares.gatos,...dbPetshop.avatares.perros]
+    getAvatarList: () => {
+        nombreAvatares = [...dbPetshop.avatares.gatos, ...dbPetshop.avatares.perros]
         return nombreAvatares
     },
-    addUserFavorite : (userId, productId) => {
+    addUserFavorite: (userId, productId) => {
         dbUsers.find(user => {
-           
+
             if (user.id == userId) {
-                user.favorites[productId] = true 
-                
+                user.favorites[productId] = true
+
                 saveDB(dbUsers, 'users.json')
-            } 
+            }
         })
         return true
     },
-    deleteUserFavorite : (userId, productId) => {
+    deleteUserFavorite: (userId, productId) => {
         dbUsers.find(user => {
-           
+
             if (user.id == userId) {
                 delete user.favorites[productId]
-                
+
                 saveDB(dbUsers, 'users.json')
-            } 
+            }
         })
         return true
     },
@@ -54,57 +53,70 @@ module.exports = {
         return dbUsers
     },
 
-    oneProduct: (productId)=>{
+    oneProduct: (productId) => {
         getProduct = db.filter(product => product.id == productId)
-        if (getProduct[0]){
-            return getProduct[0]
-        } else {
-            return false
-        }
+        return db.Product.findOne({
+            where: {
+                id: productId
+            }
+        }).then(product => {
+            if (product[0]) {
+                return product[0]
+            } else {
+                return false
+            }
+        }).catch(err => {
+            console.log(err)
+        })
+
+
     },
-    saveOneProduct: (product)=>{
-        try{
-            db.push(product)
-            saveDB(db, 'products.json')
-            return true
-        }
-        catch{
+    saveOneProduct: (product) => {
+        return db.Product.create({
+            nombre: req.body.name.trim(),
+            precio: Number(req.body.price.trim()),
+            descripcion: descriptionReplaced,
+            descuento: Number(req.body.discount.trim()),
+            subcategoria_id: Number(req.body.subcategory),
+        }).then(product => {
+            return product
+        }).catch(err => {
             return false
-        }
+        })
     },
-    getAllProducts: ()=>{
+    getAllProducts: () => {
         return db //devolvemos la base de datos completa PRODUCTOS
     },
-    
-    searchProductByName: (productName)=>{
+
+    searchProductByName: (productName) => {
         //Filtramos la base de datos, devolvera los resultados que incluyan el texto recibido por parametro
-        return db.filter((product)=> product.name.toLowerCase().includes(productName.toLowerCase()) )
+        return db.filter((product) => product.name.toLowerCase().includes(productName.toLowerCase()))
     },
 
-    searchOne: (id)=>{
+    searchOne: (id) => {
         //return db.find()
     },
 
-    searcherByPetsubCategory: (pet,subCategory)=>{
-        switch (subCategory){
+    searcherByPetsubCategory: (pet, subCategory) => {
+        switch (subCategory) {
             case 'all':
-                if (pet == 'all'){
+                if (pet == 'all') {
                     //retornamos la busqueda
                     return db
-                } else if (pet == 'cat' || pet == 'dog'){
+                } else if (pet == 'cat' || pet == 'dog') {
                     //retornamos la busqueda filtrando todo lo de gato
                     return db.filter(producto => producto.pet == pet)
                 }
                 break
-            
+
             case 'Alimentos':
             case 'Higiene':
             case 'Juguetes':
             case 'Camas':
-                if (pet == 'all'){
+                if (pet == 'all') {
                     //retornamos la busqueda
                     return db
-                } else if (pet == 'cat' || pet == 'dog'){
+                } else if (pet == 'cat' || pet == 'dog') {
                     //retornamos la busqueda filtrando todo lo de gato o perro
                     return db.filter(producto => producto.subCategory == subCategory && producto.pet == pet)
                 }

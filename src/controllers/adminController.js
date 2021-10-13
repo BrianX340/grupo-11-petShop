@@ -1,7 +1,17 @@
-const { oneProduct, getAllProducts, searchProductByName, saveOneProduct } = require('../database/db');
 const { validationResult } = require('express-validator')
-const { generoData, mascotaData, ventasData, concretadasData, anuladasData } = require('../database/statisticsDb');
 
+
+/* db.Subcategory.findAll({
+    include : [
+        {
+        association: "category",
+        include: [{ 
+            association: "products",
+            include: [{association: "productImage"}]
+        }]
+    }
+]
+}) */
 
 module.exports = {
     adminPanelView: (req, res) => {

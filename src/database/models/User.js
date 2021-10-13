@@ -2,7 +2,7 @@ module.exports = (sequalize, dataTypes) => {
 
     let { INTEGER, STRING } = dataTypes
 
-    User = sequalize.define('Users', {
+    User = sequalize.define('User', {
         id: {
             type: INTEGER(),
             primaryKey: true,
@@ -38,30 +38,32 @@ module.exports = (sequalize, dataTypes) => {
             allowNull: false
         }
     }, {
-        tableName: "usuarios",
-        timestamps: true
+        tableName: "user",
+        timestamps: false
     })
 
     User.associate = (models) => {
-        User.hasOne(models.Address, {
-            as: "address",
-            foreignKey:"userId",
-            timestamps: false
-        })
-        User.hasOne(models.Favorites, {
+        User.hasOne(models.Address)
+        User.hasOne(models.Favorites)
+        User.hasOne(models.Cart)
+        User.hasOne(models.Avatar)
+
+        /* User.hasOne(models.Favorites, {
             as: "favorites",
-            foreignKey:"userId",
+            foreignKey: "userId",
             timestamps: false
         })
         User.hasOne(models.Cart, {
             as: "cart",
-            foreignKey:"userId",
+            foreignKey: "userId",
             timestamps: false
         })
         User.hasOne(models.Avatar, {
             as: "avatar",
-            foreignKey:"userId",
+            foreignKey: "userId",
             timestamps: false
-        })
+        }) */
     }
+
+    return User
 }

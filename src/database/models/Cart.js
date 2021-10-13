@@ -1,6 +1,6 @@
 module.exports = (sequalize, dataTypes) => {
 
-    let { INTEGER, FLOAT} = dataTypes
+    let { INTEGER, FLOAT } = dataTypes
 
     Cart = sequalize.define('Cart', {
         id: {
@@ -23,16 +23,17 @@ module.exports = (sequalize, dataTypes) => {
     })
 
     Cart.associate = (models) => {
-        Cart.belongsTo(models.User, {
-            as: "cart",
-            foreignKey:"userId",
-            timestamps: false
-        })
-        Cart.hasMany(models.Item, {
-            as: "items",
-            foreignKey:"cartId",
-            timestamps: false
-        })
+        Cart.belongsTo(models.User, { foreignKey: 'userId' })
+            /* Cart.belongsTo(models.User, {
+                as: "cart",
+                foreignKey:"userId",
+                timestamps: false
+            })
+            Cart.hasMany(models.Item, {
+                as: "items",
+                foreignKey:"cartId",
+                timestamps: false
+            }) */
     }
 
     return Cart

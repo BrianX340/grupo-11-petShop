@@ -34,7 +34,7 @@ module.exports = (sequalize, dataTypes) => {
         timestamps: true
     })
 
-    Item.associate = (models) => {
+    /* Item.associate = (models) => {
         Item.belongsTo(models.Cart, {
             as: "items",
             foreignKey:"cartId",
@@ -45,7 +45,7 @@ module.exports = (sequalize, dataTypes) => {
             foreignKey:"itemId",
             through: "ItemProduct"
         })
-    }
+    } */
 
     return Item
 }
