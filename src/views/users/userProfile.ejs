@@ -15,57 +15,51 @@
 
 
         <main class="userProfile">
-            <section class="userInfo">
-                <div class="avatar">
-                    <img src="/img/avatars/<%= user.avatar %>" alt="">
-                </div>
-                <div class="userProfile-container">
-                    <section class="userName_box">
+            <div class="avatar">
+                <img src="/img/avatars/<%= data.session.user.avatar.path %>" alt="">
+            </div>
+            <div class="userProfile-container">
+                <section class="userName_box">
 
-                    </section>
+                </section>
 
-                    <section class="box_userProfile">
-                        <div class="userProfileBox">
-                            <h3 class="userProfileTitle">Datos personales:</h3>
-                            <p class="userProfileItem">Nombre: <%= user.name %>
-                            </p>
-                            <p class="userProfileItem">Apellido: <%= user.last_name %>
-                            </p>
-                            <p class="userProfileItem">Email: <%= user.email %>
-                            </p>
-                            <p class="userProfileItem">Teléfono: <%= user.tel ? user.tel : "------" %>
-                            </p>
-                        </div>
-                        <div class="userProfileBox">
-                            <h3 class="userProfileTitle">Datos de contacto:</h3>
-                            <p class="userProfileItem">Dirección: <%= user.address ? user.address : "------" %>
-                            </p>
-                            <p class="userProfileItem">Código postal: <%= user.pc ? user.pc : "------" %>
-                            </p>
-                            <p class="userProfileItem">Provincia: <%= user.province ? user.province : "------" %>
-                            </p>
-                            <p class="userProfileItem">Localidad: <%= user.city ? user.city : "------" %>
-                            </p>
-                        </div>
-                    </section>
-                    <div class="btnProfile">
-                        <a href="/ps/profile/edit/<%= user.id %>" class="btn btn-ad-primary">Editar Datos</a>
+                <section class="box_userProfile">
+                    <div class="userProfile_box">
+                        <h3 class="userProfile_title">Datos personales:</h3>
+                        <p class="userProfile_item">Nombre:
+                            <%= data.session.user.name %>
+                        </p>
+                        <p class="userProfile_item">Apellido:
+                            <%= data.session.user.last_name %>
+                        </p>
+                        <p class="userProfile_item">Email:
+                            <%= data.session.user.email %>
+                        </p>
+                        <p class="userProfile_item">Teléfono:
+                            <%= data.session.user.tel ? data.session.user.tel : "------" %>
+                        </p>
                     </div>
-                    
-                </div>
-            </section>
-            <section>
-                <div class="boxExtra">
-                    <div class="favoriteProfile">
-                        <h1>Proximamente...</h1>
-                    </div>
-                    <div class="favoriteProfile">
-                        <h1>Proximamente...</h1>
+                    <div class="userProfile_box">
+                        <h3 class="userProfile_title">Datos de contacto:</h3>
+                        <p class="userProfile_item">Dirección:
+                            <%= data.session.user.address ? data.session.user.address : "------" %>
+                        </p>
+                        <p class="userProfile_item">Código postal:
+                            <%= data.session.user.pc ? data.session.user.pc : "------" %>
+                        </p>
+                        <p class="userProfile_item">Provincia:
+                            <%= data.session.user.province ? data.session.user.province : "------" %>
+                        </p>
+                        <p class="userProfile_item">Localidad:
+                            <%= data.session.user.city ? data.session.user.city : "------" %>
+                        </p>
                     </div>
                 </div>
                 
             </section>
 
+                <a href="/ps/profile/edit/<%= data.session.user.id %>" class="btn btn-ad-primary">EDITAR DATOS</a>
+            </div>
         </main>
 
         <%- include('../partial/footer'); %>

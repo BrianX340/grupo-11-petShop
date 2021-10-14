@@ -9,95 +9,96 @@
     <link rel="stylesheet" href="/css/users/editProfile.css">
 </head>
 
-<body >
+<body>
 
     <%- include('../partial/header'); %>
-    <div class="userProfile_container">
-        <section class="userProfileBodySection">
-            <main class="editProfile-container">
+        <div class="userProfile_container">
+            <section class="userProfileBodySection">
+                <main class="editProfile-container">
 
-                <h3 class="userTitle">Edita tu perfil</h3>
+                    <h3 class="userTitle">Edita tu perfil</h3>
 
-                <form action="/ps/profile/edit/<%= user.id %>?_method=PUT" method="POST" class="form_editProfile">
-                    <section class="form_editProfileContainer">
-                        <div class="editProfile_inputContainer">
-                            <input class="editProfile_input" type="text" name="name" placeholder="Nombre" value="<%= locals.old ? old.name : user.name %>">
-                            <% if (locals.errors && errors.name) { %>
-                                <small class="text-danger"><%= errors.name.msg %> </small>
-                            <% } %>
-                        </div>
-                        <div class="editProfile_inputContainer">
-                            <input class="editProfile_input" type="text" name="last_name" placeholder="Apellido" value="<%= locals.old ? old.last_name : user.last_name %>">
-                            <% if (locals.errors && errors.last_name) { %>
-                                <small class="text-danger"><%= errors.last_name.msg %> </small>
-                            <% } %>
-                        </div>
-                        <div class="editProfile_inputContainer">
-                            <input class="editProfile_input" type="email" name="email" placeholder="Ingresá tu email" value="<%= user.email %>">
-                        </div>
-                        <div class="editProfile_inputContainer">
-                            <input class="editProfile_input" type="text" name="tel" placeholder="Ingresá tu teléfono" value="<%= user.tel ? user.tel : "" %>">
-                        </div>
-                        <div class="editProfile_inputContainer">
-                            <input class="editProfile_input" type="text" name="address" placeholder="Domicilio" value="<%= user.address ? user.address : "" %>">
-                        </div>
-                        <div class="editProfile_inputContainer">
-                            <input class="editProfile_input" type="text" name="pc" placeholder="Código postal" value="<%= user.pc ? user.pc : "" %>">
-                        </div>
-                    </section>
+                    <form action="/ps/profile/edit/<%= data.session.user.id %>?_method=PUT" method="POST" class="form_editProfile">
+                        <section class="form_editProfileContainer">
+                            <div class="editProfile_inputContainer">
+                                <input class="editProfile_input" type="text" name="name" placeholder="Nombre" value="<%= locals.old ? old.name : data.session.user.name %>">
+                                <% if (locals.errors && errors.name) { %>
+                                    <small class="text-danger"><%= errors.name.msg %> </small>
+                                    <% } %>
+                            </div>
+                            <div class="editProfile_inputContainer">
+                                <input class="editProfile_input" type="text" name="last_name" placeholder="Apellido" value="<%= locals.old ? old.lastName : data.session.user.lastName %>">
+                                <% if (locals.errors && errors.last_name) { %>
+                                    <small class="text-danger"><%= errors.last_name.msg %> </small>
+                                    <% } %>
+                            </div>
+                            <div class="editProfile_inputContainer">
+                                <input class="editProfile_input" type="email" name="email" placeholder="Ingresá tu email" value="<%= data.session.user.email %>">
+                            </div>
+                            <div class="editProfile_inputContainer">
+                                <input class="editProfile_input" type="text" name="tel" placeholder="Ingresá tu teléfono" value="<%= data.session.user.tel ? data.session.user.tel : " " %>">
+                            </div>
+                            <div class="editProfile_inputContainer">
+                                <input class="editProfile_input" type="text" name="address" placeholder="Domicilio" value="<%= data.session.user.address ? data.session.user.address : " " %>">
+                            </div>
+                            <div class="editProfile_inputContainer">
+                                <input class="editProfile_input" type="text" name="pc" placeholder="Código postal" value="<%= data.session.user.pc ? data.session.user.pc : " " %>">
+                            </div>
+                        </section>
 
-                    <section class="editProfile_select">
-                        <div>
-                            <select class="editProfile_selectContainer" name="province" id="">
+                        <section class="editProfile_select">
+                            <div>
+                                <select class="editProfile_selectContainer" name="province" id="">
                                 <option value="">Provincia</option>
                             </select>
-                        </div>
-                        <div>
-                            <select class="editProfile_selectContainer" name="city" id="">
+                            </div>
+                            <div>
+                                <select class="editProfile_selectContainer" name="city" id="">
                                 <option value="">Localidad</option>
                             </select>
-                        </div>
+                            </div>
 
-                        <div class="avatarSelect">
-                            <input type="text" id='avatarId' name='avatar' value='<%= data.session.user.avatar %>' style='display:none'>
-                            <button id='selectAvatarButton'>
+                            <div class="avatarSelect">
+                                <input type="text" id='avatarId' name='avatar' value='<%= data.session.user.avatar %>' style='display:none'>
+                                <button id='selectAvatarButton'>
                                 Seleccionar Avatar
                             </button>
-                            <div id='avatarBox'>
-                                <div>
-                                    <div class='tituloSelectAvatar'>
-                                        <span>Seleccione un Avatar</span>
-                                    </div>
-                                    <div class='avatarsContainer'>
-                                        <% avatarList.forEach(avatarDir => { %>
-                                            <div class='imgAvatar'>
-                                                <figure>
-                                                    <img src="/img/avatars/<%= avatarDir %>" id='<%= avatarDir %>' class='avatarClicked' alt="">
-                                                </figure>
-                                            </div>
-                                        <% }) %>
+                                <div id='avatarBox'>
+                                    <div>
+                                        <div class='tituloSelectAvatar'>
+                                            <span>Seleccione un Avatar</span>
+                                        </div>
+                                        <div class='avatarsContainer'>
+                                            <% avatarList.forEach(avatarDir => { %>
+                                                <div class='imgAvatar'>
+                                                    <figure>
+                                                        <img src="/img/avatars/<%= avatarDir %>" id='<%= avatarDir %>' class='avatarClicked' alt="">
+                                                    </figure>
+                                                </div>
+                                                <% }) %>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </section>
+                        </section>
 
 
-                    <div class="editProfile_botonContainer">
-                        <button type="submit" class="editProfile_boton">
+                        <div class="editProfile_botonContainer">
+                            <button type="submit" class="editProfile_boton">
                             GUARDAR
                         </button>
-                    </div>
+                        </div>
 
-                </form>
-            </main>
-        </section>
-    </div>
+                    </form>
+                </main>
+            </section>
+        </div>
 
-    <%- include('../partial/footer'); %>
+        <%- include('../partial/footer'); %>
 
 
 </body>
 <script src="/js/editProfile.js"></script>
+
 </html>
