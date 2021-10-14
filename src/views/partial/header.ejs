@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <%- include('./menuLateral'); %>
-<link rel="stylesheet" href="/css/partials/headerNav.css">
+    <link rel="stylesheet" href="/css/partials/headerNav.css">
     <div class='navPlaceTop'></div>
     <header id='header-invited'>
         <nav id='nav-mobile'>
@@ -35,9 +35,9 @@
                         </div>
                         <!-- start menu -->
                         <div class="nav-desplegable">
-                            
+
                             <% if (data.session.user) { %>
-                                <% if (data.session.user.rol == 'USER') { %>
+                                <% if (data.session.user.role == 1) { %>
                                     <ul>
                                         <li>
                                             <a href="#">
@@ -46,11 +46,11 @@
                                             <ul>
                                                 <li class="li-menu"><a href="/ps/profile">Mi perfil</a></li>
                                                 <li class="li-menu"><a href="/ps/logout">Cerrar sesión</a></li>
-                                                
+
                                             </ul>
                                         </li>
                                     </ul>
-                                <% } else if (data.session.user.rol == 'ADMIN') { %>
+                                    <% } else if (data.session.user.role == 0) { %>
                                         <ul>
                                             <li>
                                                 <a href="#">
@@ -61,17 +61,17 @@
                                                 </ul>
                                             </li>
                                         </ul>
-                                <% } %>
-                            <% } else { %>
-                                    <ul>
-                                        <li><a href="#">Cuenta</a>
-                                            <ul>
-                                                <li class="li-menu"><a href="/ps/login">Iniciar sesion</a></li>
-                                                <li class="li-menu"><a href="/ps/register">Registrarse</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                            <% } %>
+                                        <% } %>
+                                            <% } else { %>
+                                                <ul>
+                                                    <li><a href="#">Cuenta</a>
+                                                        <ul>
+                                                            <li class="li-menu"><a href="/ps/login">Iniciar sesion</a></li>
+                                                            <li class="li-menu"><a href="/ps/register">Registrarse</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <% } %>
 
                         </div>
 
@@ -83,8 +83,7 @@
 
 
                 <div>
-                    <figure class='carrito-button-container'><img id='carrito-button' src="/img/icon_carrito.svg"
-                            alt=""></figure>
+                    <figure class='carrito-button-container'><img id='carrito-button' src="/img/icon_carrito.svg" alt=""></figure>
                 </div>
             </div>
         </nav>

@@ -1,29 +1,28 @@
-const { getUsers, writeUsersJSON, getAvatarList } = require('../database/db')
+const { userCreate } = require('../database/db')
 const { validationResult } = require('express-validator')
 let bcrypt = require('bcryptjs')
+const db = require('../database/models')
 
 module.exports = {
-    carritoCompras: (req,res) =>{
+    carritoCompras: (req, res) => {
         data = {
             session: req.session ? req.session : ""
         }
-        res.render('users//carritoPage', {data})
+        res.render('users//carritoPage', { data })
     },
     /* Formulario de registro */
-    register: (req,res) =>{
+    register: (req, res) => {
         data = {
             session: req.session ? req.session : ""
         }
-        res.render('users//register',
-        {data})
+        res.render('users//register', { data })
     },
     /* Formulario de inicio de sesión */
-    login: (req,res) =>{
+    login: (req, res) => {
         data = {
             session: req.session ? req.session : ""
         }
-        res.render('users//login',
-        {data})
+        res.render('users//login', { data })
     },
     //historialCompras: (req,res) =>{
     //    res.render('users//historial')
@@ -32,7 +31,7 @@ module.exports = {
 
 
     /* Perfil de usuario */
-    profile: (req, res) =>{
+    profile: (req, res) => {
         let user = getUsers().find(user => user.id === req.session.user.id)
         data = {
             session: req.session ? req.session : ""
@@ -46,7 +45,7 @@ module.exports = {
     /* Edición de perfil */
     profileEdit: (req, res) => {
         let user = getUsers().find(user => user.id === req.session.user.id)
-        /* res.send(user) */
+            /* res.send(user) */
         data = {
             session: req.session ? req.session : ""
         }
@@ -58,7 +57,7 @@ module.exports = {
             }
         )
     },
-    
+
     /* actualización de perfil */
     updateProfile: (req, res) => {
         let errors = validationResult(req)
@@ -84,20 +83,20 @@ module.exports = {
             user.pc = pc
             user.province = province
             user.city = city
-            user.avatar = req.file ? req.file.filename : user.avatar 
+            user.avatar = req.file ? req.file.filename : user.avatar
 
             writeUsersJSON(getUsers())
 
 
             req.session.user = user
-            
+
 
             res.redirect('/ps/profile')
 
-        }else{
+        } else {
             res.render('users/editProfile', {
                 errors: errors.mapped(),
-                old:req.body,
+                old: req.body,
                 data
             })
         }
@@ -107,32 +106,36 @@ module.exports = {
         data = {
             session: req.session ? req.session : ""
         }
-        if(errors.isEmpty()) {
-            let user = getUsers().find(user => user.email === req.body.email)
+        if (errors.isEmpty()) {
+            db.User.findOne({
+                where: {
+                    email: req.body.email
+                },
+                include: [{
+                    association: "avatar"
+                }]
+            }).then(user => {
+                try {
+                    if (user) {
+                        req.session.user = user
+                        res.locals.user = req.session.user
+                        let time = 1000 * 60 * 60 * 24
+                        if (req.body.remember) {
+                            res.cookie("usersPet", req.session.user, { expires: new Date(Date.now() + time), httpOnly: true })
+                        }
 
-            req.session.user = {
-                id: user.id,
-                name: user.name,
-                last_name : user.last_name,
-                email: user.email,
-                avatar: user.avatar,
-                favorites : user.favorites,
-                rol: user.rol
-            }
+                        res.redirect('/')
+                    } else {
+                        res.redirect('/ps/register')
+                    }
+                } catch {
+                    res.redirect('/ps/register')
+                }
+            }).catch(err => {
+                console.log(err)
+            })
 
-            let time = 1000 * 60 * 60 *24
-            
-            if(req.body.remember){
-                res.cookie("usersPet", req.session.user, {expires: new Date(Date.now() + time), httpOnly : true})
-            }   
-
-            res.locals.user = req.session.user
-
-           /*  res.send(req.session.user) */
-
-            res.redirect('/')  
-
-        }else{
+        } else {
             res.render('users//login', {
                 errors: errors.mapped(),
                 data
@@ -146,36 +149,22 @@ module.exports = {
             session: req.session ? req.session : ""
         }
         if (errors.isEmpty()) {
-            
-            let lastId = 0;
-            
-            getUsers().forEach(user => {
-                if(user.id > lastId){
-                    lastId = user.id
-                }
+            delete req.body.pass2
+            req.body.pass = bcrypt.hashSync(req.body.pass, 10)
+
+            newUser = userCreate({
+                ...req.body,
+                role: 1,
+                avatarId: 1, //req.file ? req.file.filename : 1,
+                tel: "",
+                salt: ""
             })
 
-            let newUser = {
-                id: lastId +1,
-                ...req.body,
-                rol: "USER",
-                avatar: "cat01.svg",
-                tel: "",
-                address: "",
-                pc: "",
-                province: "",
-                city:"",
-                favorites: {}
+            if (newUser) {
+                res.redirect('/ps/login')
+            } else {
+                res.redirect('/')
             }
-            delete newUser.pass2
-            newUser.pass = bcrypt.hashSync(newUser.pass, 10)
-            
-
-            getUsers().push(newUser)
-
-            writeUsersJSON(getUsers())
-
-            res.redirect('/ps/login')
 
         } else {
             res.render('users//register', {
@@ -188,10 +177,10 @@ module.exports = {
 
     logout: (req, res) => {
         req.session.destroy()
-        if(req.cookies.usersPet){
-            res.cookie('usersPet', '', {maxAge: -1})
+        if (req.cookies.usersPet) {
+            res.cookie('usersPet', '', { maxAge: -1 })
         }
         res.redirect('/')
-    } 
+    }
 
 }

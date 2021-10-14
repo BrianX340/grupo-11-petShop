@@ -1,8 +1,7 @@
-const {check, body} = require('express-validator');
-const { getUsers } = require('../database/db');
+const { check, body } = require('express-validator');
+const db = require('../database/models')
 
-module.exports = 
-[
+module.exports = [
 
     check('name')
     .notEmpty()
@@ -12,7 +11,7 @@ module.exports =
     })
     .withMessage('El nombre debe tener como mínimo 3 caracteres'),
 
-    check('last_name')
+    check('lastName')
     .notEmpty()
     .withMessage('Debes escribir un apellido'),
 
@@ -23,16 +22,18 @@ module.exports =
     .withMessage('Debes escribir un email válido'),
 
     body('email')
-    .custom(value => {
-        let user = getUsers().find(user => user.email === value)
-
-        if(user === undefined){
-            return true
-        }else{
-            return false
-        }
+    .custom((value, { req }) => {
+        return db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        }).then(user => {
+            return !user ? true : false
+        }).catch(err => {
+            console.log(err)
+        })
     })
-    .withMessage("Email ya en uso"),
+    .withMessage("Email en uso"),
 
     check('pass')
     .notEmpty()
@@ -44,9 +45,9 @@ module.exports =
     .withMessage('La contraseña debe tener como mínimo de 6 a 20 caracteres'),
 
     body('pass2')
-    .custom((value, {req}) => value !== req.body.pass ? false : true)
+    .custom((value, { req }) => value !== req.body.pass ? false : true)
     .withMessage('Las contraseñas no coinciden'),
-    
+
     check('terms')
     .isString('on')
     .withMessage('Debes aceptar los términos y condiciones')

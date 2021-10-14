@@ -61,6 +61,17 @@ module.exports = (sequalize, dataTypes) => {
     })
 
     Product.associate = (models) => {
+        Product.hasMany(models.Favorites, {
+            as: 'favorites',
+            foreignKey: 'productId'
+        })
+
+        Product.hasMany(models.Cart, {
+            as: 'cart',
+            foreignKey: 'productId'
+        })
+
+        /* 
         Product.belongsToMany(models.Favorites, {
             as: "favorites",
             foreignKey:"productId",
@@ -82,7 +93,7 @@ module.exports = (sequalize, dataTypes) => {
         Product.belongsTo(models.Brand, {
             as: "products",
             foreignKey:"brandId"
-        })
+        }) */
     }
 
     return Product

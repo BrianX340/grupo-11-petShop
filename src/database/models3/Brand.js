@@ -2,7 +2,7 @@ module.exports = (sequalize, dataTypes) => {
 
     let { INTEGER, STRING } = dataTypes
 
-    SubCategories = sequalize.define('SubCategories', {
+    Brand = sequalize.define('Brand', {
         id: {
             type: INTEGER(),
             primaryKey: true,
@@ -12,18 +12,22 @@ module.exports = (sequalize, dataTypes) => {
         name: {
             type: STRING(50),
             allowNull: false
+        },
+        productsId: {
+            type: INTEGER(),
+            allowNull: false
         }
     }, {
-        tableName: "subCategories",
+        tableName: "brand",
         timestamps: true
     })
 
-    SubCategories.associate = (models) => {
-        SubCategories.hasMany(models.Product, {
+    /* Brand.associate = (models) => {
+        Brand.hasMany(models.Product, {
             as: "products",
-            foreignKey:"subCategoryId"
+            foreignKey:"brandId"
         })
-    }
+    } */
 
-    return SubCategories
+    return Brand
 }

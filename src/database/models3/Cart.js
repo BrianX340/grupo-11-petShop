@@ -1,6 +1,8 @@
+const { DataTypes } = require('sequelize')
+
 module.exports = (sequalize, dataTypes) => {
 
-    let { INTEGER, FLOAT} = dataTypes
+    let { INTEGER, FLOAT } = dataTypes
 
     Cart = sequalize.define('Cart', {
         id: {
@@ -16,24 +18,13 @@ module.exports = (sequalize, dataTypes) => {
         totalCost: {
             type: FLOAT(),
             allowNull: false
-        }
+        },
+        userId: DataTypes.INTEGER,
+        productId: DataTypes.INTEGER
     }, {
         tableName: "cart",
         timestamps: true
     })
-
-    Cart.associate = (models) => {
-        Cart.belongsTo(models.User, {
-            as: "cart",
-            foreignKey:"userId",
-            timestamps: false
-        })
-        Cart.hasMany(models.Item, {
-            as: "items",
-            foreignKey:"cartId",
-            timestamps: false
-        })
-    }
 
     return Cart
 }

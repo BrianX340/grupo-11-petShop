@@ -35,16 +35,7 @@ module.exports = (sequalize, dataTypes) => {
     })
 
     Item.associate = (models) => {
-        Item.belongsTo(models.Cart, {
-            as: "items",
-            foreignKey:"cartId",
-            timestamps: false
-        })
-        Item.belongsToMany(models.Product, {
-            as: "products",
-            foreignKey:"itemId",
-            through: "ItemProduct"
-        })
+        Item.belongsTo(models.Product, { foreignKey: 'itemId', as: 'item' })
     }
 
     return Item

@@ -1,24 +1,24 @@
-const {check, body} = require('express-validator');
-const { getUsers } = require('../database/db');
-let bcrypt = require('bcryptjs');
-
+const { check, body } = require('express-validator')
+const db = require('../database/models')
 
 module.exports = [
     check('email')
     .notEmpty()
     .withMessage('Debes ingresar el correo electronico').bail()
     .isEmail()
-    .withMessage('Debes ingresar un correo válido'), 
+    .withMessage('Debes ingresar un correo válido'),
 
     body('email')
-    .custom(value => {
-        let user = getUsers().find( user => user.email === value)
-
-        if(user !== undefined){
-            return true
-        }else{
-            return false
-        }
+    .custom((value, { req }) => {
+        return db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        }).then(user => {
+            return user ? true : false
+        }).catch(err => {
+            console.log(err)
+        })
     })
     .withMessage("Correo no registrado"),
 
@@ -27,10 +27,16 @@ module.exports = [
     .withMessage('Debes escribir tu contraseña'),
 
     body('pass')
-    .custom((value, {req}) => {
-        let user = getUsers().find(user => user.email === req.body.email)
-
-        return bcrypt.compareSync(value, user.pass)
+    .custom((value, { req }) => {
+        return db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        }).then(user => {
+            return user.verifyPassword(value)
+        }).catch(err => {
+            console.log(err)
+        })
     })
     .withMessage('Contraseña inválida')
 ]

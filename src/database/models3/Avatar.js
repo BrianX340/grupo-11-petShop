@@ -18,12 +18,5 @@ module.exports = (sequalize, dataTypes) => {
         timestamps: true
     })
 
-    Avatar.associate = (models) => {
-        Avatar.belongsToMany(models.User, {
-            as: "users",
-            foreignKey:"userId"
-        })
-    }
-
     return Avatar
 }

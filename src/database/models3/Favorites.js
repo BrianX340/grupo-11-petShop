@@ -1,6 +1,8 @@
+const { DataTypes } = require('sequelize')
+
 module.exports = (sequalize, dataTypes) => {
 
-    let { INTEGER} = dataTypes
+    let { INTEGER } = dataTypes
 
     Favorites = sequalize.define('Favorites', {
         id: {
@@ -8,17 +10,13 @@ module.exports = (sequalize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
-        }
+        },
+        userId: DataTypes.INTEGER,
+        productId: DataTypes.INTEGER
     }, {
         tableName: "favorites",
         timestamps: true
     })
 
-    Favorites.associate = (models) => {
-        Favorites.belongsTo(models.User, {
-            as: "user",
-            foreignKey:{ name : "userId", allowNull : false}
-        })
-    }
     return Favorites
 }
