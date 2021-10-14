@@ -1,7 +1,7 @@
 const { userCreate } = require('../database/db')
 const { validationResult } = require('express-validator')
 let bcrypt = require('bcryptjs')
-const db = require('../database/models')
+const { User, Avatars } = require('../database/models')
 
 module.exports = {
     carritoCompras: (req, res) => {
@@ -32,30 +32,34 @@ module.exports = {
 
     /* Perfil de usuario */
     profile: (req, res) => {
-        let user = getUsers().find(user => user.id === req.session.user.id)
         data = {
             session: req.session ? req.session : ""
         }
         res.render('users//userProfile', {
-            user,
             data
         })
     },
 
     /* Edición de perfil */
     profileEdit: (req, res) => {
-        let user = getUsers().find(user => user.id === req.session.user.id)
-            /* res.send(user) */
+
+        /* res.send(user) */
         data = {
             session: req.session ? req.session : ""
         }
-        res.render('users//editProfile', //renderizar formulario
-            {
-                user,
-                data,
-                avatarList: getAvatarList()
-            }
-        )
+
+        //obtenemos los avatares
+        Avatars.findAll()
+            .then(avatares => {
+                console.log(avatares)
+                res.render('users//editProfile', //renderizar formulario
+                    {
+                        data,
+                        avatarList: avatares
+                    }
+                )
+            })
+
     },
 
     /* actualización de perfil */
@@ -107,7 +111,7 @@ module.exports = {
             session: req.session ? req.session : ""
         }
         if (errors.isEmpty()) {
-            db.User.findOne({
+            User.findOne({
                 where: {
                     email: req.body.email
                 },

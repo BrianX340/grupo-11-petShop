@@ -2,7 +2,6 @@
 
 module.exports = {
     home: (req, res) => {
-        console.log('asdas', req.session)
         data = {
             bestSells: [] /* getBestSells() */ ,
             promotions: [] /* getPromotions() */ ,
