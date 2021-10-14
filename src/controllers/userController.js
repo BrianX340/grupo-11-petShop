@@ -107,32 +107,33 @@ module.exports = {
             session: req.session ? req.session : ""
         }
         if (errors.isEmpty()) {
-
             db.User.findOne({
                 where: {
                     email: req.body.email
-                }
+                },
+                include: [{
+                    association: "avatar"
+                }]
             }).then(user => {
-                /* console.log('aca')
-                console.log(user)
-                console.log('aca') */
-                //req.session.user = user
+                try {
+                    if (user) {
+                        req.session.user = user
+                        res.locals.user = req.session.user
+                        let time = 1000 * 60 * 60 * 24
+                        if (req.body.remember) {
+                            res.cookie("usersPet", req.session.user, { expires: new Date(Date.now() + time), httpOnly: true })
+                        }
+
+                        res.redirect('/')
+                    } else {
+                        res.redirect('/ps/register')
+                    }
+                } catch {
+                    res.redirect('/ps/register')
+                }
             }).catch(err => {
                 console.log(err)
             })
-
-
-            let time = 1000 * 60 * 60 * 24
-
-            if (req.body.remember) {
-                res.cookie("usersPet", req.session.user, { expires: new Date(Date.now() + time), httpOnly: true })
-            }
-
-            res.locals.user = req.session.user
-
-            /*  res.send(req.session.user) */
-
-            res.redirect('/')
 
         } else {
             res.render('users//login', {
@@ -148,21 +149,18 @@ module.exports = {
             session: req.session ? req.session : ""
         }
         if (errors.isEmpty()) {
+            delete req.body.pass2
+            req.body.pass = bcrypt.hashSync(req.body.pass, 10)
 
-            newUser = {
+            newUser = userCreate({
                 ...req.body,
                 role: 1,
-                avatar: "cat01.svg",
+                avatarId: 1, //req.file ? req.file.filename : 1,
                 tel: "",
-                pc: "",
-                salt: "",
-                favorites: {}
-            }
+                salt: ""
+            })
 
-            delete newUser.pass2
-            newUser.pass = bcrypt.hashSync(newUser.pass, 10)
-
-            if (userCreate(newUser)) {
+            if (newUser) {
                 res.redirect('/ps/login')
             } else {
                 res.redirect('/')

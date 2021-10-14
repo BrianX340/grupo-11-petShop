@@ -1,41 +1,36 @@
 module.exports = (sequalize, dataTypes) => {
 
-    let { INTEGER, STRING } = dataTypes
+    let { INTEGER } = dataTypes
 
-    Address = sequalize.define('Address', {
+    return sequalize.define('Order', {
         id: {
             type: INTEGER(),
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
+        cartId: {
+            type: INTEGER(),
+            allowNull: false
+        },
+        userId: {
+            type: INTEGER(),
+            allowNull: false
+        },
         address: {
-            type: STRING(50),
+            type: INTEGER(),
             allowNull: false
         },
-        city: {
-            type: STRING(50),
+        paymentId: {
+            type: INTEGER(),
             allowNull: false
         },
-        state: {
-            type: STRING(50),
-            allowNull: false
-        },
-        country: {
-            type: STRING(50),
-            allowNull: false
-        },
-        cp: {
+        delivered: {
             type: INTEGER(),
             allowNull: false
         }
     }, {
-        tableName: "address",
+        tableName: "order",
         timestamps: true
     })
-
-    Address.associate = (models) => {
-        Address.belongsTo(models.User, { foreignKey: 'userId' })
-    }
-    return Address
 }

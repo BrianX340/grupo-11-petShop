@@ -2,12 +2,12 @@
 
 module.exports = {
     home: (req, res) => {
+        console.log('asdas', req.session)
         data = {
-            favorites: [],
             bestSells: [] /* getBestSells() */ ,
             promotions: [] /* getPromotions() */ ,
             session: req.session ? req.session : '',
-            favorites: req.session.user ? req.session.user.favorites : '',
+            favorites: { 2: true, 4: true, 6: true }, //req.session.user ? req.session.user.favorites : '',
             carrouselImages: [
                 "/img/banersCarrousel/banner01.jpg"
             ]
