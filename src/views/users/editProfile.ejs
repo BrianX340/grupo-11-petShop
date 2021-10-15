@@ -39,15 +39,24 @@
                                 <input class="editProfile_input" type="text" name="tel" placeholder="Ingresá tu teléfono" value="<%= data.session.user.tel ? data.session.user.tel : " " %>">
                             </div>
                             <div class="editProfile_inputContainer">
-                                <input class="editProfile_input" type="text" name="address" placeholder="Domicilio" value="<%= data.session.user.address ? data.session.user.address : " " %>">
+                                <input class="editProfile_input" type="text" name="address" placeholder="Domicilio" value="<%= data.session.user.address.address ? data.session.user.address.address : " " %>">
                             </div>
                             <div class="editProfile_inputContainer">
-                                <input class="editProfile_input" type="text" name="cp" placeholder="Código postal" value="<%= data.session.user.pc ? data.session.user.pc : " " %>">
+                                <input class="editProfile_input" type="text" name="cp" placeholder="Código postal" value="<%= data.session.user.address.cp ? data.session.user.address.cp : " " %>">
+                            </div>
+                            <div class="editProfile_inputContainer">
+                                <input class="editProfile_input" type="text" name="state" placeholder="Provincia" value="<%= data.session.user.address.state ? data.session.user.address.state : " " %>">
+                            </div>
+                            <div class="editProfile_inputContainer">
+                                <input class="editProfile_input" type="text" name="city" placeholder="Localidad" value="<%= data.session.user.address.city ? data.session.user.address.city : " " %>">
+                            </div>
+                            <div class="editProfile_inputContainer">
+                                <input class="editProfile_input" type="text" name="country" placeholder="Pais" value="<%= data.session.user.address.country ? data.session.user.address.country : " " %>">
                             </div>
                         </section>
 
                         <section class="editProfile_select">
-                            <div>
+                            <!-- <div>
                                 <select class="editProfile_selectContainer" name="province" id="">
                                 <option value="">Provincia</option>
                             </select>
@@ -56,7 +65,7 @@
                                 <select class="editProfile_selectContainer" name="city" id="">
                                 <option value="">Localidad</option>
                             </select>
-                            </div>
+                            </div> -->
 
                             <div class="avatarSelect">
                                 <input type="text" id='avatarId' name='avatar' value='<%= data.session.user.avatarId %>' style='display:none'>

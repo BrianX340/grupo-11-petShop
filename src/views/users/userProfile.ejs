@@ -30,7 +30,7 @@
                             <%= data.session.user.name %>
                         </p>
                         <p class="userProfileItem">Apellido:
-                            <%= data.session.user.last_name %>
+                            <%= data.session.user.lastName %>
                         </p>
                         <p class="userProfileItem">Email:
                             <%= data.session.user.email %>
@@ -42,16 +42,19 @@
                     <div class="userProfileBox">
                         <h3 class="userProfileTitle">Datos de contacto:</h3>
                         <p class="userProfileItem">Dirección:
-                            <%= data.session.user.address ? data.session.user.address : "------" %>
+                            <%= data.session.user.address.address ? data.session.user.address.address : "------" %>
                         </p>
                         <p class="userProfileItem">Código postal:
-                            <%= data.session.user.cp ? data.session.user.cp : "------" %>
+                            <%= data.session.user.address.cp ? data.session.user.address.cp : "------" %>
                         </p>
                         <p class="userProfileItem">Provincia:
-                            <%= data.session.user.province ? data.session.user.province : "------" %>
+                            <%= data.session.user.address.state ? data.session.user.address.state : "------" %>
                         </p>
                         <p class="userProfileItem">Localidad:
-                            <%= data.session.user.city ? data.session.user.city : "------" %>
+                            <%= data.session.user.address.city ? data.session.user.address.city : "------" %>
+                        </p>
+                        <p class="userProfileItem">Pais:
+                            <%= data.session.user.address.country ? data.session.user.address.country : "------" %>
                         </p>
                     </div>
             </div>

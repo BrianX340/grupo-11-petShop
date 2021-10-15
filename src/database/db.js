@@ -4,49 +4,36 @@ module.exports = {
     updateUser: (id, data) => {
 
         avatarId = data.avatarId
+        addressId = data.addressId
         addressData = {
             address: data.address,
-            state: data.province,
+            state: data.state,
             city: data.city,
-            country: 'tontolandia', //falta tomar este dato
+            country: data.country,
             cp: data.cp,
         }
 
-        delete data.address
-        delete data.province
+        delete data.cp
         delete data.city
         delete data.state
-        delete data.cp
+        delete data.address
+        delete data.province
         delete data.avatarId
+        delete data.addressId
 
-        /* addressId = db.Address.create(addressData)
-            .then(address => {
-                return address.id
-            }).catch(err => {
-                console.log(err)
-                return false
-            }) */
-
-        return db.User.findOne({ where: { id: id } })
-            .then(user => {
-                if (user.addressId) {
-                    //borramos address existente
-                }
-
-                if (addressId) {
-                    //si se creo el addres se coloca
-                    user.update({
-                        ...data,
-                        addressId
-                    })
-                }
-
-
-                return user
+        return Promise.all([
+                db.User.update({...data }, { where: { id: id } }),
+                db.Address.update({...addressData }, { where: { id: addressId } })
+            ])
+            .then(([user, address]) => {
+                return 1
             })
-
+            .catch(error => {
+                return 0
+            })
     },
     userCreate: (userData) => {
+
 
         return db.Address.create({
                 address: '',
