@@ -44,5 +44,5 @@ module.exports = (sequalize, dataTypes) => {
         }) */
     }
 
-    return User
+    return Product
 }

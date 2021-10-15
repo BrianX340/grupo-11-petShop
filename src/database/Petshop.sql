@@ -1,5 +1,8 @@
+DROP DATABASE IF EXISTS `petshop`;
+
 CREATE DATABASE  IF NOT EXISTS `petshop` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `petshop`;
+
 CREATE TABLE `Address` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `address` VARCHAR(255),
@@ -67,6 +70,7 @@ CREATE TABLE `Favorites` (
 );
 
 
+
 ALTER TABLE `User` ADD CONSTRAINT `FK_518d99fb-cc12-4cf5-9b65-25ab0daa55f2` FOREIGN KEY (`addressId`) REFERENCES `Address`(`id`);
 
 ALTER TABLE `User` ADD CONSTRAINT `FK_ee352057-c5a3-4367-b0f3-2b529a7e3ca0` FOREIGN KEY (`avatarId`) REFERENCES `Avatars`(`id`);
@@ -82,3 +86,13 @@ INSERT INTO `avatars` (`id`, `path`) VALUES (NULL, 'c03.svg');
 INSERT INTO `avatars` (`id`, `path`) VALUES (NULL, 'd01.svg');
 INSERT INTO `avatars` (`id`, `path`) VALUES (NULL, 'd02.svg');
 INSERT INTO `avatars` (`id`, `path`) VALUES (NULL, 'd03.svg');
+
+INSERT INTO `categories` (`id`, `name`) VALUES ('1', 'Gato');
+INSERT INTO `categories` (`id`, `name`) VALUES ('2', 'Perro');
+
+INSERT INTO `subcategories` (`id`, `name`) VALUES ('1', 'Alimentos');
+INSERT INTO `subcategories` (`id`, `name`) VALUES ('2', 'Higiene');
+INSERT INTO `subcategories` (`id`, `name`) VALUES ('3', 'Juguetes');
+INSERT INTO `subcategories` (`id`, `name`) VALUES ('4', 'Camas');
+
+INSERT INTO `user` (`id`, `name`, `lastName`, `email`, `pass`, `role`) VALUES ('1', 'admin', NULL, 'admin@admin.com', '$2a$10$BNwOOwp.nvqO.CtHyFyA1uU2rGjSkJj0qS.IRw2xlTqW5S0lZdG9O', '0');
