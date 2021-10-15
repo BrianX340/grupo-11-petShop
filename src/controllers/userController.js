@@ -158,9 +158,7 @@ module.exports = {
             newUser = userCreate({
                 ...req.body,
                 role: 1,
-                avatarId: 1, //req.file ? req.file.filename : 1,
-                tel: "",
-                salt: ""
+                tel: ""
             })
 
 

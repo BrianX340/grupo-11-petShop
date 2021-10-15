@@ -33,6 +33,7 @@ module.exports = [
                 email: req.body.email
             }
         }).then(user => {
+            console.log(user)
             return user.verifyPassword(value)
         }).catch(err => {
             console.log(err)

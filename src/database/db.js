@@ -60,18 +60,20 @@ module.exports = {
                 cp: 0,
             })
             .then(address => {
-                userData.addressId = address.id
-                return db.User.create(userData)
-                    .then(user => {
-                        if (user[0]) {
-                            return user[0]
-                        } else {
-                            return false
-                        }
-                    }).catch(err => {
-                        console.log('ERROR RARO', err)
-                    })
-
+                return db.Avatars.findOne().then(avatar => {
+                    userData.addressId = address.id
+                    userData.avatarId = avatar.id
+                    return db.User.create(userData)
+                        .then(user => {
+                            if (user[0]) {
+                                return user[0]
+                            } else {
+                                return false
+                            }
+                        }).catch(err => {
+                            console.log('ERROR RARO', err)
+                        })
+                })
             }).catch(err => {
                 console.log(err)
                 return false
