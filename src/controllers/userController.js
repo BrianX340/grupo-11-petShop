@@ -51,7 +51,6 @@ module.exports = {
         //obtenemos los avatares
         Avatars.findAll()
             .then(avatares => {
-                console.log(avatares)
                 res.render('users//editProfile', //renderizar formulario
                     {
                         data,
@@ -71,41 +70,31 @@ module.exports = {
         if (errors.isEmpty()) {
             //cambiamos el slot de avatar a el nombre que le dio multer
             //req.body.avatar = req.file ? req.file.filename : user.avatar
-            console.log('estamos', req.body)
             id = req.session.user.id
             dataToUpdate = req.body
-            updateUser(id, dataToUpdate)
+            dataToUpdate.addressId = req.session.user.address.id
+            if (updateUser(id, dataToUpdate)) {
 
-            //let user = getUsers().find(user => user.id === +req.params.id)
-            let {
-                name,
-                lastName,
-                tel,
-                address,
-                pc,
-                province,
-                city,
-            } = req.body
-
-            /* user.name = name
-            user.last_name = last_name
-            user.tel = tel
-            user.address = address
-            user.pc = pc
-            user.province = province
-            user.city = city
-            user.avatar = req.file ? req.file.filename : user.avatar
- */
-            //writeUsersJSON(getUsers())
-
-            //updateUser(id=req.session.user.id,req.body)
+                User.findOne({
+                    where: {
+                        email: req.body.email
+                    },
+                    include: [{
+                            model: Avatars,
+                            as: 'avatar'
+                        },
+                        {
+                            model: Address,
+                            as: 'address'
+                        }
+                    ]
+                }).then(user => {
+                    req.session.user = user
+                })
 
 
-            //req.session.user = user
-
-
-            res.redirect('/ps/profile')
-
+                res.redirect('/ps/profile')
+            }
         } else {
             res.render('users/editProfile', {
                 errors: errors.mapped(),
@@ -164,13 +153,16 @@ module.exports = {
 
     processRegister: (req, res) => {
         let errors = validationResult(req)
+
         data = {
             session: req.session ? req.session : ""
         }
+
         if (errors.isEmpty()) {
             delete req.body.pass2
             delete req.body.terms
             req.body.pass = bcrypt.hashSync(req.body.pass, 10)
+
 
             newUser = userCreate({
                 ...req.body,
@@ -179,6 +171,7 @@ module.exports = {
                 tel: "",
                 salt: ""
             })
+
 
             if (newUser) {
                 res.redirect('/ps/login')
