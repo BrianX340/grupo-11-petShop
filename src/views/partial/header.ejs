@@ -27,7 +27,7 @@
                     <nav id="menu-nav">
                         <div class="avatarHeader">
                             <% if (data.session.user) { %>
-                                <img class="avatarHeaderImage" src="/img/avatars/<%= user.avatar.path %>">
+                                <img class="avatarHeaderImage" src="/img/avatars/<%= data.session.user.avatar.path %>">
                                 <% }else{ %>
                                     <i class="fas fa-user-circle fa-2x" aria-hidden="true"></i>
                                     <% } %>

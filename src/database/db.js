@@ -1,7 +1,7 @@
 const db = require('./models')
 
 module.exports = {
-    updateUser: (id, data) => {
+    updateUser: (id, data, callback) => {
 
         avatarId = data.avatarId
         addressId = data.addressId
@@ -21,12 +21,29 @@ module.exports = {
         delete data.avatarId
         delete data.addressId
 
-        return Promise.all([
-                db.User.update({...data }, { where: { id: id } }),
-                db.Address.update({...addressData }, { where: { id: addressId } })
+        addressQuery = db.Address.update({...addressData }, { where: { id: addressId } })
+        userQuery = db.User.update({...data }, { where: { id: id } })
+
+
+        Promise.all([
+                addressQuery,
+                userQuery
             ])
             .then(([user, address]) => {
-                return 1
+                userGet = db.User.findOne({
+                    where: { id: id },
+                    include: [{
+                            model: Avatars,
+                            as: 'avatar'
+                        },
+                        {
+                            model: Address,
+                            as: 'address'
+                        }
+                    ]
+                }).then(user => {
+                    callback(0, user)
+                })
             })
             .catch(error => {
                 return 0

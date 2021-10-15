@@ -73,28 +73,19 @@ module.exports = {
             id = req.session.user.id
             dataToUpdate = req.body
             dataToUpdate.addressId = req.session.user.address.id
-            if (updateUser(id, dataToUpdate)) {
 
-                User.findOne({
-                    where: {
-                        email: req.body.email
-                    },
-                    include: [{
-                            model: Avatars,
-                            as: 'avatar'
-                        },
-                        {
-                            model: Address,
-                            as: 'address'
-                        }
-                    ]
-                }).then(user => {
-                    req.session.user = user
-                })
+            updateUser(id, dataToUpdate, (err, editUser) => {
+                if (!err) {
+                    req.session.user = editUser
+                    res.locals.user = req.session.user
+                    let time = 1000 * 60 * 60 * 24
+                    res.cookie("usersPet", req.session.user, { expires: new Date(Date.now() + time), httpOnly: true })
+                    res.redirect('/ps/profile')
+                }
+            })
 
 
-                res.redirect('/ps/profile')
-            }
+
         } else {
             res.render('users/editProfile', {
                 errors: errors.mapped(),

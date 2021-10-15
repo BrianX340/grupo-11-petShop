@@ -1,5 +1,5 @@
-function viewCaterinaChat(active){
-    if (active){
+function viewCaterinaChat(active) {
+    if (active) {
         document.getElementById('wsp-chat').style.display = 'none'
         document.getElementById('chatFloat').style.display = 'flex'
     } else {
@@ -15,15 +15,13 @@ document.addEventListener('click', (event) => {
     try {
         elementId = event.path[0].id
         elementClass = event.path[0].className
-    }
-    catch {
+    } catch {
         elementId = event.target.id
         elementClass = event.path[0].className
     }
 
-    switch (elementId){
+    switch (elementId) {
         case 'catChat':
-            console.log('asd')
             viewCaterinaChat(1)
             break
     }
