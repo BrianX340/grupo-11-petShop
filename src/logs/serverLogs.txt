@@ -145,3 +145,6 @@ method: GET ## direccion: undefined ## ruta: / ## fecha: Fri Oct 15 2021 20:39:2
 method: GET ## direccion: undefined ## ruta: /admin ## fecha: Fri Oct 15 2021 20:39:28 GMT-0300 (hora estándar de Argentina) 
 method: GET ## direccion: undefined ## ruta: /search/br ## fecha: Fri Oct 15 2021 20:39:37 GMT-0300 (hora estándar de Argentina) 
 method: GET ## direccion: undefined ## ruta: /search/img/caterina.svg ## fecha: Fri Oct 15 2021 20:39:37 GMT-0300 (hora estándar de Argentina) 
+method: GET ## direccion: undefined ## ruta: /ps/logout ## fecha: Fri Oct 15 2021 20:53:37 GMT-0300 (hora estándar de Argentina) 
+method: GET ## direccion: undefined ## ruta: /ps/login ## fecha: Fri Oct 15 2021 20:53:37 GMT-0300 (hora estándar de Argentina) 
+method: GET ## direccion: undefined ## ruta: /search/br ## fecha: Fri Oct 15 2021 20:53:42 GMT-0300 (hora estándar de Argentina) 

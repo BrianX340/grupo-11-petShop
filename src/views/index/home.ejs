@@ -12,61 +12,62 @@
 <body id='body'>
     <%- include('../partial/header'); %>
 
-    <section id='all'>
+        <section id='all'>
 
-        <%- include('../partial/carrousel'); %>
+            <%- include('../partial/carrousel'); %>
 
-        <section id='pet-categories'>
-            <div class='pet-duo'>
-                <span>¿Que mascota tienes?</span>
-                <div class='categories'>
-                    <a href="/search/?pet=cat&category=all" class='pin-cat'><img src="/img/cat-vector.svg" alt=""></a>
-                    <a href="/search/?pet=dog&category=all" class='pin-dog'><img src="/img/dog-vector.svg" alt=""></a>
-                </div>
-            </div>
-            <div class='pet-cat-cate'>
+                <section id='pet-categories'>
+                    <div class='pet-duo'>
+                        <span>¿Que mascota tienes?</span>
+                        <div class='categories'>
+                            <a href="/search/?pet=1&category=all" class='pin-cat'><img src="/img/cat-vector.svg" alt=""></a>
+                            <a href="/search/?pet=2&category=all" class='pin-dog'><img src="/img/dog-vector.svg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class='pet-cat-cate'>
 
-            </div>
-            <div class='pet-dog-cate'>
+                    </div>
+                    <div class='pet-dog-cate'>
 
-            </div>
+                    </div>
+                </section>
+
+                <section id='promotions' class='box-cards'>
+
+                    <div class='promotions-title box-title'>
+                        <span>Promociones!</span>
+                    </div>
+
+                    <!--Comienza el include de la seccion que contiene las tarjetas PROMOCIONES-->
+                    <%- include('../partial/productCardPromotions'); %>
+                        <!--fin del las tarjetas-->
+
+                </section>
+
+                <section id='best-sell' class='box-cards'>
+
+                    <div class='best-sell-title box-title'>
+                        <span>Mas vendidos!</span>
+                    </div>
+
+                    <!--Comienza el include de la seccion que contiene las tarjetas MAS VENDIDOS-->
+                    <%- include('../partial/productCardBestSells'); %>
+                        <!--fin del las tarjetas-->
+
+                </section>
+
         </section>
 
-        <section id='promotions' class='box-cards'>
-
-            <div class='promotions-title box-title'>
-                <span>Promociones!</span>
-            </div>
-
-            <!--Comienza el include de la seccion que contiene las tarjetas PROMOCIONES-->
-                <%- include('../partial/productCardPromotions'); %>
-            <!--fin del las tarjetas-->
-
-        </section>
-
-        <section id='best-sell' class='box-cards'>
-
-            <div class='best-sell-title box-title'>
-                <span>Mas vendidos!</span>
-            </div>
-
-            <!--Comienza el include de la seccion que contiene las tarjetas MAS VENDIDOS-->
-            <%- include('../partial/productCardBestSells'); %>
-            <!--fin del las tarjetas-->
-
-        </section>
-
-    </section>
 
 
 
-
-    <%- include('../partial/footer'); %>
-    <%- include('../partial/carritoFlotante'); %>
-    <%- include('../partial/wsp-cat-chat'); %>
+        <%- include('../partial/footer'); %>
+            <%- include('../partial/carritoFlotante'); %>
+                <%- include('../partial/wsp-cat-chat'); %>
 
 
 </body>
 <script src="/js/home.js"></script>
 <script src="/js/partials/productHeart.js"></script>
+
 </html>

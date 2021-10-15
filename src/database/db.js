@@ -104,6 +104,62 @@ module.exports = {
             return false
         })
     },
+    searcherByPetsubCategory: (pet, subCategory, callback) => {
+
+        if (subCategory == 'all') {
+            if (pet == 'all') {
+                //retornamos la busqueda
+                return db.Product.findAll({
+                    limit: 60
+                }).then(search => {
+                    return search
+                }).catch(err => {
+                    console.log(err)
+                    return false
+                })
+            } else if (pet == '1' || pet == '2') {
+                //retornamos la busqueda filtrando todo lo de gato
+                return db.Product.findAll({
+                    limit: 60,
+                    where: {
+                        categoryId: pet
+                    }
+                }).then(search => {
+                    return search
+                }).catch(err => {
+                    console.log(err)
+                    return false
+                })
+            }
+        } else if (subCategory => 1 && subCategory <= 4) {
+            if (pet == 'all') {
+                //retornamos la busqueda
+                return db.Product.findAll({
+                    limit: 60
+                }).then(search => {
+                    return search
+                }).catch(err => {
+                    console.log(err)
+                    return false
+                })
+            } else if (pet == '1' || pet == '2') {
+                //retornamos la busqueda filtrando todo lo de gato o perro
+                return db.Product.findAll({
+                    limit: 60,
+                    where: {
+                        categoryId: pet,
+                        subCategoryId: subCategory
+                    }
+                }).then(search => {
+                    return search
+                }).catch(err => {
+                    console.log(err)
+                    return false
+                })
+            }
+        }
+
+    },
 
     getPromotions: () => {
         return dbPromotionsProducts
@@ -173,30 +229,5 @@ module.exports = {
         //return db.find()
     },
 
-    searcherByPetsubCategory: (pet, subCategory) => {
-        switch (subCategory) {
-            case 'all':
-                if (pet == 'all') {
-                    //retornamos la busqueda
-                    return db
-                } else if (pet == 'cat' || pet == 'dog') {
-                    //retornamos la busqueda filtrando todo lo de gato
-                    return db.filter(producto => producto.pet == pet)
-                }
-                break
 
-            case 'Alimentos':
-            case 'Higiene':
-            case 'Juguetes':
-            case 'Camas':
-                if (pet == 'all') {
-                    //retornamos la busqueda
-                    return db
-                } else if (pet == 'cat' || pet == 'dog') {
-                    //retornamos la busqueda filtrando todo lo de gato o perro
-                    return db.filter(producto => producto.subCategory == subCategory && producto.pet == pet)
-                }
-                break
-        }
-    }
 }
