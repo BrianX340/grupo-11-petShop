@@ -30,7 +30,7 @@ module.exports = {
                 userQuery
             ])
             .then(([user, address]) => {
-                userGet = db.User.findOne({
+                db.User.findOne({
                     where: { id: id },
                     include: [{
                             model: Avatars,
@@ -50,7 +50,6 @@ module.exports = {
             })
     },
     userCreate: (userData) => {
-
 
         return db.Address.create({
                 address: '',
@@ -80,6 +79,33 @@ module.exports = {
             })
 
     },
+    productCreate: (productData) => {
+        //a
+        console.log('asd')
+    },
+
+    productCreate: (product) => {
+        return db.Product.create({
+            name,
+            stock,
+            imgPath,
+            barcode,
+            buyPrice,
+            discount,
+            sellPrice,
+            totalViews,
+            valoration,
+            categoryId,
+            totalSells,
+            description,
+            subCategoryId,
+        }).then(product => {
+            return product
+        }).catch(err => {
+            return false
+        })
+    },
+
     getPromotions: () => {
         return dbPromotionsProducts
     },
@@ -137,19 +163,7 @@ module.exports = {
 
 
     },
-    saveOneProduct: (product) => {
-        return db.Product.create({
-            nombre: req.body.name.trim(),
-            precio: Number(req.body.price.trim()),
-            descripcion: descriptionReplaced,
-            descuento: Number(req.body.discount.trim()),
-            subcategoria_id: Number(req.body.subcategory),
-        }).then(product => {
-            return product
-        }).catch(err => {
-            return false
-        })
-    },
+
     getAllProducts: () => {
         return db //devolvemos la base de datos completa PRODUCTOS
     },

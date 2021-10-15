@@ -5,6 +5,18 @@ module.exports = [
     .notEmpty()
     .withMessage('Debes escribir el nombre del producto.').bail(),
 
+    check('stock')
+    .notEmpty()
+    .withMessage('Debes indicar una cantidad.').bail()
+    .isNumeric()
+    .withMessage("Solo puedes ingresar números."),
+
+    check('barcode')
+    .notEmpty()
+    .withMessage('Debes indicar un codigo de barras valido.').bail()
+    .isNumeric()
+    .withMessage("Solo puedes ingresar números."),
+
     check('buyPrice')
     .notEmpty()
     .withMessage('Coloca un monto.')
@@ -17,27 +29,17 @@ module.exports = [
     .isNumeric()
     .withMessage("Solo puedes ingresar números."),
 
+    check('valoration')
+    .notEmpty()
+    .withMessage('Coloca un numero entre 1 y 5.')
+    .isNumeric()
+    .withMessage("Solo puedes ingresar números."),
+
     check('description')
     .notEmpty()
     .withMessage('Debes escribir una descripcion.').bail(),
 
-    check('amount')
-    .notEmpty()
-    .withMessage('Debes indicar una cantidad.').bail()
-    .isNumeric()
-    .withMessage("Solo puedes ingresar números."),
-
-    check('barcode')
-    .notEmpty()
-    .withMessage('Debes indicar un codigo de barras valido.').bail()
-    .isNumeric()
-    .withMessage("Solo puedes ingresar números."),
-
-    check('mark')
-    .notEmpty()
-    .withMessage('Debes indicar la marca del producto.').bail(),
-
-    body('category')
+    body('categoryId')
     .custom(value => {
         switch (value) {
             case '0':
@@ -52,7 +54,7 @@ module.exports = [
     .withMessage('Debes indicar el tipo de animal correspondiente.'),
 
 
-    body('subCategory')
+    body('subCategoryId')
     .custom(value => {
         switch (value) {
             case 'alimentos':
@@ -67,5 +69,11 @@ module.exports = [
         }
     })
     .withMessage('Debes indicar el tipo de producto.'),
+
+    check('mark')
+    .notEmpty()
+    .withMessage('Debes indicar la marca del producto.').bail(),
+
+
 
 ]

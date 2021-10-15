@@ -56,23 +56,28 @@
                         </div>
 
                         <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Descuento: </span>
+                            <input type="number" class="form-control" placeholder="Ingrese el descuento..." aria-describedby="basic-addon1" id="inputDiscountAdd" name="discount">
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Valoracion: </span>
+                            <input type="number" class="form-control" placeholder="Ingrese el descuento..." aria-describedby="basic-addon1" id="inputValorationAdd" name="valoration">
+                        </div>
+
+                        <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Descripcion: </span>
                             <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputDescriptionAdd" name="description">
                         </div>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Cantidad: </span>
-                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputAmountAdd" name="amount">
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputAmountAdd" name="stock">
                         </div>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Codigo de Barras: </span>
                             <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputBarcodeAdd" name="barcode">
-                        </div>
-
-                        <div class="input-group">
-                            <span class="input-group-addon" id="basic-addon1">Marca: </span>
-                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputMarkAdd" name="mark">
                         </div>
 
                         <div class="input-group">
@@ -88,10 +93,10 @@
                             <span class="input-group-addon" id="basic-addon1">Tipo de Producto: </span>
                             <select class="form-control" name="subCategory" id="inputSubCategoryAdd" form="formCreateAdd">
                                 <option hidden value="default">Elija tipo de producto</option>
-                                <option value="alimentos">Alimentos</option>
-                                <option value="higiene">Higiene</option>
-                                <option value="juguetes">Juguetes</option>
-                                <option value="camas">Camas</option>
+                                <option value="0">Alimentos</option>
+                                <option value="1">Higiene</option>
+                                <option value="2">Juguetes</option>
+                                <option value="3">Camas</option>
                             </select>
                         </div>
 

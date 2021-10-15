@@ -44,7 +44,6 @@ CREATE TABLE `Product` (
    `totalViews` INT,
    `categoryId` INT,
    `subCategoryId` INT,
-   `brandId` INT,
    PRIMARY KEY (`id`)
 );
 
@@ -55,12 +54,6 @@ CREATE TABLE `Categories` (
 );
 
 CREATE TABLE `SubCategories` (
-   `id` INT NOT NULL AUTO_INCREMENT,
-   `name` VARCHAR(255),
-   PRIMARY KEY (`id`)
-);
-
-CREATE TABLE `Brand` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `name` VARCHAR(255),
    PRIMARY KEY (`id`)
@@ -79,8 +72,6 @@ ALTER TABLE `User` ADD CONSTRAINT `FK_518d99fb-cc12-4cf5-9b65-25ab0daa55f2` FORE
 ALTER TABLE `User` ADD CONSTRAINT `FK_ee352057-c5a3-4367-b0f3-2b529a7e3ca0` FOREIGN KEY (`avatarId`) REFERENCES `Avatars`(`id`);
 
 ALTER TABLE `Product` ADD CONSTRAINT `FK_2b8fa4d0-899e-4a47-b856-0b97d43636b4` FOREIGN KEY (`categoryId`) REFERENCES `Categories`(`id`);
-
-ALTER TABLE `Product` ADD CONSTRAINT `FK_11fdcc13-b647-4e0b-be68-36581c70b46c` FOREIGN KEY (`brandId`) REFERENCES `Brand`(`id`);
 
 ALTER TABLE `Product` ADD CONSTRAINT `FK_8f10db6b-567d-4e1e-ad4d-49699c8c02da` FOREIGN KEY (`subCategoryId`) REFERENCES `SubCategories`(`id`);
 

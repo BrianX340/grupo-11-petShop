@@ -1,17 +1,5 @@
 const { validationResult } = require('express-validator')
-
-
-/* db.Subcategory.findAll({
-    include : [
-        {
-        association: "category",
-        include: [{ 
-            association: "products",
-            include: [{association: "productImage"}]
-        }]
-    }
-]
-}) */
+const { productCreate } = require('../database/db')
 
 module.exports = {
     adminPanelView: (req, res) => {
@@ -87,9 +75,12 @@ module.exports = {
         }
 
         if (errors.isEmpty()) {
-            newProduct = { id: "", ...req.body, img }
+            newProduct = {
+                ...req.body,
+                imgPath: img
+            }
 
-            if (saveOneProduct(newProduct)) {
+            if (productCreate(newProduct)) {
                 data.productStatus = 'created'
             } else {
                 data.productStatus = 'failed'

@@ -28,8 +28,6 @@ module.exports = {
     //    res.render('users//historial')
     //},
     //FAVORITOS
-
-
     /* Perfil de usuario */
     profile: (req, res) => {
         data = {
@@ -39,7 +37,6 @@ module.exports = {
             data
         })
     },
-
     /* Edición de perfil */
     profileEdit: (req, res) => {
 
@@ -60,7 +57,6 @@ module.exports = {
             })
 
     },
-
     /* actualización de perfil */
     updateProfile: (req, res) => {
         let errors = validationResult(req)
@@ -141,7 +137,6 @@ module.exports = {
             })
         }
     },
-
     processRegister: (req, res) => {
         let errors = validationResult(req)
 
@@ -176,7 +171,6 @@ module.exports = {
             })
         }
     },
-
     logout: (req, res) => {
         req.session.destroy()
         if (req.cookies.usersPet) {
@@ -184,5 +178,4 @@ module.exports = {
         }
         res.redirect('/')
     }
-
 }
