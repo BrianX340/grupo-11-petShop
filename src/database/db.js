@@ -1,4 +1,5 @@
 const db = require('./models')
+const sequelize = require('sequelize')
 
 module.exports = {
     updateUser: (id, data, callback) => {
@@ -80,28 +81,26 @@ module.exports = {
 
     },
     productCreate: (productData) => {
-        //a
-        console.log('asd')
-    },
-
-    productCreate: (product) => {
         return db.Product.create({
-            name,
-            stock,
-            imgPath,
-            barcode,
-            buyPrice,
-            discount,
-            sellPrice,
-            totalViews,
-            valoration,
-            categoryId,
-            totalSells,
-            description,
-            subCategoryId,
+            ...productData,
+            totalViews: 0,
+            totalSells: 0,
         }).then(product => {
             return product
         }).catch(err => {
+            return false
+        })
+    },
+    searchProductByName: (productName) => {
+        //Filtramos la base de datos, devolvera los resultados que incluyan el texto recibido por parametro
+        return db.Product.findAll({
+            where: {
+                name: sequelize.where(sequelize.fn('LOWER', sequelize.col('name')), 'LIKE', '%' + productName + '%')
+            }
+        }).then(search => {
+            return search
+        }).catch(err => {
+            console.log(err)
             return false
         })
     },
@@ -168,10 +167,7 @@ module.exports = {
         return db //devolvemos la base de datos completa PRODUCTOS
     },
 
-    searchProductByName: (productName) => {
-        //Filtramos la base de datos, devolvera los resultados que incluyan el texto recibido por parametro
-        return db.filter((product) => product.name.toLowerCase().includes(productName.toLowerCase()))
-    },
+
 
     searchOne: (id) => {
         //return db.find()

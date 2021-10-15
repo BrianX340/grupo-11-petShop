@@ -21,7 +21,7 @@ const {
 
 } = require('../controllers/adminController')
 
-const adminCrudValidator = require('../validations/adminCrudValidator')
+const createProductValidator = require('../validations/createProductValidator')
     /* */
 let productUploadImage = require('../middlewares/productUploadImage')
 const isAdminContinue = require('../middlewares/isAdminContinue')
@@ -51,7 +51,7 @@ router.delete('/products/:id', deleteProduct)
 router.put('/products/:id', productUploadImage.single("image"), editProduct)
 
 //Create Products
-router.post('/products/create', productUploadImage.single("image"), adminCrudValidator, createProduct)
+router.post('/products/create', productUploadImage.single("image"), createProductValidator, createProduct)
 
 
 

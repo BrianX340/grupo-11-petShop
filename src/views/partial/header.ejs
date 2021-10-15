@@ -27,10 +27,14 @@
                     <nav id="menu-nav">
                         <div class="avatarHeader">
                             <% if (data.session.user) { %>
-                                <img class="avatarHeaderImage" src="/img/avatars/<%= data.session.user.avatar.path %>">
-                                <% }else{ %>
-                                    <i class="fas fa-user-circle fa-2x" aria-hidden="true"></i>
-                                    <% } %>
+                                <% if (data.session.user.role == 0) { %>
+                                    <img class="avatarHeaderImage" src="/img/avatars/admin.svg">
+                                    <% }else{ %>
+                                        <img class="avatarHeaderImage" src="/img/avatars/<%= data.session.user.avatar.path %>">
+                                        <% } %>
+                                            <% }else{ %>
+                                                <i class="fas fa-user-circle fa-2x" aria-hidden="true"></i>
+                                                <% } %>
 
                         </div>
                         <!-- start menu -->
@@ -54,8 +58,8 @@
                                         <ul>
                                             <li>
                                                 <a href="#">
-                                                    Admin
-                                                </a>
+                  Admin
+                </a>
                                                 <ul>
                                                     <li class="li-menu"><a href="/ps/logout">Cerrar sesión</a></li>
                                                 </ul>

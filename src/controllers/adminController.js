@@ -26,7 +26,7 @@ module.exports = {
         data = {
             session: req.session ? req.session : ""
         }
-        res.render('admin//products//editProduct', { data })
+        res.render('admin//products//searchProduct', { data })
     },
     detailProductView: (req, res) => {
         data = {
@@ -77,7 +77,7 @@ module.exports = {
         if (errors.isEmpty()) {
             newProduct = {
                 ...req.body,
-                imgPath: img
+                imgPath: img[0]
             }
 
             if (productCreate(newProduct)) {

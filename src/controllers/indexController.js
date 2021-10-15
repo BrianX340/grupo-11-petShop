@@ -1,4 +1,4 @@
-// const { getPromotions, getBestSells, oneProduct, getAllProducts , searchProductByName, searcherByPetsubCategory } = require('../database/db');
+const { getPromotions, getBestSells, oneProduct, getAllProducts, searchProductByName, searcherByPetsubCategory } = require('../database/db');
 
 module.exports = {
     home: (req, res) => {
@@ -20,12 +20,18 @@ module.exports = {
         subCategory = req.query.category
 
         search = searchText ? searchProductByName(searchText) : searcherByPetsubCategory(pet, subCategory)
+        search.then(search => {
+            if (search) {
+                data = {
+                    search,
+                    session: req.session ? req.session : ""
+                }
 
-        data = {
-            search
-        }
+                res.render('index//searchPage', { data })
+            }
+            res.render('index//searchPage', {})
+        })
 
-        res.render('index//searchPage', { data, session: req.session ? req.session : "" })
     },
     detail: (req, res) => {
         let productId = +req.params.id;
