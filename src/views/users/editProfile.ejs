@@ -27,7 +27,7 @@
                                     <% } %>
                             </div>
                             <div class="editProfile_inputContainer">
-                                <input class="editProfile_input" type="text" name="last_name" placeholder="Apellido" value="<%= locals.old ? old.lastName : data.session.user.lastName %>">
+                                <input class="editProfile_input" type="text" name="lastName" placeholder="Apellido" value="<%= locals.old ? old.lastName : data.session.user.lastName %>">
                                 <% if (locals.errors && errors.last_name) { %>
                                     <small class="text-danger"><%= errors.last_name.msg %> </small>
                                     <% } %>
@@ -42,7 +42,7 @@
                                 <input class="editProfile_input" type="text" name="address" placeholder="Domicilio" value="<%= data.session.user.address ? data.session.user.address : " " %>">
                             </div>
                             <div class="editProfile_inputContainer">
-                                <input class="editProfile_input" type="text" name="pc" placeholder="Código postal" value="<%= data.session.user.pc ? data.session.user.pc : " " %>">
+                                <input class="editProfile_input" type="text" name="cp" placeholder="Código postal" value="<%= data.session.user.pc ? data.session.user.pc : " " %>">
                             </div>
                         </section>
 
@@ -59,7 +59,7 @@
                             </div>
 
                             <div class="avatarSelect">
-                                <input type="text" id='avatarId' name='avatar' value='<%= data.session.user.avatar %>' style='display:none'>
+                                <input type="text" id='avatarId' name='avatar' value='<%= data.session.user.avatarId %>' style='display:none'>
                                 <button id='selectAvatarButton'>
                                 Seleccionar Avatar
                             </button>
@@ -69,10 +69,10 @@
                                             <span>Seleccione un Avatar</span>
                                         </div>
                                         <div class='avatarsContainer'>
-                                            <% avatarList.forEach(avatarDir => { %>
+                                            <% avatarList.forEach(avatar => { %>
                                                 <div class='imgAvatar'>
                                                     <figure>
-                                                        <img src="/img/avatars/<%= avatarDir %>" id='<%= avatarDir %>' class='avatarClicked' alt="">
+                                                        <img src="/img/avatars/<%= avatar.path %>" id='<%= avatar.id %>' class='avatarClicked' alt="">
                                                     </figure>
                                                 </div>
                                                 <% }) %>

@@ -1,17 +1,78 @@
 const db = require('./models')
 
 module.exports = {
-    userCreate: (userData) => {
-        return db.User.create(userData)
-            .then(user => {
-                if (user[0]) {
-                    return user[0]
-                } else {
-                    return false
-                }
+    updateUser: (id, data) => {
+
+        avatarId = data.avatarId
+        addressData = {
+            address: data.address,
+            state: data.province,
+            city: data.city,
+            country: 'tontolandia', //falta tomar este dato
+            cp: data.cp,
+        }
+
+        delete data.address
+        delete data.province
+        delete data.city
+        delete data.state
+        delete data.cp
+        delete data.avatarId
+
+        /* addressId = db.Address.create(addressData)
+            .then(address => {
+                return address.id
             }).catch(err => {
-                console.log('ERROR RARO', err)
+                console.log(err)
+                return false
+            }) */
+
+        return db.User.findOne({ where: { id: id } })
+            .then(user => {
+                if (user.addressId) {
+                    //borramos address existente
+                }
+
+                if (addressId) {
+                    //si se creo el addres se coloca
+                    user.update({
+                        ...data,
+                        addressId
+                    })
+                }
+
+
+                return user
             })
+
+    },
+    userCreate: (userData) => {
+
+        return db.Address.create({
+                address: '',
+                city: '',
+                state: '',
+                country: '',
+                cp: 0,
+            })
+            .then(address => {
+                userData.addressId = address.id
+                return db.User.create(userData)
+                    .then(user => {
+                        if (user[0]) {
+                            return user[0]
+                        } else {
+                            return false
+                        }
+                    }).catch(err => {
+                        console.log('ERROR RARO', err)
+                    })
+
+            }).catch(err => {
+                console.log(err)
+                return false
+            })
+
     },
     getPromotions: () => {
         return dbPromotionsProducts

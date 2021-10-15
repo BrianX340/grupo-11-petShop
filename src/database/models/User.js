@@ -32,6 +32,13 @@ module.exports = (sequalize, dataTypes) => {
             },
             as: 'avatar'
         })
+        User.belongsTo(models.Address, {
+            foreignKey: {
+                name: 'addressId',
+                allowNull: false
+            },
+            as: 'address'
+        })
     }
 
 

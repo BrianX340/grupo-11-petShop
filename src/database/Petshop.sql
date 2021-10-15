@@ -1,25 +1,23 @@
 CREATE DATABASE  IF NOT EXISTS `petshop` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `petshop`;
-
 CREATE TABLE `Address` (
-   `id` INT,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `address` VARCHAR(255),
    `city` VARCHAR(255),
    `state` VARCHAR(255),
    `country` VARCHAR(255),
    `cp` INT,
-   `userId` INT,
    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Avatars` (
-   `id` INT,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `path` VARCHAR(255),
    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `User` (
-   `id` INT,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `name` VARCHAR(255),
    `lastName` VARCHAR(255),
    `email` VARCHAR(255),
@@ -32,7 +30,7 @@ CREATE TABLE `User` (
 );
 
 CREATE TABLE `Product` (
-   `id` INT,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `name` VARCHAR(255),
    `buyPrice` FLOAT,
    `sellPrice` FLOAT,
@@ -51,25 +49,25 @@ CREATE TABLE `Product` (
 );
 
 CREATE TABLE `Categories` (
-   `id` INT,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `name` VARCHAR(255),
    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `SubCategories` (
-   `id` INT,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `name` VARCHAR(255),
    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Brand` (
-   `id` INT,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `name` VARCHAR(255),
    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Favorites` (
-   `id` INT,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `productId` INT,
    `userId` INT,
    PRIMARY KEY (`id`)

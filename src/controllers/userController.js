@@ -1,7 +1,7 @@
-const { userCreate } = require('../database/db')
+const { userCreate, updateUser } = require('../database/db')
 const { validationResult } = require('express-validator')
 let bcrypt = require('bcryptjs')
-const { User, Avatars } = require('../database/models')
+const { User, Avatars, Address } = require('../database/models')
 
 module.exports = {
     carritoCompras: (req, res) => {
@@ -69,10 +69,17 @@ module.exports = {
             session: req.session ? req.session : ""
         }
         if (errors.isEmpty()) {
-            let user = getUsers().find(user => user.id === +req.params.id)
+            //cambiamos el slot de avatar a el nombre que le dio multer
+            //req.body.avatar = req.file ? req.file.filename : user.avatar
+            console.log('estamos', req.body)
+            id = req.session.user.id
+            dataToUpdate = req.body
+            updateUser(id, dataToUpdate)
+
+            //let user = getUsers().find(user => user.id === +req.params.id)
             let {
                 name,
-                last_name,
+                lastName,
                 tel,
                 address,
                 pc,
@@ -80,7 +87,7 @@ module.exports = {
                 city,
             } = req.body
 
-            user.name = name
+            /* user.name = name
             user.last_name = last_name
             user.tel = tel
             user.address = address
@@ -88,11 +95,13 @@ module.exports = {
             user.province = province
             user.city = city
             user.avatar = req.file ? req.file.filename : user.avatar
+ */
+            //writeUsersJSON(getUsers())
 
-            writeUsersJSON(getUsers())
+            //updateUser(id=req.session.user.id,req.body)
 
 
-            req.session.user = user
+            //req.session.user = user
 
 
             res.redirect('/ps/profile')
@@ -116,8 +125,14 @@ module.exports = {
                     email: req.body.email
                 },
                 include: [{
-                    association: "avatar"
-                }]
+                        model: Avatars,
+                        as: 'avatar'
+                    },
+                    {
+                        model: Address,
+                        as: 'address'
+                    }
+                ]
             }).then(user => {
                 try {
                     if (user) {
@@ -155,6 +170,8 @@ module.exports = {
         if (errors.isEmpty()) {
             delete req.body.pass2
             req.body.pass = bcrypt.hashSync(req.body.pass, 10)
+
+            delete req.body.terms
 
             newUser = userCreate({
                 ...req.body,
