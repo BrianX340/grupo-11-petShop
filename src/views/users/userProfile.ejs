@@ -23,39 +23,50 @@
 
                 </section>
 
-                <section class="box_userProfile">
-                    <div class="userProfile_box">
-                        <h3 class="userProfile_title">Datos personales:</h3>
-                        <p class="userProfile_item">Nombre:
+                <section class="boxUserProfile">
+                    <div class="userProfileBox">
+                        <h3 class="userProfileTitle">Datos personales:</h3>
+                        <p class="userProfileItem">Nombre:
                             <%= data.session.user.name %>
                         </p>
-                        <p class="userProfile_item">Apellido:
+                        <p class="userProfileItem">Apellido:
                             <%= data.session.user.last_name %>
                         </p>
-                        <p class="userProfile_item">Email:
+                        <p class="userProfileItem">Email:
                             <%= data.session.user.email %>
                         </p>
-                        <p class="userProfile_item">Teléfono:
+                        <p class="userProfileItem">Teléfono:
                             <%= data.session.user.tel ? data.session.user.tel : "------" %>
                         </p>
                     </div>
-                    <div class="userProfile_box">
-                        <h3 class="userProfile_title">Datos de contacto:</h3>
-                        <p class="userProfile_item">Dirección:
+                    <div class="userProfileBox">
+                        <h3 class="userProfileTitle">Datos de contacto:</h3>
+                        <p class="userProfileItem">Dirección:
                             <%= data.session.user.address ? data.session.user.address : "------" %>
                         </p>
-                        <p class="userProfile_item">Código postal:
+                        <p class="userProfileItem">Código postal:
                             <%= data.session.user.cp ? data.session.user.cp : "------" %>
                         </p>
-                        <p class="userProfile_item">Provincia:
+                        <p class="userProfileItem">Provincia:
                             <%= data.session.user.province ? data.session.user.province : "------" %>
                         </p>
-                        <p class="userProfile_item">Localidad:
+                        <p class="userProfileItem">Localidad:
                             <%= data.session.user.city ? data.session.user.city : "------" %>
                         </p>
                     </div>
             </div>
 
+            </section>
+
+            <section>
+                <div class="boxExtra">
+                    <div class="favoriteProfile">
+                        <h1>Proximamente...</h1>
+                    </div>
+                    <div class="favoriteProfile">
+                        <h1>Proximamente...</h1>
+                    </div>
+                </div>
             </section>
 
             <a href="/ps/profile/edit/<%= data.session.user.id %>" class="btn btn-ad-primary">EDITAR DATOS</a>
