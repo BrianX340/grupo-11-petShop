@@ -196,9 +196,7 @@ nav {
 /* menu */
 
 .nav-desplegable{
-  border-style: double;
-  border: 1px rgb(23, 132, 235) solid;
-  border-radius: 8px;
+  
 }
 
 #menu-nav ul {
@@ -208,13 +206,16 @@ nav {
 }
 
 /* items del menu */
-   
 #menu-nav {
   background-color:#225dbb00;
+  border-style: double;
+  border: 1px rgb(23, 132, 235) solid;
+  border-radius: 8px;
+
 }
-   
+
 /* enlaces del menu */
-   
+
 #menu-nav ul a {
   display:block;
   color:rgb(255, 255, 255);
@@ -224,9 +225,9 @@ nav {
   padding:10px;
   letter-spacing:1px;
 }
-   
+
 /* items del menu */
-   
+
 #menu-nav ul li {
   position:relative;
   float:left;
@@ -237,9 +238,8 @@ nav {
 .li-menu{
   background-color: rgb(55, 169, 214);
 }
-   
 /* efecto al pasar el ratón por los items del menu */
-   
+
 #menu-nav .li-menu:hover {
   transition: 0.5s;
   background:#ab80dd;
@@ -255,23 +255,41 @@ nav {
   background:#eee;
   padding:0;
 }
-   
+
 /* items del menu desplegable */
-   
+
 #menu-nav ul ul li {
   float:none;
   width:150px
 }
-   
+
 /* enlaces de los items del menu desplegable */
-   
+
 #menu-nav ul ul a {
   line-height:120%;
 padding:10px 15px;
 }
-   
+
 /* items del menu desplegable al pasar el ratón */
-   
+
 #menu-nav ul li:hover > ul {
   display:block;
+}
+
+/* img */
+.avatarHeader {
+  margin-left: 0.2em;
+  width: 2em;
+  height: 2em;
+}
+
+.avatarHeaderImage{
+  width: 100%;
+  border-radius: 2em;
+  background-color: rgb(140 44 205);
+}
+
+.fas.fa-user-circle{
+  color: rgb(182 113 229);
+  margin-left: 0.1em;
 }

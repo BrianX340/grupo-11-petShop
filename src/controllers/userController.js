@@ -169,9 +169,8 @@ module.exports = {
         }
         if (errors.isEmpty()) {
             delete req.body.pass2
-            req.body.pass = bcrypt.hashSync(req.body.pass, 10)
-
             delete req.body.terms
+            req.body.pass = bcrypt.hashSync(req.body.pass, 10)
 
             newUser = userCreate({
                 ...req.body,

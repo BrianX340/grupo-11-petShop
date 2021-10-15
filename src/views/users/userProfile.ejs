@@ -45,7 +45,7 @@
                             <%= data.session.user.address ? data.session.user.address : "------" %>
                         </p>
                         <p class="userProfile_item">Código postal:
-                            <%= data.session.user.pc ? data.session.user.pc : "------" %>
+                            <%= data.session.user.cp ? data.session.user.cp : "------" %>
                         </p>
                         <p class="userProfile_item">Provincia:
                             <%= data.session.user.province ? data.session.user.province : "------" %>
@@ -54,9 +54,11 @@
                             <%= data.session.user.city ? data.session.user.city : "------" %>
                         </p>
                     </div>
-                </section>
+            </div>
 
-                <a href="/ps/profile/edit/<%= data.session.user.id %>" class="btn btn-ad-primary">EDITAR DATOS</a>
+            </section>
+
+            <a href="/ps/profile/edit/<%= data.session.user.id %>" class="btn btn-ad-primary">EDITAR DATOS</a>
             </div>
         </main>
 
