@@ -13,6 +13,8 @@
     display: flex;
 }
 
+
+
 #successfulOperation {
     width: 350px;
 }
@@ -31,6 +33,13 @@
     align-items: center;
     font-family: system-ui;
     margin-top: 50px;
+}
+
+.addProductSection > div {
+    background-color: #3477ab;
+    border-radius: 11px;
+    padding: 11px;
+    box-shadow: 0 0px 7px rgb(255 255 255);
 }
 
 .inputfield {
