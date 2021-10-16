@@ -14,7 +14,6 @@ module.exports = {
         res.render('index//home', { data })
     },
     productsSearch: (req, res) => {
-
         searchText = req.params.search
         pet = req.query.pet
         subCategory = req.query.category
@@ -26,6 +25,8 @@ module.exports = {
                     search,
                     session: req.session ? req.session : ""
                 }
+
+                console.log(data)
 
                 res.render('index//searchPage', { data })
             }

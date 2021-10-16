@@ -1,46 +1,48 @@
 <div class='box-card-section'>
-    <% locals.data.search.forEach(function(product){ %>
+    <% data.search.forEach(function(product){ %>
         <!--Comienza un item-->
         <div class="box-card">
             <div>
-                <% if (locals.data.session.user.role == 1) { %>
-                    <div class='favourite'>
-                        <div class='coverHeart' productId='<%= product.id %>'></div>
-                        <figure>
-                            <img class='heartInactive' src="/files/heartInactive.svg" alt="">
-                            <img id='<%= product.id %>Heart' class='nodisplay' src="/files/heartActive.svg" alt="">
-                        </figure>
-                    </div>
-                    <% } %>
-                        <a class='cardProductLink' href="/product/<%= product.id %>">
-                            <div class='box-card-top'>
-
-                                <div class='card-item-image'>
-                                    <figure>
-                                        <img src="/img/products/<%= product.imgPath %>" alt="">
-                                    </figure>
-                                </div>
-                                <div class='card-item-name'>
-                                    <span class='product-name'><%= Array.from(product.name).slice(0,64).join('')+'...' %></span>
-                                </div>
-                                <div class='card-item-description'>
-                                    <span><%= Array.from(product.description).slice(0,122).join('')+'...' %></span>
-                                </div>
-                                <div class='card-item-price'>
-                                    <span>$<%= product.sellPrice %></span>
-                                </div>
-                                <div class='card-item-valoration'>
-                                    <div>
-                                        <% for( let index = 0; index < product.valoration; index++ ) { %>
-                                            <img src="/files/star.svg" alt="">
-                                            <% } %>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <div class='box-card-bottom'>
-                            <span>Al carrito</span>
+                <% if (data.session.user) { %>
+                    <% if (data.session.user.role == 1) { %>
+                        <div class='favourite'>
+                            <div class='coverHeart' productId='<%= product.id %>'></div>
+                            <figure>
+                                <img class='heartInactive' src="/files/heartInactive.svg" alt="">
+                                <img id='<%= product.id %>Heart' class='nodisplay' src="/files/heartActive.svg" alt="">
+                            </figure>
                         </div>
+                        <% } %>
+                            <% } %>
+                                <a class='cardProductLink' href="/product/<%= product.id %>">
+                                    <div class='box-card-top'>
+
+                                        <div class='card-item-image'>
+                                            <figure>
+                                                <img src="/img/products/<%= product.imgPath %>" alt="">
+                                            </figure>
+                                        </div>
+                                        <div class='card-item-name'>
+                                            <span class='product-name'><%= Array.from(product.name).slice(0,64).join('')+'...' %></span>
+                                        </div>
+                                        <div class='card-item-description'>
+                                            <span><%= Array.from(product.description).slice(0,122).join('')+'...' %></span>
+                                        </div>
+                                        <div class='card-item-price'>
+                                            <span>$<%= product.sellPrice %></span>
+                                        </div>
+                                        <div class='card-item-valoration'>
+                                            <div>
+                                                <% for( let index = 0; index < product.valoration; index++ ) { %>
+                                                    <img src="/files/star.svg" alt="">
+                                                    <% } %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class='box-card-bottom'>
+                                    <span>Al carrito</span>
+                                </div>
             </div>
         </div>
         <!--fin del item-->

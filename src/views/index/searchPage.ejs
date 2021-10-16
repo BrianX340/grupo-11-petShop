@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,22 +8,24 @@
     <title>Busqueda</title>
     <link rel="stylesheet" href="/css/index/searchPage.css">
 </head>
+
 <body>
     <%- include('../partial/header'); %>
 
-    <div class='resultTitle'>
-        <div>
-            <span>Resultados de la busqueda:</span>
+        <div class='resultTitle'>
+            <div>
+                <span>Resultados de la busqueda:</span>
+            </div>
         </div>
-    </div>
 
-    <section class='resultSearch'>
-        <%- include('../partial/productCardSearch'); %>
-    </section>
+        <section class='resultSearch'>
+            <%- include('../partial/productCardSearch', {data}); %>
+        </section>
 
-    <%- include('../partial/footer'); %>
-    <%- include('../partial/carritoFlotante'); %>
-    <%- include('../partial/wsp-cat-chat'); %>
+        <%- include('../partial/footer'); %>
+            <%- include('../partial/carritoFlotante'); %>
+                <%- include('../partial/wsp-cat-chat'); %>
 
 </body>
+
 </html>
