@@ -112,7 +112,6 @@ module.exports = {
             }).then(user => {
                 try {
                     if (user) {
-                        console.log(user)
                         req.session.user = user
                         res.locals.user = req.session.user
                         let time = 1000 * 60 * 60 * 24

@@ -30,7 +30,7 @@ router.get('/temporal', (req, res) => {
     res.render("admin//adminPanelMobile")
 })
 router.get('/', isAdminContinue, adminPanelView)
-router.get('/products/edit', isAdminContinue, editProductView)
+router.get('/products/edit/:productId', isAdminContinue, editProductView)
 router.get('/products/detail', isAdminContinue, detailProduct)
 router.get('/products/create', isAdminContinue, createProductView)
 router.get('/products/:name', isAdminContinue, searchProducts)

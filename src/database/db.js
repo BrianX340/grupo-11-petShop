@@ -160,6 +160,16 @@ module.exports = {
         }
 
     },
+    searchProductById: (productId) => {
+        //Filtramos la base de datos, devolvera los resultados que incluyan el texto recibido por parametro
+        return db.Product.findByPk(+productId)
+            .then(product => {
+                return product
+            }).catch(err => {
+                console.log(err)
+                return false
+            })
+    },
 
     getPromotions: () => {
         return dbPromotionsProducts

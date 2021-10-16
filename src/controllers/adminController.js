@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator')
-const { productCreate } = require('../database/db')
+const { productCreate, searchProductById } = require('../database/db')
 
 module.exports = {
     adminPanelView: (req, res) => {
@@ -23,10 +23,20 @@ module.exports = {
         res.render('admin//products//deleteProduct', { data })
     },
     editProductView: (req, res) => {
-        data = {
-            session: req.session ? req.session : ""
-        }
-        res.render('admin//products//searchProduct', { data })
+        productId = req.params.productId
+            //traer product
+        searchProductById(productId)
+            .then(product => {
+                if (product) {
+                    data = {
+                        product: product.dataValues,
+                        session: req.session ? req.session : ""
+                    }
+                    res.render('admin//products//editProduct', { data })
+                }
+            })
+
+
     },
     detailProductView: (req, res) => {
         data = {

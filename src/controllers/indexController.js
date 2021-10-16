@@ -26,11 +26,11 @@ module.exports = {
                     session: req.session ? req.session : ""
                 }
 
-                console.log(data)
-
                 res.render('index//searchPage', { data })
             }
-            res.render('index//searchPage', {})
+        }).catch(err => {
+            console.log(err)
+            return false
         })
 
     },
