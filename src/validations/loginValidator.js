@@ -23,18 +23,16 @@ module.exports = [
     })
     .withMessage("Correo no registrado"),
 
-    check('pass')
-    .notEmpty()
-    .withMessage('Debes escribir tu contraseña'),
-
     body('pass')
-    .custom((value, { req }) => {
+    .notEmpty()
+    .withMessage('Debes escribir tu contraseña')
+    .custom((pass, { req }) => {
         return db.User.findOne({
             where: {
                 email: req.body.email
             }
         }).then((user) => {
-            return bcrypt.compareSync(value, user.dataValues.pass)
+            return user.verifyPassword(pass)
         }).catch(err => {
             console.log(err)
             return false

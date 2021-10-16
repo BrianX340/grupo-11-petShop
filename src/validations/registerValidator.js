@@ -25,7 +25,7 @@ module.exports = [
     .custom((value, { req }) => {
         return db.User.findOne({
             where: {
-                email: req.body.email
+                email: value
             }
         }).then(user => {
             return !user ? true : false

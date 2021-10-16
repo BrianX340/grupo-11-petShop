@@ -100,7 +100,8 @@ module.exports = {
                 where: {
                     email: req.body.email
                 },
-                include: [{
+                include: [
+                    {
                         model: Avatars,
                         as: 'avatar'
                     },
@@ -143,6 +144,8 @@ module.exports = {
         data = {
             session: req.session ? req.session : ""
         }
+
+        console.log(errors)
 
         if (errors.isEmpty()) {
             delete req.body.pass2
