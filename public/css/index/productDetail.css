@@ -16,6 +16,16 @@
     font-family: system-ui;   
 }
 
+.adminEdit {
+    position: absolute;
+    top: 10px;
+    left: 55%;
+}
+
+.adminEdit img {
+    width: 50px;
+}
+
 div {
     display: block;
 }

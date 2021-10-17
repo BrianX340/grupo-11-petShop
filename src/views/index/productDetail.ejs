@@ -25,7 +25,7 @@
                                 <div class="container-title">
                                     <h5 class="title-h5"><%= data.product.name %> </h5>
                                     <p class="subtitulo">
-                                        <%= data.product.mark %>
+                                        <%= data.product.name %>
                                     </p>
                                 </div>
     
@@ -46,7 +46,7 @@
 
                                 <div class="product-quantity">
                                     <p>Cantidad :</p> 
-                                    <input type="number" id="cantidad" name="cantidad" min="1" max="10">
+                                    <input value='<%- data.product.stock %>' type="number" id="cantidad" name="cantidad" min="1" max="10">
                                 </div>
 
                                 <div class="btn-box">
@@ -69,16 +69,26 @@
 
                             <div class="box-gallery">
 
+                                <% if (data.session.user.role == 0) { %>
+                                    <a class='adminEdit' href="/admin/products/edit/<%- data.product.id %>">
+                                        <div>
+                                            <figure>
+                                                <img src="/img/edit.svg" alt="">
+                                            </figure>
+                                        </div>
+                                    </a>
+                                <% } %>
+
                                 <div class="box-img">
-                                    <img class="image-big" width="490" height="500" src="/img/products/<%= data.product.img[0]%>">
+                                    <img class="image-big" width="490" height="500" src="/img/products/<%= data.product.imgPath%>">
                                     
                                 </div>
                                 <div class="images">
                                     
                                     <div class="small-img">
-                                        <% data.product.img.forEach(img => { %>
-                                        <img class="img-zoom" width="80" height="80" src="/img/products/<%- img%>" onclick="showImg(this.src)">
-                                       <% }) %> 
+                                       <!--  data.product.img.forEach(img => { 
+                                        <img class="img-zoom" width="80" height="80" src="/img/products/ img" onclick="showImg(this.src)">
+                                       })   -->
                                     </div>
                                     
                                 </div>

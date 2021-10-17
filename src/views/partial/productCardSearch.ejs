@@ -16,12 +16,8 @@
                             <% } %>
 
                                 <% if (data.session.user) { %>
-                                    <% if (data.session.user.role == 1) { %>
-                                        <a class='cardProductLink' href="/product/<%= product.id %>">
-                                            <% } else if (data.session.user.role == 0) { %>
-                                                <a class='cardProductLink' href="/admin/products/edit/<%= product.id %>">
-                                                    <% } %>
-                                                        <% } %>
+                                            <a class='cardProductLink' href="/products/detail/<%= product.id %>">
+                                                <% } %>
                                                             <div class='box-card-top'>
 
                                                                 <div class='card-item-image'>

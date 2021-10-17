@@ -84,7 +84,7 @@ module.exports = {
         if (errors.isEmpty()) {
             newProduct = {
                 ...req.body,
-                imgPath: img[0]
+                imgPath: img
             }
 
             if (productCreate(newProduct)) {
@@ -104,13 +104,12 @@ module.exports = {
         img = req.file ? [req.file.filename] : "productDefault.png"
         productData = {
             ...req.body,
-            imgPath: img[0]
+            imgPath: img
         }
-        console.log('Estamos')
         
         productUpdate(productId,productData,(err)=>{
             if(!err){
-                res.redirect(`/admin/products/edit/${productId}`)
+                res.redirect(`/products/detail/${productId}`)
             }
         })
 

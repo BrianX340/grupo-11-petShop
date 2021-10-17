@@ -2,6 +2,9 @@ const db = require('./models')
 const sequelize = require('sequelize')
 
 module.exports = {
+    //USER
+    //ADMIN
+    //INDEX
     updateUser: (id, data, callback) => {
 
         avatarId = data.avatarId
@@ -71,7 +74,7 @@ module.exports = {
                                 return false
                             }
                         }).catch(err => {
-                            console.log('ERROR RARO', err)
+                            console.log('ERROR AL CREAR USUARIO', err)
                         })
                 })
             }).catch(err => {
@@ -191,8 +194,10 @@ module.exports = {
         return dbBestSellsProducts
     },
     getAvatarList: () => {
-        nombreAvatares = [...dbPetshop.avatares.gatos, ...dbPetshop.avatares.perros]
-        return nombreAvatares
+        return Avatars.findAll()
+            .then(avatares => {
+                return avatares
+            })
     },
     addUserFavorite: (userId, productId) => {
         dbUsers.find(user => {

@@ -46,15 +46,15 @@ module.exports = {
         }
 
         //obtenemos los avatares
-        Avatars.findAll()
-            .then(avatares => {
-                res.render('users//editProfile', //renderizar formulario
+        getAvatarList().then(avatars=>{
+            res.render('users//editProfile', //renderizar formulario
                     {
                         data,
                         avatarList: avatares
                     }
                 )
-            })
+        })
+
 
     },
     /* actualización de perfil */
