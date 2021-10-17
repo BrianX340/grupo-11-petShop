@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator')
-const { productCreate, searchProductById } = require('../database/db')
+const { productCreate, searchProductById, productUpdate } = require('../database/db')
 
 module.exports = {
     adminPanelView: (req, res) => {
@@ -73,9 +73,6 @@ module.exports = {
     allProducts: (req, res) => {
         res.send(getAllProducts())
     },
-    searchProducts: (req, res) => {
-        res.render('partial//resultProductSearch', { productos: searchProductByName(req.params.name) })
-    },
     createProduct: (req, res) => {
         img = req.file ? [req.file.filename] : "productDefault.png"
         let errors = validationResult(req)
@@ -103,6 +100,20 @@ module.exports = {
     },
     editProduct: (req, res) => {
         //res.render('admin//adminPanel')
+        productId = req.params.productId
+        img = req.file ? [req.file.filename] : "productDefault.png"
+        productData = {
+            ...req.body,
+            imgPath: img[0]
+        }
+        console.log('Estamos')
+        
+        productUpdate(productId,productData,(err)=>{
+            if(!err){
+                res.redirect(`/admin/products/edit/${productId}`)
+            }
+        })
+
     },
     deleteProduct: (req, res) => {
         //res.render('admin//adminPanel')

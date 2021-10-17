@@ -170,6 +170,19 @@ module.exports = {
                 return false
             })
     },
+    productUpdate:(productId,productData,callback)=>{
+        Promise.all([
+            db.Product.update({...productData }, { where: { id: productId } })
+        ])
+        .then(([productUpdated]) => {
+            callback(0)
+        }).catch(err=>{
+            console.log(err)
+            callback(1)
+        })
+    },
+
+
 
     getPromotions: () => {
         return dbPromotionsProducts

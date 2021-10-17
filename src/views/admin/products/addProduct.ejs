@@ -37,47 +37,47 @@
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Imagen: </span>
-                            <input type="file" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputNameAdd" name="image">
+                            <input type="file" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputImageAdd" name="image">
                         </div>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Nombre: </span>
-                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputNameAdd" name="name">
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputName" name="name">
                         </div>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Precio Compra: </span>
-                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputNameAdd" name="buyPrice">
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputBuyPrice" name="buyPrice">
                         </div>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Precio Venta: </span>
-                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputSellPriceAdd" name="sellPrice">
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputSellPrice" name="sellPrice">
                         </div>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Descuento: </span>
-                            <input type="number" class="form-control" placeholder="Ingrese el descuento..." aria-describedby="basic-addon1" id="inputDiscountAdd" name="discount">
+                            <input type="number" class="form-control" placeholder="Ingrese el descuento..." aria-describedby="basic-addon1" id="inputDiscount" name="discount">
                         </div>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Valoracion: </span>
-                            <input type="number" class="form-control" placeholder="Ingrese el descuento..." aria-describedby="basic-addon1" id="inputValorationAdd" name="valoration">
+                            <input type="number" class="form-control" placeholder="Ingrese el descuento..." aria-describedby="basic-addon1" id="inputValoration" name="valoration">
                         </div>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Descripcion: </span>
-                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputDescriptionAdd" name="description">
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputDescription" name="description">
                         </div>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Cantidad: </span>
-                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputAmountAdd" name="stock">
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputAmount" name="stock">
                         </div>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Codigo de Barras: </span>
-                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputBarcodeAdd" name="barcode">
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputBarcode" name="barcode">
                         </div>
 
                         <div class="input-group">
@@ -104,8 +104,8 @@
                     </div>
 
                     <div class="btn-group buttonOptionProduct" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default backButton">Volver</button>
-                        <button type="button" class="btn btn-default cleanInputs">Limpiar campos</button>
+                        <button id='back' type="button" class="btn btn-default backButton">Volver</button>
+                        <button id='limpiar' type="button" class="btn btn-default cleanInputs">Limpiar campos</button>
                         <button type="submit" class="btn btn-default" id='productCreate'>Cargar</button>
                     </div>
 
@@ -133,6 +133,41 @@
         document.getElementById('operationSuccess').style.display = 'none'
         document.getElementById('successfulOperation').style.display = 'none'
     }, 2500)
+
+    //Limpieza de Campos
+    function limpiarCampos() {
+        document.getElementById("inputName").value = ''
+        document.getElementById("inputBuyPrice").value = ''
+        document.getElementById("inputSellPrice").value = ''
+        document.getElementById("inputDiscount").value = ''
+        document.getElementById("inputDiscount").value = ''
+        document.getElementById("inputValoration").value = ''
+        document.getElementById("inputDescription").value = ''
+        document.getElementById("inputAmount").value = ''
+        document.getElementById("inputBarcode").value = ''
+
+    }
+
+    document.addEventListener('click',event=>{
+        try {
+        elementId = event.path[0].id
+        elementClass = event.path[0].className
+        }
+        catch {
+            elementId = event.target.id
+            elementClass = event.path[0].className
+        }
+
+        if(elementId=='limpiar'){
+            limpiarCampos()
+            event.preventDefault()
+        } else if (elementId == 'back'){
+            window.location.href = `${window.location.origin}`
+        }
+    })
+
+
+
 </script>
 
 </html>

@@ -33,7 +33,6 @@ router.get('/', isAdminContinue, adminPanelView)
 router.get('/products/edit/:productId', isAdminContinue, editProductView)
 router.get('/products/detail', isAdminContinue, detailProduct)
 router.get('/products/create', isAdminContinue, createProductView)
-router.get('/products/:name', isAdminContinue, searchProducts)
 router.get('/products/:id', isAdminContinue, detailProductView) //los que contengan :id deben ir debajo de los que utilizen la misma ruta
 
 router.get('/statistics', isAdminContinue, statisticsView)
@@ -48,7 +47,7 @@ router.get('/transactions', isAdminContinue, transactionView)
 router.delete('/products/:id', deleteProduct)
 
 //Edit Products
-router.put('/products/:id', productUploadImage.single("image"), editProduct)
+router.put('/products/:productId', productUploadImage.single("image"), editProduct)
 
 //Create Products
 router.post('/products/create', productUploadImage.single("image"), createProductValidator, createProduct)

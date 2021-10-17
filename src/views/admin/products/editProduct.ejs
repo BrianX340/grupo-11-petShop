@@ -22,8 +22,7 @@
 
             </section>
 
-            <form id='formEdit' class="formCreate noDisplay" method="POST" enctype="multipart/form-data">
-
+            <form  action="/admin/products/<%- data.product.id %>?_method=PUT" id='formEdit' class="formCreate noDisplay" method="POST"  enctype="multipart/form-data">
                 <div class='formContainer'>
                     <div class='finalCardTitle'><span>Modificar Producto</span></div>
 
@@ -67,7 +66,7 @@
                         <div class="inputfield">
                             <div>
                                 <span>Cantidad</span>
-                                <input value='<%- data.product.stock  %>' type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="inputAmountEdit" name="amount">
+                                <input value='<%- data.product.stock  %>' type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="inputAmountEdit" name="stock">
                             </div>
                         </div>
 
@@ -103,7 +102,7 @@
                     <div class='buttonOptionProduct'>
                         <button class='backButton'>Volver</button>
                         <button class='cleanInputs'>Limpiar campos</button>
-                        <button id='productSaveEdit'>Cargar</button>
+                        <button type="submit" id='productSaveEdit'>Cargar</button>
                     </div>
 
                 </div>
@@ -112,4 +111,38 @@
         </section>
 </body>
 
-</html>l
+<script>
+    //Limpieza de Campos
+    function limpiarCampos() {
+        document.getElementById("inputNameEdit").value = ''
+        document.getElementById("inputBuyPriceEdit").value = ''
+        document.getElementById("inputSellPriceEdit").value = ''
+        document.getElementById("inputDiscountEdit").value = ''
+        document.getElementById("inputDiscountEdit").value = ''
+        document.getElementById("inputValorationEdit").value = ''
+        document.getElementById("inputDescriptionEdit").value = ''
+        document.getElementById("inputAmountEdit").value = ''
+        document.getElementById("inputBarcodeEdit").value = ''
+
+    }
+
+    document.addEventListener('click',event=>{
+        try {
+        elementId = event.path[0].id
+        elementClass = event.path[0].className
+        }
+        catch {
+            elementId = event.target.id
+            elementClass = event.path[0].className
+        }
+
+        if(elementId=='limpiar'){
+            limpiarCampos()
+            event.preventDefault()
+        } else if (elementId == 'back'){
+            window.location.href = `${window.location.origin}`
+        }
+    })
+</script>
+
+</html>
