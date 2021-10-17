@@ -184,6 +184,13 @@ module.exports = {
             callback(1)
         })
     },
+    getAllProducts: () => {
+        return db.Product.findAll({
+            limit: 60
+        }).then(products=>{
+            return products
+        })
+    },
 
 
 
@@ -246,12 +253,6 @@ module.exports = {
 
 
     },
-
-    getAllProducts: () => {
-        return db //devolvemos la base de datos completa PRODUCTOS
-    },
-
-
 
     searchOne: (id) => {
         //return db.find()

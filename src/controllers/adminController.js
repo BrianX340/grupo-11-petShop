@@ -1,7 +1,20 @@
 const { validationResult } = require('express-validator')
-const { productCreate, searchProductById, productUpdate } = require('../database/db')
+const { productCreate, searchProductById, productUpdate, getAllProducts } = require('../database/db')
 
 module.exports = {
+    listProductView: (req,res)=>{
+        getAllProducts()
+        .then(products=>{
+            data = {
+                session: req.session ? req.session : "",
+                products
+            }
+            res.render('admin//products//listProducts', {data})
+        }).catch(err=>{
+            console.log(err)
+            return false
+        })
+    },
     adminPanelView: (req, res) => {
 
         data = {
@@ -116,8 +129,5 @@ module.exports = {
     },
     deleteProduct: (req, res) => {
         //res.render('admin//adminPanel')
-    },
-    detailProduct: (req, res) => {
-        res.render('admin//adminPanel')
-    },
+    }
 }

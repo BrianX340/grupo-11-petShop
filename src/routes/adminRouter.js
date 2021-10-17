@@ -3,10 +3,8 @@ const router = express.Router()
 const {
     allProducts,
     getOneProduct,
-    searchProducts,
 
     editProduct,
-    detailProduct,
     deleteProduct,
     createProduct,
 
@@ -15,6 +13,7 @@ const {
     detailProductView,
     deleteProductView,
     createProductView,
+    listProductView,
 
     statisticsView,
     transactionView,
@@ -30,9 +29,9 @@ router.get('/temporal', (req, res) => {
     res.render("admin//adminPanelMobile")
 })
 router.get('/', isAdminContinue, adminPanelView)
-router.get('/products/edit/:productId', isAdminContinue, editProductView)
-router.get('/products/detail', isAdminContinue, detailProduct)
+router.get('/products/list', isAdminContinue, listProductView)
 router.get('/products/create', isAdminContinue, createProductView)
+router.get('/products/edit/:productId', isAdminContinue, editProductView)
 router.get('/products/:id', isAdminContinue, detailProductView) //los que contengan :id deben ir debajo de los que utilizen la misma ruta
 
 router.get('/statistics', isAdminContinue, statisticsView)
