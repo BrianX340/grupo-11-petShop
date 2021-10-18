@@ -62,12 +62,16 @@ document.addEventListener('click', (event) => {
         elementClass = event.path[0].className
     }
 
+    console.log(elementId)
 
     switch (elementId) {
         case 'catChat':
             viewCaterinaChat(1)
             break
         case 'chatClose':
+            viewCaterinaChat(0)
+            break
+        case 'chatContainer':
             viewCaterinaChat(0)
             break
         case 'option01':
