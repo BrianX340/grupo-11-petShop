@@ -7,7 +7,7 @@
                 </div>
                 <div class='caterinaProfile'>
                     <div class='profileImageCat'>
-                        <figure><img src="img/caterina.svg" alt=""></figure>
+                        <figure><img src='img/caterina.svg' alt=''></figure>
                     </div>
                     <div class='infoNameCaterina'>
                         <div class='caterinaName'><span>CAT</span><span>erina</span></div>
@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </div>
-            <div class="messagesBox">
+            <div id='messagesCat' class='messagesBox'>
 
                 <div class='messageCard messageR'>
                     <div>
@@ -23,23 +23,58 @@
                     </div>
                 </div>
 
-                <div class='messageCard messageS'>
+                <div class='messageCard frecuent'>
                     <div>
-                        <span>Hola, en que horario realizan envios?</span>
+                        <span>En que horario realizan envios?</span>
                     </div>
+                    <div id='option01' class='coverOption'></div>
                 </div>
 
-                <div class='messageCard messageR'>
+                <div class='messageCard frecuent'>
+                    <div>
+                        <span>El envio es gratis?</span>
+                    </div>
+                    <div id='option02' class='coverOption'></div>
+                </div>
+
+                <div class='messageCard frecuent'>
+                    <div>
+                        <span>Que medios de pago aceptan?</span>
+                    </div>
+                    <div id='option03' class='coverOption'></div>
+                </div>
+
+                <div class='messageCard frecuent'>
+                    <div>
+                        <span>Puedo devolver un producto?</span>
+                    </div>
+                    <div id='option04' class='coverOption'></div>
+                </div>
+
+                <!-- <div class='messageCard messageR'>
                     <div>
                         <span>Entre las 14hs y las 18hs</span>
                     </div>
                 </div>
 
-            </div>
-            <div class='inputChat'>
-                <div>
-                    <input id='chatSender' placeholder="Mensaje..." spellcheck="false" type="text">
+                <div class='messageCard messageR'>
+                    <div>
+                        <span>A partir de los $500 el envio es gratis!</span>
+                    </div>
                 </div>
+
+                <div class='messageCard messageR'>
+                    <div>
+                        <span>Aceptamos, VISA, MASTERCARD, AMEX y MercadoPago</span>
+                    </div>
+                </div>
+
+                <div class='messageCard messageR'>
+                    <div>
+                        <span>Siempre y cuando no este dañado, ten en cuenta que deberas llevarlo personalmente a nuestro local con DNI y factura.</span>
+                    </div>
+                </div> -->
+
             </div>
         </div>
     </div>
@@ -50,45 +85,11 @@
 
 <section id='wsp-chat'>
     <figure>
-        <a href="https://wa.me/+541134489022?text=Hola%20que%20servicios%20brindan%3F"><img src="/img/wsp.png"
-                alt=""></a>
+        <a href='https://wa.me/+541134489022?text=Hola%20que%20servicios%20brindan%3F'><img src='/img/wsp.png'
+                alt=''></a>
     </figure>
     <figure>
-        <img id='catChat' src="/img/catChat.svg" alt="">
+        <img id='catChat' src='/img/catChat.svg' alt=''>
     </figure>
 </section>
-<script>
-    function viewCaterinaChat(active) {
-        if (active) {
-            document.getElementById('wsp-chat').style.display = 'none'
-            document.getElementById('chatContainer').style.display = 'flex'
-        } else {
-            document.getElementById('wsp-chat').style.display = 'flex'
-            document.getElementById('chatContainer').style.display = 'none'
-        }
-    }
-
-
-
-    document.addEventListener('click', (event) => {
-        funcion = false
-        try {
-            elementId = event.path[0].id
-            elementClass = event.path[0].className
-        }
-        catch {
-            elementId = event.target.id
-            elementClass = event.path[0].className
-        }
-
-        switch (elementId) {
-            case 'catChat':
-                viewCaterinaChat(1)
-                break
-            case 'chatClose':
-                viewCaterinaChat(0)
-                break
-        }
-
-    })
-</script>
+<script src='/js/partials/wsp-cat.js'></script>
