@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator')
-const { productCreate, searchProductById, productUpdate, getAllProducts } = require('../database/db')
+const { productCreate, searchProductById, productUpdate, getAllProducts, poblar } = require('../database/db')
 
 module.exports = {
     listProductView: (req,res)=>{

@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const serverLogs = require('./middlewares/serverLogs');
-let localsCheck = require('./middlewares/localsCheck')
+let localSessionCheck = require('./middlewares/localSessionCheck')
 
 /* VIEWS */
 app.set('views', path.join(__dirname, 'views'))
@@ -20,13 +20,14 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.static(__dirname.replace('src','public')))
 app.use(cookieParser()) 
 app.use(session(
-    {secret: "mySecret",
-    resave: false,
-    saveUninitialized: true
-}
+    {
+        secret: "mySecret",
+        resave: false,
+        saveUninitialized: true
+    }
 ))
-app.use(serverLogs)
-app.use(localsCheck)
+//app.use(serverLogs)
+app.use(localSessionCheck)
 
 /* ROUTERS */
 adminRouter = require('./routes/adminRouter')
