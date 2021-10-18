@@ -188,6 +188,20 @@ module.exports = {
             return products
         })
     },
+    deleteOneProduct:(productId)=>{
+        return db.Product.destroy({
+            where: {
+                id:+productId
+            }
+        }).then(product=>{
+            return product
+        }).catch(err=>{
+            console.log(err)
+            return false
+        })
+    },
+
+
     productBestSellToogle: (productId) => {
         db.Product.findByPk(+productId)
         .then(product=>{

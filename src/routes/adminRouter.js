@@ -33,17 +33,17 @@ router.get('/products/list', isAdminContinue, listProductView)
 router.get('/products/create', isAdminContinue, createProductView)
 router.get('/products/edit/:productId', isAdminContinue, editProductView)
 router.get('/products/:id', isAdminContinue, detailProductView) //los que contengan :id deben ir debajo de los que utilizen la misma ruta
-
 router.get('/statistics', isAdminContinue, statisticsView)
-
 router.get('/transactions', isAdminContinue, transactionView)
 
 
 
 
 
+
+
 //Delete Products
-router.delete('/products/:id', isAdminContinue, deleteProduct)
+router.delete('/products/:productId', deleteProduct)
 
 //Edit Products
 router.put('/products/:productId', productUploadImage.single("image"), isAdminContinue, editProduct)

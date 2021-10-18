@@ -1,10 +1,29 @@
 const { validationResult } = require('express-validator')
-const { productCreate, searchProductById, productUpdate, getAllProducts, poblar } = require('../database/db')
+const { productCreate, searchProductById, productUpdate, getAllProducts, deleteOneProduct } = require('../database/db')
 
 module.exports = {
     deleteProduct:(req,res)=>{
-
-    },
+        try{
+            productId = req.params.productId
+            if (productId){
+                deleteOneProduct(productId)
+                .then(borrado=>{
+                    if(borrado){
+                        res.redirect('/')
+                    }
+                    else{
+                        res.redirect('/asd')
+                    }
+                })
+            }
+        }
+        catch {
+            res.send({message:'error please verify the fields'})
+        }
+        
+            
+        
+        },
     listProductView: (req,res)=>{
         getAllProducts()
         .then(products=>{
