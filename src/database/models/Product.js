@@ -21,28 +21,18 @@ module.exports = (sequalize, dataTypes) => {
         categoryId: INTEGER(),
         totalViews: INTEGER(),
         totalSells: INTEGER(),
-        subCategoryId: INTEGER()
+        isBestSell: INTEGER(),
+        subCategoryId: INTEGER(),
+        isInPromotion: INTEGER(),
     }, {
         tableName: "product",
         timestamps: false
     })
 
-    Product.associate = (models) => {
-        /* Product.belongsTo(models.Avatars, {
-            foreignKey: {
-                name: 'avatarId',
-                allowNull: false
-            },
-            as: 'avatar'
-        })
-        Product.belongsTo(models.Address, {
-            foreignKey: {
-                name: 'addressId',
-                allowNull: false
-            },
-            as: 'address'
-        }) */
-    }
+
+    /* Product.prototype.toogleBestSell = function() {
+        this.update({ isBestSell: !this.isBestSell })
+    } */
 
     return Product
 }

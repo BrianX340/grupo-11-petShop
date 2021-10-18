@@ -17,6 +17,7 @@ const registerValidator = require('../validations/registerValidator')
 
 const userSessionCheck = require('../middlewares/userSessionCheck')
 const userLog = require('../middlewares/userLog')
+const db = require('../database/models')
 
 router.get('/cart', carritoCompras)
 //router.get('/purchases', historialCompras)

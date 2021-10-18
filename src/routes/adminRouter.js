@@ -43,13 +43,13 @@ router.get('/transactions', isAdminContinue, transactionView)
 
 
 //Delete Products
-router.delete('/products/:id', deleteProduct)
+router.delete('/products/:id', isAdminContinue, deleteProduct)
 
 //Edit Products
-router.put('/products/:productId', productUploadImage.single("image"), editProduct)
+router.put('/products/:productId', productUploadImage.single("image"), isAdminContinue, editProduct)
 
 //Create Products
-router.post('/products/create', productUploadImage.single("image"), createProductValidator, createProduct)
+router.post('/products/create', productUploadImage.single("image"), isAdminContinue, createProductValidator, createProduct)
 
 
 

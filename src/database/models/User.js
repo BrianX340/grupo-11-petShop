@@ -1,4 +1,5 @@
 let bcrypt = require('bcryptjs')
+const db = require('.')
 
 module.exports = (sequalize, dataTypes) => {
 
@@ -41,11 +42,13 @@ module.exports = (sequalize, dataTypes) => {
         })
     }
 
-
-
-    User.prototype.verifyPassword = function(password) {
+    User.prototype.verifyPassword = function (password) {
         return bcrypt.compareSync(password, this.pass)
     }
+
+    /* User.prototype.updateName = function (newName) {
+        this.update({ name: newName })
+    } */
 
     return User
 }

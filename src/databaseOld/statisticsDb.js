@@ -77,7 +77,7 @@ module.exports = {
         return dbStatistics //devolvemos la base de datos completa PRODUCTOS
     },
     
-    searchProductByName: (productName)=>{
+    searchProductsByName: (productName)=>{
         //Filtramos la base de datos, devolvera los resultados que incluyan el texto recibido por parametro
         return dbStatistics.filter((product)=> product.name.toLowerCase().includes(productName.toLowerCase()) )
     },

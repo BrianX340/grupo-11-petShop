@@ -41,6 +41,16 @@ app.use('/ps', userRouter)
 app.use('/api',apiRouter)
 app.use('/admin',adminRouter)
 
+/* router.post('/test',(req,res)=>{
+    db.User.findByPk(+req.body.id)
+    .then(user=>{
+        user.updateName(req.body.name)
+    }).catch(err=>{
+        console.log(err)
+        return 0
+    })
+}) */
+
 
 app.use((req,res, next)=>{
     res.status(404).render('index//error', {session: req.session.user ? req.session.user : ""})

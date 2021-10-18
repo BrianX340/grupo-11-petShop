@@ -47,6 +47,8 @@ CREATE TABLE `Product` (
    `totalViews` INT,
    `categoryId` INT,
    `subCategoryId` INT,
+   `isBestSell` INT,
+   `isInPromotion` INT,
    PRIMARY KEY (`id`)
 );
 

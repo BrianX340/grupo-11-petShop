@@ -2,6 +2,9 @@ const { validationResult } = require('express-validator')
 const { productCreate, searchProductById, productUpdate, getAllProducts, poblar } = require('../database/db')
 
 module.exports = {
+    deleteProduct:(req,res)=>{
+
+    },
     listProductView: (req,res)=>{
         getAllProducts()
         .then(products=>{
@@ -126,8 +129,5 @@ module.exports = {
             }
         })
 
-    },
-    deleteProduct: (req, res) => {
-        //res.render('admin//adminPanel')
     }
 }

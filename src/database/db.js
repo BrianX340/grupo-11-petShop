@@ -1,11 +1,7 @@
 const db = require('./models')
 const sequelize = require('sequelize')
-const fs = require('fs')
 
 module.exports = {
-    //USER
-    //ADMIN
-    //INDEX
     updateUser: (id, data, callback) => {
 
         avatarId = data.avatarId
@@ -95,7 +91,7 @@ module.exports = {
             return false
         })
     },
-    searchProductByName: (productName) => {
+    searchProductsByName: (productName) => {
         //Filtramos la base de datos, devolvera los resultados que incluyan el texto recibido por parametro
         return db.Product.findAll({
             where: {
@@ -192,6 +188,25 @@ module.exports = {
             return products
         })
     },
+    productBestSellToogle: (productId) => {
+        db.Product.findByPk(+productId)
+        .then(product=>{
+            product.toogleBestSell()
+        })
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -234,29 +249,6 @@ module.exports = {
     },
     getUsers: () => {
         return dbUsers
-    },
-
-    oneProduct: (productId) => {
-        getProduct = db.filter(product => product.id == productId)
-        return db.Product.findOne({
-            where: {
-                id: productId
-            }
-        }).then(product => {
-            if (product[0]) {
-                return product[0]
-            } else {
-                return false
-            }
-        }).catch(err => {
-            console.log(err)
-        })
-
-
-    },
-
-    searchOne: (id) => {
-        //return db.find()
     },
 
 

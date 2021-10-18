@@ -152,7 +152,9 @@ CREATE TABLE `product` (
   `totalSells` int(11) DEFAULT NULL,
   `totalViews` int(11) DEFAULT NULL,
   `categoryId` int(11) DEFAULT NULL,
-  `subCategoryId` int(11) DEFAULT NULL
+  `subCategoryId` int(11) DEFAULT NULL,
+  `isBestSell` INT,
+  `isInPromotion` INT
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
