@@ -14,17 +14,18 @@
     <%- include('../../partial/header'); %>
 
 
-        <section id='modifyProductView' class='noDisplay'>
-            <section id='modifySearchView'>
+        <main id='modifyProductView' class='noDisplay'>
+            <section>
+                <section id='modifySearchView'>
 
-                <div class='finalCardTitle'><span>Modificar Producto</span></div>
-
-
-            </section>
-
-            <form  action="/admin/products/<%- data.product.id %>?_method=PUT" id='formEdit' class="formCreate noDisplay" method="POST"  enctype="multipart/form-data">
-                <div class='formContainer'>
                     <div class='finalCardTitle'><span>Modificar Producto</span></div>
+
+
+                </section>
+
+                <form  action="/admin/products/<%- data.product.id %>?_method=PUT" id='formEdit' class="formCreate noDisplay" method="POST"  enctype="multipart/form-data">
+                    <div class='formContainer'>
+                        <div class='finalCardTitle'><span>Modificar Producto</span></div>
 
                     <div class='inputsContainerBox'>
 
@@ -99,16 +100,19 @@
 
                     </div>
 
-                    <div class='buttonOptionProduct'>
-                        <button class='backButton'>Volver</button>
-                        <button class='cleanInputs'>Limpiar campos</button>
-                        <button type="submit" id='productSaveEdit'>Cargar</button>
+                        <div class='buttonOptionProduct'>
+                            <button class='backButton'>Volver</button>
+                            <button class='cleanInputs'>Limpiar campos</button>
+                            <button type="submit" id='productSaveEdit'>Cargar</button>
+                        </div>
+
                     </div>
 
-                </div>
+                </form>
+            </section>
 
-            </form>
-        </section>
+            
+        </main>
 </body>
 
 <script>
