@@ -30,9 +30,13 @@ module.exports = (sequalize, dataTypes) => {
     })
 
 
-    /* Product.prototype.toogleBestSell = function() {
+    Product.prototype.toogleBestSell = function() {
         this.update({ isBestSell: !this.isBestSell })
-    } */
+    }
+
+    Product.prototype.toogleInPromotion = function() {
+        this.update({ isInPromotion: !this.isInPromotion })
+    }
 
     return Product
 }

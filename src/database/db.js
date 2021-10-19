@@ -85,6 +85,8 @@ module.exports = {
             ...productData,
             totalViews: 0,
             totalSells: 0,
+            isInPromotion: 0,
+            isBestSell: 0,
         }).then(product => {
             return product
         }).catch(err => {
@@ -203,9 +205,24 @@ module.exports = {
 
 
     productBestSellToogle: (productId) => {
-        db.Product.findByPk(+productId)
+        return db.Product.findByPk(+productId)
         .then(product=>{
             product.toogleBestSell()
+            return true
+        }).catch(err=>{
+            console.log(err)
+            return false
+        })
+    },
+
+    isInPromotionToogle: (productId) => {
+        return db.Product.findByPk(+productId)
+        .then(product=>{
+            product.toogleInPromotion()
+            return true
+        }).catch(err=>{
+            console.log(err)
+            return false
         })
     },
 
