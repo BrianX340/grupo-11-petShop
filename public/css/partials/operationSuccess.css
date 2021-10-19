@@ -1,0 +1,22 @@
+#operationSuccess {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    background-color: #ffffffc2;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+}
+
+
+
+#successfulOperation {
+    width: 350px;
+}
+
+#failedOperation {
+    width: 350px;
+    display: none;
+}

@@ -63,14 +63,43 @@
                         <td><%- product.imgPath %></td>
                         <td><%- product.totalSells %></td>
                         <td><%- product.totalViews %></td>
-                        <td><button class="listButtom"><img class="listImg" src="/img/admin/edit.svg" alt="Editar"></button></td>
-                        <td><button class="listButtom"><img class="listImg" src="/img/admin/trash.svg" alt="Eliminar"></button></td>
+                        <td>
+                          <a href="/admin/products/edit/<%- product.id %>">
+                            <button class="listButtom">
+                              <img class="listImg" src="/img/admin/edit.svg" alt="Editar">
+                            </button>
+                          </a>
+                        </td>
+                        <form action="/admin/products/<%- product.id %>?_method=DELETE" method="POST">
+                          <td>
+                            <button type="submit" class="listButtom">
+                              <img class="listImg" src="/img/admin/trash.svg" alt="Eliminar">
+                            </button>
+                          </td>
+                        </form>
                       </tr>
                 <% }) %>
             </tbody>
           </table>
     </section>
 
+    <% if (data.actionStatus == 'success') { %>
+      <div id='operationSuccess'>
+          <img id='successfulOperation' src="/img/admin/ok.gif" alt="">
+      </div>
+      <% } else if (data.actionStatus == 'failed') { %>
+          <div id='operationSuccess'>
+              <img id='failedOperation' src="/img/admin/error.gif" alt="">
+          </div>
+          <% } %>
+
 </body>
+
+<script>
+  setTimeout(() => {
+        document.getElementById('operationSuccess').style.display = 'none'
+        document.getElementById('successfulOperation').style.display = 'none'
+    }, 2500)
+</script>
 
 </html>

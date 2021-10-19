@@ -3,16 +3,28 @@ const { productCreate, searchProductById, productUpdate, getAllProducts, deleteO
 
 module.exports = {
     deleteProduct:(req,res)=>{
+        console.log('estamos')
         try{
             productId = req.params.productId
+
+            data = {
+                session: req.session ? req.session : "",
+                actionStatus: 'failed'
+            }
+
             if (productId){
                 deleteOneProduct(productId)
                 .then(borrado=>{
                     if(borrado){
-                        res.redirect('/')
-                    }
-                    else{
-                        res.redirect('/asd')
+                        data.actionStatus = 'success'
+                        getAllProducts()
+                            .then(products=>{
+                                data.products = products
+                                res.render('admin//products//listProducts', {data})
+                                }).catch(err=>{
+                                        console.log(err)
+                                        return false
+                                    })
                     }
                 })
             }

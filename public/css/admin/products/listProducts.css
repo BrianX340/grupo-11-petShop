@@ -1,6 +1,7 @@
+@import url('../menuAdmin.css');
 @import url('../header-navAdmin.css');
 @import url('../../partials/background.css');
-@import url('../menuAdmin.css');
+@import url('../../partials/operationSuccess.css');
 
 body {
     margin: 0;
