@@ -95,6 +95,7 @@ module.exports = {
         data = {
             session: req.session ? req.session : ""
         }
+        console.log(errors)
         if (errors.isEmpty()) {
             User.findOne({
                 where: {
@@ -111,22 +112,25 @@ module.exports = {
                     }
                 ]
             }).then(user => {
-                try {
-                    if (user) {
-                        req.session.user = user
-                        res.locals.user = req.session.user
-                        let time = 1000 * 60 * 60 * 24
-                        if (req.body.remember) {
-                            res.cookie("usersPet", req.session.user, { expires: new Date(Date.now() + time), httpOnly: true })
-                        }
+                /* if(user.verifyPassword(req.body.pass)){ */
+                    try {
+                        if (user) {
+                            req.session.user = user
+                            res.locals.user = req.session.user
+                            let time = 1000 * 60 * 60 * 24
+                            if (req.body.remember) {
+                                res.cookie("usersPet", req.session.user, { expires: new Date(Date.now() + time), httpOnly: true })
+                            }
 
-                        res.redirect('/')
-                    } else {
+                            res.redirect('/')
+                        } else {
+                            res.redirect('/ps/register')
+                        }
+                    } catch {
                         res.redirect('/ps/register')
                     }
-                } catch {
-                    res.redirect('/ps/register')
-                }
+                /* } */
+                /* res.redirect('/ps/login') */
             }).catch(err => {
                 console.log(err)
             })
