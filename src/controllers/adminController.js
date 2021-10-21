@@ -1,41 +1,20 @@
 const { validationResult } = require('express-validator')
-const { productCreate, searchProductById, productUpdate, getAllProducts, deleteOneProduct } = require('../database/db')
+const { productCreate, searchProductById, productUpdate, getAllProducts, deleteOneProduct, isInPromotionToogle } = require('../database/db')
 
 module.exports = {
-    deleteProduct:(req,res)=>{
-        console.log('estamos')
-        try{
-            productId = req.params.productId
-
+    promotionView:(req,res)=>{
+        getAllPromotion()//armar esta funcion en el db que retorne los productos en promocion
+        .then(products=>{
             data = {
                 session: req.session ? req.session : "",
-                actionStatus: 'failed'
+                products
             }
-
-            if (productId){
-                deleteOneProduct(productId)
-                .then(borrado=>{
-                    if(borrado){
-                        data.actionStatus = 'success'
-                        getAllProducts()
-                            .then(products=>{
-                                data.products = products
-                                res.render('admin//products//listProducts', {data})
-                                }).catch(err=>{
-                                        console.log(err)
-                                        return false
-                                    })
-                    }
-                })
-            }
-        }
-        catch {
-            res.send({message:'error please verify the fields'})
-        }
-        
-            
-        
-        },
+            res.render('admin//products//promotion', {data})
+        }).catch(err=>{
+            console.log(err)
+            return false
+        })
+    },
     listProductView: (req,res)=>{
         getAllProducts()
         .then(products=>{
@@ -120,6 +99,40 @@ module.exports = {
     allProducts: (req, res) => {
         res.send(getAllProducts())
     },
+    deleteProduct:(req,res)=>{
+        console.log('estamos')
+        try{
+            productId = req.params.productId
+
+            data = {
+                session: req.session ? req.session : "",
+                actionStatus: 'failed'
+            }
+
+            if (productId){
+                deleteOneProduct(productId)
+                .then(borrado=>{
+                    if(borrado){
+                        data.actionStatus = 'success'
+                        getAllProducts()
+                            .then(products=>{
+                                data.products = products
+                                res.render('admin//products//listProducts', {data})
+                                }).catch(err=>{
+                                        console.log(err)
+                                        return false
+                                    })
+                    }
+                })
+            }
+        }
+        catch {
+            res.send({message:'error please verify the fields'})
+        }
+        
+            
+        
+        },
     createProduct: (req, res) => {
         img = req.file ? [req.file.filename] : "productDefault.png"
         let errors = validationResult(req)
@@ -160,5 +173,23 @@ module.exports = {
             }
         })
 
+    },
+    deletePromotion: (req,res)=>{
+        id = req.params.productId
+        isInPromotionToogle(id).then(completed=>{
+            if(completed){
+                getAllProducts()
+                .then(products=>{
+                    data = {
+                        session: req.session ? req.session : "",
+                        products
+                    }
+                    res.render('admin//products//promotion', {data})
+                }).catch(err=>{
+                    console.log(err)
+                    return false
+                })
+            }
+        })
     }
 }

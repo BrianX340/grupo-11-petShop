@@ -1,0 +1,33 @@
+@import url('../menuAdmin.css');
+@import url('../header-navAdmin.css');
+@import url('../../partials/background.css');
+@import url('../../partials/operationSuccess.css');
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+.tables {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.tables > table {
+    transform: scale(0.85);
+}
+
+.listButtom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5em;
+    height: 3.5em;
+    background-color: rgba(77, 77, 77, 0);
+    border:none;
+}
+
+.listImg{
+    width: 100%;
+}

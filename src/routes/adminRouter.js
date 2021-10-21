@@ -7,6 +7,7 @@ const {
     editProduct,
     deleteProduct,
     createProduct,
+    deletePromotion,
 
     adminPanelView,
     editProductView,
@@ -30,6 +31,7 @@ router.get('/temporal', (req, res) => {
     res.render("admin//adminPanelMobile")
 })
 router.get('/', isAdminContinue, adminPanelView)
+router.get('/products/promotion', isAdminContinue, promotionView)
 router.get('/products/list', isAdminContinue, listProductView)
 router.get('/products/create', isAdminContinue, createProductView)
 router.get('/products/edit/:productId', isAdminContinue, editProductView)
@@ -45,6 +47,7 @@ router.get('/transactions', isAdminContinue, transactionView)
 
 //Delete Products
 router.delete('/products/:productId', deleteProduct)
+router.delete('/products/promotion/:productId', deletePromotion)
 
 //Edit Products
 router.put('/products/:productId', productUploadImage.single("image"), isAdminContinue, editProduct)
