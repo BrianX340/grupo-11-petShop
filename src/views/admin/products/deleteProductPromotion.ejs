@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" href="/css/admin/products/listProducts.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <%- include('../../partial/header'); %>
+
+        <section class='tables'>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th style="width: 60px;">Nombre</th>
+                        <th style="width: 60px;">PrecioDeCompra</th>
+                        <th style="width: 60px;">PrecioDeVenta</th>
+                        <th style="width: 60px;">Stock</th>
+                        <th style="width: 60px;">Categoria</th>
+                        <th style="width: 60px;">SubCategoria</th>
+                        <th style="width: 60px;">Descuento%</th>
+                        <th style="width: 60px;">Valoracion</th>
+                        <th style="width: 60px;">VentasTotales</th>
+                        <th style="width: 60px;">VistasTotales</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.products.forEach(product => { %>
+                        <tr>
+                            <td>
+                                <%- product.name %>
+                            </td>
+                            <td>
+                                <%- product.buyPrice %>
+                            </td>
+                            <td>
+                                <%- product.sellPrice %>
+                            </td>
+                            <td>
+                                <%- product.stock %>
+                            </td>
+                            <td>
+                                <%- product.categoryId %>
+                            </td>
+                            <td>
+                                <%- product.subCategoryId %>
+                            </td>
+                            <td>
+                                <%- product.discount %>
+                            </td>
+                            <td>
+                                <%- product.valoration %>
+                            </td>
+                            <td>
+                                <%- product.imgPath %>
+                            </td>
+                            <td>
+                                <%- product.totalSells %>
+                            </td>
+                            <td>
+                                <%- product.totalViews %>
+                            </td>
+                            <form action="/admin/products/promotion/<%- product.id %>?_method=DELETE" method="POST">
+                                <td>
+                                    <button type="submit" class="listButtom">
+                              <img class="listImg" src="/img/admin/trash.svg" alt="Eliminar">
+                            </button>
+                                </td>
+                            </form>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </section>
+
+        <% if (data.actionStatus == 'success') { %>
+            <div id='operationSuccess'>
+                <img id='successfulOperation' src="/img/admin/ok.gif" alt="">
+            </div>
+            <% } else if (data.actionStatus == 'failed') { %>
+                <div id='operationSuccess'>
+                    <img id='failedOperation' src="/img/admin/error.gif" alt="">
+                </div>
+                <% } %>
+
+</body>
+
+<script>
+    setTimeout(() => {
+        document.getElementById('operationSuccess').style.display = 'none'
+        document.getElementById('successfulOperation').style.display = 'none'
+    }, 2500)
+</script>
+
+</html>

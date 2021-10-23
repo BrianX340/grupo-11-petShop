@@ -172,32 +172,45 @@ module.exports = {
                 return false
             })
     },
-    productUpdate:(productId,productData,callback)=>{
+    productUpdate: (productId, productData, callback) => {
         Promise.all([
-            db.Product.update({...productData }, { where: { id: productId } })
-        ])
-        .then(([productUpdated]) => {
-            callback(0)
-        }).catch(err=>{
-            console.log(err)
-            callback(1)
-        })
+                db.Product.update({...productData }, { where: { id: productId } })
+            ])
+            .then(([productUpdated]) => {
+                callback(0)
+            }).catch(err => {
+                console.log(err)
+                callback(1)
+            })
     },
     getAllProducts: () => {
         return db.Product.findAll({
             limit: 60
-        }).then(products=>{
+        }).then(products => {
             return products
         })
     },
-    deleteOneProduct:(productId)=>{
+    deleteOneProduct: (productId) => {
         return db.Product.destroy({
             where: {
-                id:+productId
+                id: +productId
             }
-        }).then(product=>{
+        }).then(product => {
             return product
-        }).catch(err=>{
+        }).catch(err => {
+            console.log(err)
+            return false
+        })
+    },
+    getAllPromotions: () => {
+        return db.Product.findAll({
+            limit: 60,
+            where: {
+                isInPromotion: 1
+            }
+        }).then(products => {
+            return products
+        }).catch(err => {
             console.log(err)
             return false
         })
@@ -206,24 +219,24 @@ module.exports = {
 
     productBestSellToogle: (productId) => {
         return db.Product.findByPk(+productId)
-        .then(product=>{
-            product.toogleBestSell()
-            return true
-        }).catch(err=>{
-            console.log(err)
-            return false
-        })
+            .then(product => {
+                product.toogleBestSell()
+                return true
+            }).catch(err => {
+                console.log(err)
+                return false
+            })
     },
 
     isInPromotionToogle: (productId) => {
         return db.Product.findByPk(+productId)
-        .then(product=>{
-            product.toogleInPromotion()
-            return true
-        }).catch(err=>{
-            console.log(err)
-            return false
-        })
+            .then(product => {
+                product.toogleInPromotion()
+                return true
+            }).catch(err => {
+                console.log(err)
+                return false
+            })
     },
 
 
