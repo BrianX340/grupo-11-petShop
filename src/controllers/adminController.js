@@ -36,18 +36,7 @@ module.exports = {
 
         res.status(200).render('admin//adminPanelDesktop', { data })
     },
-    createProductView: (req, res) => {
-        data = {
-            session: req.session ? req.session : ""
-        }
-        res.render('admin//products//addProduct', { data })
-    },
-    deleteProductView: (req, res) => {
-        data = {
-            session: req.session ? req.session : ""
-        }
-        res.render('admin//products//deleteProduct', { data })
-    },
+ 
     editProductView: (req, res) => {
         productId = req.params.productId
             //traer product
@@ -155,7 +144,11 @@ module.exports = {
 
             res.render('admin//products//addProduct', { data })
         } else {
-            return res.send({ status: 'error', msg: 'validacionesIncorrectas', errors })
+            return res.render('admin//products//addProduct', {
+                errors: errors.mapped(),
+                old: req.body,
+                data
+            })
         }
     },
     editProduct: (req, res) => {
@@ -191,5 +184,17 @@ module.exports = {
                 })
             }
         })
-    }
+    },
+    createProductView: (req, res) => {
+        data = {
+            session: req.session ? req.session : ""
+        }
+        res.render('admin//products//addProduct', { data })
+    },
+    deleteProductView: (req, res) => {
+        data = {
+            session: req.session ? req.session : ""
+        }
+        res.render('admin//products//deleteProduct', { data })
+    },
 }

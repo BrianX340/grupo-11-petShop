@@ -5,16 +5,17 @@ const {
     getOneProduct,
 
     editProduct,
-    deleteProduct,
     createProduct,
+    deleteProduct,
     deletePromotion,
 
+    promotionView,
     adminPanelView,
+    listProductView,
     editProductView,
     detailProductView,
     deleteProductView,
     createProductView,
-    listProductView,
 
     statisticsView,
     transactionView,
