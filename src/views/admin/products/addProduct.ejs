@@ -39,46 +39,91 @@
                             <span class="input-group-addon" id="basic-addon1">Imagen: </span>
                             <input type="file" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputImageAdd" name="image">
                         </div>
+                        <% if (locals.errors && errors.image) { %>
+                            <small class="text-danger">
+                            <%= errors.image.msg %>
+                            </small>
+                        <% } %>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Nombre: </span>
                             <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputName" name="name">
                         </div>
+                        <% if (locals.errors && errors.name) { %>
+                            <small class="text-danger">
+                            <%= errors.name.msg %>
+                            </small>
+                        <% } %>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Precio Compra: </span>
                             <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputBuyPrice" name="buyPrice">
                         </div>
+                        <% if (locals.errors && errors.buyPrice) { %>
+                            <small class="text-danger">
+                            <%= errors.buyPrice.msg %>
+                            </small>
+                        <% } %>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Precio Venta: </span>
                             <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputSellPrice" name="sellPrice">
                         </div>
+                        <% if (locals.errors && errors.sellPrice) { %>
+                            <small class="text-danger">
+                            <%= errors.sellPrice.msg %>
+                            </small>
+                        <% } %>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Descuento: </span>
                             <input type="number" class="form-control" placeholder="Ingrese el descuento..." aria-describedby="basic-addon1" id="inputDiscount" name="discount">
                         </div>
+                        <% if (locals.errors && errors.discount) { %>
+                            <small class="text-danger">
+                            <%= errors.discount.msg %>
+                            </small>
+                        <% } %>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Valoracion: </span>
                             <input type="number" class="form-control" placeholder="Ingrese el descuento..." aria-describedby="basic-addon1" id="inputValoration" name="valoration">
                         </div>
+                        <% if (locals.errors && errors.valoration) { %>
+                            <small class="text-danger">
+                            <%= errors.valoration.msg %>
+                            </small>
+                        <% } %>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Descripcion: </span>
                             <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputDescription" name="description">
                         </div>
+                        <% if (locals.errors && errors.description) { %>
+                            <small class="text-danger">
+                            <%= errors.description.msg %>
+                            </small>
+                        <% } %>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Cantidad: </span>
                             <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputAmount" name="stock">
                         </div>
+                        <% if (locals.errors && errors.stock) { %>
+                            <small class="text-danger">
+                            <%= errors.stock.msg %>
+                            </small>
+                        <% } %>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Codigo de Barras: </span>
                             <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputBarcode" name="barcode">
                         </div>
+                        <% if (locals.errors && errors.barcode) { %>
+                            <small class="text-danger">
+                            <%= errors.barcode.msg %>
+                            </small>
+                        <% } %>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Animal: </span>
@@ -88,6 +133,11 @@
                                 <option value="2">Perro</option>
                             </select>
                         </div>
+                        <% if (locals.errors && errors.categoryId) { %>
+                            <small class="text-danger">
+                            <%= errors.categoryId.msg %>
+                            </small>
+                        <% } %>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Tipo de Producto: </span>
@@ -99,6 +149,11 @@
                                 <option value="4">Camas</option>
                             </select>
                         </div>
+                        <% if (locals.errors && errors.subCategoryId) { %>
+                            <small class="text-danger">
+                            <%= errors.subCategoryId.msg %>
+                            </small>
+                        <% } %>
 
 
                     </div>
