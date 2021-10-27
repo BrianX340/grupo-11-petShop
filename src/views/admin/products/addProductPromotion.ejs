@@ -73,18 +73,18 @@
                             <td>
                                 <%- product.totalViews %>
                             </td>
-                            <form action="/admin/products/<%- product.id %>" method="POST"></form>
-                            <td>
-                                <input type="number">
-                            </td>
-                            <td>
-                                <button type="submit" class="listButtom">
-                                        <img class="listImg" src="/img/admin/add.svg" alt="Eliminar">
-                                    </button>
-                            </td>
+                            <form action="/admin/api/isinpromotion/<%- product.id %>?_method=PUT" method="POST">
+                                <td>
+                                    <input class='discount' type="number">
+                                </td>
+                                <td>
+                                    <button type="submit" class="listButtom">
+                                    <img class="listImg" src="/img/admin/add.svg" alt="Eliminar">
+                                </button>
+                                </td>
                             </form>
                             <td>
-                                FINAL PRICE
+                                <span class=''></span>
                             </td>
                             <td>
                                 Ganancia

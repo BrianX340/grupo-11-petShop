@@ -2,6 +2,24 @@ const db = require('./models')
 const sequelize = require('sequelize')
 
 module.exports = {
+    getPromotions: () => {
+        return db.Product.findAll({
+            where: {
+                isInPromotion: 1
+            }
+        }).then(products => {
+            return products
+        })
+    },
+    getAllProductsNotPromotion: () => {
+        return db.Product.findAll({
+            where: {
+                isInPromotion: 0
+            }
+        }).then(products => {
+            return products
+        })
+    },
     updateUser: (id, data, callback) => {
 
         avatarId = data.avatarId
@@ -246,17 +264,6 @@ module.exports = {
 
 
 
-
-
-
-
-
-
-
-
-    getPromotions: () => {
-        return dbPromotionsProducts
-    },
     getBestSells: () => {
         return dbBestSellsProducts
     },

@@ -1,17 +1,19 @@
-const { searchProductById, searchProductsByName, searcherByPetsubCategory } = require('../database/db');
+const { searchProductById, searchProductsByName, searcherByPetsubCategory, getPromotions } = require('../database/db');
 
 module.exports = {
     home: (req, res) => {
-        data = {
-            newsProduct: [] /* getnewsProduct() */ ,
-            promotions: [] /* getPromotions() */ ,
-            session: req.session ? req.session : '',
-            favorites: { 2: true, 4: true, 6: true }, //req.session.user ? req.session.user.favorites : '',
-            carrouselImages: [
-                "/img/banersCarrousel/banner01.jpg"
-            ]
-        }
-        res.render('index//home', { data })
+        getPromotions().then(promotions => {
+            data = {
+                newsProduct: [] /* getnewsProduct() */ ,
+                promotions,
+                session: req.session ? req.session : '',
+                favorites: { 2: true, 4: true, 6: true }, //req.session.user ? req.session.user.favorites : '',
+                carrouselImages: [
+                    "/img/banersCarrousel/banner01.jpg"
+                ]
+            }
+            res.render('index//home', { data })
+        })
     },
     productsSearch: (req, res) => {
         searchText = req.params.search

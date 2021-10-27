@@ -34,7 +34,6 @@ router.get('/temporal', (req, res) => {
     res.render("admin//adminPanelMobile")
 })
 router.get('/', isAdminContinue, adminPanelView)
-router.get('/products/promotion', isAdminContinue, promotionView)
 router.get('/products/promotion/add', isAdminContinue, promotionAddView)
 router.get('/products/promotion/delete', isAdminContinue, deletePromotionView)
 router.get('/products/list', isAdminContinue, listProductView)
@@ -62,7 +61,8 @@ router.post('/products/create', productUploadImage.single("image"), isAdminConti
 
 //Toogle BestSells
 router.put('/api/bestsell/:productId', isAdminContinue, productBestSellToogle)
-    //Toogle isInPromotion
+
+//Toogle isInPromotion
 router.put('/api/isinpromotion/:productId', isAdminContinue, isInPromotionToogle)
 
 

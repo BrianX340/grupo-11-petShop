@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator')
-const { getAllPromotions, productCreate, searchProductById, productUpdate, getAllProducts, deleteOneProduct, isInPromotionToogle } = require('../database/db')
+const { getAllProductsNotPromotion, getAllPromotions, productCreate, searchProductById, productUpdate, getAllProducts, deleteOneProduct, isInPromotionToogle } = require('../database/db')
 
 module.exports = {
     promotionView: (req, res) => {
@@ -16,7 +16,7 @@ module.exports = {
             })
     },
     promotionAddView: (req, res) => {
-        getAllProducts()
+        getAllProductsNotPromotion()
             .then(products => {
                 data = {
                     session: req.session ? req.session : "",
