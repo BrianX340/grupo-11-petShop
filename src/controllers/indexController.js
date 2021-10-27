@@ -3,7 +3,7 @@ const { searchProductById, searchProductsByName, searcherByPetsubCategory } = re
 module.exports = {
     home: (req, res) => {
         data = {
-            bestSells: [] /* getBestSells() */ ,
+            newsProduct: [] /* getnewsProduct() */ ,
             promotions: [] /* getPromotions() */ ,
             session: req.session ? req.session : '',
             favorites: { 2: true, 4: true, 6: true }, //req.session.user ? req.session.user.favorites : '',
@@ -36,7 +36,7 @@ module.exports = {
     },
     detail: (req, res) => {
         let productId = +req.params.id;
-        searchProductById(productId).then(product=>{
+        searchProductById(productId).then(product => {
             data = {
                 product,
                 session: req.session ? req.session : ""

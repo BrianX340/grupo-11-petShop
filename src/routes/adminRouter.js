@@ -13,6 +13,7 @@ const {
     adminPanelView,
     listProductView,
     editProductView,
+    promotionAddView,
     detailProductView,
     deleteProductView,
     createProductView,
@@ -34,6 +35,7 @@ router.get('/temporal', (req, res) => {
 })
 router.get('/', isAdminContinue, adminPanelView)
 router.get('/products/promotion', isAdminContinue, promotionView)
+router.get('/products/promotion/add', isAdminContinue, promotionAddView)
 router.get('/products/promotion/delete', isAdminContinue, deletePromotionView)
 router.get('/products/list', isAdminContinue, listProductView)
 router.get('/products/create', isAdminContinue, createProductView)

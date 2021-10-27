@@ -86,7 +86,7 @@ module.exports = {
             totalViews: 0,
             totalSells: 0,
             isInPromotion: 0,
-            isBestSell: 0,
+            isNews: 0,
         }).then(product => {
             return product
         }).catch(err => {

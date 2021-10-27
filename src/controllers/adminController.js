@@ -15,6 +15,19 @@ module.exports = {
                 return false
             })
     },
+    promotionAddView: (req, res) => {
+        getAllProducts()
+            .then(products => {
+                data = {
+                    session: req.session ? req.session : "",
+                    products
+                }
+                res.render('admin//products//addProductPromotion', { data })
+            }).catch(err => {
+                console.log(err)
+                return false
+            })
+    },
     listProductView: (req, res) => {
         getAllProducts()
             .then(products => {

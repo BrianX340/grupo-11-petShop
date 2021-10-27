@@ -60,6 +60,7 @@ body {
 .optionBox img {
     width: 55px;
     height: 55px;
+    cursor: pointer;
 }
 
 .optionBox span {
