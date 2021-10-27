@@ -1,32 +1,45 @@
 const { validationResult } = require('express-validator')
-const { productCreate, searchProductById, productUpdate, getAllProducts, deleteOneProduct, isInPromotionToogle } = require('../database/db')
+const { getAllPromotions, productCreate, searchProductById, productUpdate, getAllProducts, deleteOneProduct, isInPromotionToogle } = require('../database/db')
 
 module.exports = {
-    promotionView:(req,res)=>{
-        getAllPromotion()//armar esta funcion en el db que retorne los productos en promocion
-        .then(products=>{
-            data = {
-                session: req.session ? req.session : "",
-                products
-            }
-            res.render('admin//products//promotion', {data})
-        }).catch(err=>{
-            console.log(err)
-            return false
-        })
+    promotionView: (req, res) => {
+        getAllPromotion() //armar esta funcion en el db que retorne los productos en promocion
+            .then(products => {
+                data = {
+                    session: req.session ? req.session : "",
+                    products
+                }
+                res.render('admin//products//promotion', { data })
+            }).catch(err => {
+                console.log(err)
+                return false
+            })
     },
-    listProductView: (req,res)=>{
+    promotionAddView: (req, res) => {
         getAllProducts()
-        .then(products=>{
-            data = {
-                session: req.session ? req.session : "",
-                products
-            }
-            res.render('admin//products//listProducts', {data})
-        }).catch(err=>{
-            console.log(err)
-            return false
-        })
+            .then(products => {
+                data = {
+                    session: req.session ? req.session : "",
+                    products
+                }
+                res.render('admin//products//addProductPromotion', { data })
+            }).catch(err => {
+                console.log(err)
+                return false
+            })
+    },
+    listProductView: (req, res) => {
+        getAllProducts()
+            .then(products => {
+                data = {
+                    session: req.session ? req.session : "",
+                    products
+                }
+                res.render('admin//products//listProducts', { data })
+            }).catch(err => {
+                console.log(err)
+                return false
+            })
     },
     adminPanelView: (req, res) => {
 
@@ -36,7 +49,20 @@ module.exports = {
 
         res.status(200).render('admin//adminPanelDesktop', { data })
     },
- 
+    deletePromotionView: (req, res) => {
+        getAllPromotions()
+            .then(products => {
+                data = {
+                    session: req.session ? req.session : "",
+                    products
+                }
+                res.render('admin//products//deleteProductPromotion', { data })
+            }).catch(err => {
+                console.log(err)
+                return false
+            })
+    },
+
     editProductView: (req, res) => {
         productId = req.params.productId
             //traer product
@@ -88,9 +114,8 @@ module.exports = {
     allProducts: (req, res) => {
         res.send(getAllProducts())
     },
-    deleteProduct:(req,res)=>{
-        console.log('estamos')
-        try{
+    deleteProduct: (req, res) => {
+        try {
             productId = req.params.productId
 
             data = {
@@ -98,30 +123,29 @@ module.exports = {
                 actionStatus: 'failed'
             }
 
-            if (productId){
+            if (productId) {
                 deleteOneProduct(productId)
-                .then(borrado=>{
-                    if(borrado){
-                        data.actionStatus = 'success'
-                        getAllProducts()
-                            .then(products=>{
-                                data.products = products
-                                res.render('admin//products//listProducts', {data})
-                                }).catch(err=>{
-                                        console.log(err)
-                                        return false
-                                    })
-                    }
-                })
+                    .then(borrado => {
+                        if (borrado) {
+                            data.actionStatus = 'success'
+                            getAllProducts()
+                                .then(products => {
+                                    data.products = products
+                                    res.render('admin//products//listProducts', { data })
+                                }).catch(err => {
+                                    console.log(err)
+                                    return false
+                                })
+                        }
+                    })
             }
+        } catch {
+            res.send({ message: 'error please verify the fields' })
         }
-        catch {
-            res.send({message:'error please verify the fields'})
-        }
-        
-            
-        
-        },
+
+
+
+    },
     createProduct: (req, res) => {
         img = req.file ? [req.file.filename] : "productDefault.png"
         let errors = validationResult(req)
@@ -159,29 +183,29 @@ module.exports = {
             ...req.body,
             imgPath: img
         }
-        
-        productUpdate(productId,productData,(err)=>{
-            if(!err){
+
+        productUpdate(productId, productData, (err) => {
+            if (!err) {
                 res.redirect(`/products/detail/${productId}`)
             }
         })
 
     },
-    deletePromotion: (req,res)=>{
+    deletePromotion: (req, res) => {
         id = req.params.productId
-        isInPromotionToogle(id).then(completed=>{
-            if(completed){
+        isInPromotionToogle(id).then(completed => {
+            if (completed) {
                 getAllProducts()
-                .then(products=>{
-                    data = {
-                        session: req.session ? req.session : "",
-                        products
-                    }
-                    res.render('admin//products//promotion', {data})
-                }).catch(err=>{
-                    console.log(err)
-                    return false
-                })
+                    .then(products => {
+                        data = {
+                            session: req.session ? req.session : "",
+                            products
+                        }
+                        res.render('admin//products//promotion', { data })
+                    }).catch(err => {
+                        console.log(err)
+                        return false
+                    })
             }
         })
     },

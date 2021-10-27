@@ -21,7 +21,7 @@ module.exports = (sequalize, dataTypes) => {
         categoryId: INTEGER(),
         totalViews: INTEGER(),
         totalSells: INTEGER(),
-        isBestSell: INTEGER(),
+        isNews: INTEGER(),
         subCategoryId: INTEGER(),
         isInPromotion: INTEGER(),
     }, {
@@ -31,7 +31,7 @@ module.exports = (sequalize, dataTypes) => {
 
 
     Product.prototype.toogleBestSell = function() {
-        this.update({ isBestSell: !this.isBestSell })
+        this.update({ isNews: !this.isNews })
     }
 
     Product.prototype.toogleInPromotion = function() {

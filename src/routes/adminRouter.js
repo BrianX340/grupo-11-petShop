@@ -13,9 +13,11 @@ const {
     adminPanelView,
     listProductView,
     editProductView,
+    promotionAddView,
     detailProductView,
     deleteProductView,
     createProductView,
+    deletePromotionView,
 
     statisticsView,
     transactionView,
@@ -33,6 +35,8 @@ router.get('/temporal', (req, res) => {
 })
 router.get('/', isAdminContinue, adminPanelView)
 router.get('/products/promotion', isAdminContinue, promotionView)
+router.get('/products/promotion/add', isAdminContinue, promotionAddView)
+router.get('/products/promotion/delete', isAdminContinue, deletePromotionView)
 router.get('/products/list', isAdminContinue, listProductView)
 router.get('/products/create', isAdminContinue, createProductView)
 router.get('/products/edit/:productId', isAdminContinue, editProductView)
@@ -58,7 +62,7 @@ router.post('/products/create', productUploadImage.single("image"), isAdminConti
 
 //Toogle BestSells
 router.put('/api/bestsell/:productId', isAdminContinue, productBestSellToogle)
-//Toogle isInPromotion
+    //Toogle isInPromotion
 router.put('/api/isinpromotion/:productId', isAdminContinue, isInPromotionToogle)
 
 
