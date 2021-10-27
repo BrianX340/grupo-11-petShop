@@ -31,6 +31,7 @@ module.exports = [
 
     check('valoration')
     .notEmpty()
+    .isInt({ min: 0, max: 5 })
     .withMessage('Coloca un numero entre 1 y 5.')
     .isNumeric()
     .withMessage("Solo puedes ingresar números."),

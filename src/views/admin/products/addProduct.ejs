@@ -40,7 +40,7 @@
                             <input type="file" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputImageAdd" name="image">
                         </div>
                         <% if (locals.errors && errors.image) { %>
-                            <small class="text-danger">
+                            <small class="textDanger">
                             <%= errors.image.msg %>
                             </small>
                         <% } %>
@@ -50,7 +50,7 @@
                             <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputName" name="name">
                         </div>
                         <% if (locals.errors && errors.name) { %>
-                            <small class="text-danger">
+                            <small class="textDanger">
                             <%= errors.name.msg %>
                             </small>
                         <% } %>
@@ -60,7 +60,7 @@
                             <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputBuyPrice" name="buyPrice">
                         </div>
                         <% if (locals.errors && errors.buyPrice) { %>
-                            <small class="text-danger">
+                            <small class="textDanger">
                             <%= errors.buyPrice.msg %>
                             </small>
                         <% } %>
@@ -70,7 +70,7 @@
                             <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputSellPrice" name="sellPrice">
                         </div>
                         <% if (locals.errors && errors.sellPrice) { %>
-                            <small class="text-danger">
+                            <small class="textDanger">
                             <%= errors.sellPrice.msg %>
                             </small>
                         <% } %>
@@ -79,18 +79,14 @@
                             <span class="input-group-addon" id="basic-addon1">Descuento: </span>
                             <input type="number" class="form-control" placeholder="Ingrese el descuento..." aria-describedby="basic-addon1" id="inputDiscount" name="discount">
                         </div>
-                        <% if (locals.errors && errors.discount) { %>
-                            <small class="text-danger">
-                            <%= errors.discount.msg %>
-                            </small>
-                        <% } %>
+                        
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Valoracion: </span>
                             <input type="number" class="form-control" placeholder="Ingrese el descuento..." aria-describedby="basic-addon1" id="inputValoration" name="valoration">
                         </div>
                         <% if (locals.errors && errors.valoration) { %>
-                            <small class="text-danger">
+                            <small class="textDanger">
                             <%= errors.valoration.msg %>
                             </small>
                         <% } %>
@@ -100,7 +96,7 @@
                             <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputDescription" name="description">
                         </div>
                         <% if (locals.errors && errors.description) { %>
-                            <small class="text-danger">
+                            <small class="textDanger">
                             <%= errors.description.msg %>
                             </small>
                         <% } %>
@@ -110,7 +106,7 @@
                             <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputAmount" name="stock">
                         </div>
                         <% if (locals.errors && errors.stock) { %>
-                            <small class="text-danger">
+                            <small class="textDanger">
                             <%= errors.stock.msg %>
                             </small>
                         <% } %>
@@ -120,7 +116,7 @@
                             <input type="text" class="form-control" placeholder="Ingrese el nombre..." aria-describedby="basic-addon1" id="inputBarcode" name="barcode">
                         </div>
                         <% if (locals.errors && errors.barcode) { %>
-                            <small class="text-danger">
+                            <small class="textDanger">
                             <%= errors.barcode.msg %>
                             </small>
                         <% } %>
@@ -134,7 +130,7 @@
                             </select>
                         </div>
                         <% if (locals.errors && errors.categoryId) { %>
-                            <small class="text-danger">
+                            <small class="textDanger">
                             <%= errors.categoryId.msg %>
                             </small>
                         <% } %>
@@ -150,7 +146,7 @@
                             </select>
                         </div>
                         <% if (locals.errors && errors.subCategoryId) { %>
-                            <small class="text-danger">
+                            <small class="textDanger">
                             <%= errors.subCategoryId.msg %>
                             </small>
                         <% } %>
