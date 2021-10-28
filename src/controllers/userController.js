@@ -147,7 +147,6 @@ module.exports = {
             session: req.session ? req.session : ""
         }
 
-        console.log(errors)
 
         if (errors.isEmpty()) {
             delete req.body.pass2
