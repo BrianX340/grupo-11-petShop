@@ -1,17 +1,15 @@
 const { validationResult } = require('express-validator')
-const { isInPromotionToogle, getAllProductsNotPromotion, getAllPromotions, productCreate, searchProductById, productUpdate, getAllProducts, deleteOneProduct, isInPromotionToogle } = require('../database/db')
+const { getAllProductsNotPromotion, getAllPromotions, productCreate, searchProductById, productUpdate, getAllProducts, deleteOneProduct, isInPromotionToogle } = require('../database/db')
 
 module.exports = {
     isInPromotionToogleApi: (req, res) => {
         id = req.params.productId
         isInPromotionToogle(id).then(respuestaToogle => {
             data = {
-                session: req.session ? req.session : ""
-                status: respuestaToogle ? "success" : "error"
+                session: req.session ? req.session : "",
+                status: respuestaToogle ? 1 : 0
             }
-
-            data.status = respuestaToogle ? "success" : "error"
-
+            console.log(data)
             getAllProductsNotPromotion()
                 .then(products => {
                     data.products = products

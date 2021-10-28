@@ -249,8 +249,7 @@ module.exports = {
     isInPromotionToogle: (productId) => {
         return db.Product.findByPk(+productId)
             .then(product => {
-                product.toogleInPromotion()
-                return true
+                return product.toogleInPromotion()
             }).catch(err => {
                 console.log(err)
                 return false

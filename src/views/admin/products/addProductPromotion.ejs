@@ -95,11 +95,11 @@
             </table>
         </section>
 
-        <% if (data.actionStatus == 'success') { %>
+        <% if (data.status) { %>
             <div id='operationSuccess'>
                 <img id='successfulOperation' src="/img/admin/ok.gif" alt="">
             </div>
-            <% } else if (data.actionStatus == 'failed') { %>
+            <% } else if (data.status === 0) { %>
                 <div id='operationSuccess'>
                     <img id='failedOperation' src="/img/admin/error.gif" alt="">
                 </div>

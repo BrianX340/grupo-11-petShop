@@ -35,7 +35,11 @@ module.exports = (sequalize, dataTypes) => {
     }
 
     Product.prototype.toogleInPromotion = function() {
-        this.update({ isInPromotion: !this.isInPromotion })
+        return this.update({ isInPromotion: !this.isInPromotion }).then(() => {
+            return 1
+        }).catch(err => {
+            return 0
+        })
     }
 
     return Product

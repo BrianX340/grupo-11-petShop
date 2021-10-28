@@ -10,13 +10,10 @@
     display: flex;
 }
 
-
-
 #successfulOperation {
     width: 350px;
 }
 
 #failedOperation {
     width: 350px;
-    display: none;
 }

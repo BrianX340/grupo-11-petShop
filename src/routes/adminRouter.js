@@ -61,10 +61,10 @@ router.put('/products/:productId', productUploadImage.single("image"), isAdminCo
 router.post('/products/create', productUploadImage.single("image"), isAdminContinue, createProductValidator, createProduct)
 
 //Toogle BestSells
-router.put('/api/bestsell/:productId', isAdminContinue, productBestSellToogle)
+//router.put('/api/bestsell/:productId', isAdminContinue, productBestSellToogle)
 
 //Toogle isInPromotion
-router.put('/api/isinpromotion/:productId' /* , isAdminContinue */ , isInPromotionToogleApi)
+router.put('/api/isinpromotion/:productId', isAdminContinue, isInPromotionToogleApi)
 
 
 
