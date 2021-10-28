@@ -46,13 +46,13 @@ module.exports = {
         }
 
         //obtenemos los avatares
-        getAvatarList().then(avatars=>{
+        getAvatarList().then(avatars => {
             res.render('users//editProfile', //renderizar formulario
-                    {
-                        data,
-                        avatarList: avatares
-                    }
-                )
+                {
+                    data,
+                    avatarList: avatares
+                }
+            )
         })
 
 
@@ -95,14 +95,12 @@ module.exports = {
         data = {
             session: req.session ? req.session : ""
         }
-        console.log(errors)
         if (errors.isEmpty()) {
             User.findOne({
                 where: {
                     email: req.body.email
                 },
-                include: [
-                    {
+                include: [{
                         model: Avatars,
                         as: 'avatar'
                     },
@@ -113,22 +111,22 @@ module.exports = {
                 ]
             }).then(user => {
                 /* if(user.verifyPassword(req.body.pass)){ */
-                    try {
-                        if (user) {
-                            req.session.user = user
-                            res.locals.user = req.session.user
-                            let time = 1000 * 60 * 60 * 24
-                            if (req.body.remember) {
-                                res.cookie("usersPet", req.session.user, { expires: new Date(Date.now() + time), httpOnly: true })
-                            }
-
-                            res.redirect('/')
-                        } else {
-                            res.redirect('/ps/register')
+                try {
+                    if (user) {
+                        req.session.user = user
+                        res.locals.user = req.session.user
+                        let time = 1000 * 60 * 60 * 24
+                        if (req.body.remember) {
+                            res.cookie("usersPet", req.session.user, { expires: new Date(Date.now() + time), httpOnly: true })
                         }
-                    } catch {
+
+                        res.redirect('/')
+                    } else {
                         res.redirect('/ps/register')
                     }
+                } catch {
+                    res.redirect('/ps/register')
+                }
                 /* } */
                 /* res.redirect('/ps/login') */
             }).catch(err => {
