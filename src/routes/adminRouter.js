@@ -8,6 +8,8 @@ const {
     createProduct,
     deleteProduct,
     deletePromotion,
+    isInPromotionToogleApi,
+    //productBestSellToogle,
 
     promotionView,
     adminPanelView,
@@ -28,7 +30,6 @@ const createProductValidator = require('../validations/createProductValidator')
     /* */
 let productUploadImage = require('../middlewares/productUploadImage')
 const isAdminContinue = require('../middlewares/isAdminContinue')
-const { productBestSellToogle, isInPromotionToogle } = require('../database/db')
     //Views
 router.get('/temporal', (req, res) => {
     res.render("admin//adminPanelMobile")
@@ -60,10 +61,10 @@ router.put('/products/:productId', productUploadImage.single("image"), isAdminCo
 router.post('/products/create', productUploadImage.single("image"), isAdminContinue, createProductValidator, createProduct)
 
 //Toogle BestSells
-router.put('/api/bestsell/:productId', isAdminContinue, productBestSellToogle)
+//router.put('/api/bestsell/:productId', isAdminContinue, productBestSellToogle)
 
 //Toogle isInPromotion
-router.put('/api/isinpromotion/:productId', isAdminContinue, isInPromotionToogle)
+router.put('/api/isinpromotion/:productId', isAdminContinue, isInPromotionToogleApi)
 
 
 

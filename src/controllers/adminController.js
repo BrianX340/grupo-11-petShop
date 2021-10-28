@@ -2,6 +2,25 @@ const { validationResult } = require('express-validator')
 const { getAllProductsNotPromotion, getAllPromotions, productCreate, searchProductById, productUpdate, getAllProducts, deleteOneProduct, isInPromotionToogle } = require('../database/db')
 
 module.exports = {
+    isInPromotionToogleApi: (req, res) => {
+        id = req.params.productId
+        isInPromotionToogle(id).then(respuestaToogle => {
+            data = {
+                session: req.session ? req.session : "",
+                status: respuestaToogle ? 1 : 0
+            }
+            console.log(data)
+            getAllProductsNotPromotion()
+                .then(products => {
+                    data.products = products
+                    res.render('admin//products//addProductPromotion', { data })
+                }).catch(err => {
+                    console.log(err)
+                    return false
+                })
+        })
+
+    },
     promotionView: (req, res) => {
         getAllPromotion() //armar esta funcion en el db que retorne los productos en promocion
             .then(products => {
