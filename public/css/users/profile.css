@@ -18,6 +18,14 @@
     flex-direction: row;
 }
 
+@media(max-width: 900px){
+    .userProfile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .userProfile .avatar{
     width: 160px;
     height: 160px;
@@ -35,13 +43,51 @@
 
 .userInfo{
     display: flex;
-    width: 20vw;
     padding: 0.5em;
     border: black 0.1em solid;
     border-radius: 0.8em;
     background-color: #ad76efde;
     flex-direction: column;
+    align-items: center;
 }
+
+@media (mix-width: 1200px){
+    .userInfo{width: 20vw;}
+}
+@media (min-width: 600px){
+    .userInfo{
+        display: flex;
+        width: 38em;
+        padding: 0.5em;
+        border: black 0.1em solid;
+        border-radius: 0.8em;
+        background-color: #ad76efde;
+        flex-direction: column;
+    }
+    .userProfileContainer{
+        display: flex;
+    }
+    .boxUserProfile{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .userProfileBox{
+        margin-left: 1em;
+    }
+    /* .btnProfile {
+        width: 20%;
+    } */
+}
+
+@media (min-width: 900px){
+    .boxUserProfile{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
 
 
 .userProfileItem{
@@ -54,8 +100,8 @@
 
 .btnProfile {
     border: black 0.1em solid;
+    width: 8em;
     border-radius: 0.8em;
-    width: 50%;
     padding: 0 0.5em;
     box-shadow: -0.7px 1.7px 4px #08010e;
     font-weight: bold;
@@ -65,9 +111,15 @@
 
 .favoriteProfile{
     background-color: blueviolet;
-    margin: 2em 0 0 1em;
-    width: 38em;
+    margin: 2em 0 0 0;
+    width: 100vw;
     height: 13em;
+}
+@media (min-width: 900px){
+    .favoriteProfile{
+        margin: 2em 0 0 1em;
+        width: 38em;
+    }
 }
 .boxExtra{
     display: flex;
