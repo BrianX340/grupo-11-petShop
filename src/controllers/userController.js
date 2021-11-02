@@ -1,4 +1,4 @@
-const { userCreate, updateUser } = require('../database/db')
+const { userCreate, updateUser, getAvatarList } = require('../database/db')
 const { validationResult } = require('express-validator')
 let bcrypt = require('bcryptjs')
 const { User, Avatars, Address } = require('../database/models')
@@ -50,7 +50,7 @@ module.exports = {
             res.render('users//editProfile', //renderizar formulario
                 {
                     data,
-                    avatarList: avatares
+                    avatarList: avatars
                 }
             )
         })
