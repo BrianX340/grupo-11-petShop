@@ -1,21 +1,33 @@
 const { check, body } = require('express-validator');
 
 module.exports = [
-    check('name')
-    .notEmpty()
-    .withMessage('Debes escribir el nombre del producto.').bail(),
 
-    check('stock')
+    body('name')
+    .custom((value) => {
+        regexProductName = /^[a-zA-Z0-9\s]*$/
+        return regexProductName.test(value)
+    })
+    .withMessage("Introduzca un nombre de producto valido"),
+
+    body('stock')
     .notEmpty()
     .withMessage('Debes indicar una cantidad.').bail()
-    .isNumeric()
-    .withMessage("Solo puedes ingresar números."),
+    .custom((value) => {
+        regexProductStock = /^[0-9]*$/
+        return regexProductStock.test(value)
+    })
+    .withMessage("Introduzca un numero de producto valido"),
 
-    check('barcode')
+
+    body('barcode')
     .notEmpty()
-    .withMessage('Debes indicar un codigo de barras valido.').bail()
-    .isNumeric()
-    .withMessage("Solo puedes ingresar números."),
+    .withMessage('Debes indicar un codigo de barras.').bail()
+    .custom((value) => {
+        regexBarcode = /^[0-9]*$/
+        return regexBarcode.test(value)
+    })
+    .withMessage("Introduzca un codigo de barras valido"),
+
 
     check('buyPrice')
     .notEmpty()
@@ -31,46 +43,29 @@ module.exports = [
 
     check('valoration')
     .notEmpty()
+    .withMessage("Debe ingresar al menos un numero").bail()
     .isInt({ min: 0, max: 5 })
-    .withMessage('Coloca un numero entre 1 y 5.')
+    .withMessage('Coloca un numero entre 1 y 5.').bail()
     .isNumeric()
     .withMessage("Solo puedes ingresar números."),
 
-    check('description')
+    body('description')
     .notEmpty()
-    .withMessage('Debes escribir una descripcion.').bail(),
-
-    body('categoryId')
-    .custom(value => {
-        switch (value) {
-            case '1':
-            case '2':
-                return true
-                break
-            default:
-                return false
-                break
-        }
+    .withMessage('Debes escribir una descripcion.').bail()
+    .custom((value) => {
+        regexDescription = /^[\w\s]*$/
+        return regexDescription.test(value)
     })
+    .withMessage("Introduzca un codigo de barras valido"),
+
+    check('categoryId')
+    .isNumeric()
+    .isInt({ min: 1, max: 2 })
     .withMessage('Debes indicar el tipo de animal correspondiente.'),
 
-
     body('subCategoryId')
-    .custom(value => {
-        switch (value) {
-            case '1':
-            case '2':
-            case '3':
-            case '4':
-                return true
-                break
-            default:
-                return false
-                break
-        }
-    })
+    .isNumeric()
+    .isInt({ min: 1, max: 4 })
     .withMessage('Debes indicar el tipo de producto.'),
-
-
 
 ]
