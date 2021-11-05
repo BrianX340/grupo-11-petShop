@@ -30,7 +30,6 @@
                                 <% if (data.session.user.role == 0) { %>
                                     <img class="avatarHeaderImage" src="/img/avatars/admin.svg">
                                     <% }else if (data.session.user.role == 1){ %>
-                                       
                                         <img class="avatarHeaderImage" src="/img/avatars/<%= data.session.user.avatar.path %>">
                                         <% } %>
                                             <% }else{ %>
