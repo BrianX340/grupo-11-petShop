@@ -228,16 +228,21 @@ module.exports = {
         }
         return isInPromotionToogle(id).then(completed => {
             if (completed) {
-                getAllProducts()
+                getAllPromotions()
                     .then(products => {
                         data = {
                             session: req.session ? req.session : "",
+                            actionStatus: 'success',
                             products
                         }
-                        return res.render('admin//products//promotion', { data })
+                        return res.render('admin//products//deleteProductPromotion', { data })
                     }).catch(err => {
-                        console.log(err)
-                        return false
+                        data = {
+                            session: req.session ? req.session : "",
+                            actionStatus: 'failed',
+                            products
+                        }
+                        return res.render('admin//products//deleteProductPromotion', { data })
                     })
             }
         })
