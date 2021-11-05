@@ -181,14 +181,18 @@ module.exports = {
 
     },
     searchProductById: (productId) => {
-        //Filtramos la base de datos, devolvera los resultados que incluyan el texto recibido por parametro
-        return db.Product.findByPk(+productId)
-            .then(product => {
-                return product
-            }).catch(err => {
-                console.log(err)
-                return false
-            })
+        try {
+            //Filtramos la base de datos, devolvera los resultados que incluyan el texto recibido por parametro
+            return db.Product.findByPk(+productId)
+                .then(product => {
+                    return product
+                }).catch(err => {
+                    console.log(err)
+                    return false
+                })
+        } catch {
+            return false
+        }
     },
     productUpdate: (productId, productData, callback) => {
         Promise.all([
@@ -215,9 +219,6 @@ module.exports = {
             }
         }).then(product => {
             return product
-        }).catch(err => {
-            console.log(err)
-            return false
         })
     },
     getAllPromotions: () => {

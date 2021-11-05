@@ -84,17 +84,28 @@ module.exports = {
 
     editProductView: (req, res) => {
         productId = req.params.productId
-            //traer product
-        searchProductById(productId)
-            .then(product => {
-                if (product) {
-                    data = {
-                        product: product.dataValues,
-                        session: req.session ? req.session : ""
+        try {
+            Number(productId) //esta funciion no tiro error y siguio
+            searchProductById(productId)
+                .then(product => {
+                    if (product) {
+                        data = {
+                            product: product.dataValues,
+                            session: req.session ? req.session : "",
+                            status: 'ok'
+                        }
+                        res.render('admin//products//editProduct', { data })
                     }
-                    res.render('admin//products//editProduct', { data })
-                }
-            })
+                })
+        } catch (err) { //tubo que dar error por la letra aunque es raro
+            data = {
+                product: product.dataValues,
+                session: req.session ? req.session : "",
+                status: 'error'
+            }
+            res.render('admin//products//editProduct', { data })
+            return false
+        }
 
 
     },
@@ -212,7 +223,10 @@ module.exports = {
     },
     deletePromotion: (req, res) => {
         id = req.params.productId
-        isInPromotionToogle(id).then(completed => {
+        if (isNaN(id)) {
+            return res.status(400).send({ message: 'La ruta que desea ingresar no existe' })
+        }
+        return isInPromotionToogle(id).then(completed => {
             if (completed) {
                 getAllProducts()
                     .then(products => {
@@ -220,7 +234,7 @@ module.exports = {
                             session: req.session ? req.session : "",
                             products
                         }
-                        res.render('admin//products//promotion', { data })
+                        return res.render('admin//products//promotion', { data })
                     }).catch(err => {
                         console.log(err)
                         return false
