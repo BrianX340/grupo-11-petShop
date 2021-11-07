@@ -195,8 +195,10 @@ module.exports = {
         }
     },
     productUpdate: (productId, productData, callback) => {
+        nuevoStock = productData.stock
+        delete productData.stock
         Promise.all([
-                db.Product.update({...productData }, { where: { id: productId } })
+                db.Product.update({...productData, stock: nuevoStock + this.stock }, { where: { id: productId } })
             ])
             .then(([productUpdated]) => {
                 callback(0)

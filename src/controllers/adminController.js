@@ -28,7 +28,7 @@ module.exports = {
                     session: req.session ? req.session : "",
                     products
                 }
-                res.render('admin//products//promotion', { data })
+                res.render('admin//products//listPromotion', { data })
             }).catch(err => {
                 console.log(err)
                 return false
@@ -84,6 +84,7 @@ module.exports = {
 
     editProductView: (req, res) => {
         productId = req.params.productId
+        
         try {
             Number(productId) //esta funciion no tiro error y siguio
             searchProductById(productId)

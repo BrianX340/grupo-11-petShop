@@ -5,34 +5,70 @@
 @import url('../partials/footer.css');
 @import url('../partials/background.css');
 
-.userProfile_container{
-    height: 100vh;
+
+.userProfile_container {
     display: flex;
-    align-items: center;
     justify-content: center;
 }
-
-/* .userProfileBodySection{
-    background-color: blueviolet;
-}
- */
-.form_editProfileContainer{
+section.userProfileBodySection {
+    background: rgb(154 70 211);
+    margin: 2em 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-
-.editProfile-container{
-    display: flex;
+    justify-content: center;
     flex-direction: column;
-    justify-content: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
-    padding: 16px;
-    border-radius: 13px;
-    background-color: blueviolet;
+    border-radius: 0.8em;
+    width: 50%;
 }
 
+@media (min-width: 1000px){
+    section.userProfileBodySection {
+        width: 460px;
+    }
+}
+@media (max-width: 500px){
+    section.userProfileBodySection {
+        width: 100%;
+    }
+}
+
+h3.userTitle {
+    display: flex;
+    justify-content: center;
+}
+
+label.labelEditProfile {
+    font-size: large;
+    font-weight: bold;
+}
+.editProfile_input{
+    background-color: #9f6ae9;
+    display: block;
+    height: 2.5em;
+    width: 90%;
+    margin: 0.6em auto;
+    border-style: none;
+    border-radius: 0.8em;
+}
+
+.botonEditProfile, #provinceList{
+    display: inline-block;
+    position: relative;
+    background-color: rgb(139 11 227);
+    margin: 0px 0px 0px 0px;
+    padding: 7px 12px;
+    overflow: visible;
+    border: 1px solid rgb(81 11 129);
+    border-radius: 3px 3px 3px 3px;
+    color: #000000;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: normal;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 340px;
+}
+/* Boton avatar*/
 #avatarBox {
     position: absolute;
     display: none;
@@ -86,49 +122,4 @@
     transform: scale(1.2);
 }
 
-/**/
-@media (min-width: 600px){
-    .editProfile-container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 800px;
-    }
-}
-
-.editProfile_inputContainer{
-    margin: 10px 0;
-}
-
-.editProfile_input {
-    border-radius: 10px;
-    width: 200px;
-    height: 26px;
-    background-color: rgb(236, 236, 236);
-    border-style: none;
-}
-
-.editProfile_select{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.editProfile_botonContainer{
-    display: flex;
-    justify-content: flex-end;
-    margin: 10px;
-}
-.editProfile_boton{
-    border-radius: 5px;
-    border-style: none;
-    width: 100px;
-    height: 23px;
-}
-
-.editProfile_selectContainer{
-    border-radius: 10px;
-    width: 200px;
-    height: 26px;
-    background-color: lightgray;
-    border-style: none;
-}
+/*Fin boton avatar*/
