@@ -12,29 +12,32 @@
 <body class="Product-body">
     <%- include('../partial/header'); %>
 
-            <div class="productDetail-padre">
+        <div class="productDetail-padre">
 
-                <div class="productDetail-img-info">
+            <div class="productDetail-img-info">
 
-                    <div class="productDetail-padre-info">
+                <div class="productDetail-padre-info">
 
-                        <div class="container-box-info">
+                    <div class="container-box-info">
 
-                            <div class="container-info">
+                        <div class="container-info">
 
-                                <div class="container-title">
-                                    <h5 class="title-h5"><%= data.product.name %> </h5>
-                                    <p class="subtitulo">
-                                        <%= data.product.name %>
-                                    </p>
+                            <div class="container-title">
+                                <h5 class="title-h5">
+                                    <%= data.product.name %>
+                                </h5>
+                                <p class="subtitulo">
+                                    <%= data.product.name %>
+                                </p>
+                            </div>
+
+                            <div class="container-price">
+                                <div class="price">$
+                                    <%= data.product.sellPrice %>
                                 </div>
-    
-                                <div class="container-price">
-                                    <div class="price">$<%= data.product.sellPrice %>
-                                    </div>
-                                </div>
-    
-                                <!-- <div class="product-color">
+                            </div>
+
+                            <!-- <div class="product-color">
                                     <label>Color :</label>
                                     <select name="mes">
                                         <option value="1">Negro</option>
@@ -44,17 +47,17 @@
                                     </select>
                                 </div> -->
 
-                                <div class="product-quantity">
-                                    <p>Cantidad :</p> 
-                                    <input value='<%- data.product.stock %>' type="number" id="cantidad" name="cantidad" min="1" max="10">
-                                </div>
+                            <div class="product-quantity">
+                                <p>Cantidad :</p>
+                                <input value='<%- data.product.stock %>' type="number" id="cantidad" name="cantidad" min="1" max="10">
+                            </div>
 
-                                <div class="btn-box">
-                                    <div class="btn-cart">
-                                        <button class="cart-btn"> Añadir al carrito</button>
-                                    </div>
-                                    <div class="btn-buy">
-                                        <button class="buy-btn"> Comprar ahora </buttom>
+                            <div class="btn-box">
+                                <div class="btn-cart">
+                                    <button class="cart-btn"> Añadir al carrito</button>
+                                </div>
+                                <div class="btn-buy">
+                                    <button class="buy-btn"> Comprar ahora </buttom>
                                     </div>
                                 </div>
 
@@ -69,7 +72,7 @@
 
                             <div class="box-gallery">
 
-                                <% if (data.session.user.role == 0) { %>
+                                <% if (data.session.user && data.session.user.role == 0) { %>
                                     <a class='adminEdit' href="/admin/products/edit/<%- data.product.id %>">
                                         <div>
                                             <figure>

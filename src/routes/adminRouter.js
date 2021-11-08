@@ -11,7 +11,6 @@ const {
     isInPromotionToogleApi,
     //productBestSellToogle,
 
-    promotionView,
     adminPanelView,
     listProductView,
     editProductView,

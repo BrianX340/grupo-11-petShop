@@ -4,6 +4,9 @@ const { getAllProductsNotPromotion, getAllPromotions, productCreate, searchProdu
 module.exports = {
     isInPromotionToogleApi: (req, res) => {
         id = req.params.productId
+        if (isNaN(id)) {
+            return res.status(400).send({ message: 'La ruta que desea ingresar no existe' })
+        }
         isInPromotionToogle(id).then(respuestaToogle => {
             data = {
                 session: req.session ? req.session : "",
@@ -20,19 +23,6 @@ module.exports = {
                 })
         })
 
-    },
-    promotionView: (req, res) => {
-        getAllPromotion() //armar esta funcion en el db que retorne los productos en promocion
-            .then(products => {
-                data = {
-                    session: req.session ? req.session : "",
-                    products
-                }
-                res.render('admin//products//promotion', { data })
-            }).catch(err => {
-                console.log(err)
-                return false
-            })
     },
     promotionAddView: (req, res) => {
         getAllProductsNotPromotion()
@@ -84,29 +74,20 @@ module.exports = {
 
     editProductView: (req, res) => {
         productId = req.params.productId
-        try {
-            Number(productId) //esta funciion no tiro error y siguio
-            searchProductById(productId)
-                .then(product => {
-                    if (product) {
-                        data = {
-                            product: product.dataValues,
-                            session: req.session ? req.session : "",
-                            status: 'ok'
-                        }
-                        res.render('admin//products//editProduct', { data })
-                    }
-                })
-        } catch (err) { //tubo que dar error por la letra aunque es raro
-            data = {
-                product: product.dataValues,
-                session: req.session ? req.session : "",
-                status: 'error'
-            }
-            res.render('admin//products//editProduct', { data })
-            return false
+        if (isNaN(productId)) {
+            return res.status(400).send({ message: 'La ruta que desea ingresar no existe' })
         }
-
+        searchProductById(productId)
+            .then(product => {
+                if (product) {
+                    data = {
+                        product: product.dataValues,
+                        session: req.session ? req.session : "",
+                        status: 'ok'
+                    }
+                    res.render('admin//products//editProduct', { data })
+                }
+            })
 
     },
     detailProductView: (req, res) => {
@@ -147,6 +128,9 @@ module.exports = {
     deleteProduct: (req, res) => {
         try {
             productId = req.params.productId
+            if (isNaN(productId)) {
+                return res.status(400).send({ message: 'La ruta que desea ingresar no existe' })
+            }
 
             data = {
                 session: req.session ? req.session : "",
