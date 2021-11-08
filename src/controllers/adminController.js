@@ -24,22 +24,6 @@ module.exports = {
         })
 
     },
-<<<<<<< HEAD
-=======
-    promotionView: (req, res) => {
-        getAllPromotion() //armar esta funcion en el db que retorne los productos en promocion
-            .then(products => {
-                data = {
-                    session: req.session ? req.session : "",
-                    products
-                }
-                res.render('admin//products//listPromotion', { data })
-            }).catch(err => {
-                console.log(err)
-                return false
-            })
-    },
->>>>>>> 4fd669ead62ba22d4ac1e3f9db4505cdc661225d
     promotionAddView: (req, res) => {
         getAllProductsNotPromotion()
             .then(products => {
@@ -90,33 +74,8 @@ module.exports = {
 
     editProductView: (req, res) => {
         productId = req.params.productId
-<<<<<<< HEAD
         if (isNaN(productId)) {
             return res.status(400).send({ message: 'La ruta que desea ingresar no existe' })
-=======
-        
-        try {
-            Number(productId) //esta funciion no tiro error y siguio
-            searchProductById(productId)
-                .then(product => {
-                    if (product) {
-                        data = {
-                            product: product.dataValues,
-                            session: req.session ? req.session : "",
-                            status: 'ok'
-                        }
-                        res.render('admin//products//editProduct', { data })
-                    }
-                })
-        } catch (err) { //tubo que dar error por la letra aunque es raro
-            data = {
-                product: product.dataValues,
-                session: req.session ? req.session : "",
-                status: 'error'
-            }
-            res.render('admin//products//editProduct', { data })
-            return false
->>>>>>> 4fd669ead62ba22d4ac1e3f9db4505cdc661225d
         }
         searchProductById(productId)
             .then(product => {
