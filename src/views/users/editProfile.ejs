@@ -20,37 +20,46 @@
 
                     <form action="/ps/profile/edit/<%= data.session.user.id %>?_method=PUT" method="POST" class="form_editProfile">
                         <section class="form_editProfileContainer">
+                            <label class="labelEditProfile" for="name">Nombre: </label>
                             <div class="editProfile_inputContainer">
                                 <input class="editProfile_input" type="text" name="name" placeholder="Nombre" value="<%= locals.old ? old.name : data.session.user.name %>">
                                 <% if (locals.errors && errors.name) { %>
                                     <small class="text-danger"><%= errors.name.msg %> </small>
                                     <% } %>
                             </div>
+                            <label class="labelEditProfile" for="lastName">Apellido:</label>
                             <div class="editProfile_inputContainer">
                                 <input class="editProfile_input" type="text" name="lastName" placeholder="Apellido" value="<%= locals.old ? old.lastName : data.session.user.lastName %>">
                                 <% if (locals.errors && errors.last_name) { %>
                                     <small class="text-danger"><%= errors.last_name.msg %> </small>
                                     <% } %>
                             </div>
+                            <label class="labelEditProfile" for="email">Correo Electronico:</label>
                             <div class="editProfile_inputContainer">
                                 <input class="editProfile_input" type="email" name="email" placeholder="Ingresá tu email" value="<%= data.session.user.email %>">
                             </div>
+                            <label class="labelEditProfile" for="tel">Telefono:</label>
                             <div class="editProfile_inputContainer">
                                 <input class="editProfile_input" type="text" name="tel" placeholder="Ingresá tu teléfono" value="<%= data.session.user.tel ? data.session.user.tel : " " %>">
                             </div>
+                            <label class="labelEditProfile" for="address">Domicilio:</label>
                             <div class="editProfile_inputContainer">
                                 <input class="editProfile_input" type="text" name="address" placeholder="Domicilio" value="<%= data.session.user.address.address ? data.session.user.address.address : " " %>">
                             </div>
+                            <label class="labelEditProfile" for="cp">Codigo Postal:</label>
                             <div class="editProfile_inputContainer">
                                 <input class="editProfile_input" type="text" name="cp" placeholder="Código postal" value="<%= data.session.user.address.cp ? data.session.user.address.cp : " " %>">
                             </div>
-                            <div class="editProfile_inputContainer">
-                                <input class="editProfile_input" type="text" name="state" placeholder="Provincia" value="<%= data.session.user.address.state ? data.session.user.address.state : " " %>">
+                            <label class="labelEditProfile" for="state">Provincia:</label>
+                            <div >
+                                <select name="state" id="provinceList"></select>
                             </div>
-                            <div class="editProfile_inputContainer">
+                            <label class="labelEditProfile" for="city">Localidad:</label>
+                            <div class="botonEditProfile">
                                 <input class="editProfile_input" type="text" name="city" placeholder="Localidad" value="<%= data.session.user.address.city ? data.session.user.address.city : " " %>">
                             </div>
-                            <div class="editProfile_inputContainer">
+                            <label class="labelEditProfile" for="country">Pais:</label>
+                            <div class="botonEditProfile">
                                 <input class="editProfile_input" type="text" name="country" placeholder="Pais" value="<%= data.session.user.address.country ? data.session.user.address.country : " " %>">
                             </div>
                         </section>
@@ -98,7 +107,7 @@
 
 
                         <div class="editProfile_botonContainer">
-                            <button type="submit" class="editProfile_boton">
+                            <button class="botonEditProfile" type="submit" class="editProfile_boton">
                             GUARDAR
                         </button>
                         </div>
