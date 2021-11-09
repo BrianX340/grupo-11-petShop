@@ -42,7 +42,7 @@ module.exports = (sequalize, dataTypes) => {
         })
     }
 
-    User.prototype.verifyPassword = function (password) {
+    User.prototype.verifyPassword = function(password) {
         return bcrypt.compareSync(password, this.pass)
     }
 

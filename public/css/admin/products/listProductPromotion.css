@@ -30,3 +30,25 @@ body {
 .listImg {
     width: 100%;
 }
+
+.backButton {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.backButton>div {
+    font-weight: bold;
+    font-family: system-ui;
+    font-size: 1.5em;
+    box-sizing: border-box;
+    width: 100px;
+    border: 2px white solid;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.backButton>div a {
+    color: white;
+}

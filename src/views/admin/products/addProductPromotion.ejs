@@ -24,6 +24,12 @@
 <body>
     <%- include('../../partial/header'); %>
 
+        <section class='backButton'>
+            <div>
+                <a href="/">Volver</a>
+            </div>
+        </section>
+
         <section class='tables'>
             <table class="table table-bordered table-striped">
                 <thead>
@@ -37,7 +43,7 @@
                         <th style="width: 60px;">Valoracion</th>
                         <th style="width: 60px;">VentasTotales</th>
                         <th style="width: 60px;">VistasTotales</th>
-                        <th style="width: 60px;">Descuento%</th>
+                        <th style="width: 60px;">Descuento% (max 99)</th>
                         <th>Agregar a Promocion</th>
                         <th>Precio final</th>
                         <th>Ganancia</th>
@@ -49,10 +55,10 @@
                             <td>
                                 <%- product.name %>
                             </td>
-                            <td>
+                            <td id='tdBuyPrice<%- product.id %>'>
                                 <%- product.buyPrice %>
                             </td>
-                            <td>
+                            <td id='tdSellPrice<%- product.id %>'>
                                 <%- product.sellPrice %>
                             </td>
                             <td>
@@ -75,18 +81,17 @@
                             </td>
                             <form action="/admin/api/isinpromotion/<%- product.id %>?_method=PUT" method="POST">
                                 <td>
-                                    <input class='discount' type="number">
+                                    <input id='input<%- product.id %>' onkeydown="javascript: return event.keyCode == 69 ? false : true" class='discount' type="number">
                                 </td>
                                 <td>
                                     <button type="submit" class="listButtom">
-                                    <img class="listImg" src="/img/admin/check.svg" alt="Agregar">
+                                    <img class="listImg" src="/img/admin/check.svg" id='sender<%- product.id %>' alt="Agregar">
                                 </button>
                                 </td>
                             </form>
-                            <td>
-                                <span class=''></span>
+                            <td id='finalPrice<%- product.id %>'>
                             </td>
-                            <td>
+                            <td id='gain<%- product.id %>'>
                                 Ganancia
                             </td>
                         </tr>
@@ -109,9 +114,60 @@
 
 <script>
     setTimeout(() => {
-        document.getElementById('operationSuccess').style.display = 'none'
-        document.getElementById('successfulOperation').style.display = 'none'
+        try {
+            document.getElementById('operationSuccess').style.display = 'none'
+            document.getElementById('successfulOperation').style.display = 'none'
+        } catch {
+            document.getElementById('successfulOperation').style.display = 'none'
+        }
     }, 2500)
+
+    window.onload = () => {
+        let elements = document.getElementsByClassName('discount')
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].addEventListener('keyup', (event) => {
+
+
+                if (elements[i].value.match(/^[0-9]{0,2}$/)) {
+                    elements[i].style.border = '3px solid #12c312'
+                        //comienza descuento con sell price
+                    discount = elements[i].value
+                    sellPrice = document.getElementById(`tdSellPrice${elements[i].id.slice(5)}`).innerHTML.trim()
+                    finalPrice = sellPrice - (sellPrice * (discount / 100))
+                    document.getElementById(`finalPrice${elements[i].id.slice(5)}`).innerHTML = finalPrice
+                        //fin descuento con sell price
+
+                    //Comienza vista ganancia
+                    buyPrice = document.getElementById(`tdBuyPrice${elements[i].id.slice(5)}`).innerHTML.trim()
+                    ganancia = finalPrice - buyPrice
+                    document.getElementById(`gain${elements[i].id.slice(5)}`).innerHTML = ganancia
+                        //fin vista ganancia
+
+                } else {
+                    elements[i].style.border = '2px red solid'
+                    buyPrice = document.getElementById(`tdSellPrice${elements[i].id.slice(5)}`).innerHTML.trim()
+                }
+
+            })
+        }
+
+        let elementsSenders = document.getElementsByClassName('listImg')
+        for (let i = 0; i < elementsSenders.length; i++) {
+            elementsSenders[i].addEventListener('click', (event) => {
+                input = document.getElementById('input' + elementsSenders[i].id.slice(6))
+                regexChecked = input.value.match(/^[0-9]{0,2}$/)
+                if (!regexChecked) {
+                    event.preventDefault()
+                }
+            })
+        }
+    }
 </script>
+
+<style>
+    input {
+        outline: none;
+    }
+</style>
 
 </html>

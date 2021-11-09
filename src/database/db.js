@@ -236,6 +236,47 @@ module.exports = {
             return false
         })
     },
+    isInPromotionToogle: (productId) => {
+        return db.Product.findByPk(+productId)
+            .then(product => {
+                return product.toogleInPromotion()
+            }).catch(err => {
+                console.log(err)
+                return false
+            })
+    },
+
+    addUserFavorite: (userId, productId) => {
+        return db.Favorites.findOne({
+            where: {
+                userId,
+                productId
+            }
+        }).then(favorite => {
+            if (favorite) {
+                return false
+            } else {
+                return db.Favorites.create({
+                    userId,
+                    productId
+                })
+            }
+        }).catch(err => {
+            console.log(err)
+            return false
+        })
+    },
+    deleteUserFavorite: (userId, productId) => {
+        dbUsers.find(user => {
+
+            if (user.id == userId) {
+                delete user.favorites[productId]
+
+                saveDB(dbUsers, 'users.json')
+            }
+        })
+        return true
+    },
 
 
     productBestSellToogle: (productId) => {
@@ -243,16 +284,6 @@ module.exports = {
             .then(product => {
                 product.toogleBestSell()
                 return true
-            }).catch(err => {
-                console.log(err)
-                return false
-            })
-    },
-
-    isInPromotionToogle: (productId) => {
-        return db.Product.findByPk(+productId)
-            .then(product => {
-                return product.toogleInPromotion()
             }).catch(err => {
                 console.log(err)
                 return false
@@ -275,28 +306,7 @@ module.exports = {
                 return avatares
             })
     },
-    addUserFavorite: (userId, productId) => {
-        dbUsers.find(user => {
 
-            if (user.id == userId) {
-                user.favorites[productId] = true
-
-                saveDB(dbUsers, 'users.json')
-            }
-        })
-        return true
-    },
-    deleteUserFavorite: (userId, productId) => {
-        dbUsers.find(user => {
-
-            if (user.id == userId) {
-                delete user.favorites[productId]
-
-                saveDB(dbUsers, 'users.json')
-            }
-        })
-        return true
-    },
     writeUsersJSON: (dbUsers) => {
         fs.writeFileSync(`./src/database/users.json`, JSON.stringify(dbUsers), "utf-8")
     },
