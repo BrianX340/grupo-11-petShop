@@ -1,4 +1,4 @@
-const { check, body } = require('express-validator')
+const { body } = require('express-validator')
 const db = require('../database/models')
 
 module.exports = [
@@ -37,19 +37,11 @@ module.exports = [
             })
     }),
 
-    body('pass')
+    body('tel')
     .custom((value) => {
-        regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/
-        return regexPassword.test(value)
+        let regExTel = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/i
+        return regExTel.test(value)
     })
-    .withMessage("Introduzca una contraseña valida, Deberá tener letras mayúsculas, minúsculas, un número y un carácter especial."),
-
-    body('pass2')
-    .custom((value, { req }) => value !== req.body.pass ? false : true)
-    .withMessage('Las contraseñas no coinciden'),
-
-    check('terms')
-    .isString('on')
-    .withMessage('Debes aceptar los términos y condiciones')
+    .withMessage("Introduzca un nombre valido"),
 
 ]
