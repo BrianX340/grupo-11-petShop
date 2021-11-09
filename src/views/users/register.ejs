@@ -72,29 +72,19 @@
                         <%= errors.terms.msg %>
                         </small>
                         <% } %>
-                        <small class="text-danger" id=""></small>
+                        <small class="text-danger" id="errorTermsRegister"></small>
 
-
+                        <small class="text-danger" id="formErrorRegister"></small>
+                        
                         <input id="submitErrorRegistro" type="submit" value="Registrarse">
                         <p class="signup">¿Ya tiene cuenta? <a href="/ps/login"> Inicie sesión.</a></p>
                         </form>
-
-                        <!--                   </div>
-<div class="imgBx"><img class="imgBx-img" src="/img/gato-forms.jpg"></div>
-            </div> -->
                     </div>
         </section>
 
         <%- include('../partial/footer'); %>
 
-            <script>
-                /* function toggleForm(){
-                                                                            section = document.querySelector('section');
-                                                                            container = document.querySelector('.container');
-                                                                            container.classList.toggle('active');
-                                                                            section.classList.toggle('active');
-                                                                        } */
-            </script>
+            <script src="/js/registerValidator.js"></script>
 </body>
 
 </html>
