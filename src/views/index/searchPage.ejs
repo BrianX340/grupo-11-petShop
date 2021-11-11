@@ -14,7 +14,17 @@
 
         <div class='resultTitle'>
             <div>
-                <span>Resultados de la busqueda:</span>
+                <span>
+                <% if (data.isCategory) { %>
+                    <% if (data.category == 1 || data.category == 2) { %>
+                        <%- data.category == 1 ? "Gatos" : "Perros" %> 
+                    <% } else { %>
+                        La categoria seleccionada es incorrecta
+                    <% } %>
+                <% } else { %>
+                    Resultados de la busqueda:
+                <% } %>
+                </span>
             </div>
         </div>
 

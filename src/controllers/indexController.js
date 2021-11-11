@@ -21,10 +21,15 @@ module.exports = {
         subCategory = req.query.category
 
         search = searchText ? searchProductsByName(searchText) : searcherByPetsubCategory(pet, subCategory)
+        try{
+
+        
         search.then(search => {
             if (search) {
                 data = {
                     search,
+                    isCategory: !searchText ? true : false,
+                    category: pet,
                     session: req.session ? req.session : ""
                 }
 
@@ -34,7 +39,10 @@ module.exports = {
             console.log(err)
             return false
         })
-
+        }
+        catch{
+            res.status(404).render('index//error', { data:{session: req.session.user ? req.session.user : ""}})
+        }
     },
     detail: (req, res) => {
         let productId = +req.params.id;
