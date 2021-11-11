@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,7 @@
 
 
         <main id='modifyProductView' class='noDisplay'>
-            <section>
+            <section class="sectionEditProduct">
                 <section id='modifySearchView'>
 
                     <div class='finalCardTitle'><span>Modificar Producto</span></div>
@@ -28,103 +28,82 @@
                     <% } else if (data.status == 'ok') { %>
                         <form action="/admin/products/<%- data.product.id %>?_method=PUT" id='formEdit' class="formCreate noDisplay" method="POST" enctype="multipart/form-data">
                             <div class='formContainer'>
-                                <div class='finalCardTitle'><span>Modificar Producto</span></div>
-
                                 <div class='inputsContainerBox'>
-
                                     <div class="inputfield">
+                                            <span>Imagen: </span>
                                         <div class='addImageButton'>
-                                            <span>Imagen</span>
-                                            <input id='imageContainerEdit' type="file" class="form-control" name="image" aria-label="file example">
+                                            <input class="imageEditProduct" id='imageContainerEdit' type="file" name="image" aria-label="file example">
                                         </div>
                                     </div>
-
                                     <div class="inputfield">
-                                        <div>
-                                            <span>Nombre</span>
-                                            <input value='<%- data.product.name  %>' type="text" type="text" class="form-control" id="inputNameEdit" name="name">
+                                        <span>Nombre:</span>
+                                        <div class="inputEditProduct">
+                                            <input  value='<%- data.product.name  %>' type="text" type="text"  id="inputNameEdit" name="name">
                                         </div>
                                     </div>
-
                                     <div class="inputfield">
-                                        <div>
-                                            <span>Precio Compra</span>
-                                            <input value='<%- data.product.buyPrice  %>' type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="inputBuyPriceEdit" name="buyPrice">
+                                            <span>Precio Compra: </span>
+                                        <div class="inputEditProduct">
+                                            <input value='<%- data.product.buyPrice  %>' type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="inputBuyPriceEdit" name="buyPrice">
                                         </div>
                                     </div>
-
                                     <div class="inputfield">
-                                        <div>
-                                            <span>Precio Venta</span>
-                                            <input value='<%- data.product.sellPrice  %>' type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="inputSellPriceEdit" name="sellPrice">
+                                            <span>Precio Venta: </span>
+                                        <div class="inputEditProduct">
+                                            <input value='<%- data.product.sellPrice  %>' type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="inputSellPriceEdit" name="sellPrice">
                                         </div>
                                     </div>
-
                                     <div class="inputfield">
-                                        <div>
-                                            <span>Descripcion</span>
-                                            <input value='<%- data.product.description  %>' type="text" id="inputDescriptionEdit" name="description">
+                                            <span>Descripcion: </span>
+                                        <div class="inputEditProduct">
+                                        <textarea name="description"  type="text" id="inputDescriptionEdit"  rows="6" required> <%- data.product.description %></textarea>
+                                        
                                         </div>
                                     </div>
-
                                     <div class="inputfield">
-                                        <div>
-                                            <span>Cantidad</span>
+                                            <span>Stock: </span>
+                                        <div class="inputEditProduct">
                                             <input value='<%- data.product.stock  %>' type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="inputAmountEdit" name="stock">
                                         </div>
                                     </div>
-
                                     <div class="inputfield">
-                                        <div>
-                                            <span>Descuento</span>
-                                            <input value='<%- data.product.discount  %>' type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="inputDiscountEdit" name="discount">
-                                        </div>
-                                    </div>
-
-                                    <div class="inputfield">
-                                        <div>
-                                            <span>Valoracion</span>
-                                            <input value='<%- data.product.valoration  %>' type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="inputValorationEdit" name="valoration">
-                                        </div>
-                                    </div>
-
-                                    <div class="inputfield">
-                                        <div>
-                                            <span>Codigo de Barras</span>
+                                            <span>Codigo de Barras: </span>
+                                        <div class="inputEditProduct">
                                             <input value='<%- data.product.barcode  %>' type="text" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="inputBarcodeEdit" name="barcode">
                                         </div>
                                     </div>
-
                                     <div class="inputfield">
                                         <span class="input-group-addon" id="basic-addon1">Animal: </span>
-                                        <select class="form-control" name="categoryId" id="inputCategoryAdd" form="formCreateAdd">
+                                        <div>
+                                            <select class="form-control" name="categoryId" id="inputCategoryAdd" form="formCreateAdd">
+                                        
                                     <option hidden value="<%- data.product.categoryId  %>">Elija una categoria</option>
                                     <option value="1">Gato</option>
                                     <option value="2">Perro</option>
                                 </select>
+                                </div>
                                     </div>
-
                                     <div class="inputfield">
                                         <span class="input-group-addon" id="basic-addon1">Tipo de Producto: </span>
-                                        <select class="form-control" name="subCategoryId" id="inputSubCategoryAdd" form="formCreateAdd">
+                                        <div>
+                                            <select class="form-control" name="subCategoryId" id="inputSubCategoryAdd" form="formCreateAdd">
+                                        
                                     <option hidden value="<%= data.product.subCategoryId  %>">Elija tipo de producto</option>
                                     <option value="1">Alimentos</option>
                                     <option value="2">Higiene</option>
                                     <option value="3">Juguetes</option>
                                     <option value="4">Camas</option>
                                 </select>
-                                    </div>
-
-                                </div>
-
-                                <div class='buttonOptionProduct'>
-                                    <button class='backButton'>Volver</button>
-                                    <button class='cleanInputs'>Limpiar campos</button>
-                                    <button type="submit" id='productSaveEdit'>Cargar</button>
-                                </div>
-
                             </div>
-
+                                </select>
+                                    </div>
+                                </div>
+                                <div class='buttonOptionProduct'>
+                                    <button class="buttonEditProduct" id='backButton'>Volver</button>
+                                    <button class="buttonEditProduct" id='cleanInputs'>Limpiar campos</button>
+                                    <button class="buttonEditProduct" type="submit" id='productSaveEdit'>Cargar</button>
+                                </div>
+                            </div>
                         </form>
                         <% } %>
 
@@ -143,13 +122,12 @@
         document.getElementById("inputBuyPriceEdit").value = ''
         document.getElementById("inputSellPriceEdit").value = ''
         document.getElementById("inputDiscountEdit").value = ''
+        document.getElementById("inputDiscountEdit").value = ''
         document.getElementById("inputValorationEdit").value = ''
         document.getElementById("inputDescriptionEdit").value = ''
         document.getElementById("inputAmountEdit").value = ''
         document.getElementById("inputBarcodeEdit").value = ''
-
     }
-
     document.addEventListener('click', event => {
         try {
             elementId = event.path[0].id
@@ -158,7 +136,6 @@
             elementId = event.target.id
             elementClass = event.path[0].className
         }
-
         if (elementId == 'limpiar') {
             limpiarCampos()
             event.preventDefault()
@@ -167,7 +144,5 @@
         }
     })
 </script>
-
-<script src="/js/editProduct.js"></script>
 
 </html>
