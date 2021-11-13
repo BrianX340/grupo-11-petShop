@@ -121,9 +121,6 @@
         document.getElementById("inputNameEdit").value = ''
         document.getElementById("inputBuyPriceEdit").value = ''
         document.getElementById("inputSellPriceEdit").value = ''
-        document.getElementById("inputDiscountEdit").value = ''
-        document.getElementById("inputDiscountEdit").value = ''
-        document.getElementById("inputValorationEdit").value = ''
         document.getElementById("inputDescriptionEdit").value = ''
         document.getElementById("inputAmountEdit").value = ''
         document.getElementById("inputBarcodeEdit").value = ''
@@ -136,8 +133,9 @@
             elementId = event.target.id
             elementClass = event.path[0].className
         }
-        if (elementId == 'limpiar') {
-            limpiarCampos()
+        console.log(elementId)
+        if (elementId == 'cleanInputs') {
+            limpiarCampos() 
             event.preventDefault()
         } else if (elementId == 'back') {
             window.location.href = `${window.location.origin}`

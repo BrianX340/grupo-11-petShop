@@ -16,6 +16,23 @@ window.onload = () => {
         }
     })
 
+    document.addEventListener('click', event => {
+        try {
+            elementId = event.path[0].id
+            elementClass = event.path[0].className
+        } catch {
+            elementId = event.target.id
+            elementClass = event.path[0].className
+        }
+    
+        if (elementId == 'limpiar') {
+            limpiarCampos()
+            event.preventDefault()
+        } else if (elementId == 'back') {
+            window.location.href = `${window.location.origin}`
+        }
+    })
+
 }
 
 function listenRegexOk(idElement, regex) {
@@ -51,4 +68,16 @@ function listenChangeImageAndShow(inputFileId,imgLabelId){
         }
         imgLabel.src = URL.createObjectURL(archivos[0])
         });
+}
+
+function limpiarCampos() {
+    document.getElementById("inputName").value = ''
+    document.getElementById("inputBuyPrice").value = ''
+    document.getElementById("inputSellPrice").value = ''
+    document.getElementById("inputDiscount").value = ''
+    document.getElementById("inputDiscount").value = ''
+    document.getElementById("inputValoration").value = ''
+    document.getElementById("inputDescription").value = ''
+    document.getElementById("inputAmount").value = ''
+    document.getElementById("inputBarcode").value = ''
 }
