@@ -6,6 +6,7 @@ window.onload = () => {
     listenRegexOk('inputDiscount', /^[0-9]{0,2}$/)
     listenRegexOk('inputName', /^[a-zA-Z0-9]{3,}$/)
     listenRegexOk('inputValoration', /^[0-5]{0,1}$/)
+    listenChangeImageAndShow('inputImageAdd','imgView') 
     listenRegexOk('inputDescription', /(.|\s)*[a-zA-Z]+(.|\s)*$/)
 
     document.getElementById('productCreate').addEventListener('click', (event) => {
@@ -14,6 +15,7 @@ window.onload = () => {
             event.preventDefault()
         }
     })
+
 }
 
 function listenRegexOk(idElement, regex) {
@@ -35,4 +37,18 @@ function verifyAll() {
         }
     }
     return allCorrect
+}
+
+function listenChangeImageAndShow(inputFileId,imgLabelId){
+    inputFile = document.querySelector("#inputImageAdd")
+    imgLabel = document.querySelector("#imgView")
+
+    inputFile.addEventListener("change", () => {
+        archivos = inputFile.files;
+        if (!archivos || !archivos.length) {
+            imgLabel.src = "";
+            return;
+        }
+        imgLabel.src = URL.createObjectURL(archivos[0])
+        });
 }
