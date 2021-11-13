@@ -30,9 +30,24 @@ window.onload = () => {
             event.preventDefault()
         } else if (elementId == 'back') {
             window.location.href = `${window.location.origin}`
+        } else if (elementId=='productCreate'){
+            if (!priceVerify()){
+                event.preventDefault()
+            }
         }
     })
 
+    verifyPrice('inputBuyPrice')
+    verifyPrice('inputSellPrice')
+
+}
+
+function verifyPrice(idElement){
+    document.querySelector(`#${idElement}`).addEventListener('keyup',(event)=>{
+        verified = priceVerify()
+        document.getElementById('inputBuyPrice').style.border = verified ? '3px solid #12c312' : '2px red solid'
+        document.getElementById('inputSellPrice').style.border = verified ? '3px solid #12c312' : '2px red solid'
+    })
 }
 
 function listenRegexOk(idElement, regex) {
@@ -80,4 +95,13 @@ function limpiarCampos() {
     document.getElementById("inputDescription").value = ''
     document.getElementById("inputAmount").value = ''
     document.getElementById("inputBarcode").value = ''
+}
+
+function priceVerify(){
+    buyPrice = document.getElementById('inputBuyPrice').value
+    sellPrice = document.getElementById('inputSellPrice').value
+    if (buyPrice >= sellPrice){
+        return false
+    }
+    return true
 }
