@@ -1,4 +1,13 @@
 
+@media (min-width: 600px) { 
+    #wsp-chat{
+        display: none;
+    }
+    .wspChat{
+        display: none;
+    }
+}
+
 
 #wsp-chat {
     position: fixed;
