@@ -30,6 +30,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   min-width: 320px;
+  overflow-x:hidden
 }
 
 span {
