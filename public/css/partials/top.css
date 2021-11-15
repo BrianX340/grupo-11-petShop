@@ -1,0 +1,83 @@
+.topStyle{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    height: 28em;
+    width: 100vw;
+}
+
+
+.topContainer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 680px){
+    .topContainer{
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+/* animacion  */
+/* .bgTop {
+    position: absolute;
+    /* background: url("https://droitthemes.com/html/saasland/img/seo/cloud_bg.png") no-repeat scroll center 0;
+    width: 100%; 
+    height: 266px;
+} */
+
+/* .topBg .topBgOne {
+    background: url("") no-repeat center center;
+    background-size:100%;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    -webkit-animation: gatito 7s linear infinite;
+    animation: gatito 7s linear infinite;
+} */
+.topBgTwo {
+    background: url("") no-repeat center center;
+    background-size:100%;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    -webkit-animation: gatito 10s linear infinite;
+    animation: gatito 10s linear infinite;
+    animation-direction: reverse;
+}
+
+.topImage {
+    width: 100px; 
+    height: 100px;
+}
+
+@keyframes gatito {
+    0% {
+    left: -25%;
+    }
+    100% {
+    left: 100%;
+    }
+}
+
+@-webkit-keyframes gatito {
+    0% {
+    left: -25%;
+    }
+    100% {
+    left: 100%;
+    }
+}
+
+@-moz-keyframes gatito {
+    0% {
+    left: -25%;
+    }
+    100% {
+    left: 100%;
+    }
+}
