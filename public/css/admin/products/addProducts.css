@@ -67,3 +67,12 @@
 
 .form-control{
 }
+
+.inputsContainerBox figure {
+    display: flex;
+    justify-content: center;
+}
+
+.inputsContainerBox img {
+    width: 75%;
+}

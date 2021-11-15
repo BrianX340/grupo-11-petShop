@@ -33,7 +33,11 @@
 
                     <div class='inputsContainerBox'>
 
-
+                        <div>
+                            <figure>
+                                <img id='imgView' src="/img/products/productDefault.png" alt="">
+                            </figure>
+                        </div>
 
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Imagen: </span>
@@ -178,45 +182,11 @@
                 <% } %>
 
 </body>
-
 <script>
     setTimeout(() => {
         document.getElementById('operationSuccess').style.display = 'none'
         document.getElementById('successfulOperation').style.display = 'none'
     }, 2500)
-
-    //Limpieza de Campos
-    function limpiarCampos() {
-        document.getElementById("inputName").value = ''
-        document.getElementById("inputBuyPrice").value = ''
-        document.getElementById("inputSellPrice").value = ''
-        document.getElementById("inputDiscount").value = ''
-        document.getElementById("inputDiscount").value = ''
-        document.getElementById("inputValoration").value = ''
-        document.getElementById("inputDescription").value = ''
-        document.getElementById("inputAmount").value = ''
-        document.getElementById("inputBarcode").value = ''
-
-    }
-
-    document.addEventListener('click', event => {
-        try {
-            elementId = event.path[0].id
-            elementClass = event.path[0].className
-        } catch {
-            elementId = event.target.id
-            elementClass = event.path[0].className
-        }
-
-        if (elementId == 'limpiar') {
-            limpiarCampos()
-            event.preventDefault()
-        } else if (elementId == 'back') {
-            window.location.href = `${window.location.origin}`
-        }
-    })
 </script>
-
 <script src="/js/addProduct.js"></script>
-
 </html>

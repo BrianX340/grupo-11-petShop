@@ -14,6 +14,12 @@ window.onload = () => {
             event.preventDefault()
         }
     })
+
+    /* document.getElementById('cleanInputs').addEventListener('click', (event) => {
+        console.log('sad')
+        limpiarCampos()
+        event.preventDefault()
+    }) */
 }
 
 function listenRegexOk(idElement, regex) {
@@ -36,3 +42,12 @@ function verifyAll() {
     }
     return allCorrect
 }
+/* 
+function limpiarCampos() {
+    document.getElementById("inputNameEdit").value = ''
+    document.getElementById("inputBuyPriceEdit").value = ''
+    document.getElementById("inputSellPriceEdit").value = ''
+    document.getElementById("inputDescriptionEdit").value = ''
+    document.getElementById("inputAmountEdit").value = ''
+    document.getElementById("inputBarcodeEdit").value = ''
+} */

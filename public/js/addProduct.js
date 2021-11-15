@@ -6,6 +6,7 @@ window.onload = () => {
     listenRegexOk('inputDiscount', /^[0-9]{0,2}$/)
     listenRegexOk('inputName', /^[a-zA-Z0-9]{3,}$/)
     listenRegexOk('inputValoration', /^[0-5]{0,1}$/)
+    listenChangeImageAndShow('inputImageAdd','imgView') 
     listenRegexOk('inputDescription', /(.|\s)*[a-zA-Z]+(.|\s)*$/)
 
     document.getElementById('productCreate').addEventListener('click', (event) => {
@@ -13,6 +14,39 @@ window.onload = () => {
         if (!allCorrect) {
             event.preventDefault()
         }
+    })
+
+    document.addEventListener('click', event => {
+        try {
+            elementId = event.path[0].id
+            elementClass = event.path[0].className
+        } catch {
+            elementId = event.target.id
+            elementClass = event.path[0].className
+        }
+    
+        if (elementId == 'limpiar') {
+            limpiarCampos()
+            event.preventDefault()
+        } else if (elementId == 'back') {
+            window.location.href = `${window.location.origin}`
+        } else if (elementId=='productCreate'){
+            if (!priceVerify()){
+                event.preventDefault()
+            }
+        }
+    })
+
+    verifyPrice('inputBuyPrice')
+    verifyPrice('inputSellPrice')
+
+}
+
+function verifyPrice(idElement){
+    document.querySelector(`#${idElement}`).addEventListener('keyup',(event)=>{
+        verified = priceVerify()
+        document.getElementById('inputBuyPrice').style.border = verified ? '3px solid #12c312' : '2px red solid'
+        document.getElementById('inputSellPrice').style.border = verified ? '3px solid #12c312' : '2px red solid'
     })
 }
 
@@ -35,4 +69,39 @@ function verifyAll() {
         }
     }
     return allCorrect
+}
+
+function listenChangeImageAndShow(inputFileId,imgLabelId){
+    inputFile = document.querySelector("#inputImageAdd")
+    imgLabel = document.querySelector("#imgView")
+
+    inputFile.addEventListener("change", () => {
+        archivos = inputFile.files;
+        if (!archivos || !archivos.length) {
+            imgLabel.src = "";
+            return;
+        }
+        imgLabel.src = URL.createObjectURL(archivos[0])
+        });
+}
+
+function limpiarCampos() {
+    document.getElementById("inputName").value = ''
+    document.getElementById("inputBuyPrice").value = ''
+    document.getElementById("inputSellPrice").value = ''
+    document.getElementById("inputDiscount").value = ''
+    document.getElementById("inputDiscount").value = ''
+    document.getElementById("inputValoration").value = ''
+    document.getElementById("inputDescription").value = ''
+    document.getElementById("inputAmount").value = ''
+    document.getElementById("inputBarcode").value = ''
+}
+
+function priceVerify(){
+    buyPrice = document.getElementById('inputBuyPrice').value
+    sellPrice = document.getElementById('inputSellPrice').value
+    if (buyPrice >= sellPrice){
+        return false
+    }
+    return true
 }
