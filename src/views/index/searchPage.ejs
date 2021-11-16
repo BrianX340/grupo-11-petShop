@@ -29,7 +29,33 @@
         </div>
 
         <section class='resultSearch'>
-            <%- include('../partial/productCardSearch', {data}); %>
+            <% if (data.search.length > 0) { %>
+                <%- include('../partial/productCardSearch', {data}); %>
+            <% } else { %>
+                <div class="box-card" style='
+                width: 200px;
+                height: 200px;'
+                >
+                    <div>
+                        <a class='cardProductLink'>
+                            <div class='box-card-top' style='
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            '>
+                                <div class='card-item-image'>
+                                    <figure>
+                                        <img src="/img/products/productDefault.png" alt="">
+                                    </figure>
+                                </div>
+                                <div class='card-item-name'>
+                                    <span class='product-name'>No se han encontrado articulos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            <% } %>
         </section>
 
         <%- include('../partial/footer'); %>
