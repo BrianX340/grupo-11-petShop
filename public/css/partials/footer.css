@@ -36,15 +36,17 @@
 }
 
 .sector-title {
-  color: white;
+  color: rgb(54, 7, 99);
   font-size: 16px;
   font-weight: bold;
+  margin-top: 0.5em;
 }
 
 .sector-info {
-  color: #DDDDDD;
+  color: #a81cd3;
   font-size: 13px;
-  font-weight: normal;
+  font-weight: bolder;
+  margin-top: 0.8em;
 }
 
 /* END FOOTER */
@@ -55,7 +57,14 @@
     }
 }
 
-
+@media(min-width:800px){
+  .sector-title{
+    font-size: 1.5em;
+  }
+  .sector-info{
+    font-size: 1em;
+  }
+}
 
 
 /* animacion  */
