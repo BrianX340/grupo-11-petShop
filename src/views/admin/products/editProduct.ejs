@@ -20,7 +20,6 @@
 
                     <div class='finalCardTitle'><span>Modificar Producto</span></div>
 
-
                 </section>
 
                 <% if (data.status == 'error') { %>
@@ -73,9 +72,15 @@
                                         </div>
                                     </div>
                                     <div class="inputfield">
+                                        <span>Descuento: </span>
+                                    <div class="inputEditProduct">
+                                        <input value='<%- data.product.barcode  %>' type="text" onkeydown="javascript: return event.keyCode == 69 ? false : true" id="inputDiscountEdit" name="barcode">
+                                    </div>
+                                </div>
+                                    <div class="inputfield">
                                         <span class="input-group-addon" id="basic-addon1">Animal: </span>
                                         <div>
-                                            <select class="form-control" name="categoryId" id="inputCategoryAdd" form="formCreateAdd">
+                                    <select class="form-control" name="categoryId" id="inputCategoryAdd" form="formCreateAdd">
                                         
                                     <option hidden value="<%- data.product.categoryId  %>">Elija una categoria</option>
                                     <option value="1">Gato</option>
@@ -114,33 +119,5 @@
 
         </main>
 </body>
-
-<script>
-    //Limpieza de Campos
-    function limpiarCampos() {
-        document.getElementById("inputNameEdit").value = ''
-        document.getElementById("inputBuyPriceEdit").value = ''
-        document.getElementById("inputSellPriceEdit").value = ''
-        document.getElementById("inputDescriptionEdit").value = ''
-        document.getElementById("inputAmountEdit").value = ''
-        document.getElementById("inputBarcodeEdit").value = ''
-    }
-    document.addEventListener('click', event => {
-        try {
-            elementId = event.path[0].id
-            elementClass = event.path[0].className
-        } catch {
-            elementId = event.target.id
-            elementClass = event.path[0].className
-        }
-        console.log(elementId)
-        if (elementId == 'cleanInputs') {
-            limpiarCampos() 
-            event.preventDefault()
-        } else if (elementId == 'back') {
-            window.location.href = `${window.location.origin}`
-        }
-    })
-</script>
-
+<script src="/js/editProduct.js"></script>
 </html>

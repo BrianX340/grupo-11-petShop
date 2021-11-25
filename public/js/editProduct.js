@@ -6,20 +6,32 @@ window.onload = () => {
     listenRegexOk('inputAmountEdit', /^[0-9]{1,}$/)
     listenRegexOk('inputBarcodeEdit', /^[0-9]{1,}$/)
     listenRegexOk('inputDiscountEdit', /^[0-9]{0,2}$/)
-    listenRegexOk('inputValorationEdit', /^[0-5]{0,1}$/)
+    //listenRegexOk('inputValorationEdit', /^[0-5]{0,1}$/)
 
-    document.getElementById('productSaveEdit').addEventListener('click', (event) => {
-        allCorrect = verifyAll()
-        if (!allCorrect) {
+    document.addEventListener('click', event => {
+        try {
+            elementId = event.path[0].id
+            elementClass = event.path[0].className
+        } catch {
+            elementId = event.target.id
+            elementClass = event.path[0].className
+        }
+    
+        if (elementId == 'cleanInputs') {
+            limpiarCampos()
             event.preventDefault()
+        } else if (elementId == 'backButton') {
+            window.location.href = `${window.location.origin}`
+        } else if (elementId=='productSaveEdit'){
+            console.log('asd')
+            if (!priceVerify()){
+                event.preventDefault()
+            }
         }
     })
-
-    /* document.getElementById('cleanInputs').addEventListener('click', (event) => {
-        console.log('sad')
-        limpiarCampos()
-        event.preventDefault()
-    }) */
+    console.log('asd')
+    verifyPrice('inputBuyPriceEdit')
+    verifyPrice('inputSellPriceEdit')
 }
 
 function listenRegexOk(idElement, regex) {
@@ -42,7 +54,24 @@ function verifyAll() {
     }
     return allCorrect
 }
-/* 
+
+function verifyPrice(idElement){
+    document.querySelector(`#${idElement}`).addEventListener('keyup',(event)=>{
+        verified = priceVerify()
+        document.getElementById('inputBuyPriceEdit').style.border = verified ? '3px solid #12c312' : '2px red solid'
+        document.getElementById('inputSellPriceEdit').style.border = verified ? '3px solid #12c312' : '2px red solid'
+    })
+}
+
+function priceVerify(){
+    buyPrice = document.getElementById('inputBuyPriceEdit').value
+    sellPrice = document.getElementById('inputSellPriceEdit').value
+    if (buyPrice >= sellPrice){
+        return false
+    }
+    return true
+}
+
 function limpiarCampos() {
     document.getElementById("inputNameEdit").value = ''
     document.getElementById("inputBuyPriceEdit").value = ''
@@ -50,4 +79,4 @@ function limpiarCampos() {
     document.getElementById("inputDescriptionEdit").value = ''
     document.getElementById("inputAmountEdit").value = ''
     document.getElementById("inputBarcodeEdit").value = ''
-} */
+}
