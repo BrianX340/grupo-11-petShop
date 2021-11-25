@@ -9,8 +9,10 @@ const {
     deleteProduct,
     deletePromotion,
     isInPromotionToogleApi,
-    //productBestSellToogle,
+    isInNewsToogleApi,
 
+    newsAddView,
+    newsDeleteView,
     adminPanelView,
     listProductView,
     editProductView,
@@ -36,6 +38,8 @@ router.get('/temporal', (req, res) => {
 router.get('/', isAdminContinue, adminPanelView)
 router.get('/products/promotion/add', isAdminContinue, promotionAddView)
 router.get('/products/promotion/delete', isAdminContinue, deletePromotionView)
+router.get('/products/news/add', isAdminContinue, newsAddView)
+router.get('/products/news/delete', isAdminContinue, newsDeleteView)
 router.get('/products/list', isAdminContinue, listProductView)
 router.get('/products/create', isAdminContinue, createProductView)
 router.get('/products/edit/:productId', isAdminContinue, editProductView)
@@ -51,7 +55,6 @@ router.get('/transactions', isAdminContinue, transactionView)
 
 //Delete Products
 router.delete('/products/:productId', deleteProduct)
-router.delete('/products/promotion/:productId', deletePromotion)
 
 //Edit Products
 router.put('/products/:productId', productUploadImage.single("image"), isAdminContinue, editProduct)
@@ -65,22 +68,13 @@ router.post('/products/create', productUploadImage.single("image"), isAdminConti
 //Toogle isInPromotion
 router.put('/api/isinpromotion/:productId', isAdminContinue, isInPromotionToogleApi)
 
-
-
-
-
+//Toogle isNews
+router.put('/api/isinnews/:productId', isAdminContinue, isInNewsToogleApi)
 
 //Return All Products
 router.get('/allProducts', allProducts)
 
-
-
-
 //Return One Product
 router.get('/getOneProduct/:id', getOneProduct)
-
-
-
-
 
 module.exports = router

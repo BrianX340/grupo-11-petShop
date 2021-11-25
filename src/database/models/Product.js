@@ -42,5 +42,13 @@ module.exports = (sequalize, dataTypes) => {
         })
     }
 
+    Product.prototype.toogleInNews = function() {
+        return this.update({ isNews: !this.isNews }).then(() => {
+            return 1
+        }).catch(err => {
+            return 0
+        })
+    }
+
     return Product
 }

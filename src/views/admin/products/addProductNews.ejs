@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Productos</title>
-    <link rel="stylesheet" href="/css/admin/products/listProducts.css">
+    <title>Agregar novedades</title>
+    <link rel="stylesheet" href="/css/admin/products/listProductPromotion.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -24,6 +24,12 @@
 <body>
     <%- include('../../partial/header'); %>
 
+        <section class='backButton'>
+            <div>
+                <a href="/">Volver</a>
+            </div>
+        </section>
+
         <section class='tables'>
             <table class="table table-bordered table-striped">
                 <thead>
@@ -34,12 +40,10 @@
                         <th style="width: 60px;">Stock</th>
                         <th style="width: 60px;">Categoria</th>
                         <th style="width: 60px;">SubCategoria</th>
-                        <th style="width: 60px;">Descuento%</th>
                         <th style="width: 60px;">Valoracion</th>
                         <th style="width: 60px;">VentasTotales</th>
                         <th style="width: 60px;">VistasTotales</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
+                        <th>Agregar a Novedades</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,10 +52,10 @@
                             <td>
                                 <%- product.name %>
                             </td>
-                            <td>
+                            <td id='tdBuyPrice<%- product.id %>'>
                                 <%- product.buyPrice %>
                             </td>
-                            <td>
+                            <td id='tdSellPrice<%- product.id %>'>
                                 <%- product.sellPrice %>
                             </td>
                             <td>
@@ -64,13 +68,7 @@
                                 <%- product.subCategoryId %>
                             </td>
                             <td>
-                                <%- product.discount %>
-                            </td>
-                            <td>
                                 <%- product.valoration %>
-                            </td>
-                            <td>
-                                <%- product.imgPath %>
                             </td>
                             <td>
                                 <%- product.totalSells %>
@@ -78,11 +76,11 @@
                             <td>
                                 <%- product.totalViews %>
                             </td>
-                            <form action="/admin/api/isinpromotion/<%- product.id %>?_method=PUT" method="POST">
+                            <form action="/admin/api/isinnews/<%- product.id %>?_method=PUT" method="POST">
                                 <td>
                                     <button type="submit" class="listButtom">
-                              <img class="listImg" src="/img/admin/trash.svg" alt="Eliminar">
-                            </button>
+                                    <img class="listImg" src="/img/admin/check.svg" id='sender<%- product.id %>' alt="Agregar">
+                                </button>
                                 </td>
                             </form>
                         </tr>
@@ -91,11 +89,11 @@
             </table>
         </section>
 
-        <% if (data.actionStatus == 'success') { %>
+        <% if (data.status) { %>
             <div id='operationSuccess'>
                 <img id='successfulOperation' src="/img/admin/ok.gif" alt="">
             </div>
-            <% } else if (data.actionStatus == 'failed') { %>
+            <% } else if (data.status === 0) { %>
                 <div id='operationSuccess'>
                     <img id='failedOperation' src="/img/admin/error.gif" alt="">
                 </div>
@@ -104,10 +102,20 @@
 </body>
 
 <script>
-    setTimeout(() => {
-        document.getElementById('operationSuccess').style.display = 'none'
-        document.getElementById('successfulOperation').style.display = 'none'
+     setTimeout(() => {
+        try {
+            document.getElementById('operationSuccess').style.display = 'none'
+            document.getElementById('successfulOperation').style.display = 'none'
+        } catch {
+            document.getElementById('successfulOperation').style.display = 'none'
+        }
     }, 2500)
 </script>
+
+<style>
+    input {
+        outline: none;
+    }
+</style>
 
 </html>

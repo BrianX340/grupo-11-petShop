@@ -246,6 +246,34 @@ module.exports = {
             })
     },
 
+    getAllProductsNotNews: () => {
+        return db.Product.findAll({
+            where: {
+                isNews: 0
+            }
+        }).then(products => {
+            return products
+        })
+    },
+    isInNewsToogle: (productId) => {
+        return db.Product.findByPk(+productId)
+            .then(product => {
+                return product.toogleInNews()
+            }).catch(err => {
+                console.log(err)
+                return false
+            })
+    },
+    getNews: () => {
+        return db.Product.findAll({
+            where: {
+                isNews: 1
+            }
+        }).then(products => {
+            return products
+        })
+    },
+    
     addUserFavorite: (userId, productId) => {
         return db.Favorites.findOne({
             where: {

@@ -78,7 +78,7 @@
                             <td>
                                 <%- product.totalViews %>
                             </td>
-                            <form action="/admin/api/isinpromotion/<%- product.id %>?_method=PUT" method="POST">
+                            <form action="/admin/products/promotion/<%- product.id %>?_method=DELETE" method="POST">
                                 <td>
                                     <button type="submit" class="listButtom">
                               <img class="listImg" src="/img/admin/trash.svg" alt="Eliminar">

@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator')
-const { getAllProductsNotPromotion, getAllPromotions, productCreate, searchProductById, productUpdate, getAllProducts, deleteOneProduct, isInPromotionToogle } = require('../database/db')
+const { getAllProductsNotNews, getAllProductsNotPromotion, getAllPromotions, productCreate, searchProductById, productUpdate, getAllProducts, deleteOneProduct, isInPromotionToogle, isInNewsToogle, getNews } = require('../database/db')
 
 module.exports = {
     isInPromotionToogleApi: (req, res) => {
@@ -116,6 +116,54 @@ module.exports = {
                 anuladasData: JSON.stringify(anuladasData()),
             }
         })
+    },
+    newsAddView: (req, res) => {
+        getAllProductsNotNews()
+            .then(products => {
+                data = {
+                    session: req.session ? req.session : "",
+                    products
+                }
+                res.render('admin//products//addProductNews', { data })
+            }).catch(err => {
+                console.log(err)
+                return false
+            })
+    },
+    newsDeleteView: (req, res) => {
+        getNews()
+            .then(products => {
+                data = {
+                    session: req.session ? req.session : "",
+                    products
+                }
+                res.render('admin//products//deleteProductPromotion', { data })
+            }).catch(err => {
+                console.log(err)
+                return false
+            })
+    },
+    isInNewsToogleApi: (req, res) => {
+        id = req.params.productId
+        if (isNaN(id)) {
+            return res.status(400).send({ message: 'La ruta que desea ingresar no existe' })
+        }
+        isInNewsToogle(id).then(respuestaToogle => {
+            data = {
+                session: req.session ? req.session : "",
+                status: respuestaToogle ? 1 : 0
+            }
+            console.log(data)
+            getAllProductsNotNews()
+                .then(products => {
+                    data.products = products
+                    res.render('admin//products//addProductNews', { data })
+                }).catch(err => {
+                    console.log(err)
+                    return false
+                })
+        })
+
     },
     getOneProduct: (req, res) => {
         elementId = req.params.id
