@@ -195,8 +195,13 @@ nav {
 
 /* menu */
 
+.nav-desplegable li{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .nav-desplegable{
-  
+  margin-right: 0.8em;
 }
 
 #menu-nav ul {
