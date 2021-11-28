@@ -18,6 +18,9 @@ section.userProfileBodySection {
     border-radius: 0.8em;
     width: 50%;
 }
+.form_editProfileContainer{
+    padding: 0.8em;
+}
 
 @media (min-width: 1000px){
     section.userProfileBodySection {
@@ -49,11 +52,11 @@ label.labelEditProfile {
     border-radius: 0.8em;
 }
 
-.botonEditProfile, #provinceList{
+.botonEditProfile, #provinceList, #cityList{
     display: inline-block;
     position: relative;
     background-color: rgb(139 11 227);
-    margin: 0px 0px 0px 0px;
+    margin: 0;
     padding: 7px 12px;
     overflow: visible;
     border: 1px solid rgb(81 11 129);

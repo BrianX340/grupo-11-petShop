@@ -22,7 +22,7 @@ module.exports = {
     },
     updateUser: (id, data, callback) => {
 
-        avatarId = data.avatarId
+        data.avatarId = +data.avatarId
         addressId = data.addressId
         addressData = {
             address: data.address,
@@ -37,7 +37,7 @@ module.exports = {
         delete data.state
         delete data.address
         delete data.province
-        delete data.avatarId
+        
         delete data.addressId
 
         addressQuery = db.Address.update({...addressData }, { where: { id: addressId } })

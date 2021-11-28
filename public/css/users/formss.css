@@ -19,6 +19,7 @@
 .text-danger{
     font-size: 18px;
     color: rgb(50, 8, 129);
+    font-weight: bolder;
 }
 .inicioF{
     text-decoration: none;

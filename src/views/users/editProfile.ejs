@@ -51,16 +51,21 @@
                                 <input class="editProfile_input" type="text" name="cp" placeholder="Código postal" value="<%= data.session.user.address.cp ? data.session.user.address.cp : " " %>">
                             </div>
                             <label class="labelEditProfile" for="state">Provincia:</label>
+                            
                             <div >
                                 <select name="state" id="provinceList"></select>
+                                <% if (data.session.user.address.state) { %>
+                                    <option value="<%= data.session.user.address.state %>" selected hidden><%= data.session.user.address.state %></option>
+                                <% } else { %>
+                                    <option value="" selected hidden>Provincia</option>
+                                <% } %>
                             </div>
                             <label class="labelEditProfile" for="city">Localidad:</label>
-                            <div class="botonEditProfile">
-                                
-                            </div>
-                            <label class="labelEditProfile" for="country">Pais:</label>
-                            <div class="botonEditProfile">
-                                
+                            <div>
+                                <select name="city" id="cityList"></select>
+                                <% if (data.session.user.address.city) { %>
+                                    <option value="<%= data.session.user.address.city %>" selected hidden><%= data.session.user.address.city %></option>
+                                <% } %>
                             </div>
                         </section>
 
@@ -69,6 +74,9 @@
                                 <select class="editProfile_selectContainer" name="province" id="">
                                 <option value="">Provincia</option>
                             </select>
+                            </div>
+                            <div class="botonEditProfile">
+                                
                             </div>
                             <div>
                                 <select class="editProfile_selectContainer" name="city" id="">
@@ -82,7 +90,7 @@
 
                         <section class="avatarSelectContainer">
                             <div class="avatarSelect">
-                                <input type="text" id='avatarId' name='avatar' value='<%= data.session.user.avatarId %>' style='display:none'>
+                                <input type="text" id='avatarId' name='avatarId' value='<%= data.session.user.avatarId %>' style='display:none'>
                                 <button id='selectAvatarButton'>
                                 Seleccionar Avatar
                             </button>
@@ -98,7 +106,7 @@
                                                         <img src="/img/avatars/<%= avatar.path %>" id='<%= avatar.id %>' class='avatarClicked' alt="">
                                                     </figure>
                                                 </div>
-                                                <% }) %>
+                                            <% }) %>
                                         </div>
                                     </div>
                                 </div>
@@ -122,5 +130,6 @@
 
 </body>
 <script src="/js/editProfile.js"></script>
+<script src="/js/apiProfile.js"></script>
 
 </html>

@@ -39,10 +39,10 @@ module.exports = [
 
     body('pass')
     .custom((value) => {
-        regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/
+        regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}$/
         return regexPassword.test(value)
     })
-    .withMessage("Introduzca una contraseña valida, Deberá tener letras mayúsculas, minúsculas, un número y un carácter especial."),
+    .withMessage("Introduzca una contraseña valida, Deberá tener letras mayúsculas, minúsculas y un número."),
 
     body('pass2')
     .custom((value, { req }) => value !== req.body.pass ? false : true)
