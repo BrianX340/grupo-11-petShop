@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/users/formss.css">
+    <link rel="stylesheet" href="/css/users/login.css">
     <title>Inicio de sesión</title>
 </head>
 
@@ -19,7 +19,10 @@
                     <div class="formBx">
                         <form id="formLogin" method="POST">
                             <h2>Inicio de Sesión</h2>
-                            <input id="loginEmail" name="email" type="email" placeholder="Correo electronico">
+                            <div class="imgLogin">
+                                <img src="/img/login/giphy.gif" alt="">
+                            </div>
+                            <input class="inputLogin" id="loginEmail" name="email" type="email" placeholder="Correo electronico">
                             <% if (locals.errors && errors.email) { %>
                                 <small class="text-danger">
                                     <%= errors.email.msg %>
@@ -28,7 +31,7 @@
 
                             <small class="text-danger" id="loginErrorEmail"></small>
 
-                            <input id="input-password" type="password" name="pass" placeholder="Contraseña">
+                            <input class="inputLogin" id="input-password" type="password" name="pass" placeholder="Contraseña">
                             <% if (locals.errors && errors.pass) { %>
                                 <small class="text-danger">
                                     <%= errors.pass.msg %>
@@ -42,7 +45,7 @@
 
                             <small class="text-danger" id="loginErrorform"></small>
 
-                            <input type="submit" value="Iniciar sesion">
+                            <input class="submitLogin" type="submit" value="Iniciar sesion">
                             <p class="signup">¿No tienes cuenta? <a href="/ps/register">
                                 Obtén una cuenta.</a>
                             </p>

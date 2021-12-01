@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/users/formss.css">
+    <link rel="stylesheet" href="/css/users/register.css">
     <title>Registrarse</title>
 </head>
 
@@ -16,14 +16,14 @@
 
         <section class="container-form">
             <div class="container-relog">
-
-
                 <div class="user singupBox">
                     <div class="formBox">
                         <form id="formRegister" action="/ps/register" method="POST">
                             <h2>Registro</h2>
-
-                            <input type="text" name="name" placeholder="Nombre" id="nameRegister" value="<%= locals.old && old.name %>">
+                            <div class="imgLogin">
+                                <img src="/img/register/kat.gif" alt="">
+                            </div>
+                            <input class="inputLogin"  type="text" name="name" placeholder="Nombre" id="nameRegister" value="<%= locals.old && old.name %>">
                             <% if (locals.errors && errors.name) { %>
                                 <small class="text-danger">
                             <%= errors.name.msg %>
@@ -31,7 +31,7 @@
                             <% } %>
                             <small class="text-danger" id="nameErrorRegister"></small>
 
-                            <input type="text" name="lastName" placeholder="Apellido" id="lastNameRegister" value="<%= locals.old && old.lastName %>">
+                            <input class="inputLogin"  type="text" name="lastName" placeholder="Apellido" id="lastNameRegister" value="<%= locals.old && old.lastName %>">
                             <% if (locals.errors && errors.lastName) { %>
                                 <small class="text-danger">
                                 <%= errors.lastName.msg %>
@@ -39,7 +39,7 @@
                                 <% } %>
                             <small class="text-danger" id="lastNameErrorRegister"></small>
 
-                            <input id="inputEmailRegister" type="email" name="email" placeholder="Correo electronico">
+                            <input class="inputLogin"  id="inputEmailRegister" type="email" name="email" placeholder="Correo electronico">
                             <% if (locals.errors && errors.email) { %>
                             <small class="text-danger">
                             <%= errors.email.msg %>
@@ -47,7 +47,7 @@
                             <% } %>
                             <small class="text-danger" id="emailErrorRegister"></small>
 
-                            <input id="passwordRegister" type="password" name="pass" placeholder="Contraseña">
+                            <input class="inputLogin"  id="passwordRegister" type="password" name="pass" placeholder="Contraseña">
                             <% if (locals.errors && errors.pass) { %>
                             <small class="text-danger">
                             <%= errors.pass.msg %>
@@ -55,7 +55,7 @@
                             <% } %>
                             <small class="text-danger" id="passwordErrorRegister"></small>
 
-                            <input id="passwordRe" type="password" name="pass2" placeholder="Reingrese la contraseña">
+                            <input class="inputLogin"  id="passwordRe" type="password" name="pass2" placeholder="Reingrese la contraseña">
                             <% if (locals.errors && errors.pass2) { %>
                             <small class="text-danger">
                             <%= errors.pass2.msg %>
@@ -64,7 +64,7 @@
                             <small class="text-danger" id="passwordErrorRe"></small>
 
                             <div class="registerCheck">
-                            <input class="checkRegisterlogin" type="checkbox" name="terms" id="check">
+                            <input class="boton"  class="checkRegisterlogin" type="checkbox" name="terms" id="check">
                             <label for="check">Acepto los términos y condiciones</label>
                             </div>
                             <% if (locals.errors && errors.terms) { %>
@@ -76,7 +76,7 @@
 
                         <small class="text-danger" id="formErrorRegister"></small>
                         
-                        <input id="submitErrorRegistro" type="submit" value="Registrarse">
+                        <input class="submitLogin" id="submitErrorRegistro" type="submit" value="Registrarse">
                         <p class="signup">¿Ya tiene cuenta? <a href="/ps/login"> Inicie sesión.</a></p>
                         </form>
                     </div>

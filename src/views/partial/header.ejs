@@ -59,16 +59,13 @@
                                     <% } else if (data.session.user.role == 0) { %>
                                         <ul>
                                             <li>
-                                                <a href="#">
-                Admin
-                </a>
+                                                <a href="#">Admin</a>
                                                 <ul>
                                                     <li class="li-menu"><a href="/ps/logout">Cerrar sesión</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
-                                        <% } %>
-                                            <% } else { %>
+                                    <% } %><% } else { %>
                                                 <ul>
                                                     <li><a href="#">Cuenta</a>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -79,7 +76,6 @@
                                                     </li>
                                                 </ul>
                                                 <% } %>
-
                         </div>
 
                         <!-- end menu -->
