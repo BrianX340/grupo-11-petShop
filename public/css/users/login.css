@@ -26,6 +26,7 @@
     text-decoration: none;
 }
 
+
 .container-form {
     height: 100vh;
     display: flex;
@@ -35,14 +36,12 @@
 }
 
 .user .formBx{
-    width: 26em;
     height: 100%;
     background: rgb(255 255 255);
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 40px;
-    margin-right: 1em;
 }
 .imgLogin img {
     width: 100%;
@@ -108,10 +107,13 @@ h2{
 
 /* Ajuste de pantalla */
 
-@media (max-width: 990px){
+@media(min-width: 1020px){
     .container{
-        max-width: 440px;
+        max-width: 560px;
     }
+}
+
+@media (max-width: 990px){
     .container .imgBx{
         display: none;
     }
