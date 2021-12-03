@@ -4,6 +4,34 @@
     overflow-x: hidden;
 }
 
+.infoFooter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.methodPay{
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.socialFooter{
+  border-left: none;
+  width: 360px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.8em;
+}
+.redesS{
+  display: flex;
+  flex-direction: row;
+}
+.logoFooter{
+  width: 100%;
+  object-fit: contain;
+  margin: 0.5em;
+}
 .footer-style {
   background-color: #10232c;
   height: 100%;
@@ -54,6 +82,12 @@
 @media (min-width: 500px) {
     .sectorFooter {
       flex-direction: row;
+    }
+    .infoFooter{
+      flex-direction: row;
+    }
+    .socialFooter{
+      border-left: 0.1em solid rgb(16 33 179);
     }
 }
 

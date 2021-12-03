@@ -44,7 +44,8 @@ nav {
   }
   
   .logo-desktop figure img {
-    width: 30px;
+    width: 6em;
+    object-fit: contain;
   }
   
   
