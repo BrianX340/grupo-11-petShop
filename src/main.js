@@ -26,7 +26,7 @@ app.use(session(
         saveUninitialized: true
     }
 ))
-//app.use(serverLogs)
+app.use(serverLogs)
 app.use(localSessionCheck)
 
 /* ROUTERS */
