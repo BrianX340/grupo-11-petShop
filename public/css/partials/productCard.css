@@ -194,12 +194,14 @@ a:-webkit-any-link {
 }
 
 .favourite {
+  display: none;
   position: absolute;
   right: 60px;
   top: 10px;
 }
 
 .favourite figure {
+  display: none;
   margin: 0;
   padding: 0;
   position: relative;
@@ -207,11 +209,13 @@ a:-webkit-any-link {
 }
 
 .favourite figure img {
+  display: none;
   height: 100%;
   position: absolute;
 }
 
 .coverHeart {
+    display: none;
     height: 45px;
     position: absolute;
     width: 45px;
