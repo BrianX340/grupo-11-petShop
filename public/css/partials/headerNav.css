@@ -42,7 +42,12 @@ nav {
     margin: 0;
     padding: 0;
   }
-  
+  .avatarHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
   .logo-desktop figure img {
     width: 6em;
     object-fit: contain;
