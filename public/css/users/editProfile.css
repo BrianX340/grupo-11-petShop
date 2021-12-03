@@ -52,7 +52,15 @@ label.labelEditProfile {
     border-radius: 0.8em;
 }
 
-.botonEditProfile, #provinceList, #cityList{
+.avatarSelectContainer{
+    margin: 0.8em;
+}
+.editProfile_botonContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.botonEditProfile, #selectAvatarButton, #provinceList, #cityList{
     display: inline-block;
     position: relative;
     background-color: rgb(139 11 227);
