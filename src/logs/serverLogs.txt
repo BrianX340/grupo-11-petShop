@@ -6,3 +6,7 @@ method: GET ## direccion: undefined ## ruta: / ## fecha: Fri Dec 03 2021 20:18:3
 method: GET ## direccion: undefined ## ruta: /img/products/1634438171830_img_.jpg ## fecha: Fri Dec 03 2021 20:18:38 GMT-0300 (hora estándar de Argentina) 
 method: GET ## direccion: undefined ## ruta: /img/products/1634438171830_img_.jpg ## fecha: Fri Dec 03 2021 20:18:38 GMT-0300 (hora estándar de Argentina) 
 method: GET ## direccion: undefined ## ruta: /favicon.ico ## fecha: Fri Dec 03 2021 20:18:39 GMT-0300 (hora estándar de Argentina) 
+method: GET ## direccion: undefined ## ruta: / ## fecha: Fri Dec 03 2021 20:27:38 GMT-0300 (hora estándar de Argentina) 
+method: GET ## direccion: undefined ## ruta: /img/products/1634438171830_img_.jpg ## fecha: Fri Dec 03 2021 20:27:38 GMT-0300 (hora estándar de Argentina) 
+method: GET ## direccion: undefined ## ruta: /img/products/1634438171830_img_.jpg ## fecha: Fri Dec 03 2021 20:27:38 GMT-0300 (hora estándar de Argentina) 
+method: GET ## direccion: undefined ## ruta: /favicon.ico ## fecha: Fri Dec 03 2021 20:27:39 GMT-0300 (hora estándar de Argentina) 
